@@ -1,4 +1,30 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
+
+export enum BRAND_TEXT_COLORS {
+  BODY = "#335c67",
+  LARGE = "#e09f3e",
+  SMALL_BODY = "#540b0e",
+}
+
+type StyledTextProps = {
+  type: "small" | "medium" | "large";
+  color: string;
+};
+
+export const StyledColSection = styled.section<{ align?: "start" | "center" | "end" }>`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: ${props =>
+    props?.align && (props?.align == "start" ? "flex=start" : props?.align == "end" ? "flex-end" : "center")};
+  grid-gap: 10px;
+  gap: 10px;
+`;
+
+export const StyledText = styled.p<StyledTextProps>`
+  font-size: ${props => (props.type === "small" ? "16px" : props.type === "medium" ? "24px" : "36px")};
+  color: ${props => props.color};
+`;
 
 const GlobalStyle = createGlobalStyle`
    *{
@@ -6,7 +32,7 @@ const GlobalStyle = createGlobalStyle`
        padding: 0;
        outline:0;
        box-sizing:border-box;
-       font-family: 'Open Sans', sans-serif; 
+       font-family: 'Inter Tight', sans-serif;
    }
    #root{
        margin:0 auto;

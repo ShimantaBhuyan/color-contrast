@@ -5635,25 +5635,36 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _global = require("./styles/global");
 var _globalDefault = parcelHelpers.interopDefault(_global);
+var _contrastChecker = require("./components/ContrastChecker");
+var _contrastCheckerDefault = parcelHelpers.interopDefault(_contrastChecker);
+var _layout = require("./components/Layout");
+var _layoutDefault = parcelHelpers.interopDefault(_layout);
+var _header = require("./components/Header");
+var _headerDefault = parcelHelpers.interopDefault(_header);
 function App() {
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _globalDefault.default), {}, void 0, false, {
                 fileName: "src/App.tsx",
-                lineNumber: 7,
+                lineNumber: 11,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                    children: "Hello!"
-                }, void 0, false, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {
+                type: "wave"
+            }, void 0, false, {
+                fileName: "src/App.tsx",
+                lineNumber: 12,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _layoutDefault.default), {
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contrastCheckerDefault.default), {}, void 0, false, {
                     fileName: "src/App.tsx",
-                    lineNumber: 9,
+                    lineNumber: 14,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "src/App.tsx",
-                lineNumber: 8,
+                lineNumber: 13,
                 columnNumber: 7
             }, this)
         ]
@@ -5668,7 +5679,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./styles/global":"jHMjs"}],"gkKU3":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./styles/global":"jHMjs","./components/ContrastChecker":"c52lp","./components/Layout":"95pB0","./components/Header":"35enc"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -5821,14 +5832,36 @@ function registerExportsForReactRefresh(module1) {
 },{"react-refresh/runtime":"786KC"}],"jHMjs":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "BRAND_TEXT_COLORS", ()=>BRAND_TEXT_COLORS);
+parcelHelpers.export(exports, "StyledColSection", ()=>StyledColSection);
+parcelHelpers.export(exports, "StyledText", ()=>StyledText);
 var _styledComponents = require("styled-components");
+var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
+let BRAND_TEXT_COLORS;
+(function(BRAND_TEXT_COLORS) {
+    BRAND_TEXT_COLORS["BODY"] = "#335c67";
+    BRAND_TEXT_COLORS["LARGE"] = "#e09f3e";
+    BRAND_TEXT_COLORS["SMALL_BODY"] = "#540b0e";
+})(BRAND_TEXT_COLORS || (BRAND_TEXT_COLORS = {}));
+const StyledColSection = (0, _styledComponentsDefault.default).section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: ${(props)=>props?.align && (props?.align == "start" ? "flex=start" : props?.align == "end" ? "flex-end" : "center")};
+  grid-gap: 10px;
+  gap: 10px;
+`;
+const StyledText = (0, _styledComponentsDefault.default).p`
+  font-size: ${(props)=>props.type === "small" ? "16px" : props.type === "medium" ? "24px" : "36px"};
+  color: ${(props)=>props.color};
+`;
 const GlobalStyle = (0, _styledComponents.createGlobalStyle)`
    *{
        margin: 0;
        padding: 0;
        outline:0;
        box-sizing:border-box;
-       font-family: 'Open Sans', sans-serif; 
+       font-family: 'Inter Tight', sans-serif;
    }
    #root{
        margin:0 auto;
@@ -7513,7 +7546,547 @@ function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
 }
 module.exports = hoistNonReactStatics;
 
-},{"react-is":"7EuwB"}],"lOjBx":[function(require,module,exports) {
+},{"react-is":"7EuwB"}],"c52lp":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$7c7e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$7c7e.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+// import { APCAcontrast, sRGBtoY, displayP3toY, colorParsley } from "bridge-pca";
+var _styledComponents = require("styled-components");
+var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
+var _global = require("../styles/global");
+var _swapSvg = require("url:../assets/swap.svg");
+var _swapSvgDefault = parcelHelpers.interopDefault(_swapSvg);
+var _s = $RefreshSig$();
+const ContrastChecker = ()=>{
+    _s();
+    const [textColor, setTextColor] = (0, _react.useState)("#FEF3C7");
+    const [bgColor, setBgColor] = (0, _react.useState)("#059669");
+    const handleTextColorChange = (event)=>{
+        setTextColor(event.target.value.toUpperCase());
+    };
+    const handleBgColorChange = (event)=>{
+        setBgColor(event.target.value.toUpperCase());
+    };
+    const swapColors = (event)=>{
+        event.preventDefault();
+        const tempColor = textColor;
+        setTextColor(bgColor);
+        setBgColor(tempColor);
+    };
+    const handleSubmit = (event)=>{
+        console.log(event.target, {
+            textColor,
+            bgColor
+        });
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Wrapper, {
+        align: "center",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledForm, {
+                onSubmit: handleSubmit,
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledColSection), {
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledText), {
+                                type: "small",
+                                color: (0, _global.BRAND_TEXT_COLORS).BODY,
+                                children: "Text Color"
+                            }, void 0, false, {
+                                fileName: "src/components/ContrastChecker.tsx",
+                                lineNumber: 35,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledColorPickerIcon, {
+                                color: textColor
+                            }, void 0, false, {
+                                fileName: "src/components/ContrastChecker.tsx",
+                                lineNumber: 38,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledInputs, {
+                                type: "text",
+                                name: "textColor",
+                                value: textColor,
+                                onChange: handleTextColorChange
+                            }, void 0, false, {
+                                fileName: "src/components/ContrastChecker.tsx",
+                                lineNumber: 39,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/ContrastChecker.tsx",
+                        lineNumber: 34,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(SwapButton, {
+                        onClick: swapColors,
+                        type: "button",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            src: (0, _swapSvgDefault.default),
+                            alt: "Swap icon"
+                        }, void 0, false, {
+                            fileName: "src/components/ContrastChecker.tsx",
+                            lineNumber: 43,
+                            columnNumber: 11
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/components/ContrastChecker.tsx",
+                        lineNumber: 42,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledColSection), {
+                        align: "end",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledText), {
+                                type: "small",
+                                color: (0, _global.BRAND_TEXT_COLORS).BODY,
+                                children: "Background Color"
+                            }, void 0, false, {
+                                fileName: "src/components/ContrastChecker.tsx",
+                                lineNumber: 47,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledColorPickerIcon, {
+                                color: bgColor
+                            }, void 0, false, {
+                                fileName: "src/components/ContrastChecker.tsx",
+                                lineNumber: 50,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledInputs, {
+                                type: "text",
+                                name: "bgColor",
+                                value: bgColor,
+                                onChange: handleBgColorChange
+                            }, void 0, false, {
+                                fileName: "src/components/ContrastChecker.tsx",
+                                lineNumber: 51,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/ContrastChecker.tsx",
+                        lineNumber: 46,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/ContrastChecker.tsx",
+                lineNumber: 33,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledTextDisplay, {
+                textColor: textColor,
+                bgColor: bgColor,
+                children: "The quick brown fox jumped over the lazy dog"
+            }, void 0, false, {
+                fileName: "src/components/ContrastChecker.tsx",
+                lineNumber: 55,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/ContrastChecker.tsx",
+        lineNumber: 32,
+        columnNumber: 5
+    }, undefined);
+};
+_s(ContrastChecker, "gFmZInPNV4O/lVw8fo+f3hJ3tjA=");
+_c = ContrastChecker;
+const Wrapper = (0, _styledComponentsDefault.default)((0, _global.StyledColSection))``;
+_c1 = Wrapper;
+const StyledForm = (0, _styledComponentsDefault.default).form`
+  display: flex;
+  justify-content: center;
+  grid-gap: 20px;
+  gap: 20px;
+`;
+_c2 = StyledForm;
+const StyledInputs = (0, _styledComponentsDefault.default).input`
+  padding: 5px;
+  border: 3px solid #cbf3f0;
+  border-radius: 5px;
+`;
+_c3 = StyledInputs;
+const StyledColorPickerIcon = (0, _styledComponentsDefault.default).div`
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  background-color: ${(props)=>props.color};
+`;
+_c4 = StyledColorPickerIcon;
+const StyledTextDisplay = (0, _styledComponentsDefault.default).div`
+  background-color: ${(props)=>props.bgColor};
+  color: ${(props)=>props.textColor};
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 24px;
+  margin-top: 20px;
+`;
+_c5 = StyledTextDisplay;
+const SwapButton = (0, _styledComponentsDefault.default).button`
+  background: transparent;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  cursor: pointer;
+`;
+_c6 = SwapButton;
+exports.default = ContrastChecker;
+var _c, _c1, _c2, _c3, _c4, _c5, _c6;
+$RefreshReg$(_c, "ContrastChecker");
+$RefreshReg$(_c1, "Wrapper");
+$RefreshReg$(_c2, "StyledForm");
+$RefreshReg$(_c3, "StyledInputs");
+$RefreshReg$(_c4, "StyledColorPickerIcon");
+$RefreshReg$(_c5, "StyledTextDisplay");
+$RefreshReg$(_c6, "SwapButton");
+
+  $parcel$ReactRefreshHelpers$7c7e.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../styles/global":"jHMjs","styled-components":"1U3k6","url:../assets/swap.svg":"g4rXk"}],"g4rXk":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("6EXJA") + "swap.9c464f13.svg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"lgJ39":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return "/";
+}
+function getBaseURL(url) {
+    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error("Origin not found");
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"95pB0":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$d617 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$d617.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _styledComponents = require("styled-components");
+var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
+const Layout = ({ children  })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledLayout, {
+        children: children
+    }, void 0, false, {
+        fileName: "src/components/Layout.tsx",
+        lineNumber: 5,
+        columnNumber: 10
+    }, undefined);
+};
+_c = Layout;
+const StyledLayout = (0, _styledComponentsDefault.default).section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  align-self: center;
+  margin-top: 20px;
+`;
+_c1 = StyledLayout;
+exports.default = Layout;
+var _c, _c1;
+$RefreshReg$(_c, "Layout");
+$RefreshReg$(_c1, "StyledLayout");
+
+  $parcel$ReactRefreshHelpers$d617.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","styled-components":"1U3k6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"35enc":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$d5a6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$d5a6.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _styledComponents = require("styled-components");
+var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
+var _global = require("../styles/global");
+var _blob = require("./Blob");
+var _blobDefault = parcelHelpers.interopDefault(_blob);
+var _waves = require("./Waves");
+var _wavesDefault = parcelHelpers.interopDefault(_waves);
+const Header = ({ type  })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledHeaderWrapper, {
+        children: [
+            type === "blob" ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _blobDefault.default), {
+                width: "350px"
+            }, void 0, false, {
+                fileName: "src/components/Header.tsx",
+                lineNumber: 12,
+                columnNumber: 26
+            }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _wavesDefault.default), {
+                color: "#cbf3f0"
+            }, void 0, false, {
+                fileName: "src/components/Header.tsx",
+                lineNumber: 12,
+                columnNumber: 53
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledHeaderText, {
+                type: "large",
+                color: (0, _global.BRAND_TEXT_COLORS).BODY,
+                children: "Color Contrast Tool"
+            }, void 0, false, {
+                fileName: "src/components/Header.tsx",
+                lineNumber: 13,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledSubHeaderText, {
+                type: "small",
+                color: (0, _global.BRAND_TEXT_COLORS).BODY,
+                children: "Calculated using the new WCAG 3 - APCA algorithm currently being developed."
+            }, void 0, false, {
+                fileName: "src/components/Header.tsx",
+                lineNumber: 16,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/Header.tsx",
+        lineNumber: 11,
+        columnNumber: 5
+    }, undefined);
+};
+_c = Header;
+const StyledHeaderWrapper = (0, _styledComponentsDefault.default).div`
+  position: relative;
+`;
+_c1 = StyledHeaderWrapper;
+const StyledHeaderText = (0, _styledComponentsDefault.default)((0, _global.StyledText))`
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  text-transform: uppercase;
+`;
+_c2 = StyledHeaderText;
+const StyledSubHeaderText = (0, _styledComponentsDefault.default)((0, _global.StyledText))`
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  width: 25%;
+  word-wrap: normal;
+  text-transform: uppercase;
+`;
+_c3 = StyledSubHeaderText;
+exports.default = Header;
+var _c, _c1, _c2, _c3;
+$RefreshReg$(_c, "Header");
+$RefreshReg$(_c1, "StyledHeaderWrapper");
+$RefreshReg$(_c2, "StyledHeaderText");
+$RefreshReg$(_c3, "StyledSubHeaderText");
+
+  $parcel$ReactRefreshHelpers$d5a6.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","styled-components":"1U3k6","../styles/global":"jHMjs","./Blob":"5vqDi","./Waves":"iu8jy","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"5vqDi":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$6469 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$6469.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const Blob = (props)=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
+        version: "1.1",
+        xmlns: "http://www.w3.org/2000/svg",
+        viewBox: "0 0 500 500",
+        width: props?.width || "100%",
+        id: "blobSvg",
+        filter: "blur(0px)",
+        style: {
+            opacity: 1
+        },
+        transform: "rotate(0)",
+        children: [
+            " ",
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("defs", {
+                children: [
+                    " ",
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("linearGradient", {
+                        id: "gradient",
+                        x1: "0%",
+                        y1: "0%",
+                        x2: "0%",
+                        y2: "100%",
+                        children: [
+                            " ",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("stop", {
+                                offset: "0%",
+                                style: {
+                                    stopColor: "rgb(84, 11, 14)"
+                                }
+                            }, void 0, false, {
+                                fileName: "src/components/Blob.tsx",
+                                lineNumber: 20,
+                                columnNumber: 11
+                            }, undefined),
+                            " ",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("stop", {
+                                offset: "100%",
+                                style: {
+                                    stopColor: "rgb(224, 159, 62)"
+                                }
+                            }, void 0, false, {
+                                fileName: "src/components/Blob.tsx",
+                                lineNumber: 21,
+                                columnNumber: 11
+                            }, undefined),
+                            " "
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/Blob.tsx",
+                        lineNumber: 18,
+                        columnNumber: 9
+                    }, undefined),
+                    " "
+                ]
+            }, void 0, true, {
+                fileName: "src/components/Blob.tsx",
+                lineNumber: 16,
+                columnNumber: 7
+            }, undefined),
+            " ",
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+                id: "blob",
+                fill: "url(#gradient)",
+                style: {
+                    opacity: 1
+                },
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("animate", {
+                    attributeName: "d",
+                    dur: "10s",
+                    repeatCount: "indefinite",
+                    values: "M400,314Q352,378,277,420Q202,462,143,396Q84,330,66.5,241.5Q49,153,125.5,97.5Q202,42,298.5,55Q395,68,421.5,159Q448,250,400,314Z;M392.2525,331.53996Q379.05994,413.07992,285.7525,456.15485Q192.44505,499.22978,100.80019,432.44731Q9.15533,365.66484,30.81018,260.57493Q52.46503,155.48501,121.45005,74.10764Q190.43506,-7.26974,268.13261,60.97003Q345.83016,129.2098,375.63761,189.6049Q405.44505,250,392.2525,331.53996Z;M388.67097,319.27849Q360.55699,388.55699,291.23441,379.72688Q221.91183,370.89678,145.00645,354.28387Q68.10108,337.67097,71.32903,251.33548Q74.55699,165,142.39247,119.95591Q210.22796,74.91183,286.12043,91.61398Q362.0129,108.31613,389.39892,179.15806Q416.78495,250,388.67097,319.27849Z;M429.79847,339.54154Q392.67727,429.08308,294.97368,455.00137Q197.27008,480.91966,143.94598,403.56786Q90.62188,326.21607,83.52769,246.22992Q76.43351,166.24376,136.8518,92.77008Q197.27008,19.29641,287.1482,55Q377.02632,90.70359,421.97299,170.3518Q466.91966,250,429.79847,339.54154Z;M390.7302,319.10952Q360.37524,388.21905,284.62068,409.39959Q208.86612,430.58014,161.11156,373.20082Q113.35701,315.8215,88.46857,238.04463Q63.58014,160.26776,136.76776,117.04463Q209.95537,73.8215,303.79007,69.52027Q397.62476,65.21905,409.35497,157.60952Q421.08517,250,390.7302,319.10952Z;M400,314Q352,378,277,420Q202,462,143,396Q84,330,66.5,241.5Q49,153,125.5,97.5Q202,42,298.5,55Q395,68,421.5,159Q448,250,400,314Z"
+                }, void 0, false, {
+                    fileName: "src/components/Blob.tsx",
+                    lineNumber: 25,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/components/Blob.tsx",
+                lineNumber: 24,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/Blob.tsx",
+        lineNumber: 5,
+        columnNumber: 5
+    }, undefined);
+};
+_c = Blob;
+exports.default = Blob;
+var _c;
+$RefreshReg$(_c, "Blob");
+
+  $parcel$ReactRefreshHelpers$6469.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iu8jy":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$e565 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$e565.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const Waves = (props)=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
+        xmlns: "http://www.w3.org/2000/svg",
+        viewBox: "0 0 1440 320",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+            fill: props?.color || "#0099ff",
+            fillOpacity: "1",
+            d: "M0,256L34.3,245.3C68.6,235,137,213,206,186.7C274.3,160,343,128,411,106.7C480,85,549,75,617,85.3C685.7,96,754,128,823,138.7C891.4,149,960,139,1029,149.3C1097.1,160,1166,192,1234,186.7C1302.9,181,1371,139,1406,117.3L1440,96L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z"
+        }, void 0, false, {
+            fileName: "src/components/Waves.tsx",
+            lineNumber: 6,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/components/Waves.tsx",
+        lineNumber: 5,
+        columnNumber: 5
+    }, undefined);
+};
+_c = Waves;
+exports.default = Waves;
+var _c;
+$RefreshReg$(_c, "Waves");
+
+  $parcel$ReactRefreshHelpers$e565.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lOjBx":[function(require,module,exports) {
 "use strict";
 var m = require("react-dom");
 var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
