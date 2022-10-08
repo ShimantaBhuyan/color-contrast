@@ -7587,7 +7587,7 @@ const ContrastChecker = ()=>{
             bgColor
         });
     };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledColSection), {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Wrapper, {
         align: "center",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledForm, {
@@ -7702,26 +7702,28 @@ const ContrastChecker = ()=>{
 };
 _s(ContrastChecker, "gFmZInPNV4O/lVw8fo+f3hJ3tjA=");
 _c = ContrastChecker;
+const Wrapper = (0, _styledComponentsDefault.default)((0, _global.StyledColSection))``;
+_c1 = Wrapper;
 const StyledForm = (0, _styledComponentsDefault.default).form`
   display: flex;
   justify-content: center;
   grid-gap: 20px;
   gap: 20px;
 `;
-_c1 = StyledForm;
+_c2 = StyledForm;
 const StyledInputs = (0, _styledComponentsDefault.default).input`
   padding: 5px;
   border: 3px solid #cbf3f0;
   border-radius: 5px;
 `;
-_c2 = StyledInputs;
+_c3 = StyledInputs;
 const StyledColorPickerIcon = (0, _styledComponentsDefault.default).div`
   width: 24px;
   height: 24px;
   border-radius: 12px;
   background-color: ${(props)=>props.color};
 `;
-_c3 = StyledColorPickerIcon;
+_c4 = StyledColorPickerIcon;
 const StyledTextDisplay = (0, _styledComponentsDefault.default).div`
   background-color: ${(props)=>props.bgColor};
   color: ${(props)=>props.textColor};
@@ -7735,7 +7737,7 @@ const StyledTextDisplay = (0, _styledComponentsDefault.default).div`
   font-size: 24px;
   margin-top: 20px;
 `;
-_c4 = StyledTextDisplay;
+_c5 = StyledTextDisplay;
 const SwapButton = (0, _styledComponentsDefault.default).button`
   background: transparent;
   width: 30px;
@@ -7743,15 +7745,16 @@ const SwapButton = (0, _styledComponentsDefault.default).button`
   border-radius: 15px;
   cursor: pointer;
 `;
-_c5 = SwapButton;
+_c6 = SwapButton;
 exports.default = ContrastChecker;
-var _c, _c1, _c2, _c3, _c4, _c5;
+var _c, _c1, _c2, _c3, _c4, _c5, _c6;
 $RefreshReg$(_c, "ContrastChecker");
-$RefreshReg$(_c1, "StyledForm");
-$RefreshReg$(_c2, "StyledInputs");
-$RefreshReg$(_c3, "StyledColorPickerIcon");
-$RefreshReg$(_c4, "StyledTextDisplay");
-$RefreshReg$(_c5, "SwapButton");
+$RefreshReg$(_c1, "Wrapper");
+$RefreshReg$(_c2, "StyledForm");
+$RefreshReg$(_c3, "StyledInputs");
+$RefreshReg$(_c4, "StyledColorPickerIcon");
+$RefreshReg$(_c5, "StyledTextDisplay");
+$RefreshReg$(_c6, "SwapButton");
 
   $parcel$ReactRefreshHelpers$7c7e.postlude(module);
 } finally {
@@ -7858,7 +7861,7 @@ var _blobDefault = parcelHelpers.interopDefault(_blob);
 var _waves = require("./Waves");
 var _wavesDefault = parcelHelpers.interopDefault(_waves);
 const Header = ({ type  })=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledBlobWrapper, {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledHeaderWrapper, {
         children: [
             type === "blob" ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _blobDefault.default), {
                 width: "350px"
@@ -7873,13 +7876,22 @@ const Header = ({ type  })=>{
                 lineNumber: 12,
                 columnNumber: 53
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledTextWrapper, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledHeaderText, {
                 type: "large",
                 color: (0, _global.BRAND_TEXT_COLORS).BODY,
                 children: "Color Contrast Tool"
             }, void 0, false, {
                 fileName: "src/components/Header.tsx",
                 lineNumber: 13,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledSubHeaderText, {
+                type: "small",
+                color: (0, _global.BRAND_TEXT_COLORS).BODY,
+                children: "Calculated using the new WCAG 3 - APCA algorithm currently being developed."
+            }, void 0, false, {
+                fileName: "src/components/Header.tsx",
+                lineNumber: 16,
                 columnNumber: 7
             }, undefined)
         ]
@@ -7890,22 +7902,32 @@ const Header = ({ type  })=>{
     }, undefined);
 };
 _c = Header;
-const StyledBlobWrapper = (0, _styledComponentsDefault.default).div`
+const StyledHeaderWrapper = (0, _styledComponentsDefault.default).div`
   position: relative;
 `;
-_c1 = StyledBlobWrapper;
-const StyledTextWrapper = (0, _styledComponentsDefault.default)((0, _global.StyledText))`
+_c1 = StyledHeaderWrapper;
+const StyledHeaderText = (0, _styledComponentsDefault.default)((0, _global.StyledText))`
   position: absolute;
   top: 10px;
   left: 10px;
   text-transform: uppercase;
 `;
-_c2 = StyledTextWrapper;
+_c2 = StyledHeaderText;
+const StyledSubHeaderText = (0, _styledComponentsDefault.default)((0, _global.StyledText))`
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  width: 25%;
+  word-wrap: normal;
+  text-transform: uppercase;
+`;
+_c3 = StyledSubHeaderText;
 exports.default = Header;
-var _c, _c1, _c2;
+var _c, _c1, _c2, _c3;
 $RefreshReg$(_c, "Header");
-$RefreshReg$(_c1, "StyledBlobWrapper");
-$RefreshReg$(_c2, "StyledTextWrapper");
+$RefreshReg$(_c1, "StyledHeaderWrapper");
+$RefreshReg$(_c2, "StyledHeaderText");
+$RefreshReg$(_c3, "StyledSubHeaderText");
 
   $parcel$ReactRefreshHelpers$d5a6.postlude(module);
 } finally {

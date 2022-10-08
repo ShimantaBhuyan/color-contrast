@@ -29,7 +29,7 @@ const ContrastChecker = () => {
   };
 
   return (
-    <StyledColSection align="center">
+    <Wrapper align="center">
       <StyledForm onSubmit={handleSubmit}>
         <StyledColSection>
           <StyledText type="small" color={BRAND_TEXT_COLORS.BODY}>
@@ -55,9 +55,11 @@ const ContrastChecker = () => {
       <StyledTextDisplay textColor={textColor} bgColor={bgColor}>
         The quick brown fox jumped over the lazy dog
       </StyledTextDisplay>
-    </StyledColSection>
+    </Wrapper>
   );
 };
+
+const Wrapper = styled(StyledColSection)``;
 
 const StyledForm = styled.form`
   display: flex;

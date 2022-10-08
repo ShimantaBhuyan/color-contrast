@@ -8,23 +8,35 @@ import Waves from "./Waves";
 
 const Header = ({ type }: { type: "wave" | "blob" }) => {
   return (
-    <StyledBlobWrapper>
+    <StyledHeaderWrapper>
       {type === "blob" ? <Blob width={"350px"} /> : <Waves color={"#cbf3f0"} />}
-      <StyledTextWrapper type="large" color={BRAND_TEXT_COLORS.BODY}>
+      <StyledHeaderText type="large" color={BRAND_TEXT_COLORS.BODY}>
         Color Contrast Tool
-      </StyledTextWrapper>
-    </StyledBlobWrapper>
+      </StyledHeaderText>
+      <StyledSubHeaderText type="small" color={BRAND_TEXT_COLORS.BODY}>
+        Calculated using the new WCAG 3 - APCA algorithm currently being developed.
+      </StyledSubHeaderText>
+    </StyledHeaderWrapper>
   );
 };
 
-const StyledBlobWrapper = styled.div`
+const StyledHeaderWrapper = styled.div`
   position: relative;
 `;
 
-const StyledTextWrapper = styled(StyledText)`
+const StyledHeaderText = styled(StyledText)`
   position: absolute;
   top: 10px;
   left: 10px;
+  text-transform: uppercase;
+`;
+
+const StyledSubHeaderText = styled(StyledText)`
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  width: 25%;
+  word-wrap: normal;
   text-transform: uppercase;
 `;
 
