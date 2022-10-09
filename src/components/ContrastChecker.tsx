@@ -1,22 +1,46 @@
-import React, { useState } from "react";
-// import { APCAcontrast, sRGBtoY, displayP3toY, colorParsley } from "bridge-pca";
-
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { StyledColSection, StyledText } from "../styles/global";
 
+import Blob from "./Blob";
+import ContrastDisplay from "./ContrastDisplay";
 import SwapIcon from "url:../assets/swap.svg";
 import { BRAND_TEXT_COLORS, devices } from "../constants";
+import { getContrast, parseColor } from "../utils";
 
 const ContrastChecker = () => {
   const [textColor, setTextColor] = useState("#FEF3C7");
   const [bgColor, setBgColor] = useState("#059669");
+  const [contrastRatio, setContrastRatio] = useState<number | null>(null);
+  const [wcag2Ratio, setWcag2Ratio] = useState<string | null>(null);
+
+  useEffect(() => {
+    updateRatio(textColor, bgColor);
+  }, [textColor, bgColor]);
+
+  const updateRatio = (textColor: string, bgColor: string) => {
+    const { contrastLC, wcag2Ratio } = getContrast(textColor, bgColor);
+    setContrastRatio(contrastLC);
+    setWcag2Ratio(wcag2Ratio);
+    console.log({ contrastLC, wcag2Ratio });
+  };
 
   const handleTextColorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setTextColor(event.target.value.toUpperCase());
+    const color = event.target.value.toUpperCase();
+    setTextColor(color);
+
+    if (parseColor(color)[4] === false) {
+      // TODO: show error
+    }
   };
 
   const handleBgColorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setBgColor(event.target.value.toUpperCase());
+    const color = event.target.value.toUpperCase();
+    setBgColor(color);
+
+    if (parseColor(color)[4] === false) {
+      // TODO: show error
+    }
   };
 
   const swapColors = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -26,18 +50,15 @@ const ContrastChecker = () => {
     setBgColor(tempColor);
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    console.log(event.target, { textColor, bgColor });
-  };
-
   return (
     <Wrapper align="center">
-      <StyledForm onSubmit={handleSubmit}>
+      <StyledForm>
         <StyledColSection>
           <StyledText type="small" color={BRAND_TEXT_COLORS.BODY}>
             Text Color
           </StyledText>
-          <StyledColorPickerIcon color={textColor} />
+          {/* <StyledColorPickerIcon color={textColor} /> */}
+          <Blob fill={textColor} width={48} height={48} />
           <StyledInputs
             type="text"
             name="textColor"
@@ -48,14 +69,15 @@ const ContrastChecker = () => {
         </StyledColSection>
 
         <SwapButton onClick={swapColors} type="button">
-          <img src={SwapIcon} alt="Swap icon" />
+          <img src={SwapIcon} alt="Swap icon" width={24} height={24} />
         </SwapButton>
 
         <StyledColSection align="end">
           <StyledText type="small" color={BRAND_TEXT_COLORS.BODY}>
             Background Color
           </StyledText>
-          <StyledColorPickerIcon color={bgColor} />
+          {/* <StyledColorPickerIcon color={bgColor} /> */}
+          <Blob fill={bgColor} width={48} height={48} />
           <StyledInputs
             type="text"
             name="bgColor"
@@ -65,6 +87,8 @@ const ContrastChecker = () => {
           />
         </StyledColSection>
       </StyledForm>
+
+      <ContrastDisplay contrastLC={contrastRatio} wcag2Ratio={wcag2Ratio} />
 
       <StyledTextDisplay textColor={textColor} bgColor={bgColor}>
         The quick brown fox jumped over the lazy dog
@@ -109,12 +133,12 @@ const StyledInputs = styled.input`
   }
 `;
 
-const StyledColorPickerIcon = styled.div<{ color: string }>`
-  width: 24px;
-  height: 24px;
-  border-radius: 12px;
-  background-color: ${props => props.color};
-`;
+// const StyledColorPickerIcon = styled.div<{ color: string }>`
+//   width: 24px;
+//   height: 24px;
+//   border-radius: 12px;
+//   background-color: ${props => props.color};
+// `;
 
 const StyledTextDisplay = styled.div<{ textColor: string; bgColor: string }>`
   background-color: ${props => props.bgColor};
@@ -128,6 +152,8 @@ const StyledTextDisplay = styled.div<{ textColor: string; bgColor: string }>`
   text-align: center;
   font-size: 24px;
   margin-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
 
   @media ${devices.mobileL} {
     width: 90%;

@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Tool to check for color contrast using APCA",
   "source": "src/public/index.html",
-  "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "start": "parcel",
     "build": "parcel build",
@@ -15,6 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "bridge-pca": "^0.1.6",
+    "colorparsley": "^0.1.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^5.3.6"
