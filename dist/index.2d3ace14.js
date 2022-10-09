@@ -5832,17 +5832,11 @@ function registerExportsForReactRefresh(module1) {
 },{"react-refresh/runtime":"786KC"}],"jHMjs":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "BRAND_TEXT_COLORS", ()=>BRAND_TEXT_COLORS);
 parcelHelpers.export(exports, "StyledColSection", ()=>StyledColSection);
 parcelHelpers.export(exports, "StyledText", ()=>StyledText);
 var _styledComponents = require("styled-components");
 var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
-let BRAND_TEXT_COLORS;
-(function(BRAND_TEXT_COLORS) {
-    BRAND_TEXT_COLORS["BODY"] = "#335c67";
-    BRAND_TEXT_COLORS["LARGE"] = "#e09f3e";
-    BRAND_TEXT_COLORS["SMALL_BODY"] = "#540b0e";
-})(BRAND_TEXT_COLORS || (BRAND_TEXT_COLORS = {}));
+var _constants = require("../constants");
 const StyledColSection = (0, _styledComponentsDefault.default).section`
   display: flex;
   flex-direction: column;
@@ -5850,6 +5844,10 @@ const StyledColSection = (0, _styledComponentsDefault.default).section`
   align-items: ${(props)=>props?.align && (props?.align == "start" ? "flex=start" : props?.align == "end" ? "flex-end" : "center")};
   grid-gap: 10px;
   gap: 10px;
+
+  @media ${(0, _constants.devices).mobileL} {
+    align-items: center;
+  }
 `;
 const StyledText = (0, _styledComponentsDefault.default).p`
   font-size: ${(props)=>props.type === "small" ? "16px" : props.type === "medium" ? "24px" : "36px"};
@@ -5862,6 +5860,7 @@ const GlobalStyle = (0, _styledComponents.createGlobalStyle)`
        outline:0;
        box-sizing:border-box;
        font-family: 'Inter Tight', sans-serif;
+       overscroll-behavior: none;
    }
    #root{
        margin:0 auto;
@@ -5869,7 +5868,7 @@ const GlobalStyle = (0, _styledComponents.createGlobalStyle)`
 `;
 exports.default = GlobalStyle;
 
-},{"styled-components":"1U3k6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1U3k6":[function(require,module,exports) {
+},{"styled-components":"1U3k6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../constants":"45DZp"}],"1U3k6":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "ServerStyleSheet", ()=>Je);
@@ -7546,7 +7545,37 @@ function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
 }
 module.exports = hoistNonReactStatics;
 
-},{"react-is":"7EuwB"}],"c52lp":[function(require,module,exports) {
+},{"react-is":"7EuwB"}],"45DZp":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "BRAND_TEXT_COLORS", ()=>BRAND_TEXT_COLORS);
+parcelHelpers.export(exports, "devices", ()=>devices);
+let BRAND_TEXT_COLORS;
+(function(BRAND_TEXT_COLORS) {
+    BRAND_TEXT_COLORS["BODY"] = "#335c67";
+    BRAND_TEXT_COLORS["LARGE"] = "#e09f3e";
+    BRAND_TEXT_COLORS["SMALL_BODY"] = "#540b0e";
+})(BRAND_TEXT_COLORS || (BRAND_TEXT_COLORS = {}));
+const sizes = {
+    mobileS: "320px",
+    mobileM: "375px",
+    mobileL: "425px",
+    tablet: "768px",
+    laptop: "1024px",
+    laptopL: "1440px",
+    desktop: "2560px"
+};
+const devices = {
+    mobileS: `(max-width: ${sizes.mobileS})`,
+    mobileM: `(max-width: ${sizes.mobileM})`,
+    mobileL: `(max-width: ${sizes.mobileL})`,
+    tablet: `(max-width: ${sizes.tablet})`,
+    laptop: `(max-width: ${sizes.laptop})`,
+    laptopL: `(max-width: ${sizes.laptopL})`,
+    desktop: `(max-width: ${sizes.desktop})`
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"c52lp":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$7c7e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -7564,6 +7593,7 @@ var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
 var _global = require("../styles/global");
 var _swapSvg = require("url:../assets/swap.svg");
 var _swapSvgDefault = parcelHelpers.interopDefault(_swapSvg);
+var _constants = require("../constants");
 var _s = $RefreshSig$();
 const ContrastChecker = ()=>{
     _s();
@@ -7576,6 +7606,7 @@ const ContrastChecker = ()=>{
         setBgColor(event.target.value.toUpperCase());
     };
     const swapColors = (event)=>{
+        console.log("SWAPPING COLORS");
         event.preventDefault();
         const tempColor = textColor;
         setTextColor(bgColor);
@@ -7597,34 +7628,35 @@ const ContrastChecker = ()=>{
                         children: [
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledText), {
                                 type: "small",
-                                color: (0, _global.BRAND_TEXT_COLORS).BODY,
+                                color: (0, _constants.BRAND_TEXT_COLORS).BODY,
                                 children: "Text Color"
                             }, void 0, false, {
                                 fileName: "src/components/ContrastChecker.tsx",
-                                lineNumber: 35,
+                                lineNumber: 38,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledColorPickerIcon, {
                                 color: textColor
                             }, void 0, false, {
                                 fileName: "src/components/ContrastChecker.tsx",
-                                lineNumber: 38,
+                                lineNumber: 41,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledInputs, {
                                 type: "text",
                                 name: "textColor",
                                 value: textColor,
-                                onChange: handleTextColorChange
+                                onChange: handleTextColorChange,
+                                placeholder: "Enter text color"
                             }, void 0, false, {
                                 fileName: "src/components/ContrastChecker.tsx",
-                                lineNumber: 39,
+                                lineNumber: 42,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/ContrastChecker.tsx",
-                        lineNumber: 34,
+                        lineNumber: 37,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(SwapButton, {
@@ -7635,12 +7667,12 @@ const ContrastChecker = ()=>{
                             alt: "Swap icon"
                         }, void 0, false, {
                             fileName: "src/components/ContrastChecker.tsx",
-                            lineNumber: 43,
+                            lineNumber: 52,
                             columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/ContrastChecker.tsx",
-                        lineNumber: 42,
+                        lineNumber: 51,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledColSection), {
@@ -7648,40 +7680,41 @@ const ContrastChecker = ()=>{
                         children: [
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledText), {
                                 type: "small",
-                                color: (0, _global.BRAND_TEXT_COLORS).BODY,
+                                color: (0, _constants.BRAND_TEXT_COLORS).BODY,
                                 children: "Background Color"
                             }, void 0, false, {
                                 fileName: "src/components/ContrastChecker.tsx",
-                                lineNumber: 47,
+                                lineNumber: 56,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledColorPickerIcon, {
                                 color: bgColor
                             }, void 0, false, {
                                 fileName: "src/components/ContrastChecker.tsx",
-                                lineNumber: 50,
+                                lineNumber: 59,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledInputs, {
                                 type: "text",
                                 name: "bgColor",
                                 value: bgColor,
-                                onChange: handleBgColorChange
+                                onChange: handleBgColorChange,
+                                placeholder: "Enter background color"
                             }, void 0, false, {
                                 fileName: "src/components/ContrastChecker.tsx",
-                                lineNumber: 51,
+                                lineNumber: 60,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/ContrastChecker.tsx",
-                        lineNumber: 46,
+                        lineNumber: 55,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/ContrastChecker.tsx",
-                lineNumber: 33,
+                lineNumber: 36,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledTextDisplay, {
@@ -7690,31 +7723,52 @@ const ContrastChecker = ()=>{
                 children: "The quick brown fox jumped over the lazy dog"
             }, void 0, false, {
                 fileName: "src/components/ContrastChecker.tsx",
-                lineNumber: 55,
+                lineNumber: 70,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/ContrastChecker.tsx",
-        lineNumber: 32,
+        lineNumber: 35,
         columnNumber: 5
     }, undefined);
 };
 _s(ContrastChecker, "gFmZInPNV4O/lVw8fo+f3hJ3tjA=");
 _c = ContrastChecker;
-const Wrapper = (0, _styledComponentsDefault.default)((0, _global.StyledColSection))``;
+const Wrapper = (0, _styledComponentsDefault.default)((0, _global.StyledColSection))`
+  z-index: 1;
+  margin-top: -10%;
+
+  @media ${(0, _constants.devices).mobileL} {
+    margin-top: 10%;
+  }
+`;
 _c1 = Wrapper;
 const StyledForm = (0, _styledComponentsDefault.default).form`
   display: flex;
   justify-content: center;
   grid-gap: 20px;
   gap: 20px;
+
+  @media ${(0, _constants.devices).mobileL} {
+    flex-direction: column;
+    align-items: center;
+    grid-gap: 10px;
+    gap: 10px;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 `;
 _c2 = StyledForm;
 const StyledInputs = (0, _styledComponentsDefault.default).input`
   padding: 5px;
   border: 3px solid #cbf3f0;
   border-radius: 5px;
+
+  @media ${(0, _constants.devices).mobileL} {
+    width: 100%;
+  }
 `;
 _c3 = StyledInputs;
 const StyledColorPickerIcon = (0, _styledComponentsDefault.default).div`
@@ -7736,6 +7790,11 @@ const StyledTextDisplay = (0, _styledComponentsDefault.default).div`
   text-align: center;
   font-size: 24px;
   margin-top: 20px;
+
+  @media ${(0, _constants.devices).mobileL} {
+    width: 90%;
+    height: 200px;
+  }
 `;
 _c5 = StyledTextDisplay;
 const SwapButton = (0, _styledComponentsDefault.default).button`
@@ -7744,6 +7803,10 @@ const SwapButton = (0, _styledComponentsDefault.default).button`
   height: 30px;
   border-radius: 15px;
   cursor: pointer;
+
+  @media ${(0, _constants.devices).mobileL} {
+    transform: rotateZ(90deg);
+  }
 `;
 _c6 = SwapButton;
 exports.default = ContrastChecker;
@@ -7761,7 +7824,7 @@ $RefreshReg$(_c6, "SwapButton");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../styles/global":"jHMjs","styled-components":"1U3k6","url:../assets/swap.svg":"g4rXk"}],"g4rXk":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../styles/global":"jHMjs","styled-components":"1U3k6","url:../assets/swap.svg":"g4rXk","../constants":"45DZp"}],"g4rXk":[function(require,module,exports) {
 module.exports = require("./helpers/bundle-url").getBundleURL("6EXJA") + "swap.9c464f13.svg" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"lgJ39"}],"lgJ39":[function(require,module,exports) {
@@ -7855,6 +7918,7 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _styledComponents = require("styled-components");
 var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
+var _constants = require("../constants");
 var _global = require("../styles/global");
 var _blob = require("./Blob");
 var _blobDefault = parcelHelpers.interopDefault(_blob);
@@ -7867,37 +7931,37 @@ const Header = ({ type  })=>{
                 width: "350px"
             }, void 0, false, {
                 fileName: "src/components/Header.tsx",
-                lineNumber: 12,
+                lineNumber: 13,
                 columnNumber: 26
             }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _wavesDefault.default), {
                 color: "#cbf3f0"
             }, void 0, false, {
                 fileName: "src/components/Header.tsx",
-                lineNumber: 12,
+                lineNumber: 13,
                 columnNumber: 53
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledHeaderText, {
                 type: "large",
-                color: (0, _global.BRAND_TEXT_COLORS).BODY,
+                color: (0, _constants.BRAND_TEXT_COLORS).BODY,
                 children: "Color Contrast Tool"
             }, void 0, false, {
                 fileName: "src/components/Header.tsx",
-                lineNumber: 13,
+                lineNumber: 14,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledSubHeaderText, {
                 type: "small",
-                color: (0, _global.BRAND_TEXT_COLORS).BODY,
+                color: (0, _constants.BRAND_TEXT_COLORS).BODY,
                 children: "Calculated using the new WCAG 3 - APCA algorithm currently being developed."
             }, void 0, false, {
                 fileName: "src/components/Header.tsx",
-                lineNumber: 16,
+                lineNumber: 17,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/Header.tsx",
-        lineNumber: 11,
+        lineNumber: 12,
         columnNumber: 5
     }, undefined);
 };
@@ -7911,6 +7975,10 @@ const StyledHeaderText = (0, _styledComponentsDefault.default)((0, _global.Style
   top: 10px;
   left: 10px;
   text-transform: uppercase;
+
+  @media ${(0, _constants.devices).mobileL} {
+    font-size: 22px;
+  }
 `;
 _c2 = StyledHeaderText;
 const StyledSubHeaderText = (0, _styledComponentsDefault.default)((0, _global.StyledText))`
@@ -7920,6 +7988,12 @@ const StyledSubHeaderText = (0, _styledComponentsDefault.default)((0, _global.St
   width: 25%;
   word-wrap: normal;
   text-transform: uppercase;
+
+  @media ${(0, _constants.devices).mobileL} {
+    top: 40px;
+    width: 100%;
+    font-size: 12px;
+  }
 `;
 _c3 = StyledSubHeaderText;
 exports.default = Header;
@@ -7934,7 +8008,7 @@ $RefreshReg$(_c3, "StyledSubHeaderText");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","styled-components":"1U3k6","../styles/global":"jHMjs","./Blob":"5vqDi","./Waves":"iu8jy","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"5vqDi":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","styled-components":"1U3k6","../styles/global":"jHMjs","./Blob":"5vqDi","./Waves":"iu8jy","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../constants":"45DZp"}],"5vqDi":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$6469 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

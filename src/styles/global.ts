@@ -1,10 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
-
-export enum BRAND_TEXT_COLORS {
-  BODY = "#335c67",
-  LARGE = "#e09f3e",
-  SMALL_BODY = "#540b0e",
-}
+import { devices } from "../constants";
 
 type StyledTextProps = {
   type: "small" | "medium" | "large";
@@ -19,6 +14,10 @@ export const StyledColSection = styled.section<{ align?: "start" | "center" | "e
     props?.align && (props?.align == "start" ? "flex=start" : props?.align == "end" ? "flex-end" : "center")};
   grid-gap: 10px;
   gap: 10px;
+
+  @media ${devices.mobileL} {
+    align-items: center;
+  }
 `;
 
 export const StyledText = styled.p<StyledTextProps>`
@@ -33,6 +32,7 @@ const GlobalStyle = createGlobalStyle`
        outline:0;
        box-sizing:border-box;
        font-family: 'Inter Tight', sans-serif;
+       overscroll-behavior: none;
    }
    #root{
        margin:0 auto;

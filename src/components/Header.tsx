@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import { StyledText, BRAND_TEXT_COLORS } from "../styles/global";
+import { BRAND_TEXT_COLORS, devices } from "../constants";
+import { StyledText } from "../styles/global";
 
 import Blob from "./Blob";
 import Waves from "./Waves";
@@ -29,6 +30,10 @@ const StyledHeaderText = styled(StyledText)`
   top: 10px;
   left: 10px;
   text-transform: uppercase;
+
+  @media ${devices.mobileL} {
+    font-size: 22px;
+  }
 `;
 
 const StyledSubHeaderText = styled(StyledText)`
@@ -38,6 +43,12 @@ const StyledSubHeaderText = styled(StyledText)`
   width: 25%;
   word-wrap: normal;
   text-transform: uppercase;
+
+  @media ${devices.mobileL} {
+    top: 40px;
+    width: 100%;
+    font-size: 12px;
+  }
 `;
 
 export default Header;
