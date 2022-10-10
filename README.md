@@ -8,3 +8,6 @@ This is a tool to check for color contrast using APCA
 > APCA is a contrast assessment method for predicting the perceived contrast between sRGB colors on a computer monitor.
 > It has been developed as an assessment method for W3 Silver/WCAG3 accessibility standards relating to content for
 > computer displays and mobile devices, with a focus on readability and understandability.
+
+> APCA™ is the candidate contrast method for WCAG 3, and is currently in public beta. WCAG 3 is still in development and
+> subject to changes prior to adoption.
