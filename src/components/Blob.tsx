@@ -1,6 +1,6 @@
 import React from "react";
 
-const AnimatedBlob = (props: React.SVGProps<SVGSVGElement>) => {
+const Blob = (props: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width={props.width} height={props.height}>
       <path
@@ -14,4 +14,4 @@ const AnimatedBlob = (props: React.SVGProps<SVGSVGElement>) => {
   );
 };
 
-export default AnimatedBlob;
+export default Blob;
