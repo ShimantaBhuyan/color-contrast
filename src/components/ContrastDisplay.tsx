@@ -14,6 +14,11 @@ const ContrastDisplay = ({
   wcag2Ratio: string | null;
   error: boolean;
 }) => {
+  const contrastLCTooltip =
+    contrastLC && contrastLC < 0
+      ? "APCA Contrast Value: Negative value means light text on a dark background"
+      : "APCA Contrast Value";
+  const wcagTooltip = "WCAG 2 contrast ratio";
   return (
     <StyledDisplay>
       <StyledInfoText type="medium" color={BRAND_TEXT_COLORS.BODY}>
@@ -26,7 +31,7 @@ const ContrastDisplay = ({
             <sup>c</sup>
           </strong>
         </StyledText>
-        <StyledText type="medium" color={BRAND_TEXT_COLORS.BODY} bold>
+        <StyledText type="medium" color={BRAND_TEXT_COLORS.BODY} bold data-tooltip={contrastLCTooltip}>
           {!error ? contrastLC?.toFixed(2) ?? "?" : "?"}
         </StyledText>
       </StyledColumnWrapper>
@@ -34,7 +39,7 @@ const ContrastDisplay = ({
         <StyledText type="medium" color={BRAND_TEXT_COLORS.BODY}>
           Compatibility with WCAG 2
         </StyledText>
-        <StyledText type="medium" color={BRAND_TEXT_COLORS.BODY} bold>
+        <StyledText type="medium" color={BRAND_TEXT_COLORS.BODY} bold data-tooltip={wcagTooltip}>
           {!error ? wcag2Ratio ?? "?" : "?"}
         </StyledText>
       </StyledColumnWrapper>

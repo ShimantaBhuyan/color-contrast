@@ -2,7 +2,13 @@ import React from "react";
 
 const Blob = (props: React.SVGProps<SVGSVGElement>) => {
   return (
-    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width={props.width} height={props.height}>
+    <svg
+      viewBox="0 0 200 200"
+      xmlns="http://www.w3.org/2000/svg"
+      width={props.width}
+      height={props.height}
+      style={{ pointerEvents: "none" }}
+    >
       <path
         fill={props.fill}
         stroke={"#000"}
