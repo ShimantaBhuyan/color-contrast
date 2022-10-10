@@ -6,7 +6,7 @@ import Blob from "./Blob";
 import ContrastDisplay from "./ContrastDisplay";
 import SwapIcon from "url:../assets/swap.svg";
 import { BRAND_TEXT_COLORS, devices } from "../constants";
-import { getContrast, parseColor } from "../utils";
+import { getContrast, getFromQueryParams, getHexColor, parseColor } from "../utils";
 
 const ContrastChecker = () => {
   const [textColor, setTextColor] = useState("#FEF3C7");
@@ -15,6 +15,19 @@ const ContrastChecker = () => {
   const [bgColorError, setBgColorError] = useState(false);
   const [contrastRatio, setContrastRatio] = useState<number | null>(null);
   const [wcag2Ratio, setWcag2Ratio] = useState<string | null>(null);
+
+  useEffect(() => {
+    const colorsFromUrl = getFromQueryParams();
+    if (
+      colorsFromUrl.txtColorFromUrl != undefined &&
+      colorsFromUrl.txtColorFromUrl != -1 &&
+      colorsFromUrl.bgColorFromUrl != undefined &&
+      colorsFromUrl.bgColorFromUrl != -1
+    ) {
+      setTextColor(colorsFromUrl.txtColorFromUrl.toString().toUpperCase());
+      setBgColor(colorsFromUrl.bgColorFromUrl.toString().toUpperCase());
+    }
+  }, []);
 
   useEffect(() => {
     updateRatio(textColor, bgColor);
@@ -26,25 +39,23 @@ const ContrastChecker = () => {
     setWcag2Ratio(wcag2Ratio);
   };
 
-  const handleTextColorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleColorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const color = event.target.value.toUpperCase();
-    setTextColor(color);
 
-    if (parseColor(color)[4] === false) {
-      setTColorError(true);
-    } else {
-      setTColorError(false);
-    }
-  };
-
-  const handleBgColorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const color = event.target.value.toUpperCase();
-    setBgColor(color);
-
-    if (parseColor(color)[4] === false) {
-      setBgColorError(true);
-    } else {
-      setBgColorError(false);
+    if (event.target.id === "textColorInput") {
+      setTextColor(color);
+      if (parseColor(color)[4] === false) {
+        setTColorError(true);
+      } else {
+        setTColorError(false);
+      }
+    } else if (event.target.id === "bgColorInput") {
+      setBgColor(color);
+      if (parseColor(color)[4] === false) {
+        setBgColorError(true);
+      } else {
+        setBgColorError(false);
+      }
     }
   };
 
@@ -75,19 +86,25 @@ const ContrastChecker = () => {
           </StyledText>
           {!tColorError ? (
             <>
-              <Blob fill={textColor} width={48} height={48} style={{ cursor: "pointer" }} />
-              <StyledColorPickerIcon color={textColor}>
-                <input type="color" id="TextColorPicker" onInput={handleColorPickerChange} value={textColor} />
+              <Blob fill={getHexColor(textColor)} width={48} height={48} style={{ cursor: "pointer" }} />
+              <StyledColorPickerIcon>
+                <input
+                  type="color"
+                  id="TextColorPicker"
+                  onInput={handleColorPickerChange}
+                  value={getHexColor(textColor)}
+                />
               </StyledColorPickerIcon>
             </>
           ) : (
             <InvalidColorText>Invalid Color!</InvalidColorText>
           )}
           <StyledInputs
+            id="textColorInput"
             type="text"
             name="textColor"
             value={textColor}
-            onChange={handleTextColorChange}
+            onChange={handleColorChange}
             placeholder="Enter text color"
           />
         </StyledColSection>
@@ -102,19 +119,20 @@ const ContrastChecker = () => {
           </StyledText>
           {!bgColorError ? (
             <>
-              <Blob fill={bgColor} width={48} height={48} style={{ cursor: "pointer" }} />
-              <StyledColorPickerIcon color={bgColor}>
-                <input type="color" id="BGColorPicker" onInput={handleColorPickerChange} value={bgColor} />
+              <Blob fill={getHexColor(bgColor)} width={48} height={48} style={{ cursor: "pointer" }} />
+              <StyledColorPickerIcon>
+                <input type="color" id="BGColorPicker" onInput={handleColorPickerChange} value={getHexColor(bgColor)} />
               </StyledColorPickerIcon>
             </>
           ) : (
             <InvalidColorText>Invalid Color!</InvalidColorText>
           )}
           <StyledInputs
+            id="bgColorInput"
             type="text"
             name="bgColor"
             value={bgColor}
-            onChange={handleBgColorChange}
+            onChange={handleColorChange}
             placeholder="Enter background color"
           />
         </StyledColSection>
@@ -122,7 +140,7 @@ const ContrastChecker = () => {
 
       <ContrastDisplay contrastLC={contrastRatio} wcag2Ratio={wcag2Ratio} error={tColorError || bgColorError} />
 
-      <StyledTextDisplay textColor={textColor} bgColor={bgColor}>
+      <StyledTextDisplay textColor={getHexColor(textColor)} bgColor={getHexColor(bgColor)}>
         The quick brown fox jumped over the lazy dog
       </StyledTextDisplay>
     </Wrapper>
@@ -170,7 +188,7 @@ const StyledInputs = styled.input`
   }
 `;
 
-const StyledColorPickerIcon = styled.div<{ color: string }>`
+const StyledColorPickerIcon = styled.div`
   position: absolute;
   width: 48px;
   height: 48px;
