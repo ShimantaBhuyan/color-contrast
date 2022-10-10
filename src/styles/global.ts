@@ -77,6 +77,34 @@ const GlobalStyle = createGlobalStyle`
    #root{
       margin: 0 auto 50px auto;
    }
+  [data-tooltip] {
+    position: relative;
+    cursor: help;
+    text-decoration: underline;
+  }
+  [data-tooltip]:hover::before {
+  transform: translate(0);
+  opacity: 1;
+  }
+  [data-tooltip]::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    width: 150px;
+    display: block;
+    background: #FFF;
+    padding: 10px;
+    top: -50px;
+    box-shadow: 0px 2px 5px #0000008c;
+    border-radius: 5px;
+    text-align: center;
+    left: 0;
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 12px;
+  }
 `;
 
 export default GlobalStyle;

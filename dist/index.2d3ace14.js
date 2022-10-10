@@ -27201,6 +27201,34 @@ const GlobalStyle = (0, _styledComponents.createGlobalStyle)`
    #root{
       margin: 0 auto 50px auto;
    }
+  [data-tooltip] {
+    position: relative;
+    cursor: help;
+    text-decoration: underline;
+  }
+  [data-tooltip]:hover::before {
+  transform: translate(0);
+  opacity: 1;
+  }
+  [data-tooltip]::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    width: 150px;
+    display: block;
+    background: #FFF;
+    padding: 10px;
+    top: -50px;
+    box-shadow: 0px 2px 5px #0000008c;
+    border-radius: 5px;
+    text-align: center;
+    left: 0;
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 12px;
+  }
 `;
 exports.default = GlobalStyle;
 
@@ -29040,26 +29068,17 @@ const ContrastChecker = ()=>{
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _blobDefault.default), {
                                         fill: (0, _utils.getHexColor)(textColor),
                                         width: 48,
-                                        height: 48,
-                                        style: {
-                                            cursor: "pointer"
-                                        }
+                                        height: 48
                                     }, void 0, false, {
                                         fileName: "src/components/ContrastChecker.tsx",
                                         lineNumber: 89,
                                         columnNumber: 15
                                     }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledColorPickerIcon, {
-                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                            type: "color",
-                                            id: "TextColorPicker",
-                                            onInput: handleColorPickerChange,
-                                            value: (0, _utils.getHexColor)(textColor)
-                                        }, void 0, false, {
-                                            fileName: "src/components/ContrastChecker.tsx",
-                                            lineNumber: 91,
-                                            columnNumber: 17
-                                        }, undefined)
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledColorPicker, {
+                                        type: "color",
+                                        id: "TextColorPicker",
+                                        onInput: handleColorPickerChange,
+                                        value: (0, _utils.getHexColor)(textColor)
                                     }, void 0, false, {
                                         fileName: "src/components/ContrastChecker.tsx",
                                         lineNumber: 90,
@@ -29070,7 +29089,7 @@ const ContrastChecker = ()=>{
                                 children: "Invalid Color!"
                             }, void 0, false, {
                                 fileName: "src/components/ContrastChecker.tsx",
-                                lineNumber: 100,
+                                lineNumber: 98,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledInputs, {
@@ -29082,7 +29101,7 @@ const ContrastChecker = ()=>{
                                 placeholder: "Enter text color"
                             }, void 0, false, {
                                 fileName: "src/components/ContrastChecker.tsx",
-                                lineNumber: 102,
+                                lineNumber: 100,
                                 columnNumber: 11
                             }, undefined)
                         ]
@@ -29094,22 +29113,20 @@ const ContrastChecker = ()=>{
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(SwapButton, {
                         onClick: swapColors,
                         type: "button",
+                        "data-tooltip": "Click to swap text and background color",
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                             src: (0, _swapSvgDefault.default),
                             alt: "Swap icon",
                             width: 24,
-                            height: 24,
-                            style: {
-                                cursor: "pointer"
-                            }
+                            height: 24
                         }, void 0, false, {
                             fileName: "src/components/ContrastChecker.tsx",
-                            lineNumber: 113,
+                            lineNumber: 111,
                             columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/ContrastChecker.tsx",
-                        lineNumber: 112,
+                        lineNumber: 110,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledColSection), {
@@ -29121,7 +29138,7 @@ const ContrastChecker = ()=>{
                                 children: "Background Color"
                             }, void 0, false, {
                                 fileName: "src/components/ContrastChecker.tsx",
-                                lineNumber: 117,
+                                lineNumber: 115,
                                 columnNumber: 11
                             }, undefined),
                             !bgColorError ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
@@ -29129,29 +29146,20 @@ const ContrastChecker = ()=>{
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _blobDefault.default), {
                                         fill: (0, _utils.getHexColor)(bgColor),
                                         width: 48,
-                                        height: 48,
-                                        style: {
-                                            cursor: "pointer"
-                                        }
+                                        height: 48
                                     }, void 0, false, {
                                         fileName: "src/components/ContrastChecker.tsx",
-                                        lineNumber: 122,
+                                        lineNumber: 120,
                                         columnNumber: 15
                                     }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledColorPickerIcon, {
-                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                            type: "color",
-                                            id: "BGColorPicker",
-                                            onInput: handleColorPickerChange,
-                                            value: (0, _utils.getHexColor)(bgColor)
-                                        }, void 0, false, {
-                                            fileName: "src/components/ContrastChecker.tsx",
-                                            lineNumber: 124,
-                                            columnNumber: 17
-                                        }, undefined)
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledColorPicker, {
+                                        type: "color",
+                                        id: "BGColorPicker",
+                                        onInput: handleColorPickerChange,
+                                        value: (0, _utils.getHexColor)(bgColor)
                                     }, void 0, false, {
                                         fileName: "src/components/ContrastChecker.tsx",
-                                        lineNumber: 123,
+                                        lineNumber: 121,
                                         columnNumber: 15
                                     }, undefined)
                                 ]
@@ -29159,7 +29167,7 @@ const ContrastChecker = ()=>{
                                 children: "Invalid Color!"
                             }, void 0, false, {
                                 fileName: "src/components/ContrastChecker.tsx",
-                                lineNumber: 128,
+                                lineNumber: 129,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledInputs, {
@@ -29171,13 +29179,13 @@ const ContrastChecker = ()=>{
                                 placeholder: "Enter background color"
                             }, void 0, false, {
                                 fileName: "src/components/ContrastChecker.tsx",
-                                lineNumber: 130,
+                                lineNumber: 131,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/ContrastChecker.tsx",
-                        lineNumber: 116,
+                        lineNumber: 114,
                         columnNumber: 9
                     }, undefined)
                 ]
@@ -29192,7 +29200,7 @@ const ContrastChecker = ()=>{
                 error: tColorError || bgColorError
             }, void 0, false, {
                 fileName: "src/components/ContrastChecker.tsx",
-                lineNumber: 141,
+                lineNumber: 142,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledTextDisplay, {
@@ -29201,7 +29209,7 @@ const ContrastChecker = ()=>{
                 children: "The quick brown fox jumped over the lazy dog"
             }, void 0, false, {
                 fileName: "src/components/ContrastChecker.tsx",
-                lineNumber: 143,
+                lineNumber: 144,
                 columnNumber: 7
             }, undefined)
         ]
@@ -29254,7 +29262,7 @@ const StyledInputs = (0, _styledComponentsDefault.default).input`
   }
 `;
 _c3 = StyledInputs;
-const StyledColorPickerIcon = (0, _styledComponentsDefault.default).div`
+const StyledColorPicker = (0, _styledComponentsDefault.default).input`
   position: absolute;
   width: 48px;
   height: 48px;
@@ -29264,8 +29272,11 @@ const StyledColorPickerIcon = (0, _styledComponentsDefault.default).div`
   align-items: center;
   appearance: none;
   margin-top: -10px;
+  cursor: pointer;
+  pointer-events: all;
+  z-index: 1;
 `;
-_c4 = StyledColorPickerIcon;
+_c4 = StyledColorPicker;
 const StyledTextDisplay = (0, _styledComponentsDefault.default).div`
   background-color: ${(props)=>props.bgColor};
   color: ${(props)=>props.textColor};
@@ -29313,7 +29324,7 @@ $RefreshReg$(_c, "ContrastChecker");
 $RefreshReg$(_c1, "Wrapper");
 $RefreshReg$(_c2, "StyledForm");
 $RefreshReg$(_c3, "StyledInputs");
-$RefreshReg$(_c4, "StyledColorPickerIcon");
+$RefreshReg$(_c4, "StyledColorPicker");
 $RefreshReg$(_c5, "StyledTextDisplay");
 $RefreshReg$(_c6, "SwapButton");
 $RefreshReg$(_c7, "InvalidColorText");
@@ -29341,6 +29352,9 @@ const Blob = (props)=>{
         xmlns: "http://www.w3.org/2000/svg",
         width: props.width,
         height: props.height,
+        style: {
+            pointerEvents: "none"
+        },
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
             fill: props.fill,
             stroke: "#000",
@@ -29349,7 +29363,7 @@ const Blob = (props)=>{
             transform: "translate(100 100)"
         }, void 0, false, {
             fileName: "src/components/Blob.tsx",
-            lineNumber: 6,
+            lineNumber: 12,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
@@ -29506,6 +29520,8 @@ var _constants = require("../constants");
 var _global = require("../styles/global");
 var _utils = require("../utils");
 const ContrastDisplay = ({ contrastLC , wcag2Ratio , error  })=>{
+    const contrastLCTooltip = contrastLC && contrastLC < 0 ? "APCA Contrast Value: Negative value means light text on a dark background" : "APCA Contrast Value";
+    const wcagTooltip = "WCAG 2 contrast ratio";
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledDisplay, {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledInfoText, {
@@ -29514,7 +29530,7 @@ const ContrastDisplay = ({ contrastLC , wcag2Ratio , error  })=>{
                 children: !error ? (0, _utils.getAALevel)(contrastLC ?? 0) : "?"
             }, void 0, false, {
                 fileName: "src/components/ContrastDisplay.tsx",
-                lineNumber: 19,
+                lineNumber: 24,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledColumnWrapper, {
@@ -29530,34 +29546,35 @@ const ContrastDisplay = ({ contrastLC , wcag2Ratio , error  })=>{
                                     children: "c"
                                 }, void 0, false, {
                                     fileName: "src/components/ContrastDisplay.tsx",
-                                    lineNumber: 26,
+                                    lineNumber: 31,
                                     columnNumber: 13
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/ContrastDisplay.tsx",
-                                lineNumber: 25,
+                                lineNumber: 30,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/ContrastDisplay.tsx",
-                        lineNumber: 23,
+                        lineNumber: 28,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledText), {
                         type: "medium",
                         color: (0, _constants.BRAND_TEXT_COLORS).BODY,
                         bold: true,
+                        "data-tooltip": contrastLCTooltip,
                         children: !error ? contrastLC?.toFixed(2) ?? "?" : "?"
                     }, void 0, false, {
                         fileName: "src/components/ContrastDisplay.tsx",
-                        lineNumber: 29,
+                        lineNumber: 34,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/ContrastDisplay.tsx",
-                lineNumber: 22,
+                lineNumber: 27,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledColumnWrapper, {
@@ -29569,29 +29586,30 @@ const ContrastDisplay = ({ contrastLC , wcag2Ratio , error  })=>{
                         children: "Compatibility with WCAG 2"
                     }, void 0, false, {
                         fileName: "src/components/ContrastDisplay.tsx",
-                        lineNumber: 34,
+                        lineNumber: 39,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledText), {
                         type: "medium",
                         color: (0, _constants.BRAND_TEXT_COLORS).BODY,
                         bold: true,
+                        "data-tooltip": wcagTooltip,
                         children: !error ? wcag2Ratio ?? "?" : "?"
                     }, void 0, false, {
                         fileName: "src/components/ContrastDisplay.tsx",
-                        lineNumber: 37,
+                        lineNumber: 42,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/ContrastDisplay.tsx",
-                lineNumber: 33,
+                lineNumber: 38,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/ContrastDisplay.tsx",
-        lineNumber: 18,
+        lineNumber: 23,
         columnNumber: 5
     }, undefined);
 };

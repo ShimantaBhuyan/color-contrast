@@ -86,15 +86,13 @@ const ContrastChecker = () => {
           </StyledText>
           {!tColorError ? (
             <>
-              <Blob fill={getHexColor(textColor)} width={48} height={48} style={{ cursor: "pointer" }} />
-              <StyledColorPickerIcon>
-                <input
-                  type="color"
-                  id="TextColorPicker"
-                  onInput={handleColorPickerChange}
-                  value={getHexColor(textColor)}
-                />
-              </StyledColorPickerIcon>
+              <Blob fill={getHexColor(textColor)} width={48} height={48} />
+              <StyledColorPicker
+                type="color"
+                id="TextColorPicker"
+                onInput={handleColorPickerChange}
+                value={getHexColor(textColor)}
+              />
             </>
           ) : (
             <InvalidColorText>Invalid Color!</InvalidColorText>
@@ -109,8 +107,8 @@ const ContrastChecker = () => {
           />
         </StyledColSection>
 
-        <SwapButton onClick={swapColors} type="button">
-          <img src={SwapIcon} alt="Swap icon" width={24} height={24} style={{ cursor: "pointer" }} />
+        <SwapButton onClick={swapColors} type="button" data-tooltip={"Click to swap text and background color"}>
+          <img src={SwapIcon} alt="Swap icon" width={24} height={24} />
         </SwapButton>
 
         <StyledColSection align="end">
@@ -119,10 +117,13 @@ const ContrastChecker = () => {
           </StyledText>
           {!bgColorError ? (
             <>
-              <Blob fill={getHexColor(bgColor)} width={48} height={48} style={{ cursor: "pointer" }} />
-              <StyledColorPickerIcon>
-                <input type="color" id="BGColorPicker" onInput={handleColorPickerChange} value={getHexColor(bgColor)} />
-              </StyledColorPickerIcon>
+              <Blob fill={getHexColor(bgColor)} width={48} height={48} />
+              <StyledColorPicker
+                type="color"
+                id="BGColorPicker"
+                onInput={handleColorPickerChange}
+                value={getHexColor(bgColor)}
+              />
             </>
           ) : (
             <InvalidColorText>Invalid Color!</InvalidColorText>
@@ -188,7 +189,7 @@ const StyledInputs = styled.input`
   }
 `;
 
-const StyledColorPickerIcon = styled.div`
+const StyledColorPicker = styled.input`
   position: absolute;
   width: 48px;
   height: 48px;
@@ -198,6 +199,9 @@ const StyledColorPickerIcon = styled.div`
   align-items: center;
   appearance: none;
   margin-top: -10px;
+  cursor: pointer;
+  pointer-events: all;
+  z-index: 1;
 `;
 
 const StyledTextDisplay = styled.div<{ textColor: string; bgColor: string }>`
