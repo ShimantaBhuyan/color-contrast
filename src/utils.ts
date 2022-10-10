@@ -1,8 +1,13 @@
 import { BPCAcontrast, sRGBtoY, bridgeRatio } from "bridge-pca";
-import { colorParsley } from "colorparsley";
+import { colorParsley, colorToHex } from "colorparsley";
 
 export const parseColor = (color: string) => {
   return colorParsley(color);
+};
+
+export const getHexColor = (color: string) => {
+  const result = color.startsWith("#") ? color : "#" + colorToHex(parseColor(color), false);
+  return result;
 };
 
 export const getContrast = (textColor: string, bgColor: string) => {
@@ -36,4 +41,31 @@ export const getAALevel = (ratio: number) => {
     quality = "?";
   }
   return quality;
+};
+
+export const getFromQueryParams = () => {
+  if (window && window.location && URLSearchParams) {
+    const result = { txtColorFromUrl: {}, bgColorFromUrl: {} };
+    const currentLocation = window.location;
+    const queryParams = new URLSearchParams(currentLocation.search);
+    const txtStringFromUrl = queryParams.get("txtColor");
+    const parsedTxtString = parseColor(txtStringFromUrl ?? "");
+    const bgStringFromUrl = queryParams.get("bgColor");
+    const parsedBgString = parseColor(bgStringFromUrl ?? "");
+    console.log({ parsedTxtString, parsedBgString });
+    if (parsedTxtString[4] === false) {
+      result.txtColorFromUrl = -1;
+    } else {
+      result.txtColorFromUrl = colorToHex(parsedTxtString, false);
+    }
+    if (parsedBgString[4] === false) {
+      result.bgColorFromUrl = -1;
+    } else {
+      result.bgColorFromUrl = colorToHex(parsedBgString, false);
+    }
+    console.log({ currentLocation, queryParams, result });
+    return result;
+  } else {
+    return { txtColorFromUrl: -1, bgColorFromUrl: -1 };
+  }
 };

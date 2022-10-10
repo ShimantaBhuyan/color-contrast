@@ -20,6 +20,9 @@ const Footnote = () => {
               <li>
                 <a href="https://cliambrown.com/contrast/">C Liam Brown's Contrast Calculator</a>
               </li>
+              <li>
+                <a href="https://github.com/Myndex/colorparsley">Color Parsley</a>
+              </li>
             </ul>
           </StyledText>
         </StyledColSection>

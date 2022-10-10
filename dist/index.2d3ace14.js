@@ -28976,6 +28976,13 @@ const ContrastChecker = ()=>{
     const [contrastRatio, setContrastRatio] = (0, _react.useState)(null);
     const [wcag2Ratio, setWcag2Ratio] = (0, _react.useState)(null);
     (0, _react.useEffect)(()=>{
+        const colorsFromUrl = (0, _utils.getFromQueryParams)();
+        if (colorsFromUrl.txtColorFromUrl != undefined && colorsFromUrl.txtColorFromUrl != -1 && colorsFromUrl.bgColorFromUrl != undefined && colorsFromUrl.bgColorFromUrl != -1) {
+            setTextColor(colorsFromUrl.txtColorFromUrl.toString().toUpperCase());
+            setBgColor(colorsFromUrl.bgColorFromUrl.toString().toUpperCase());
+        }
+    }, []);
+    (0, _react.useEffect)(()=>{
         updateRatio(textColor, bgColor);
     }, [
         textColor,
@@ -28986,17 +28993,17 @@ const ContrastChecker = ()=>{
         setContrastRatio(contrastLC);
         setWcag2Ratio(wcag2Ratio);
     };
-    const handleTextColorChange = (event)=>{
+    const handleColorChange = (event)=>{
         const color = event.target.value.toUpperCase();
-        setTextColor(color);
-        if ((0, _utils.parseColor)(color)[4] === false) setTColorError(true);
-        else setTColorError(false);
-    };
-    const handleBgColorChange = (event)=>{
-        const color = event.target.value.toUpperCase();
-        setBgColor(color);
-        if ((0, _utils.parseColor)(color)[4] === false) setBgColorError(true);
-        else setBgColorError(false);
+        if (event.target.id === "textColorInput") {
+            setTextColor(color);
+            if ((0, _utils.parseColor)(color)[4] === false) setTColorError(true);
+            else setTColorError(false);
+        } else if (event.target.id === "bgColorInput") {
+            setBgColor(color);
+            if ((0, _utils.parseColor)(color)[4] === false) setBgColorError(true);
+            else setBgColorError(false);
+        }
     };
     const swapColors = (event)=>{
         event.preventDefault();
@@ -29025,13 +29032,13 @@ const ContrastChecker = ()=>{
                                 children: "Text Color"
                             }, void 0, false, {
                                 fileName: "src/components/ContrastChecker.tsx",
-                                lineNumber: 73,
+                                lineNumber: 84,
                                 columnNumber: 11
                             }, undefined),
                             !tColorError ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                                 children: [
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _blobDefault.default), {
-                                        fill: textColor,
+                                        fill: (0, _utils.getHexColor)(textColor),
                                         width: 48,
                                         height: 48,
                                         style: {
@@ -29039,24 +29046,23 @@ const ContrastChecker = ()=>{
                                         }
                                     }, void 0, false, {
                                         fileName: "src/components/ContrastChecker.tsx",
-                                        lineNumber: 78,
+                                        lineNumber: 89,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledColorPickerIcon, {
-                                        color: textColor,
                                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
                                             type: "color",
                                             id: "TextColorPicker",
                                             onInput: handleColorPickerChange,
-                                            value: textColor
+                                            value: (0, _utils.getHexColor)(textColor)
                                         }, void 0, false, {
                                             fileName: "src/components/ContrastChecker.tsx",
-                                            lineNumber: 80,
+                                            lineNumber: 91,
                                             columnNumber: 17
                                         }, undefined)
                                     }, void 0, false, {
                                         fileName: "src/components/ContrastChecker.tsx",
-                                        lineNumber: 79,
+                                        lineNumber: 90,
                                         columnNumber: 15
                                     }, undefined)
                                 ]
@@ -29064,24 +29070,25 @@ const ContrastChecker = ()=>{
                                 children: "Invalid Color!"
                             }, void 0, false, {
                                 fileName: "src/components/ContrastChecker.tsx",
-                                lineNumber: 84,
+                                lineNumber: 100,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledInputs, {
+                                id: "textColorInput",
                                 type: "text",
                                 name: "textColor",
                                 value: textColor,
-                                onChange: handleTextColorChange,
+                                onChange: handleColorChange,
                                 placeholder: "Enter text color"
                             }, void 0, false, {
                                 fileName: "src/components/ContrastChecker.tsx",
-                                lineNumber: 86,
+                                lineNumber: 102,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/ContrastChecker.tsx",
-                        lineNumber: 72,
+                        lineNumber: 83,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(SwapButton, {
@@ -29097,12 +29104,12 @@ const ContrastChecker = ()=>{
                             }
                         }, void 0, false, {
                             fileName: "src/components/ContrastChecker.tsx",
-                            lineNumber: 96,
+                            lineNumber: 113,
                             columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/ContrastChecker.tsx",
-                        lineNumber: 95,
+                        lineNumber: 112,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledColSection), {
@@ -29114,13 +29121,13 @@ const ContrastChecker = ()=>{
                                 children: "Background Color"
                             }, void 0, false, {
                                 fileName: "src/components/ContrastChecker.tsx",
-                                lineNumber: 100,
+                                lineNumber: 117,
                                 columnNumber: 11
                             }, undefined),
                             !bgColorError ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                                 children: [
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _blobDefault.default), {
-                                        fill: bgColor,
+                                        fill: (0, _utils.getHexColor)(bgColor),
                                         width: 48,
                                         height: 48,
                                         style: {
@@ -29128,24 +29135,23 @@ const ContrastChecker = ()=>{
                                         }
                                     }, void 0, false, {
                                         fileName: "src/components/ContrastChecker.tsx",
-                                        lineNumber: 105,
+                                        lineNumber: 122,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledColorPickerIcon, {
-                                        color: bgColor,
                                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
                                             type: "color",
                                             id: "BGColorPicker",
                                             onInput: handleColorPickerChange,
-                                            value: bgColor
+                                            value: (0, _utils.getHexColor)(bgColor)
                                         }, void 0, false, {
                                             fileName: "src/components/ContrastChecker.tsx",
-                                            lineNumber: 107,
+                                            lineNumber: 124,
                                             columnNumber: 17
                                         }, undefined)
                                     }, void 0, false, {
                                         fileName: "src/components/ContrastChecker.tsx",
-                                        lineNumber: 106,
+                                        lineNumber: 123,
                                         columnNumber: 15
                                     }, undefined)
                                 ]
@@ -29153,30 +29159,31 @@ const ContrastChecker = ()=>{
                                 children: "Invalid Color!"
                             }, void 0, false, {
                                 fileName: "src/components/ContrastChecker.tsx",
-                                lineNumber: 111,
+                                lineNumber: 128,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledInputs, {
+                                id: "bgColorInput",
                                 type: "text",
                                 name: "bgColor",
                                 value: bgColor,
-                                onChange: handleBgColorChange,
+                                onChange: handleColorChange,
                                 placeholder: "Enter background color"
                             }, void 0, false, {
                                 fileName: "src/components/ContrastChecker.tsx",
-                                lineNumber: 113,
+                                lineNumber: 130,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/ContrastChecker.tsx",
-                        lineNumber: 99,
+                        lineNumber: 116,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/ContrastChecker.tsx",
-                lineNumber: 71,
+                lineNumber: 82,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contrastDisplayDefault.default), {
@@ -29185,26 +29192,26 @@ const ContrastChecker = ()=>{
                 error: tColorError || bgColorError
             }, void 0, false, {
                 fileName: "src/components/ContrastChecker.tsx",
-                lineNumber: 123,
+                lineNumber: 141,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledTextDisplay, {
-                textColor: textColor,
-                bgColor: bgColor,
+                textColor: (0, _utils.getHexColor)(textColor),
+                bgColor: (0, _utils.getHexColor)(bgColor),
                 children: "The quick brown fox jumped over the lazy dog"
             }, void 0, false, {
                 fileName: "src/components/ContrastChecker.tsx",
-                lineNumber: 125,
+                lineNumber: 143,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/ContrastChecker.tsx",
-        lineNumber: 70,
+        lineNumber: 81,
         columnNumber: 5
     }, undefined);
 };
-_s(ContrastChecker, "97uBDpHEkZ1BV+Ar00drBvGGnR8=");
+_s(ContrastChecker, "ZO5Uuw3w2WqpTFs2O1eY6cgeD6Q=");
 _c = ContrastChecker;
 const Wrapper = (0, _styledComponentsDefault.default)((0, _global.StyledColSection))`
   z-index: 1;
@@ -29256,7 +29263,6 @@ const StyledColorPickerIcon = (0, _styledComponentsDefault.default).div`
   justify-content: center;
   align-items: center;
   appearance: none;
-  /* z-index: -1; */
   margin-top: -10px;
 `;
 _c4 = StyledColorPickerIcon;
@@ -29628,12 +29634,18 @@ $RefreshReg$(_c3, "StyledDisplay");
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "parseColor", ()=>parseColor);
+parcelHelpers.export(exports, "getHexColor", ()=>getHexColor);
 parcelHelpers.export(exports, "getContrast", ()=>getContrast);
 parcelHelpers.export(exports, "getAALevel", ()=>getAALevel);
+parcelHelpers.export(exports, "getFromQueryParams", ()=>getFromQueryParams);
 var _bridgePca = require("bridge-pca");
 var _colorparsley = require("colorparsley");
 const parseColor = (color)=>{
     return (0, _colorparsley.colorParsley)(color);
+};
+const getHexColor = (color)=>{
+    const result = color.startsWith("#") ? color : "#" + (0, _colorparsley.colorToHex)(parseColor(color), false);
+    return result;
 };
 const getContrast = (textColor, bgColor)=>{
     const TextColor = (0, _colorparsley.colorParsley)(textColor);
@@ -29658,6 +29670,37 @@ const getAALevel = (ratio)=>{
         else if (absoluteRatio >= 90) quality = "ACCESSIBILITY MASTER!!! \uD83E\uDD29";
     } else quality = "?";
     return quality;
+};
+const getFromQueryParams = ()=>{
+    if (window && window.location && URLSearchParams) {
+        const result = {
+            txtColorFromUrl: {},
+            bgColorFromUrl: {}
+        };
+        const currentLocation = window.location;
+        const queryParams = new URLSearchParams(currentLocation.search);
+        const txtStringFromUrl = queryParams.get("txtColor");
+        const parsedTxtString = parseColor(txtStringFromUrl ?? "");
+        const bgStringFromUrl = queryParams.get("bgColor");
+        const parsedBgString = parseColor(bgStringFromUrl ?? "");
+        console.log({
+            parsedTxtString,
+            parsedBgString
+        });
+        if (parsedTxtString[4] === false) result.txtColorFromUrl = -1;
+        else result.txtColorFromUrl = (0, _colorparsley.colorToHex)(parsedTxtString, false);
+        if (parsedBgString[4] === false) result.bgColorFromUrl = -1;
+        else result.bgColorFromUrl = (0, _colorparsley.colorToHex)(parsedBgString, false);
+        console.log({
+            currentLocation,
+            queryParams,
+            result
+        });
+        return result;
+    } else return {
+        txtColorFromUrl: -1,
+        bgColorFromUrl: -1
+    };
 };
 
 },{"bridge-pca":"lVMFY","colorparsley":"gNgS2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lVMFY":[function(require,module,exports) {
@@ -30911,6 +30954,20 @@ const Footnote = ()=>{
                                             fileName: "src/components/Footnote.tsx",
                                             lineNumber: 20,
                                             columnNumber: 15
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                                href: "https://github.com/Myndex/colorparsley",
+                                                children: "Color Parsley"
+                                            }, void 0, false, {
+                                                fileName: "src/components/Footnote.tsx",
+                                                lineNumber: 24,
+                                                columnNumber: 17
+                                            }, undefined)
+                                        }, void 0, false, {
+                                            fileName: "src/components/Footnote.tsx",
+                                            lineNumber: 23,
+                                            columnNumber: 15
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
@@ -30942,12 +30999,12 @@ const Footnote = ()=>{
                                     children: "WCAG 2 Standards reference"
                                 }, void 0, false, {
                                     fileName: "src/components/Footnote.tsx",
-                                    lineNumber: 29,
+                                    lineNumber: 32,
                                     columnNumber: 13
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/Footnote.tsx",
-                                lineNumber: 28,
+                                lineNumber: 31,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledRowSection), {
@@ -30963,7 +31020,7 @@ const Footnote = ()=>{
                                                 children: "AA, Enhanced"
                                             }, void 0, false, {
                                                 fileName: "src/components/Footnote.tsx",
-                                                lineNumber: 36,
+                                                lineNumber: 39,
                                                 columnNumber: 15
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledText), {
@@ -30973,7 +31030,7 @@ const Footnote = ()=>{
                                                 children: "SHOULD"
                                             }, void 0, false, {
                                                 fileName: "src/components/Footnote.tsx",
-                                                lineNumber: 39,
+                                                lineNumber: 42,
                                                 columnNumber: 15
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledText), {
@@ -30988,27 +31045,10 @@ const Footnote = ()=>{
                                                                     children: "c"
                                                                 }, void 0, false, {
                                                                     fileName: "src/components/Footnote.tsx",
-                                                                    lineNumber: 45,
-                                                                    columnNumber: 22
-                                                                }, undefined),
-                                                                " 15 (W 1.3:1) Minimum for disabled elements (not hidden)."
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "src/components/Footnote.tsx",
-                                                            lineNumber: 44,
-                                                            columnNumber: 19
-                                                        }, undefined),
-                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                                            children: [
-                                                                "L",
-                                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("sup", {
-                                                                    children: "c"
-                                                                }, void 0, false, {
-                                                                    fileName: "src/components/Footnote.tsx",
                                                                     lineNumber: 48,
                                                                     columnNumber: 22
                                                                 }, undefined),
-                                                                " 30 (W 1.8:1) Minimum for incidental text such as placeholders."
+                                                                " 15 (W 1.3:1) Minimum for disabled elements (not hidden)."
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "src/components/Footnote.tsx",
@@ -31025,22 +31065,39 @@ const Footnote = ()=>{
                                                                     lineNumber: 51,
                                                                     columnNumber: 22
                                                                 }, undefined),
-                                                                " 45 (W 2:1) Minimum for logotypes."
+                                                                " 30 (W 1.8:1) Minimum for incidental text such as placeholders."
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "src/components/Footnote.tsx",
                                                             lineNumber: 50,
                                                             columnNumber: 19
+                                                        }, undefined),
+                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                            children: [
+                                                                "L",
+                                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("sup", {
+                                                                    children: "c"
+                                                                }, void 0, false, {
+                                                                    fileName: "src/components/Footnote.tsx",
+                                                                    lineNumber: 54,
+                                                                    columnNumber: 22
+                                                                }, undefined),
+                                                                " 45 (W 2:1) Minimum for logotypes."
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "src/components/Footnote.tsx",
+                                                            lineNumber: 53,
+                                                            columnNumber: 19
                                                         }, undefined)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "src/components/Footnote.tsx",
-                                                    lineNumber: 43,
+                                                    lineNumber: 46,
                                                     columnNumber: 17
                                                 }, undefined)
                                             }, void 0, false, {
                                                 fileName: "src/components/Footnote.tsx",
-                                                lineNumber: 42,
+                                                lineNumber: 45,
                                                 columnNumber: 15
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledText), {
@@ -31050,7 +31107,7 @@ const Footnote = ()=>{
                                                 children: "SHALL"
                                             }, void 0, false, {
                                                 fileName: "src/components/Footnote.tsx",
-                                                lineNumber: 56,
+                                                lineNumber: 59,
                                                 columnNumber: 15
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledText), {
@@ -31065,27 +31122,10 @@ const Footnote = ()=>{
                                                                     children: "c"
                                                                 }, void 0, false, {
                                                                     fileName: "src/components/Footnote.tsx",
-                                                                    lineNumber: 63,
-                                                                    columnNumber: 22
-                                                                }, undefined),
-                                                                " 60 (W 3:1) Large font only, no body text. Non-text okay."
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "src/components/Footnote.tsx",
-                                                            lineNumber: 62,
-                                                            columnNumber: 19
-                                                        }, undefined),
-                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                                            children: [
-                                                                "L",
-                                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("sup", {
-                                                                    children: "c"
-                                                                }, void 0, false, {
-                                                                    fileName: "src/components/Footnote.tsx",
                                                                     lineNumber: 66,
                                                                     columnNumber: 22
                                                                 }, undefined),
-                                                                " 75 (W 4.5:1) 16px minimum for body text, 12px minimum otherwise"
+                                                                " 60 (W 3:1) Large font only, no body text. Non-text okay."
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "src/components/Footnote.tsx",
@@ -31102,28 +31142,45 @@ const Footnote = ()=>{
                                                                     lineNumber: 69,
                                                                     columnNumber: 22
                                                                 }, undefined),
-                                                                " 90 (W 7:1) 14px minimum body text, 10px minimum otherwise"
+                                                                " 75 (W 4.5:1) 16px minimum for body text, 12px minimum otherwise"
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "src/components/Footnote.tsx",
                                                             lineNumber: 68,
                                                             columnNumber: 19
+                                                        }, undefined),
+                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                            children: [
+                                                                "L",
+                                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("sup", {
+                                                                    children: "c"
+                                                                }, void 0, false, {
+                                                                    fileName: "src/components/Footnote.tsx",
+                                                                    lineNumber: 72,
+                                                                    columnNumber: 22
+                                                                }, undefined),
+                                                                " 90 (W 7:1) 14px minimum body text, 10px minimum otherwise"
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "src/components/Footnote.tsx",
+                                                            lineNumber: 71,
+                                                            columnNumber: 19
                                                         }, undefined)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "src/components/Footnote.tsx",
-                                                    lineNumber: 61,
+                                                    lineNumber: 64,
                                                     columnNumber: 17
                                                 }, undefined)
                                             }, void 0, false, {
                                                 fileName: "src/components/Footnote.tsx",
-                                                lineNumber: 60,
+                                                lineNumber: 63,
                                                 columnNumber: 15
                                             }, undefined)
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/components/Footnote.tsx",
-                                        lineNumber: 35,
+                                        lineNumber: 38,
                                         columnNumber: 13
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledColSection), {
@@ -31136,7 +31193,7 @@ const Footnote = ()=>{
                                                 children: "AAA, Enhanced"
                                             }, void 0, false, {
                                                 fileName: "src/components/Footnote.tsx",
-                                                lineNumber: 76,
+                                                lineNumber: 79,
                                                 columnNumber: 15
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledText), {
@@ -31146,7 +31203,7 @@ const Footnote = ()=>{
                                                 children: "SHOULD"
                                             }, void 0, false, {
                                                 fileName: "src/components/Footnote.tsx",
-                                                lineNumber: 79,
+                                                lineNumber: 82,
                                                 columnNumber: 15
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledText), {
@@ -31154,23 +31211,6 @@ const Footnote = ()=>{
                                                 color: (0, _constants.BRAND_TEXT_COLORS).SMALL_BODY,
                                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
                                                     children: [
-                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                                            children: [
-                                                                "L",
-                                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("sup", {
-                                                                    children: "c"
-                                                                }, void 0, false, {
-                                                                    fileName: "src/components/Footnote.tsx",
-                                                                    lineNumber: 85,
-                                                                    columnNumber: 22
-                                                                }, undefined),
-                                                                " 15 (W 1.3:1) Minimum for disabled elements (not hidden)."
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "src/components/Footnote.tsx",
-                                                            lineNumber: 84,
-                                                            columnNumber: 19
-                                                        }, undefined),
                                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                                                             children: [
                                                                 "L",
@@ -31181,22 +31221,39 @@ const Footnote = ()=>{
                                                                     lineNumber: 88,
                                                                     columnNumber: 22
                                                                 }, undefined),
-                                                                " 30 (W 1.8:1) Minimum for incidental text such as placeholders."
+                                                                " 15 (W 1.3:1) Minimum for disabled elements (not hidden)."
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "src/components/Footnote.tsx",
                                                             lineNumber: 87,
                                                             columnNumber: 19
+                                                        }, undefined),
+                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                            children: [
+                                                                "L",
+                                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("sup", {
+                                                                    children: "c"
+                                                                }, void 0, false, {
+                                                                    fileName: "src/components/Footnote.tsx",
+                                                                    lineNumber: 91,
+                                                                    columnNumber: 22
+                                                                }, undefined),
+                                                                " 30 (W 1.8:1) Minimum for incidental text such as placeholders."
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "src/components/Footnote.tsx",
+                                                            lineNumber: 90,
+                                                            columnNumber: 19
                                                         }, undefined)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "src/components/Footnote.tsx",
-                                                    lineNumber: 83,
+                                                    lineNumber: 86,
                                                     columnNumber: 17
                                                 }, undefined)
                                             }, void 0, false, {
                                                 fileName: "src/components/Footnote.tsx",
-                                                lineNumber: 82,
+                                                lineNumber: 85,
                                                 columnNumber: 15
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledText), {
@@ -31206,7 +31263,7 @@ const Footnote = ()=>{
                                                 children: "SHALL"
                                             }, void 0, false, {
                                                 fileName: "src/components/Footnote.tsx",
-                                                lineNumber: 93,
+                                                lineNumber: 96,
                                                 columnNumber: 15
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledText), {
@@ -31221,27 +31278,10 @@ const Footnote = ()=>{
                                                                     children: "c"
                                                                 }, void 0, false, {
                                                                     fileName: "src/components/Footnote.tsx",
-                                                                    lineNumber: 100,
-                                                                    columnNumber: 22
-                                                                }, undefined),
-                                                                " 60 (W 3:1) Minimum for logotypes and essential non-text."
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "src/components/Footnote.tsx",
-                                                            lineNumber: 99,
-                                                            columnNumber: 19
-                                                        }, undefined),
-                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                                            children: [
-                                                                "L",
-                                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("sup", {
-                                                                    children: "c"
-                                                                }, void 0, false, {
-                                                                    fileName: "src/components/Footnote.tsx",
                                                                     lineNumber: 103,
                                                                     columnNumber: 22
                                                                 }, undefined),
-                                                                " 75 (W 4.5:1) Large font only, no body text."
+                                                                " 60 (W 3:1) Minimum for logotypes and essential non-text."
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "src/components/Footnote.tsx",
@@ -31258,40 +31298,57 @@ const Footnote = ()=>{
                                                                     lineNumber: 106,
                                                                     columnNumber: 22
                                                                 }, undefined),
-                                                                " 90 (W 7:1) 16px minimum for body text, 12px minimum otherwise"
+                                                                " 75 (W 4.5:1) Large font only, no body text."
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "src/components/Footnote.tsx",
                                                             lineNumber: 105,
                                                             columnNumber: 19
+                                                        }, undefined),
+                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                            children: [
+                                                                "L",
+                                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("sup", {
+                                                                    children: "c"
+                                                                }, void 0, false, {
+                                                                    fileName: "src/components/Footnote.tsx",
+                                                                    lineNumber: 109,
+                                                                    columnNumber: 22
+                                                                }, undefined),
+                                                                " 90 (W 7:1) 16px minimum for body text, 12px minimum otherwise"
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "src/components/Footnote.tsx",
+                                                            lineNumber: 108,
+                                                            columnNumber: 19
                                                         }, undefined)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "src/components/Footnote.tsx",
-                                                    lineNumber: 98,
+                                                    lineNumber: 101,
                                                     columnNumber: 17
                                                 }, undefined)
                                             }, void 0, false, {
                                                 fileName: "src/components/Footnote.tsx",
-                                                lineNumber: 97,
+                                                lineNumber: 100,
                                                 columnNumber: 15
                                             }, undefined)
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/components/Footnote.tsx",
-                                        lineNumber: 75,
+                                        lineNumber: 78,
                                         columnNumber: 13
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/Footnote.tsx",
-                                lineNumber: 34,
+                                lineNumber: 37,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/Footnote.tsx",
-                        lineNumber: 27,
+                        lineNumber: 30,
                         columnNumber: 9
                     }, undefined)
                 ]
