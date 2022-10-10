@@ -2919,7 +2919,7 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _app.App), {}, void 0, 
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./App":"7F5Te","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-dom/client":"lOjBx"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./App":"7F5Te","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("./cjs/react-jsx-dev-runtime.development.js");
 
@@ -5620,2547 +5620,7 @@ module.exports = require("./cjs/react.development.js");
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
 })();
 
-},{}],"7F5Te":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$0342 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$0342.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "App", ()=>App);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _global = require("./styles/global");
-var _globalDefault = parcelHelpers.interopDefault(_global);
-var _contrastChecker = require("./components/ContrastChecker");
-var _contrastCheckerDefault = parcelHelpers.interopDefault(_contrastChecker);
-var _layout = require("./components/Layout");
-var _layoutDefault = parcelHelpers.interopDefault(_layout);
-var _header = require("./components/Header");
-var _headerDefault = parcelHelpers.interopDefault(_header);
-function App() {
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _globalDefault.default), {}, void 0, false, {
-                fileName: "src/App.tsx",
-                lineNumber: 11,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {
-                type: "wave"
-            }, void 0, false, {
-                fileName: "src/App.tsx",
-                lineNumber: 12,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _layoutDefault.default), {
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contrastCheckerDefault.default), {}, void 0, false, {
-                    fileName: "src/App.tsx",
-                    lineNumber: 14,
-                    columnNumber: 9
-                }, this)
-            }, void 0, false, {
-                fileName: "src/App.tsx",
-                lineNumber: 13,
-                columnNumber: 7
-            }, this)
-        ]
-    }, void 0, true);
-}
-_c = App;
-var _c;
-$RefreshReg$(_c, "App");
-
-  $parcel$ReactRefreshHelpers$0342.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./styles/global":"jHMjs","./components/ContrastChecker":"c52lp","./components/Layout":"95pB0","./components/Header":"35enc"}],"gkKU3":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"km3Ru":[function(require,module,exports) {
-"use strict";
-var Refresh = require("react-refresh/runtime");
-function debounce(func, delay) {
-    var args;
-    var timeout = undefined;
-    return function(args) {
-        clearTimeout(timeout);
-        timeout = setTimeout(function() {
-            timeout = undefined;
-            func.call(null, args);
-        }, delay);
-    };
-}
-var enqueueUpdate = debounce(function() {
-    Refresh.performReactRefresh();
-}, 30); // Everthing below is either adapted or copied from
-// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
-// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
-module.exports.prelude = function(module1) {
-    window.$RefreshReg$ = function(type, id) {
-        Refresh.register(type, module1.id + " " + id);
-    };
-    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
-};
-module.exports.postlude = function(module1) {
-    if (isReactRefreshBoundary(module1.exports)) {
-        registerExportsForReactRefresh(module1);
-        if (module1.hot) {
-            module1.hot.dispose(function(data) {
-                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
-                data.prevExports = module1.exports;
-            });
-            module1.hot.accept(function(getParents) {
-                var prevExports = module1.hot.data.prevExports;
-                var nextExports = module1.exports; // Since we just executed the code for it, it's possible
-                // that the new exports make it ineligible for being a boundary.
-                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports); // It can also become ineligible if its exports are incompatible
-                // with the previous exports.
-                // For example, if you add/remove/change exports, we'll want
-                // to re-execute the importing modules, and force those components
-                // to re-render. Similarly, if you convert a class component
-                // to a function, we want to invalidate the boundary.
-                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
-                if (isNoLongerABoundary || didInvalidate) {
-                    // We'll be conservative. The only case in which we won't do a full
-                    // reload is if all parent modules are also refresh boundaries.
-                    // In that case we'll add them to the current queue.
-                    var parents = getParents();
-                    if (parents.length === 0) {
-                        // Looks like we bubbled to the root. Can't recover from that.
-                        window.location.reload();
-                        return;
-                    }
-                    return parents;
-                }
-                enqueueUpdate();
-            });
-        }
-    }
-};
-function isReactRefreshBoundary(exports) {
-    if (Refresh.isLikelyComponentType(exports)) return true;
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    return false;
-    var hasExports = false;
-    var areAllExportsComponents = true;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        hasExports = true;
-        if (key === "__esModule") continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
-        return false;
-        var exportValue = exports[key];
-        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
-    }
-    return hasExports && areAllExportsComponents;
-}
-function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
-    var prevSignature = getRefreshBoundarySignature(prevExports);
-    var nextSignature = getRefreshBoundarySignature(nextExports);
-    if (prevSignature.length !== nextSignature.length) return true;
-    for(var i = 0; i < nextSignature.length; i++){
-        if (prevSignature[i] !== nextSignature[i]) return true;
-    }
-    return false;
-} // When this signature changes, it's unsafe to stop at this refresh boundary.
-function getRefreshBoundarySignature(exports) {
-    var signature = [];
-    signature.push(Refresh.getFamilyByType(exports));
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return signature;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        if (key === "__esModule") continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        signature.push(key);
-        signature.push(Refresh.getFamilyByType(exportValue));
-    }
-    return signature;
-}
-function registerExportsForReactRefresh(module1) {
-    var exports = module1.exports, id = module1.id;
-    Refresh.register(exports, id + " %exports%");
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        Refresh.register(exportValue, id + " %exports% " + key);
-    }
-}
-
-},{"react-refresh/runtime":"786KC"}],"jHMjs":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "StyledColSection", ()=>StyledColSection);
-parcelHelpers.export(exports, "StyledText", ()=>StyledText);
-var _styledComponents = require("styled-components");
-var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
-var _constants = require("../constants");
-const StyledColSection = (0, _styledComponentsDefault.default).section`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: ${(props)=>props?.align && (props?.align == "start" ? "flex=start" : props?.align == "end" ? "flex-end" : "center")};
-  grid-gap: 10px;
-  gap: 10px;
-
-  @media ${(0, _constants.devices).mobileL} {
-    align-items: center;
-  }
-`;
-const StyledText = (0, _styledComponentsDefault.default).p`
-  font-size: ${(props)=>props.type === "small" ? "16px" : props.type === "medium" ? "24px" : "36px"};
-  color: ${(props)=>props.color};
-`;
-const GlobalStyle = (0, _styledComponents.createGlobalStyle)`
-   *{
-       margin: 0;
-       padding: 0;
-       outline:0;
-       box-sizing:border-box;
-       font-family: 'Inter Tight', sans-serif;
-       overscroll-behavior: none;
-   }
-   #root{
-       margin:0 auto;
-   }
-`;
-exports.default = GlobalStyle;
-
-},{"styled-components":"1U3k6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../constants":"45DZp"}],"1U3k6":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "ServerStyleSheet", ()=>Je);
-parcelHelpers.export(exports, "StyleSheetConsumer", ()=>le);
-parcelHelpers.export(exports, "StyleSheetContext", ()=>ue);
-parcelHelpers.export(exports, "StyleSheetManager", ()=>ye);
-parcelHelpers.export(exports, "ThemeConsumer", ()=>Le);
-parcelHelpers.export(exports, "ThemeContext", ()=>Ge);
-parcelHelpers.export(exports, "ThemeProvider", ()=>Fe);
-parcelHelpers.export(exports, "__PRIVATE__", ()=>Ke);
-parcelHelpers.export(exports, "createGlobalStyle", ()=>We);
-parcelHelpers.export(exports, "css", ()=>Ce);
-parcelHelpers.export(exports, "isStyledComponent", ()=>N);
-parcelHelpers.export(exports, "keyframes", ()=>Ue);
-parcelHelpers.export(exports, "useTheme", ()=>Ze);
-parcelHelpers.export(exports, "version", ()=>C);
-parcelHelpers.export(exports, "withTheme", ()=>Xe);
-var _reactIs = require("react-is");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _shallowequal = require("shallowequal");
-var _shallowequalDefault = parcelHelpers.interopDefault(_shallowequal);
-var _stylis = require("@emotion/stylis");
-var _stylisDefault = parcelHelpers.interopDefault(_stylis);
-var _unitless = require("@emotion/unitless");
-var _unitlessDefault = parcelHelpers.interopDefault(_unitless);
-var _isPropValid = require("@emotion/is-prop-valid");
-var _isPropValidDefault = parcelHelpers.interopDefault(_isPropValid);
-var _hoistNonReactStatics = require("hoist-non-react-statics");
-var _hoistNonReactStaticsDefault = parcelHelpers.interopDefault(_hoistNonReactStatics);
-var process = require("process");
-function v() {
-    return (v = Object.assign || function(e) {
-        for(var t = 1; t < arguments.length; t++){
-            var n = arguments[t];
-            for(var r in n)Object.prototype.hasOwnProperty.call(n, r) && (e[r] = n[r]);
-        }
-        return e;
-    }).apply(this, arguments);
-}
-var g = function(e, t) {
-    for(var n = [
-        e[0]
-    ], r = 0, o = t.length; r < o; r += 1)n.push(t[r], e[r + 1]);
-    return n;
-}, S = function(t) {
-    return null !== t && "object" == typeof t && "[object Object]" === (t.toString ? t.toString() : Object.prototype.toString.call(t)) && !(0, _reactIs.typeOf)(t);
-}, w = Object.freeze([]), E = Object.freeze({});
-function b(e) {
-    return "function" == typeof e;
-}
-function _(e) {
-    return "string" == typeof e && e || e.displayName || e.name || "Component";
-}
-function N(e) {
-    return e && "string" == typeof e.styledComponentId;
-}
-var A = ("undefined" != typeof process && undefined, "data-styled"), C = "5.3.6", I = "undefined" != typeof window && "HTMLElement" in window, P = Boolean("boolean" == typeof SC_DISABLE_SPEEDY ? SC_DISABLE_SPEEDY : (typeof process, typeof process, true)), O = {}, R = {
-    1: "Cannot create styled-component for component: %s.\n\n",
-    2: "Can't collect styles once you've consumed a `ServerStyleSheet`'s styles! `ServerStyleSheet` is a one off instance for each server-side render cycle.\n\n- Are you trying to reuse it across renders?\n- Are you accidentally calling collectStyles twice?\n\n",
-    3: "Streaming SSR is only supported in a Node.js environment; Please do not try to call this method in the browser.\n\n",
-    4: "The `StyleSheetManager` expects a valid target or sheet prop!\n\n- Does this error occur on the client and is your target falsy?\n- Does this error occur on the server and is the sheet falsy?\n\n",
-    5: "The clone method cannot be used on the client!\n\n- Are you running in a client-like environment on the server?\n- Are you trying to run SSR on the client?\n\n",
-    6: "Trying to insert a new style tag, but the given Node is unmounted!\n\n- Are you using a custom target that isn't mounted?\n- Does your document not have a valid head element?\n- Have you accidentally removed a style tag manually?\n\n",
-    7: 'ThemeProvider: Please return an object from your "theme" prop function, e.g.\n\n```js\ntheme={() => ({})}\n```\n\n',
-    8: 'ThemeProvider: Please make your "theme" prop an object.\n\n',
-    9: "Missing document `<head>`\n\n",
-    10: "Cannot find a StyleSheet instance. Usually this happens if there are multiple copies of styled-components loaded at once. Check out this issue for how to troubleshoot and fix the common cases where this situation can happen: https://github.com/styled-components/styled-components/issues/1941#issuecomment-417862021\n\n",
-    11: "_This error was replaced with a dev-time warning, it will be deleted for v4 final._ [createGlobalStyle] received children which will not be rendered. Please use the component without passing children elements.\n\n",
-    12: "It seems you are interpolating a keyframe declaration (%s) into an untagged string. This was supported in styled-components v3, but is not longer supported in v4 as keyframes are now injected on-demand. Please wrap your string in the css\\`\\` helper which ensures the styles are injected correctly. See https://www.styled-components.com/docs/api#css\n\n",
-    13: "%s is not a styled component and cannot be referred to via component selector. See https://www.styled-components.com/docs/advanced#referring-to-other-components for more details.\n\n",
-    14: 'ThemeProvider: "theme" prop is required.\n\n',
-    15: "A stylis plugin has been supplied that is not named. We need a name for each plugin to be able to prevent styling collisions between different stylis configurations within the same app. Before you pass your plugin to `<StyleSheetManager stylisPlugins={[]}>`, please make sure each plugin is uniquely-named, e.g.\n\n```js\nObject.defineProperty(importedPlugin, 'name', { value: 'some-unique-name' });\n```\n\n",
-    16: "Reached the limit of how many styled components may be created at group %s.\nYou may only create up to 1,073,741,824 components. If you're creating components dynamically,\nas for instance in your render method then you may be running into this limitation.\n\n",
-    17: "CSSStyleSheet could not be found on HTMLStyleElement.\nHas styled-components' style tag been unmounted or altered by another script?\n"
-};
-function D() {
-    for(var e = arguments.length <= 0 ? void 0 : arguments[0], t = [], n = 1, r = arguments.length; n < r; n += 1)t.push(n < 0 || arguments.length <= n ? void 0 : arguments[n]);
-    return t.forEach(function(t) {
-        e = e.replace(/%[a-z]/, t);
-    }), e;
-}
-function j(e) {
-    for(var t = arguments.length, n = new Array(t > 1 ? t - 1 : 0), r = 1; r < t; r++)n[r - 1] = arguments[r];
-    throw new Error(D.apply(void 0, [
-        R[e]
-    ].concat(n)).trim());
-}
-var T = function() {
-    function e(e) {
-        this.groupSizes = new Uint32Array(512), this.length = 512, this.tag = e;
-    }
-    var t = e.prototype;
-    return t.indexOfGroup = function(e) {
-        for(var t = 0, n = 0; n < e; n++)t += this.groupSizes[n];
-        return t;
-    }, t.insertRules = function(e, t) {
-        if (e >= this.groupSizes.length) {
-            for(var n = this.groupSizes, r = n.length, o = r; e >= o;)(o <<= 1) < 0 && j(16, "" + e);
-            this.groupSizes = new Uint32Array(o), this.groupSizes.set(n), this.length = o;
-            for(var s = r; s < o; s++)this.groupSizes[s] = 0;
-        }
-        for(var i = this.indexOfGroup(e + 1), a = 0, c = t.length; a < c; a++)this.tag.insertRule(i, t[a]) && (this.groupSizes[e]++, i++);
-    }, t.clearGroup = function(e) {
-        if (e < this.length) {
-            var t = this.groupSizes[e], n = this.indexOfGroup(e), r = n + t;
-            this.groupSizes[e] = 0;
-            for(var o = n; o < r; o++)this.tag.deleteRule(n);
-        }
-    }, t.getGroup = function(e) {
-        var t = "";
-        if (e >= this.length || 0 === this.groupSizes[e]) return t;
-        for(var n = this.groupSizes[e], r = this.indexOfGroup(e), o = r + n, s = r; s < o; s++)t += this.tag.getRule(s) + "/*!sc*/\n";
-        return t;
-    }, e;
-}(), x = new Map, k = new Map, V = 1, B = function(e) {
-    if (x.has(e)) return x.get(e);
-    for(; k.has(V);)V++;
-    var t = V++;
-    return ((0 | t) < 0 || t > 1073741824) && j(16, "" + t), x.set(e, t), k.set(t, e), t;
-}, z = function(e) {
-    return k.get(e);
-}, M = function(e, t) {
-    t >= V && (V = t + 1), x.set(e, t), k.set(t, e);
-}, G = "style[" + A + '][data-styled-version="5.3.6"]', L = new RegExp("^" + A + '\\.g(\\d+)\\[id="([\\w\\d-]+)"\\].*?"([^"]*)'), F = function(e, t, n) {
-    for(var r, o = n.split(","), s = 0, i = o.length; s < i; s++)(r = o[s]) && e.registerName(t, r);
-}, Y = function(e, t) {
-    for(var n = (t.textContent || "").split("/*!sc*/\n"), r = [], o = 0, s = n.length; o < s; o++){
-        var i = n[o].trim();
-        if (i) {
-            var a = i.match(L);
-            if (a) {
-                var c = 0 | parseInt(a[1], 10), u = a[2];
-                0 !== c && (M(u, c), F(e, u, a[3]), e.getTag().insertRules(c, r)), r.length = 0;
-            } else r.push(i);
-        }
-    }
-}, q = function() {
-    return "undefined" != typeof __webpack_nonce__ ? __webpack_nonce__ : null;
-}, H = function(e) {
-    var t = document.head, n = e || t, r = document.createElement("style"), o = function(e) {
-        for(var t = e.childNodes, n = t.length; n >= 0; n--){
-            var r = t[n];
-            if (r && 1 === r.nodeType && r.hasAttribute(A)) return r;
-        }
-    }(n), s = void 0 !== o ? o.nextSibling : null;
-    r.setAttribute(A, "active"), r.setAttribute("data-styled-version", "5.3.6");
-    var i = q();
-    return i && r.setAttribute("nonce", i), n.insertBefore(r, s), r;
-}, $ = function() {
-    function e(e) {
-        var t = this.element = H(e);
-        t.appendChild(document.createTextNode("")), this.sheet = function(e) {
-            if (e.sheet) return e.sheet;
-            for(var t = document.styleSheets, n = 0, r = t.length; n < r; n++){
-                var o = t[n];
-                if (o.ownerNode === e) return o;
-            }
-            j(17);
-        }(t), this.length = 0;
-    }
-    var t = e.prototype;
-    return t.insertRule = function(e, t) {
-        try {
-            return this.sheet.insertRule(t, e), this.length++, !0;
-        } catch (e1) {
-            return !1;
-        }
-    }, t.deleteRule = function(e) {
-        this.sheet.deleteRule(e), this.length--;
-    }, t.getRule = function(e) {
-        var t = this.sheet.cssRules[e];
-        return void 0 !== t && "string" == typeof t.cssText ? t.cssText : "";
-    }, e;
-}(), W = function() {
-    function e(e) {
-        var t = this.element = H(e);
-        this.nodes = t.childNodes, this.length = 0;
-    }
-    var t = e.prototype;
-    return t.insertRule = function(e, t) {
-        if (e <= this.length && e >= 0) {
-            var n = document.createTextNode(t), r = this.nodes[e];
-            return this.element.insertBefore(n, r || null), this.length++, !0;
-        }
-        return !1;
-    }, t.deleteRule = function(e) {
-        this.element.removeChild(this.nodes[e]), this.length--;
-    }, t.getRule = function(e) {
-        return e < this.length ? this.nodes[e].textContent : "";
-    }, e;
-}(), U = function() {
-    function e(e) {
-        this.rules = [], this.length = 0;
-    }
-    var t = e.prototype;
-    return t.insertRule = function(e, t) {
-        return e <= this.length && (this.rules.splice(e, 0, t), this.length++, !0);
-    }, t.deleteRule = function(e) {
-        this.rules.splice(e, 1), this.length--;
-    }, t.getRule = function(e) {
-        return e < this.length ? this.rules[e] : "";
-    }, e;
-}(), J = I, X = {
-    isServer: !I,
-    useCSSOMInjection: !P
-}, Z = function() {
-    function e(e, t, n) {
-        void 0 === e && (e = E), void 0 === t && (t = {}), this.options = v({}, X, {}, e), this.gs = t, this.names = new Map(n), this.server = !!e.isServer, !this.server && I && J && (J = !1, function(e) {
-            for(var t = document.querySelectorAll(G), n = 0, r = t.length; n < r; n++){
-                var o = t[n];
-                o && "active" !== o.getAttribute(A) && (Y(e, o), o.parentNode && o.parentNode.removeChild(o));
-            }
-        }(this));
-    }
-    e.registerId = function(e) {
-        return B(e);
-    };
-    var t = e.prototype;
-    return t.reconstructWithOptions = function(t, n) {
-        return void 0 === n && (n = !0), new e(v({}, this.options, {}, t), this.gs, n && this.names || void 0);
-    }, t.allocateGSInstance = function(e) {
-        return this.gs[e] = (this.gs[e] || 0) + 1;
-    }, t.getTag = function() {
-        var e, t, n, r, o;
-        return this.tag || (this.tag = (n = (t = this.options).isServer, r = t.useCSSOMInjection, o = t.target, e = n ? new U(o) : r ? new $(o) : new W(o), new T(e)));
-    }, t.hasNameForId = function(e, t) {
-        return this.names.has(e) && this.names.get(e).has(t);
-    }, t.registerName = function(e, t) {
-        if (B(e), this.names.has(e)) this.names.get(e).add(t);
-        else {
-            var n = new Set;
-            n.add(t), this.names.set(e, n);
-        }
-    }, t.insertRules = function(e, t, n) {
-        this.registerName(e, t), this.getTag().insertRules(B(e), n);
-    }, t.clearNames = function(e) {
-        this.names.has(e) && this.names.get(e).clear();
-    }, t.clearRules = function(e) {
-        this.getTag().clearGroup(B(e)), this.clearNames(e);
-    }, t.clearTag = function() {
-        this.tag = void 0;
-    }, t.toString = function() {
-        return function(e) {
-            for(var t = e.getTag(), n = t.length, r = "", o = 0; o < n; o++){
-                var s = z(o);
-                if (void 0 !== s) {
-                    var i = e.names.get(s), a = t.getGroup(o);
-                    if (i && a && i.size) {
-                        var c = A + ".g" + o + '[id="' + s + '"]', u = "";
-                        void 0 !== i && i.forEach(function(e) {
-                            e.length > 0 && (u += e + ",");
-                        }), r += "" + a + c + '{content:"' + u + '"}/*!sc*/\n';
-                    }
-                }
-            }
-            return r;
-        }(this);
-    }, e;
-}(), K = /(a)(d)/gi, Q = function(e) {
-    return String.fromCharCode(e + (e > 25 ? 39 : 97));
-};
-function ee(e) {
-    var t, n = "";
-    for(t = Math.abs(e); t > 52; t = t / 52 | 0)n = Q(t % 52) + n;
-    return (Q(t % 52) + n).replace(K, "$1-$2");
-}
-var te = function(e, t) {
-    for(var n = t.length; n;)e = 33 * e ^ t.charCodeAt(--n);
-    return e;
-}, ne = function(e) {
-    return te(5381, e);
-};
-function re(e) {
-    for(var t = 0; t < e.length; t += 1){
-        var n = e[t];
-        if (b(n) && !N(n)) return !1;
-    }
-    return !0;
-}
-var oe = ne("5.3.6"), se = function() {
-    function e(e, t, n) {
-        this.rules = e, this.staticRulesId = "", this.isStatic = false, this.componentId = t, this.baseHash = te(oe, t), this.baseStyle = n, Z.registerId(t);
-    }
-    return e.prototype.generateAndInjectStyles = function(e, t, n) {
-        var r = this.componentId, o = [];
-        if (this.baseStyle && o.push(this.baseStyle.generateAndInjectStyles(e, t, n)), this.isStatic && !n.hash) {
-            if (this.staticRulesId && t.hasNameForId(r, this.staticRulesId)) o.push(this.staticRulesId);
-            else {
-                var s = Ne(this.rules, e, t, n).join(""), i = ee(te(this.baseHash, s) >>> 0);
-                if (!t.hasNameForId(r, i)) {
-                    var a = n(s, "." + i, void 0, r);
-                    t.insertRules(r, i, a);
-                }
-                o.push(i), this.staticRulesId = i;
-            }
-        } else {
-            for(var c = this.rules.length, u = te(this.baseHash, n.hash), l = "", d = 0; d < c; d++){
-                var h = this.rules[d];
-                if ("string" == typeof h) l += h, u = te(u, h + d);
-                else if (h) {
-                    var p = Ne(h, e, t, n), f = Array.isArray(p) ? p.join("") : p;
-                    u = te(u, f + d), l += f;
-                }
-            }
-            if (l) {
-                var m = ee(u >>> 0);
-                if (!t.hasNameForId(r, m)) {
-                    var y = n(l, "." + m, void 0, r);
-                    t.insertRules(r, m, y);
-                }
-                o.push(m);
-            }
-        }
-        return o.join(" ");
-    }, e;
-}(), ie = /^\s*\/\/.*$/gm, ae = [
-    ":",
-    "[",
-    ".",
-    "#"
-];
-function ce(e) {
-    var t, n, r, o, s = void 0 === e ? E : e, i = s.options, a = void 0 === i ? E : i, c = s.plugins, u = void 0 === c ? w : c, l = new (0, _stylisDefault.default)(a), d = [], h = function(e) {
-        function t(t) {
-            if (t) try {
-                e(t + "}");
-            } catch (e1) {}
-        }
-        return function(n, r, o, s, i, a, c, u, l, d) {
-            switch(n){
-                case 1:
-                    if (0 === l && 64 === r.charCodeAt(0)) return e(r + ";"), "";
-                    break;
-                case 2:
-                    if (0 === u) return r + "/*|*/";
-                    break;
-                case 3:
-                    switch(u){
-                        case 102:
-                        case 112:
-                            return e(o[0] + r), "";
-                        default:
-                            return r + (0 === d ? "/*|*/" : "");
-                    }
-                case -2:
-                    r.split("/*|*/}").forEach(t);
-            }
-        };
-    }(function(e) {
-        d.push(e);
-    }), f = function(e, r, s) {
-        return 0 === r && -1 !== ae.indexOf(s[n.length]) || s.match(o) ? e : "." + t;
-    };
-    function m(e, s, i, a) {
-        void 0 === a && (a = "&");
-        var c = e.replace(ie, ""), u = s && i ? i + " " + s + " { " + c + " }" : c;
-        return t = a, n = s, r = new RegExp("\\" + n + "\\b", "g"), o = new RegExp("(\\" + n + "\\b){2,}"), l(i || !s ? "" : s, u);
-    }
-    return l.use([].concat(u, [
-        function(e, t, o) {
-            2 === e && o.length && o[0].lastIndexOf(n) > 0 && (o[0] = o[0].replace(r, f));
-        },
-        h,
-        function(e) {
-            if (-2 === e) {
-                var t = d;
-                return d = [], t;
-            }
-        }
-    ])), m.hash = u.length ? u.reduce(function(e, t) {
-        return t.name || j(15), te(e, t.name);
-    }, 5381).toString() : "", m;
-}
-var ue = (0, _reactDefault.default).createContext(), le = ue.Consumer, de = (0, _reactDefault.default).createContext(), he = (de.Consumer, new Z), pe = ce();
-function fe() {
-    return (0, _react.useContext)(ue) || he;
-}
-function me() {
-    return (0, _react.useContext)(de) || pe;
-}
-function ye(e) {
-    var t = (0, _react.useState)(e.stylisPlugins), n = t[0], s = t[1], c = fe(), u = (0, _react.useMemo)(function() {
-        var t = c;
-        return e.sheet ? t = e.sheet : e.target && (t = t.reconstructWithOptions({
-            target: e.target
-        }, !1)), e.disableCSSOMInjection && (t = t.reconstructWithOptions({
-            useCSSOMInjection: !1
-        })), t;
-    }, [
-        e.disableCSSOMInjection,
-        e.sheet,
-        e.target
-    ]), l = (0, _react.useMemo)(function() {
-        return ce({
-            options: {
-                prefix: !e.disableVendorPrefixes
-            },
-            plugins: n
-        });
-    }, [
-        e.disableVendorPrefixes,
-        n
-    ]);
-    return (0, _react.useEffect)(function() {
-        (0, _shallowequalDefault.default)(n, e.stylisPlugins) || s(e.stylisPlugins);
-    }, [
-        e.stylisPlugins
-    ]), (0, _reactDefault.default).createElement(ue.Provider, {
-        value: u
-    }, (0, _reactDefault.default).createElement(de.Provider, {
-        value: l
-    }, (0, _reactDefault.default).Children.only(e.children)));
-}
-var ve = function() {
-    function e(e, t) {
-        var n = this;
-        this.inject = function(e, t) {
-            void 0 === t && (t = pe);
-            var r = n.name + t.hash;
-            e.hasNameForId(n.id, r) || e.insertRules(n.id, r, t(n.rules, r, "@keyframes"));
-        }, this.toString = function() {
-            return j(12, String(n.name));
-        }, this.name = e, this.id = "sc-keyframes-" + e, this.rules = t;
-    }
-    return e.prototype.getName = function(e) {
-        return void 0 === e && (e = pe), this.name + e.hash;
-    }, e;
-}(), ge = /([A-Z])/, Se = /([A-Z])/g, we = /^ms-/, Ee = function(e) {
-    return "-" + e.toLowerCase();
-};
-function be(e) {
-    return ge.test(e) ? e.replace(Se, Ee).replace(we, "-ms-") : e;
-}
-var _e = function(e) {
-    return null == e || !1 === e || "" === e;
-};
-function Ne(e, n, r, o) {
-    if (Array.isArray(e)) {
-        for(var s, i = [], a = 0, c = e.length; a < c; a += 1)"" !== (s = Ne(e[a], n, r, o)) && (Array.isArray(s) ? i.push.apply(i, s) : i.push(s));
-        return i;
-    }
-    if (_e(e)) return "";
-    if (N(e)) return "." + e.styledComponentId;
-    if (b(e)) {
-        if ("function" != typeof (l = e) || l.prototype && l.prototype.isReactComponent || !n) return e;
-        var u = e(n);
-        return (0, _reactIs.isElement)(u) && console.warn(_(e) + " is not a styled component and cannot be referred to via component selector. See https://www.styled-components.com/docs/advanced#referring-to-other-components for more details."), Ne(u, n, r, o);
-    }
-    var l;
-    return e instanceof ve ? r ? (e.inject(r, o), e.getName(o)) : e : S(e) ? function e(t, n) {
-        var r, o, s = [];
-        for(var i in t)t.hasOwnProperty(i) && !_e(t[i]) && (Array.isArray(t[i]) && t[i].isCss || b(t[i]) ? s.push(be(i) + ":", t[i], ";") : S(t[i]) ? s.push.apply(s, e(t[i], i)) : s.push(be(i) + ": " + (r = i, null == (o = t[i]) || "boolean" == typeof o || "" === o ? "" : "number" != typeof o || 0 === o || r in (0, _unitlessDefault.default) ? String(o).trim() : o + "px") + ";"));
-        return n ? [
-            n + " {"
-        ].concat(s, [
-            "}"
-        ]) : s;
-    }(e) : e.toString();
-}
-var Ae = function(e) {
-    return Array.isArray(e) && (e.isCss = !0), e;
-};
-function Ce(e) {
-    for(var t = arguments.length, n = new Array(t > 1 ? t - 1 : 0), r = 1; r < t; r++)n[r - 1] = arguments[r];
-    return b(e) || S(e) ? Ae(Ne(g(w, [
-        e
-    ].concat(n)))) : 0 === n.length && 1 === e.length && "string" == typeof e[0] ? e : Ae(Ne(g(e, n)));
-}
-var Ie = /invalid hook call/i, Pe = new Set, Oe = function(e, t) {
-    var n = "The component " + e + (t ? ' with the id of "' + t + '"' : "") + " has been created dynamically.\nYou may see this warning because you've called styled inside another component.\nTo resolve this only create new StyledComponents outside of any render method and function component.", r = console.error;
-    try {
-        var o = !0;
-        console.error = function(e) {
-            if (Ie.test(e)) o = !1, Pe.delete(n);
-            else {
-                for(var t = arguments.length, s = new Array(t > 1 ? t - 1 : 0), i = 1; i < t; i++)s[i - 1] = arguments[i];
-                r.apply(void 0, [
-                    e
-                ].concat(s));
-            }
-        }, (0, _react.useRef)(), o && !Pe.has(n) && (console.warn(n), Pe.add(n));
-    } catch (e1) {
-        Ie.test(e1.message) && Pe.delete(n);
-    } finally{
-        console.error = r;
-    }
-}, Re = function(e, t, n) {
-    return void 0 === n && (n = E), e.theme !== n.theme && e.theme || t || n.theme;
-}, De = /[!"#$%&'()*+,./:;<=>?@[\\\]^`{|}~-]+/g, je = /(^-|-$)/g;
-function Te(e) {
-    return e.replace(De, "-").replace(je, "");
-}
-var xe = function(e) {
-    return ee(ne(e) >>> 0);
-};
-function ke(e) {
-    return "string" == typeof e && e.charAt(0) === e.charAt(0).toLowerCase();
-}
-var Ve = function(e) {
-    return "function" == typeof e || "object" == typeof e && null !== e && !Array.isArray(e);
-}, Be = function(e) {
-    return "__proto__" !== e && "constructor" !== e && "prototype" !== e;
-};
-function ze(e, t, n) {
-    var r = e[n];
-    Ve(t) && Ve(r) ? Me(r, t) : e[n] = t;
-}
-function Me(e) {
-    for(var t = arguments.length, n = new Array(t > 1 ? t - 1 : 0), r = 1; r < t; r++)n[r - 1] = arguments[r];
-    for(var o = 0, s = n; o < s.length; o++){
-        var i = s[o];
-        if (Ve(i)) for(var a in i)Be(a) && ze(e, i[a], a);
-    }
-    return e;
-}
-var Ge = (0, _reactDefault.default).createContext(), Le = Ge.Consumer;
-function Fe(e) {
-    var t = (0, _react.useContext)(Ge), n = (0, _react.useMemo)(function() {
-        return function(e, t) {
-            if (!e) return j(14);
-            if (b(e)) {
-                var n = e(t);
-                return null !== n && !Array.isArray(n) && "object" == typeof n ? n : j(7);
-            }
-            return Array.isArray(e) || "object" != typeof e ? j(8) : t ? v({}, t, {}, e) : e;
-        }(e.theme, t);
-    }, [
-        e.theme,
-        t
-    ]);
-    return e.children ? (0, _reactDefault.default).createElement(Ge.Provider, {
-        value: n
-    }, e.children) : null;
-}
-var Ye = {};
-function qe(e, t, n) {
-    var o = N(e), i = !ke(e), a = t.attrs, c = void 0 === a ? w : a, d = t.componentId, h = void 0 === d ? function(e, t) {
-        var n = "string" != typeof e ? "sc" : Te(e);
-        Ye[n] = (Ye[n] || 0) + 1;
-        var r = n + "-" + xe("5.3.6" + n + Ye[n]);
-        return t ? t + "-" + r : r;
-    }(t.displayName, t.parentComponentId) : d, p = t.displayName, f = void 0 === p ? function(e) {
-        return ke(e) ? "styled." + e : "Styled(" + _(e) + ")";
-    }(e) : p, g = t.displayName && t.componentId ? Te(t.displayName) + "-" + t.componentId : t.componentId || h, S = o && e.attrs ? Array.prototype.concat(e.attrs, c).filter(Boolean) : c, A = t.shouldForwardProp;
-    o && e.shouldForwardProp && (A = t.shouldForwardProp ? function(n, r, o) {
-        return e.shouldForwardProp(n, r, o) && t.shouldForwardProp(n, r, o);
-    } : e.shouldForwardProp);
-    var C, I = new se(n, g, o ? e.componentStyle : void 0), P = I.isStatic && 0 === c.length, O = function(e, t) {
-        return function(e, t, n, r) {
-            var o = e.attrs, i = e.componentStyle, a = e.defaultProps, c = e.foldedComponentIds, d = e.shouldForwardProp, h = e.styledComponentId, p = e.target;
-            (0, _react.useDebugValue)(h);
-            var f = function(e, t, n) {
-                void 0 === e && (e = E);
-                var r = v({}, t, {
-                    theme: e
-                }), o = {};
-                return n.forEach(function(e) {
-                    var t, n, s, i = e;
-                    for(t in b(i) && (i = i(r)), i)r[t] = o[t] = "className" === t ? (n = o[t], s = i[t], n && s ? n + " " + s : n || s) : i[t];
-                }), [
-                    r,
-                    o
-                ];
-            }(Re(t, (0, _react.useContext)(Ge), a) || E, t, o), y = f[0], g = f[1], S = function(e, t, n, r) {
-                var o = fe(), s = me(), i = t ? e.generateAndInjectStyles(E, o, s) : e.generateAndInjectStyles(n, o, s);
-                return (0, _react.useDebugValue)(i), !t && r && r(i), i;
-            }(i, r, y, e.warnTooManyClasses), w = n, _ = g.$as || t.$as || g.as || t.as || p, N = ke(_), A = g !== t ? v({}, t, {}, g) : t, C = {};
-            for(var I in A)"$" !== I[0] && "as" !== I && ("forwardedAs" === I ? C.as = A[I] : (d ? d(I, (0, _isPropValidDefault.default), _) : !N || (0, _isPropValidDefault.default)(I)) && (C[I] = A[I]));
-            return t.style && g.style !== t.style && (C.style = v({}, t.style, {}, g.style)), C.className = Array.prototype.concat(c, h, S !== h ? S : null, t.className, g.className).filter(Boolean).join(" "), C.ref = w, (0, _react.createElement)(_, C);
-        }(C, e, t, P);
-    };
-    return O.displayName = f, (C = (0, _reactDefault.default).forwardRef(O)).attrs = S, C.componentStyle = I, C.displayName = f, C.shouldForwardProp = A, C.foldedComponentIds = o ? Array.prototype.concat(e.foldedComponentIds, e.styledComponentId) : w, C.styledComponentId = g, C.target = o ? e.target : e, C.withComponent = function(e) {
-        var r = t.componentId, o = function(e, t) {
-            if (null == e) return {};
-            var n, r, o = {}, s = Object.keys(e);
-            for(r = 0; r < s.length; r++)n = s[r], t.indexOf(n) >= 0 || (o[n] = e[n]);
-            return o;
-        }(t, [
-            "componentId"
-        ]), s = r && r + "-" + (ke(e) ? e : Te(_(e)));
-        return qe(e, v({}, o, {
-            attrs: S,
-            componentId: s
-        }), n);
-    }, Object.defineProperty(C, "defaultProps", {
-        get: function() {
-            return this._foldedDefaultProps;
-        },
-        set: function(t) {
-            this._foldedDefaultProps = o ? Me({}, e.defaultProps, t) : t;
-        }
-    }), Oe(f, g), C.warnTooManyClasses = function(e, t) {
-        var n = {}, r = !1;
-        return function(o) {
-            if (!r && (n[o] = !0, Object.keys(n).length >= 200)) {
-                var s = t ? ' with the id of "' + t + '"' : "";
-                console.warn("Over 200 classes were generated for component " + e + s + ".\nConsider using the attrs method, together with a style object for frequently changed styles.\nExample:\n  const Component = styled.div.attrs(props => ({\n    style: {\n      background: props.background,\n    },\n  }))`width: 100%;`\n\n  <Component />"), r = !0, n = {};
-            }
-        };
-    }(f, g), C.toString = function() {
-        return "." + C.styledComponentId;
-    }, i && (0, _hoistNonReactStaticsDefault.default)(C, e, {
-        attrs: !0,
-        componentStyle: !0,
-        displayName: !0,
-        foldedComponentIds: !0,
-        shouldForwardProp: !0,
-        styledComponentId: !0,
-        target: !0,
-        withComponent: !0
-    }), C;
-}
-var He = function(e) {
-    return function e(t, r, o) {
-        if (void 0 === o && (o = E), !(0, _reactIs.isValidElementType)(r)) return j(1, String(r));
-        var s = function() {
-            return t(r, o, Ce.apply(void 0, arguments));
-        };
-        return s.withConfig = function(n) {
-            return e(t, r, v({}, o, {}, n));
-        }, s.attrs = function(n) {
-            return e(t, r, v({}, o, {
-                attrs: Array.prototype.concat(o.attrs, n).filter(Boolean)
-            }));
-        }, s;
-    }(qe, e);
-};
-[
-    "a",
-    "abbr",
-    "address",
-    "area",
-    "article",
-    "aside",
-    "audio",
-    "b",
-    "base",
-    "bdi",
-    "bdo",
-    "big",
-    "blockquote",
-    "body",
-    "br",
-    "button",
-    "canvas",
-    "caption",
-    "cite",
-    "code",
-    "col",
-    "colgroup",
-    "data",
-    "datalist",
-    "dd",
-    "del",
-    "details",
-    "dfn",
-    "dialog",
-    "div",
-    "dl",
-    "dt",
-    "em",
-    "embed",
-    "fieldset",
-    "figcaption",
-    "figure",
-    "footer",
-    "form",
-    "h1",
-    "h2",
-    "h3",
-    "h4",
-    "h5",
-    "h6",
-    "head",
-    "header",
-    "hgroup",
-    "hr",
-    "html",
-    "i",
-    "iframe",
-    "img",
-    "input",
-    "ins",
-    "kbd",
-    "keygen",
-    "label",
-    "legend",
-    "li",
-    "link",
-    "main",
-    "map",
-    "mark",
-    "marquee",
-    "menu",
-    "menuitem",
-    "meta",
-    "meter",
-    "nav",
-    "noscript",
-    "object",
-    "ol",
-    "optgroup",
-    "option",
-    "output",
-    "p",
-    "param",
-    "picture",
-    "pre",
-    "progress",
-    "q",
-    "rp",
-    "rt",
-    "ruby",
-    "s",
-    "samp",
-    "script",
-    "section",
-    "select",
-    "small",
-    "source",
-    "span",
-    "strong",
-    "style",
-    "sub",
-    "summary",
-    "sup",
-    "table",
-    "tbody",
-    "td",
-    "textarea",
-    "tfoot",
-    "th",
-    "thead",
-    "time",
-    "title",
-    "tr",
-    "track",
-    "u",
-    "ul",
-    "var",
-    "video",
-    "wbr",
-    "circle",
-    "clipPath",
-    "defs",
-    "ellipse",
-    "foreignObject",
-    "g",
-    "image",
-    "line",
-    "linearGradient",
-    "marker",
-    "mask",
-    "path",
-    "pattern",
-    "polygon",
-    "polyline",
-    "radialGradient",
-    "rect",
-    "stop",
-    "svg",
-    "text",
-    "textPath",
-    "tspan"
-].forEach(function(e) {
-    He[e] = He(e);
-});
-var $e = function() {
-    function e(e, t) {
-        this.rules = e, this.componentId = t, this.isStatic = re(e), Z.registerId(this.componentId + 1);
-    }
-    var t = e.prototype;
-    return t.createStyles = function(e, t, n, r) {
-        var o = r(Ne(this.rules, t, n, r).join(""), ""), s = this.componentId + e;
-        n.insertRules(s, s, o);
-    }, t.removeStyles = function(e, t) {
-        t.clearRules(this.componentId + e);
-    }, t.renderStyles = function(e, t, n, r) {
-        e > 2 && Z.registerId(this.componentId + e), this.removeStyles(e, n), this.createStyles(e, t, n, r);
-    }, e;
-}();
-function We(e) {
-    for(var t = arguments.length, n = new Array(t > 1 ? t - 1 : 0), o = 1; o < t; o++)n[o - 1] = arguments[o];
-    var i = Ce.apply(void 0, [
-        e
-    ].concat(n)), a = "sc-global-" + xe(JSON.stringify(i)), u = new $e(i, a);
-    function l(e) {
-        var t = fe(), n = me(), o = (0, _react.useContext)(Ge), l = (0, _react.useRef)(t.allocateGSInstance(a)).current;
-        return (0, _reactDefault.default).Children.count(e.children) && console.warn("The global style component " + a + " was given child JSX. createGlobalStyle does not render children."), i.some(function(e) {
-            return "string" == typeof e && -1 !== e.indexOf("@import");
-        }) && console.warn("Please do not use @import CSS syntax in createGlobalStyle at this time, as the CSSOM APIs we use in production do not handle it well. Instead, we recommend using a library such as react-helmet to inject a typical <link> meta tag to the stylesheet, or simply embedding it manually in your index.html <head> section for a simpler app."), t.server && h(l, e, t, o, n), (0, _react.useLayoutEffect)(function() {
-            if (!t.server) return h(l, e, t, o, n), function() {
-                return u.removeStyles(l, t);
-            };
-        }, [
-            l,
-            e,
-            t,
-            o,
-            n
-        ]), null;
-    }
-    function h(e, t, n, r, o) {
-        if (u.isStatic) u.renderStyles(e, O, n, o);
-        else {
-            var s = v({}, t, {
-                theme: Re(t, r, l.defaultProps)
-            });
-            u.renderStyles(e, s, n, o);
-        }
-    }
-    return Oe(a), (0, _reactDefault.default).memo(l);
-}
-function Ue(e) {
-    "undefined" != typeof navigator && "ReactNative" === navigator.product && console.warn("`keyframes` cannot be used on ReactNative, only on the web. To do animation in ReactNative please use Animated.");
-    for(var t = arguments.length, n = new Array(t > 1 ? t - 1 : 0), r = 1; r < t; r++)n[r - 1] = arguments[r];
-    var o = Ce.apply(void 0, [
-        e
-    ].concat(n)).join(""), s = xe(o);
-    return new ve(s, o);
-}
-var Je = function() {
-    function e() {
-        var e = this;
-        this._emitSheetCSS = function() {
-            var t = e.instance.toString();
-            if (!t) return "";
-            var n = q();
-            return "<style " + [
-                n && 'nonce="' + n + '"',
-                A + '="true"',
-                'data-styled-version="5.3.6"'
-            ].filter(Boolean).join(" ") + ">" + t + "</style>";
-        }, this.getStyleTags = function() {
-            return e.sealed ? j(2) : e._emitSheetCSS();
-        }, this.getStyleElement = function() {
-            var t;
-            if (e.sealed) return j(2);
-            var n = ((t = {})[A] = "", t["data-styled-version"] = "5.3.6", t.dangerouslySetInnerHTML = {
-                __html: e.instance.toString()
-            }, t), o = q();
-            return o && (n.nonce = o), [
-                (0, _reactDefault.default).createElement("style", v({}, n, {
-                    key: "sc-0-0"
-                }))
-            ];
-        }, this.seal = function() {
-            e.sealed = !0;
-        }, this.instance = new Z({
-            isServer: !0
-        }), this.sealed = !1;
-    }
-    var t = e.prototype;
-    return t.collectStyles = function(e) {
-        return this.sealed ? j(2) : (0, _reactDefault.default).createElement(ye, {
-            sheet: this.instance
-        }, e);
-    }, t.interleaveWithNodeStream = function(e) {
-        return j(3);
-    }, e;
-}(), Xe = function(e) {
-    var t = (0, _reactDefault.default).forwardRef(function(t, n) {
-        var o = (0, _react.useContext)(Ge), i = e.defaultProps, a = Re(t, o, i);
-        return void 0 === a && console.warn('[withTheme] You are not using a ThemeProvider nor passing a theme prop or a theme in defaultProps in component class "' + _(e) + '"'), (0, _reactDefault.default).createElement(e, v({}, t, {
-            theme: a,
-            ref: n
-        }));
-    });
-    return (0, _hoistNonReactStaticsDefault.default)(t, e), t.displayName = "WithTheme(" + _(e) + ")", t;
-}, Ze = function() {
-    return (0, _react.useContext)(Ge);
-}, Ke = {
-    StyleSheet: Z,
-    masterSheet: he
-};
-"undefined" != typeof navigator && "ReactNative" === navigator.product && console.warn("It looks like you've imported 'styled-components' on React Native.\nPerhaps you're looking to import 'styled-components/native'?\nRead more about this at https://www.styled-components.com/docs/basics#react-native"), "undefined" != typeof window && (window["__styled-components-init__"] = window["__styled-components-init__"] || 0, 1 === window["__styled-components-init__"] && console.warn("It looks like there are several instances of 'styled-components' initialized in this application. This may cause dynamic styles to not render properly, errors during the rehydration process, a missing theme prop, and makes your application bigger without good reason.\n\nSee https://s-c.sh/2BAXzed for more info."), window["__styled-components-init__"] += 1);
-exports.default = He;
-
-},{"react-is":"7EuwB","react":"21dqq","shallowequal":"fjwkp","@emotion/stylis":"fGS9o","@emotion/unitless":"pVndT","@emotion/is-prop-valid":"9JzNk","hoist-non-react-statics":"1GfsB","process":"d5jf4","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7EuwB":[function(require,module,exports) {
-"use strict";
-module.exports = require("./cjs/react-is.development.js");
-
-},{"./cjs/react-is.development.js":"5DsXl"}],"5DsXl":[function(require,module,exports) {
-/** @license React v16.13.1
- * react-is.development.js
- *
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */ "use strict";
-(function() {
-    "use strict";
-    // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
-    // nor polyfill, then a plain number is used for performance.
-    var hasSymbol = typeof Symbol === "function" && Symbol.for;
-    var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for("react.element") : 0xeac7;
-    var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for("react.portal") : 0xeaca;
-    var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for("react.fragment") : 0xeacb;
-    var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for("react.strict_mode") : 0xeacc;
-    var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for("react.profiler") : 0xead2;
-    var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for("react.provider") : 0xeacd;
-    var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for("react.context") : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
-    // (unstable) APIs that have been removed. Can we remove the symbols?
-    var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for("react.async_mode") : 0xeacf;
-    var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for("react.concurrent_mode") : 0xeacf;
-    var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for("react.forward_ref") : 0xead0;
-    var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for("react.suspense") : 0xead1;
-    var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for("react.suspense_list") : 0xead8;
-    var REACT_MEMO_TYPE = hasSymbol ? Symbol.for("react.memo") : 0xead3;
-    var REACT_LAZY_TYPE = hasSymbol ? Symbol.for("react.lazy") : 0xead4;
-    var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for("react.block") : 0xead9;
-    var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for("react.fundamental") : 0xead5;
-    var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for("react.responder") : 0xead6;
-    var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for("react.scope") : 0xead7;
-    function isValidElementType(type) {
-        return typeof type === "string" || typeof type === "function" || type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === "object" && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
-    }
-    function typeOf(object) {
-        if (typeof object === "object" && object !== null) {
-            var $$typeof = object.$$typeof;
-            switch($$typeof){
-                case REACT_ELEMENT_TYPE:
-                    var type = object.type;
-                    switch(type){
-                        case REACT_ASYNC_MODE_TYPE:
-                        case REACT_CONCURRENT_MODE_TYPE:
-                        case REACT_FRAGMENT_TYPE:
-                        case REACT_PROFILER_TYPE:
-                        case REACT_STRICT_MODE_TYPE:
-                        case REACT_SUSPENSE_TYPE:
-                            return type;
-                        default:
-                            var $$typeofType = type && type.$$typeof;
-                            switch($$typeofType){
-                                case REACT_CONTEXT_TYPE:
-                                case REACT_FORWARD_REF_TYPE:
-                                case REACT_LAZY_TYPE:
-                                case REACT_MEMO_TYPE:
-                                case REACT_PROVIDER_TYPE:
-                                    return $$typeofType;
-                                default:
-                                    return $$typeof;
-                            }
-                    }
-                case REACT_PORTAL_TYPE:
-                    return $$typeof;
-            }
-        }
-        return undefined;
-    } // AsyncMode is deprecated along with isAsyncMode
-    var AsyncMode = REACT_ASYNC_MODE_TYPE;
-    var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
-    var ContextConsumer = REACT_CONTEXT_TYPE;
-    var ContextProvider = REACT_PROVIDER_TYPE;
-    var Element = REACT_ELEMENT_TYPE;
-    var ForwardRef = REACT_FORWARD_REF_TYPE;
-    var Fragment = REACT_FRAGMENT_TYPE;
-    var Lazy = REACT_LAZY_TYPE;
-    var Memo = REACT_MEMO_TYPE;
-    var Portal = REACT_PORTAL_TYPE;
-    var Profiler = REACT_PROFILER_TYPE;
-    var StrictMode = REACT_STRICT_MODE_TYPE;
-    var Suspense = REACT_SUSPENSE_TYPE;
-    var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
-    function isAsyncMode(object) {
-        if (!hasWarnedAboutDeprecatedIsAsyncMode) {
-            hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
-            console["warn"]("The ReactIs.isAsyncMode() alias has been deprecated, and will be removed in React 17+. Update your code to use ReactIs.isConcurrentMode() instead. It has the exact same API.");
-        }
-        return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
-    }
-    function isConcurrentMode(object) {
-        return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
-    }
-    function isContextConsumer(object) {
-        return typeOf(object) === REACT_CONTEXT_TYPE;
-    }
-    function isContextProvider(object) {
-        return typeOf(object) === REACT_PROVIDER_TYPE;
-    }
-    function isElement(object) {
-        return typeof object === "object" && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
-    }
-    function isForwardRef(object) {
-        return typeOf(object) === REACT_FORWARD_REF_TYPE;
-    }
-    function isFragment(object) {
-        return typeOf(object) === REACT_FRAGMENT_TYPE;
-    }
-    function isLazy(object) {
-        return typeOf(object) === REACT_LAZY_TYPE;
-    }
-    function isMemo(object) {
-        return typeOf(object) === REACT_MEMO_TYPE;
-    }
-    function isPortal(object) {
-        return typeOf(object) === REACT_PORTAL_TYPE;
-    }
-    function isProfiler(object) {
-        return typeOf(object) === REACT_PROFILER_TYPE;
-    }
-    function isStrictMode(object) {
-        return typeOf(object) === REACT_STRICT_MODE_TYPE;
-    }
-    function isSuspense(object) {
-        return typeOf(object) === REACT_SUSPENSE_TYPE;
-    }
-    exports.AsyncMode = AsyncMode;
-    exports.ConcurrentMode = ConcurrentMode;
-    exports.ContextConsumer = ContextConsumer;
-    exports.ContextProvider = ContextProvider;
-    exports.Element = Element;
-    exports.ForwardRef = ForwardRef;
-    exports.Fragment = Fragment;
-    exports.Lazy = Lazy;
-    exports.Memo = Memo;
-    exports.Portal = Portal;
-    exports.Profiler = Profiler;
-    exports.StrictMode = StrictMode;
-    exports.Suspense = Suspense;
-    exports.isAsyncMode = isAsyncMode;
-    exports.isConcurrentMode = isConcurrentMode;
-    exports.isContextConsumer = isContextConsumer;
-    exports.isContextProvider = isContextProvider;
-    exports.isElement = isElement;
-    exports.isForwardRef = isForwardRef;
-    exports.isFragment = isFragment;
-    exports.isLazy = isLazy;
-    exports.isMemo = isMemo;
-    exports.isPortal = isPortal;
-    exports.isProfiler = isProfiler;
-    exports.isStrictMode = isStrictMode;
-    exports.isSuspense = isSuspense;
-    exports.isValidElementType = isValidElementType;
-    exports.typeOf = typeOf;
-})();
-
-},{}],"fjwkp":[function(require,module,exports) {
-//
-module.exports = function shallowEqual(objA, objB, compare, compareContext) {
-    var ret = compare ? compare.call(compareContext, objA, objB) : void 0;
-    if (ret !== void 0) return !!ret;
-    if (objA === objB) return true;
-    if (typeof objA !== "object" || !objA || typeof objB !== "object" || !objB) return false;
-    var keysA = Object.keys(objA);
-    var keysB = Object.keys(objB);
-    if (keysA.length !== keysB.length) return false;
-    var bHasOwnProperty = Object.prototype.hasOwnProperty.bind(objB);
-    // Test for A's keys different from B.
-    for(var idx = 0; idx < keysA.length; idx++){
-        var key = keysA[idx];
-        if (!bHasOwnProperty(key)) return false;
-        var valueA = objA[key];
-        var valueB = objB[key];
-        ret = compare ? compare.call(compareContext, valueA, valueB, key) : void 0;
-        if (ret === false || ret === void 0 && valueA !== valueB) return false;
-    }
-    return true;
-};
-
-},{}],"fGS9o":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-function stylis_min(W) {
-    function M(d, c, e, h, a) {
-        for(var m = 0, b = 0, v = 0, n = 0, q, g, x = 0, K = 0, k, u = k = q = 0, l = 0, r = 0, I = 0, t = 0, B = e.length, J = B - 1, y, f = "", p = "", F = "", G = "", C; l < B;){
-            g = e.charCodeAt(l);
-            l === J && 0 !== b + n + v + m && (0 !== b && (g = 47 === b ? 10 : 47), n = v = m = 0, B++, J++);
-            if (0 === b + n + v + m) {
-                if (l === J && (0 < r && (f = f.replace(N, "")), 0 < f.trim().length)) {
-                    switch(g){
-                        case 32:
-                        case 9:
-                        case 59:
-                        case 13:
-                        case 10:
-                            break;
-                        default:
-                            f += e.charAt(l);
-                    }
-                    g = 59;
-                }
-                switch(g){
-                    case 123:
-                        f = f.trim();
-                        q = f.charCodeAt(0);
-                        k = 1;
-                        for(t = ++l; l < B;){
-                            switch(g = e.charCodeAt(l)){
-                                case 123:
-                                    k++;
-                                    break;
-                                case 125:
-                                    k--;
-                                    break;
-                                case 47:
-                                    switch(g = e.charCodeAt(l + 1)){
-                                        case 42:
-                                        case 47:
-                                            a: {
-                                                for(u = l + 1; u < J; ++u)switch(e.charCodeAt(u)){
-                                                    case 47:
-                                                        if (42 === g && 42 === e.charCodeAt(u - 1) && l + 2 !== u) {
-                                                            l = u + 1;
-                                                            break a;
-                                                        }
-                                                        break;
-                                                    case 10:
-                                                        if (47 === g) {
-                                                            l = u + 1;
-                                                            break a;
-                                                        }
-                                                }
-                                                l = u;
-                                            }
-                                    }
-                                    break;
-                                case 91:
-                                    g++;
-                                case 40:
-                                    g++;
-                                case 34:
-                                case 39:
-                                    for(; (l++) < J && e.charCodeAt(l) !== g;);
-                            }
-                            if (0 === k) break;
-                            l++;
-                        }
-                        k = e.substring(t, l);
-                        0 === q && (q = (f = f.replace(ca, "").trim()).charCodeAt(0));
-                        switch(q){
-                            case 64:
-                                0 < r && (f = f.replace(N, ""));
-                                g = f.charCodeAt(1);
-                                switch(g){
-                                    case 100:
-                                    case 109:
-                                    case 115:
-                                    case 45:
-                                        r = c;
-                                        break;
-                                    default:
-                                        r = O;
-                                }
-                                k = M(c, r, k, g, a + 1);
-                                t = k.length;
-                                0 < A && (r = X(O, f, I), C = H(3, k, r, c, D, z, t, g, a, h), f = r.join(""), void 0 !== C && 0 === (t = (k = C.trim()).length) && (g = 0, k = ""));
-                                if (0 < t) switch(g){
-                                    case 115:
-                                        f = f.replace(da, ea);
-                                    case 100:
-                                    case 109:
-                                    case 45:
-                                        k = f + "{" + k + "}";
-                                        break;
-                                    case 107:
-                                        f = f.replace(fa, "$1 $2");
-                                        k = f + "{" + k + "}";
-                                        k = 1 === w || 2 === w && L("@" + k, 3) ? "@-webkit-" + k + "@" + k : "@" + k;
-                                        break;
-                                    default:
-                                        k = f + k, 112 === h && (k = (p += k, ""));
-                                }
-                                else k = "";
-                                break;
-                            default:
-                                k = M(c, X(c, f, I), k, h, a + 1);
-                        }
-                        F += k;
-                        k = I = r = u = q = 0;
-                        f = "";
-                        g = e.charCodeAt(++l);
-                        break;
-                    case 125:
-                    case 59:
-                        f = (0 < r ? f.replace(N, "") : f).trim();
-                        if (1 < (t = f.length)) switch(0 === u && (q = f.charCodeAt(0), 45 === q || 96 < q && 123 > q) && (t = (f = f.replace(" ", ":")).length), 0 < A && void 0 !== (C = H(1, f, c, d, D, z, p.length, h, a, h)) && 0 === (t = (f = C.trim()).length) && (f = "\0\0"), q = f.charCodeAt(0), g = f.charCodeAt(1), q){
-                            case 0:
-                                break;
-                            case 64:
-                                if (105 === g || 99 === g) {
-                                    G += f + e.charAt(l);
-                                    break;
-                                }
-                            default:
-                                58 !== f.charCodeAt(t - 1) && (p += P(f, q, g, f.charCodeAt(2)));
-                        }
-                        I = r = u = q = 0;
-                        f = "";
-                        g = e.charCodeAt(++l);
-                }
-            }
-            switch(g){
-                case 13:
-                case 10:
-                    47 === b ? b = 0 : 0 === 1 + q && 107 !== h && 0 < f.length && (r = 1, f += "\0");
-                    0 < A * Y && H(0, f, c, d, D, z, p.length, h, a, h);
-                    z = 1;
-                    D++;
-                    break;
-                case 59:
-                case 125:
-                    if (0 === b + n + v + m) {
-                        z++;
-                        break;
-                    }
-                default:
-                    z++;
-                    y = e.charAt(l);
-                    switch(g){
-                        case 9:
-                        case 32:
-                            if (0 === n + m + b) switch(x){
-                                case 44:
-                                case 58:
-                                case 9:
-                                case 32:
-                                    y = "";
-                                    break;
-                                default:
-                                    32 !== g && (y = " ");
-                            }
-                            break;
-                        case 0:
-                            y = "\\0";
-                            break;
-                        case 12:
-                            y = "\\f";
-                            break;
-                        case 11:
-                            y = "\\v";
-                            break;
-                        case 38:
-                            0 === n + b + m && (r = I = 1, y = "\f" + y);
-                            break;
-                        case 108:
-                            if (0 === n + b + m + E && 0 < u) switch(l - u){
-                                case 2:
-                                    112 === x && 58 === e.charCodeAt(l - 3) && (E = x);
-                                case 8:
-                                    111 === K && (E = K);
-                            }
-                            break;
-                        case 58:
-                            0 === n + b + m && (u = l);
-                            break;
-                        case 44:
-                            0 === b + v + n + m && (r = 1, y += "\r");
-                            break;
-                        case 34:
-                        case 39:
-                            0 === b && (n = n === g ? 0 : 0 === n ? g : n);
-                            break;
-                        case 91:
-                            0 === n + b + v && m++;
-                            break;
-                        case 93:
-                            0 === n + b + v && m--;
-                            break;
-                        case 41:
-                            0 === n + b + m && v--;
-                            break;
-                        case 40:
-                            if (0 === n + b + m) {
-                                if (0 === q) switch(2 * x + 3 * K){
-                                    case 533:
-                                        break;
-                                    default:
-                                        q = 1;
-                                }
-                                v++;
-                            }
-                            break;
-                        case 64:
-                            0 === b + v + n + m + u + k && (k = 1);
-                            break;
-                        case 42:
-                        case 47:
-                            if (!(0 < n + m + v)) switch(b){
-                                case 0:
-                                    switch(2 * g + 3 * e.charCodeAt(l + 1)){
-                                        case 235:
-                                            b = 47;
-                                            break;
-                                        case 220:
-                                            t = l, b = 42;
-                                    }
-                                    break;
-                                case 42:
-                                    47 === g && 42 === x && t + 2 !== l && (33 === e.charCodeAt(t + 2) && (p += e.substring(t, l + 1)), y = "", b = 0);
-                            }
-                    }
-                    0 === b && (f += y);
-            }
-            K = x;
-            x = g;
-            l++;
-        }
-        t = p.length;
-        if (0 < t) {
-            r = c;
-            if (0 < A && (C = H(2, p, r, d, D, z, t, h, a, h), void 0 !== C && 0 === (p = C).length)) return G + p + F;
-            p = r.join(",") + "{" + p + "}";
-            if (0 !== w * E) {
-                2 !== w || L(p, 2) || (E = 0);
-                switch(E){
-                    case 111:
-                        p = p.replace(ha, ":-moz-$1") + p;
-                        break;
-                    case 112:
-                        p = p.replace(Q, "::-webkit-input-$1") + p.replace(Q, "::-moz-$1") + p.replace(Q, ":-ms-input-$1") + p;
-                }
-                E = 0;
-            }
-        }
-        return G + p + F;
-    }
-    function X(d, c, e) {
-        var h = c.trim().split(ia);
-        c = h;
-        var a = h.length, m = d.length;
-        switch(m){
-            case 0:
-            case 1:
-                var b = 0;
-                for(d = 0 === m ? "" : d[0] + " "; b < a; ++b)c[b] = Z(d, c[b], e).trim();
-                break;
-            default:
-                var v = b = 0;
-                for(c = []; b < a; ++b)for(var n = 0; n < m; ++n)c[v++] = Z(d[n] + " ", h[b], e).trim();
-        }
-        return c;
-    }
-    function Z(d, c, e) {
-        var h = c.charCodeAt(0);
-        33 > h && (h = (c = c.trim()).charCodeAt(0));
-        switch(h){
-            case 38:
-                return c.replace(F, "$1" + d.trim());
-            case 58:
-                return d.trim() + c.replace(F, "$1" + d.trim());
-            default:
-                if (0 < 1 * e && 0 < c.indexOf("\f")) return c.replace(F, (58 === d.charCodeAt(0) ? "" : "$1") + d.trim());
-        }
-        return d + c;
-    }
-    function P(d, c, e, h) {
-        var a = d + ";", m = 2 * c + 3 * e + 4 * h;
-        if (944 === m) {
-            d = a.indexOf(":", 9) + 1;
-            var b = a.substring(d, a.length - 1).trim();
-            b = a.substring(0, d).trim() + b + ";";
-            return 1 === w || 2 === w && L(b, 1) ? "-webkit-" + b + b : b;
-        }
-        if (0 === w || 2 === w && !L(a, 1)) return a;
-        switch(m){
-            case 1015:
-                return 97 === a.charCodeAt(10) ? "-webkit-" + a + a : a;
-            case 951:
-                return 116 === a.charCodeAt(3) ? "-webkit-" + a + a : a;
-            case 963:
-                return 110 === a.charCodeAt(5) ? "-webkit-" + a + a : a;
-            case 1009:
-                if (100 !== a.charCodeAt(4)) break;
-            case 969:
-            case 942:
-                return "-webkit-" + a + a;
-            case 978:
-                return "-webkit-" + a + "-moz-" + a + a;
-            case 1019:
-            case 983:
-                return "-webkit-" + a + "-moz-" + a + "-ms-" + a + a;
-            case 883:
-                if (45 === a.charCodeAt(8)) return "-webkit-" + a + a;
-                if (0 < a.indexOf("image-set(", 11)) return a.replace(ja, "$1-webkit-$2") + a;
-                break;
-            case 932:
-                if (45 === a.charCodeAt(4)) switch(a.charCodeAt(5)){
-                    case 103:
-                        return "-webkit-box-" + a.replace("-grow", "") + "-webkit-" + a + "-ms-" + a.replace("grow", "positive") + a;
-                    case 115:
-                        return "-webkit-" + a + "-ms-" + a.replace("shrink", "negative") + a;
-                    case 98:
-                        return "-webkit-" + a + "-ms-" + a.replace("basis", "preferred-size") + a;
-                }
-                return "-webkit-" + a + "-ms-" + a + a;
-            case 964:
-                return "-webkit-" + a + "-ms-flex-" + a + a;
-            case 1023:
-                if (99 !== a.charCodeAt(8)) break;
-                b = a.substring(a.indexOf(":", 15)).replace("flex-", "").replace("space-between", "justify");
-                return "-webkit-box-pack" + b + "-webkit-" + a + "-ms-flex-pack" + b + a;
-            case 1005:
-                return ka.test(a) ? a.replace(aa, ":-webkit-") + a.replace(aa, ":-moz-") + a : a;
-            case 1e3:
-                b = a.substring(13).trim();
-                c = b.indexOf("-") + 1;
-                switch(b.charCodeAt(0) + b.charCodeAt(c)){
-                    case 226:
-                        b = a.replace(G, "tb");
-                        break;
-                    case 232:
-                        b = a.replace(G, "tb-rl");
-                        break;
-                    case 220:
-                        b = a.replace(G, "lr");
-                        break;
-                    default:
-                        return a;
-                }
-                return "-webkit-" + a + "-ms-" + b + a;
-            case 1017:
-                if (-1 === a.indexOf("sticky", 9)) break;
-            case 975:
-                c = (a = d).length - 10;
-                b = (33 === a.charCodeAt(c) ? a.substring(0, c) : a).substring(d.indexOf(":", 7) + 1).trim();
-                switch(m = b.charCodeAt(0) + (b.charCodeAt(7) | 0)){
-                    case 203:
-                        if (111 > b.charCodeAt(8)) break;
-                    case 115:
-                        a = a.replace(b, "-webkit-" + b) + ";" + a;
-                        break;
-                    case 207:
-                    case 102:
-                        a = a.replace(b, "-webkit-" + (102 < m ? "inline-" : "") + "box") + ";" + a.replace(b, "-webkit-" + b) + ";" + a.replace(b, "-ms-" + b + "box") + ";" + a;
-                }
-                return a + ";";
-            case 938:
-                if (45 === a.charCodeAt(5)) switch(a.charCodeAt(6)){
-                    case 105:
-                        return b = a.replace("-items", ""), "-webkit-" + a + "-webkit-box-" + b + "-ms-flex-" + b + a;
-                    case 115:
-                        return "-webkit-" + a + "-ms-flex-item-" + a.replace(ba, "") + a;
-                    default:
-                        return "-webkit-" + a + "-ms-flex-line-pack" + a.replace("align-content", "").replace(ba, "") + a;
-                }
-                break;
-            case 973:
-            case 989:
-                if (45 !== a.charCodeAt(3) || 122 === a.charCodeAt(4)) break;
-            case 931:
-            case 953:
-                if (!0 === la.test(d)) return 115 === (b = d.substring(d.indexOf(":") + 1)).charCodeAt(0) ? P(d.replace("stretch", "fill-available"), c, e, h).replace(":fill-available", ":stretch") : a.replace(b, "-webkit-" + b) + a.replace(b, "-moz-" + b.replace("fill-", "")) + a;
-                break;
-            case 962:
-                if (a = "-webkit-" + a + (102 === a.charCodeAt(5) ? "-ms-" + a : "") + a, 211 === e + h && 105 === a.charCodeAt(13) && 0 < a.indexOf("transform", 10)) return a.substring(0, a.indexOf(";", 27) + 1).replace(ma, "$1-webkit-$2") + a;
-        }
-        return a;
-    }
-    function L(d, c) {
-        var e = d.indexOf(1 === c ? ":" : "{"), h = d.substring(0, 3 !== c ? e : 10);
-        e = d.substring(e + 1, d.length - 1);
-        return R(2 !== c ? h : h.replace(na, "$1"), e, c);
-    }
-    function ea(d, c) {
-        var e = P(c, c.charCodeAt(0), c.charCodeAt(1), c.charCodeAt(2));
-        return e !== c + ";" ? e.replace(oa, " or ($1)").substring(4) : "(" + c + ")";
-    }
-    function H(d, c, e, h, a, m, b, v, n, q) {
-        for(var g = 0, x = c, w; g < A; ++g)switch(w = S[g].call(B, d, x, e, h, a, m, b, v, n, q)){
-            case void 0:
-            case !1:
-            case !0:
-            case null:
-                break;
-            default:
-                x = w;
-        }
-        if (x !== c) return x;
-    }
-    function T(d) {
-        switch(d){
-            case void 0:
-            case null:
-                A = S.length = 0;
-                break;
-            default:
-                if ("function" === typeof d) S[A++] = d;
-                else if ("object" === typeof d) for(var c = 0, e = d.length; c < e; ++c)T(d[c]);
-                else Y = !!d | 0;
-        }
-        return T;
-    }
-    function U(d) {
-        d = d.prefix;
-        void 0 !== d && (R = null, d ? "function" !== typeof d ? w = 1 : (w = 2, R = d) : w = 0);
-        return U;
-    }
-    function B(d, c) {
-        var e = d;
-        33 > e.charCodeAt(0) && (e = e.trim());
-        V = e;
-        e = [
-            V
-        ];
-        if (0 < A) {
-            var h = H(-1, c, e, e, D, z, 0, 0, 0, 0);
-            void 0 !== h && "string" === typeof h && (c = h);
-        }
-        var a = M(O, e, c, 0, 0);
-        0 < A && (h = H(-2, a, e, e, D, z, a.length, 0, 0, 0), void 0 !== h && (a = h));
-        V = "";
-        E = 0;
-        z = D = 1;
-        return a;
-    }
-    var ca = /^\0+/g, N = /[\0\r\f]/g, aa = /: */g, ka = /zoo|gra/, ma = /([,: ])(transform)/g, ia = /,\r+?/g, F = /([\t\r\n ])*\f?&/g, fa = /@(k\w+)\s*(\S*)\s*/, Q = /::(place)/g, ha = /:(read-only)/g, G = /[svh]\w+-[tblr]{2}/, da = /\(\s*(.*)\s*\)/g, oa = /([\s\S]*?);/g, ba = /-self|flex-/g, na = /[^]*?(:[rp][el]a[\w-]+)[^]*/, la = /stretch|:\s*\w+\-(?:conte|avail)/, ja = /([^-])(image-set\()/, z = 1, D = 1, E = 0, w = 1, O = [], S = [], A = 0, R = null, Y = 0, V = "";
-    B.use = T;
-    B.set = U;
-    void 0 !== W && U(W);
-    return B;
-}
-exports.default = stylis_min;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"pVndT":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var unitlessKeys = {
-    animationIterationCount: 1,
-    borderImageOutset: 1,
-    borderImageSlice: 1,
-    borderImageWidth: 1,
-    boxFlex: 1,
-    boxFlexGroup: 1,
-    boxOrdinalGroup: 1,
-    columnCount: 1,
-    columns: 1,
-    flex: 1,
-    flexGrow: 1,
-    flexPositive: 1,
-    flexShrink: 1,
-    flexNegative: 1,
-    flexOrder: 1,
-    gridRow: 1,
-    gridRowEnd: 1,
-    gridRowSpan: 1,
-    gridRowStart: 1,
-    gridColumn: 1,
-    gridColumnEnd: 1,
-    gridColumnSpan: 1,
-    gridColumnStart: 1,
-    msGridRow: 1,
-    msGridRowSpan: 1,
-    msGridColumn: 1,
-    msGridColumnSpan: 1,
-    fontWeight: 1,
-    lineHeight: 1,
-    opacity: 1,
-    order: 1,
-    orphans: 1,
-    tabSize: 1,
-    widows: 1,
-    zIndex: 1,
-    zoom: 1,
-    WebkitLineClamp: 1,
-    // SVG-related properties
-    fillOpacity: 1,
-    floodOpacity: 1,
-    stopOpacity: 1,
-    strokeDasharray: 1,
-    strokeDashoffset: 1,
-    strokeMiterlimit: 1,
-    strokeOpacity: 1,
-    strokeWidth: 1
-};
-exports.default = unitlessKeys;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9JzNk":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _memoize = require("@emotion/memoize");
-var _memoizeDefault = parcelHelpers.interopDefault(_memoize);
-var reactPropsRegex = /^((children|dangerouslySetInnerHTML|key|ref|autoFocus|defaultValue|defaultChecked|innerHTML|suppressContentEditableWarning|suppressHydrationWarning|valueLink|abbr|accept|acceptCharset|accessKey|action|allow|allowUserMedia|allowPaymentRequest|allowFullScreen|allowTransparency|alt|async|autoComplete|autoPlay|capture|cellPadding|cellSpacing|challenge|charSet|checked|cite|classID|className|cols|colSpan|content|contentEditable|contextMenu|controls|controlsList|coords|crossOrigin|data|dateTime|decoding|default|defer|dir|disabled|disablePictureInPicture|download|draggable|encType|enterKeyHint|form|formAction|formEncType|formMethod|formNoValidate|formTarget|frameBorder|headers|height|hidden|high|href|hrefLang|htmlFor|httpEquiv|id|inputMode|integrity|is|keyParams|keyType|kind|label|lang|list|loading|loop|low|marginHeight|marginWidth|max|maxLength|media|mediaGroup|method|min|minLength|multiple|muted|name|nonce|noValidate|open|optimum|pattern|placeholder|playsInline|poster|preload|profile|radioGroup|readOnly|referrerPolicy|rel|required|reversed|role|rows|rowSpan|sandbox|scope|scoped|scrolling|seamless|selected|shape|size|sizes|slot|span|spellCheck|src|srcDoc|srcLang|srcSet|start|step|style|summary|tabIndex|target|title|translate|type|useMap|value|width|wmode|wrap|about|datatype|inlist|prefix|property|resource|typeof|vocab|autoCapitalize|autoCorrect|autoSave|color|incremental|fallback|inert|itemProp|itemScope|itemType|itemID|itemRef|on|option|results|security|unselectable|accentHeight|accumulate|additive|alignmentBaseline|allowReorder|alphabetic|amplitude|arabicForm|ascent|attributeName|attributeType|autoReverse|azimuth|baseFrequency|baselineShift|baseProfile|bbox|begin|bias|by|calcMode|capHeight|clip|clipPathUnits|clipPath|clipRule|colorInterpolation|colorInterpolationFilters|colorProfile|colorRendering|contentScriptType|contentStyleType|cursor|cx|cy|d|decelerate|descent|diffuseConstant|direction|display|divisor|dominantBaseline|dur|dx|dy|edgeMode|elevation|enableBackground|end|exponent|externalResourcesRequired|fill|fillOpacity|fillRule|filter|filterRes|filterUnits|floodColor|floodOpacity|focusable|fontFamily|fontSize|fontSizeAdjust|fontStretch|fontStyle|fontVariant|fontWeight|format|from|fr|fx|fy|g1|g2|glyphName|glyphOrientationHorizontal|glyphOrientationVertical|glyphRef|gradientTransform|gradientUnits|hanging|horizAdvX|horizOriginX|ideographic|imageRendering|in|in2|intercept|k|k1|k2|k3|k4|kernelMatrix|kernelUnitLength|kerning|keyPoints|keySplines|keyTimes|lengthAdjust|letterSpacing|lightingColor|limitingConeAngle|local|markerEnd|markerMid|markerStart|markerHeight|markerUnits|markerWidth|mask|maskContentUnits|maskUnits|mathematical|mode|numOctaves|offset|opacity|operator|order|orient|orientation|origin|overflow|overlinePosition|overlineThickness|panose1|paintOrder|pathLength|patternContentUnits|patternTransform|patternUnits|pointerEvents|points|pointsAtX|pointsAtY|pointsAtZ|preserveAlpha|preserveAspectRatio|primitiveUnits|r|radius|refX|refY|renderingIntent|repeatCount|repeatDur|requiredExtensions|requiredFeatures|restart|result|rotate|rx|ry|scale|seed|shapeRendering|slope|spacing|specularConstant|specularExponent|speed|spreadMethod|startOffset|stdDeviation|stemh|stemv|stitchTiles|stopColor|stopOpacity|strikethroughPosition|strikethroughThickness|string|stroke|strokeDasharray|strokeDashoffset|strokeLinecap|strokeLinejoin|strokeMiterlimit|strokeOpacity|strokeWidth|surfaceScale|systemLanguage|tableValues|targetX|targetY|textAnchor|textDecoration|textRendering|textLength|to|transform|u1|u2|underlinePosition|underlineThickness|unicode|unicodeBidi|unicodeRange|unitsPerEm|vAlphabetic|vHanging|vIdeographic|vMathematical|values|vectorEffect|version|vertAdvY|vertOriginX|vertOriginY|viewBox|viewTarget|visibility|widths|wordSpacing|writingMode|x|xHeight|x1|x2|xChannelSelector|xlinkActuate|xlinkArcrole|xlinkHref|xlinkRole|xlinkShow|xlinkTitle|xlinkType|xmlBase|xmlns|xmlnsXlink|xmlLang|xmlSpace|y|y1|y2|yChannelSelector|z|zoomAndPan|for|class|autofocus)|(([Dd][Aa][Tt][Aa]|[Aa][Rr][Ii][Aa]|x)-.*))$/; // https://esbench.com/bench/5bfee68a4cd7e6009ef61d23
-var isPropValid = /* #__PURE__ */ (0, _memoizeDefault.default)(function(prop) {
-    return reactPropsRegex.test(prop) || prop.charCodeAt(0) === 111 && prop.charCodeAt(1) === 110 && prop.charCodeAt(2) < 91;
-});
-exports.default = isPropValid;
-
-},{"@emotion/memoize":"2vzJd","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2vzJd":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-function memoize(fn) {
-    var cache = Object.create(null);
-    return function(arg) {
-        if (cache[arg] === undefined) cache[arg] = fn(arg);
-        return cache[arg];
-    };
-}
-exports.default = memoize;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1GfsB":[function(require,module,exports) {
-"use strict";
-var reactIs = require("react-is");
-/**
- * Copyright 2015, Yahoo! Inc.
- * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
- */ var REACT_STATICS = {
-    childContextTypes: true,
-    contextType: true,
-    contextTypes: true,
-    defaultProps: true,
-    displayName: true,
-    getDefaultProps: true,
-    getDerivedStateFromError: true,
-    getDerivedStateFromProps: true,
-    mixins: true,
-    propTypes: true,
-    type: true
-};
-var KNOWN_STATICS = {
-    name: true,
-    length: true,
-    prototype: true,
-    caller: true,
-    callee: true,
-    arguments: true,
-    arity: true
-};
-var FORWARD_REF_STATICS = {
-    "$$typeof": true,
-    render: true,
-    defaultProps: true,
-    displayName: true,
-    propTypes: true
-};
-var MEMO_STATICS = {
-    "$$typeof": true,
-    compare: true,
-    defaultProps: true,
-    displayName: true,
-    propTypes: true,
-    type: true
-};
-var TYPE_STATICS = {};
-TYPE_STATICS[reactIs.ForwardRef] = FORWARD_REF_STATICS;
-TYPE_STATICS[reactIs.Memo] = MEMO_STATICS;
-function getStatics(component) {
-    // React v16.11 and below
-    if (reactIs.isMemo(component)) return MEMO_STATICS;
-     // React v16.12 and above
-    return TYPE_STATICS[component["$$typeof"]] || REACT_STATICS;
-}
-var defineProperty = Object.defineProperty;
-var getOwnPropertyNames = Object.getOwnPropertyNames;
-var getOwnPropertySymbols = Object.getOwnPropertySymbols;
-var getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
-var getPrototypeOf = Object.getPrototypeOf;
-var objectPrototype = Object.prototype;
-function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
-    if (typeof sourceComponent !== "string") {
-        // don't hoist over string (html) components
-        if (objectPrototype) {
-            var inheritedComponent = getPrototypeOf(sourceComponent);
-            if (inheritedComponent && inheritedComponent !== objectPrototype) hoistNonReactStatics(targetComponent, inheritedComponent, blacklist);
-        }
-        var keys = getOwnPropertyNames(sourceComponent);
-        if (getOwnPropertySymbols) keys = keys.concat(getOwnPropertySymbols(sourceComponent));
-        var targetStatics = getStatics(targetComponent);
-        var sourceStatics = getStatics(sourceComponent);
-        for(var i = 0; i < keys.length; ++i){
-            var key = keys[i];
-            if (!KNOWN_STATICS[key] && !(blacklist && blacklist[key]) && !(sourceStatics && sourceStatics[key]) && !(targetStatics && targetStatics[key])) {
-                var descriptor = getOwnPropertyDescriptor(sourceComponent, key);
-                try {
-                    // Avoid failures from read-only properties
-                    defineProperty(targetComponent, key, descriptor);
-                } catch (e) {}
-            }
-        }
-    }
-    return targetComponent;
-}
-module.exports = hoistNonReactStatics;
-
-},{"react-is":"7EuwB"}],"45DZp":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "BRAND_TEXT_COLORS", ()=>BRAND_TEXT_COLORS);
-parcelHelpers.export(exports, "devices", ()=>devices);
-let BRAND_TEXT_COLORS;
-(function(BRAND_TEXT_COLORS) {
-    BRAND_TEXT_COLORS["BODY"] = "#335c67";
-    BRAND_TEXT_COLORS["LARGE"] = "#e09f3e";
-    BRAND_TEXT_COLORS["SMALL_BODY"] = "#540b0e";
-})(BRAND_TEXT_COLORS || (BRAND_TEXT_COLORS = {}));
-const sizes = {
-    mobileS: "320px",
-    mobileM: "375px",
-    mobileL: "425px",
-    tablet: "768px",
-    laptop: "1024px",
-    laptopL: "1440px",
-    desktop: "2560px"
-};
-const devices = {
-    mobileS: `(max-width: ${sizes.mobileS})`,
-    mobileM: `(max-width: ${sizes.mobileM})`,
-    mobileL: `(max-width: ${sizes.mobileL})`,
-    tablet: `(max-width: ${sizes.tablet})`,
-    laptop: `(max-width: ${sizes.laptop})`,
-    laptopL: `(max-width: ${sizes.laptopL})`,
-    desktop: `(max-width: ${sizes.desktop})`
-};
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"c52lp":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$7c7e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$7c7e.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-// import { APCAcontrast, sRGBtoY, displayP3toY, colorParsley } from "bridge-pca";
-var _styledComponents = require("styled-components");
-var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
-var _global = require("../styles/global");
-var _swapSvg = require("url:../assets/swap.svg");
-var _swapSvgDefault = parcelHelpers.interopDefault(_swapSvg);
-var _constants = require("../constants");
-var _s = $RefreshSig$();
-const ContrastChecker = ()=>{
-    _s();
-    const [textColor, setTextColor] = (0, _react.useState)("#FEF3C7");
-    const [bgColor, setBgColor] = (0, _react.useState)("#059669");
-    const handleTextColorChange = (event)=>{
-        setTextColor(event.target.value.toUpperCase());
-    };
-    const handleBgColorChange = (event)=>{
-        setBgColor(event.target.value.toUpperCase());
-    };
-    const swapColors = (event)=>{
-        console.log("SWAPPING COLORS");
-        event.preventDefault();
-        const tempColor = textColor;
-        setTextColor(bgColor);
-        setBgColor(tempColor);
-    };
-    const handleSubmit = (event)=>{
-        console.log(event.target, {
-            textColor,
-            bgColor
-        });
-    };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Wrapper, {
-        align: "center",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledForm, {
-                onSubmit: handleSubmit,
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledColSection), {
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledText), {
-                                type: "small",
-                                color: (0, _constants.BRAND_TEXT_COLORS).BODY,
-                                children: "Text Color"
-                            }, void 0, false, {
-                                fileName: "src/components/ContrastChecker.tsx",
-                                lineNumber: 38,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledColorPickerIcon, {
-                                color: textColor
-                            }, void 0, false, {
-                                fileName: "src/components/ContrastChecker.tsx",
-                                lineNumber: 41,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledInputs, {
-                                type: "text",
-                                name: "textColor",
-                                value: textColor,
-                                onChange: handleTextColorChange,
-                                placeholder: "Enter text color"
-                            }, void 0, false, {
-                                fileName: "src/components/ContrastChecker.tsx",
-                                lineNumber: 42,
-                                columnNumber: 11
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/components/ContrastChecker.tsx",
-                        lineNumber: 37,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(SwapButton, {
-                        onClick: swapColors,
-                        type: "button",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                            src: (0, _swapSvgDefault.default),
-                            alt: "Swap icon"
-                        }, void 0, false, {
-                            fileName: "src/components/ContrastChecker.tsx",
-                            lineNumber: 52,
-                            columnNumber: 11
-                        }, undefined)
-                    }, void 0, false, {
-                        fileName: "src/components/ContrastChecker.tsx",
-                        lineNumber: 51,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledColSection), {
-                        align: "end",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledText), {
-                                type: "small",
-                                color: (0, _constants.BRAND_TEXT_COLORS).BODY,
-                                children: "Background Color"
-                            }, void 0, false, {
-                                fileName: "src/components/ContrastChecker.tsx",
-                                lineNumber: 56,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledColorPickerIcon, {
-                                color: bgColor
-                            }, void 0, false, {
-                                fileName: "src/components/ContrastChecker.tsx",
-                                lineNumber: 59,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledInputs, {
-                                type: "text",
-                                name: "bgColor",
-                                value: bgColor,
-                                onChange: handleBgColorChange,
-                                placeholder: "Enter background color"
-                            }, void 0, false, {
-                                fileName: "src/components/ContrastChecker.tsx",
-                                lineNumber: 60,
-                                columnNumber: 11
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/components/ContrastChecker.tsx",
-                        lineNumber: 55,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/ContrastChecker.tsx",
-                lineNumber: 36,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledTextDisplay, {
-                textColor: textColor,
-                bgColor: bgColor,
-                children: "The quick brown fox jumped over the lazy dog"
-            }, void 0, false, {
-                fileName: "src/components/ContrastChecker.tsx",
-                lineNumber: 70,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/components/ContrastChecker.tsx",
-        lineNumber: 35,
-        columnNumber: 5
-    }, undefined);
-};
-_s(ContrastChecker, "gFmZInPNV4O/lVw8fo+f3hJ3tjA=");
-_c = ContrastChecker;
-const Wrapper = (0, _styledComponentsDefault.default)((0, _global.StyledColSection))`
-  z-index: 1;
-  margin-top: -10%;
-
-  @media ${(0, _constants.devices).mobileL} {
-    margin-top: 10%;
-  }
-`;
-_c1 = Wrapper;
-const StyledForm = (0, _styledComponentsDefault.default).form`
-  display: flex;
-  justify-content: center;
-  grid-gap: 20px;
-  gap: 20px;
-
-  @media ${(0, _constants.devices).mobileL} {
-    flex-direction: column;
-    align-items: center;
-    grid-gap: 10px;
-    gap: 10px;
-    width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-`;
-_c2 = StyledForm;
-const StyledInputs = (0, _styledComponentsDefault.default).input`
-  padding: 5px;
-  border: 3px solid #cbf3f0;
-  border-radius: 5px;
-
-  @media ${(0, _constants.devices).mobileL} {
-    width: 100%;
-  }
-`;
-_c3 = StyledInputs;
-const StyledColorPickerIcon = (0, _styledComponentsDefault.default).div`
-  width: 24px;
-  height: 24px;
-  border-radius: 12px;
-  background-color: ${(props)=>props.color};
-`;
-_c4 = StyledColorPickerIcon;
-const StyledTextDisplay = (0, _styledComponentsDefault.default).div`
-  background-color: ${(props)=>props.bgColor};
-  color: ${(props)=>props.textColor};
-  width: 300px;
-  height: 200px;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 24px;
-  margin-top: 20px;
-
-  @media ${(0, _constants.devices).mobileL} {
-    width: 90%;
-    height: 200px;
-  }
-`;
-_c5 = StyledTextDisplay;
-const SwapButton = (0, _styledComponentsDefault.default).button`
-  background: transparent;
-  width: 30px;
-  height: 30px;
-  border-radius: 15px;
-  cursor: pointer;
-
-  @media ${(0, _constants.devices).mobileL} {
-    transform: rotateZ(90deg);
-  }
-`;
-_c6 = SwapButton;
-exports.default = ContrastChecker;
-var _c, _c1, _c2, _c3, _c4, _c5, _c6;
-$RefreshReg$(_c, "ContrastChecker");
-$RefreshReg$(_c1, "Wrapper");
-$RefreshReg$(_c2, "StyledForm");
-$RefreshReg$(_c3, "StyledInputs");
-$RefreshReg$(_c4, "StyledColorPickerIcon");
-$RefreshReg$(_c5, "StyledTextDisplay");
-$RefreshReg$(_c6, "SwapButton");
-
-  $parcel$ReactRefreshHelpers$7c7e.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../styles/global":"jHMjs","styled-components":"1U3k6","url:../assets/swap.svg":"g4rXk","../constants":"45DZp"}],"g4rXk":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("6EXJA") + "swap.9c464f13.svg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"lgJ39":[function(require,module,exports) {
-"use strict";
-var bundleURL = {};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return "/";
-}
-function getBaseURL(url) {
-    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
-} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
-    if (!matches) throw new Error("Origin not found");
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"95pB0":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$d617 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$d617.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _styledComponents = require("styled-components");
-var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
-const Layout = ({ children  })=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledLayout, {
-        children: children
-    }, void 0, false, {
-        fileName: "src/components/Layout.tsx",
-        lineNumber: 5,
-        columnNumber: 10
-    }, undefined);
-};
-_c = Layout;
-const StyledLayout = (0, _styledComponentsDefault.default).section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  align-self: center;
-  margin-top: 20px;
-`;
-_c1 = StyledLayout;
-exports.default = Layout;
-var _c, _c1;
-$RefreshReg$(_c, "Layout");
-$RefreshReg$(_c1, "StyledLayout");
-
-  $parcel$ReactRefreshHelpers$d617.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","styled-components":"1U3k6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"35enc":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$d5a6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$d5a6.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _styledComponents = require("styled-components");
-var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
-var _constants = require("../constants");
-var _global = require("../styles/global");
-var _blob = require("./Blob");
-var _blobDefault = parcelHelpers.interopDefault(_blob);
-var _waves = require("./Waves");
-var _wavesDefault = parcelHelpers.interopDefault(_waves);
-const Header = ({ type  })=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledHeaderWrapper, {
-        children: [
-            type === "blob" ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _blobDefault.default), {
-                width: "350px"
-            }, void 0, false, {
-                fileName: "src/components/Header.tsx",
-                lineNumber: 13,
-                columnNumber: 26
-            }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _wavesDefault.default), {
-                color: "#cbf3f0"
-            }, void 0, false, {
-                fileName: "src/components/Header.tsx",
-                lineNumber: 13,
-                columnNumber: 53
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledHeaderText, {
-                type: "large",
-                color: (0, _constants.BRAND_TEXT_COLORS).BODY,
-                children: "Color Contrast Tool"
-            }, void 0, false, {
-                fileName: "src/components/Header.tsx",
-                lineNumber: 14,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledSubHeaderText, {
-                type: "small",
-                color: (0, _constants.BRAND_TEXT_COLORS).BODY,
-                children: "Calculated using the new WCAG 3 - APCA algorithm currently being developed."
-            }, void 0, false, {
-                fileName: "src/components/Header.tsx",
-                lineNumber: 17,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/components/Header.tsx",
-        lineNumber: 12,
-        columnNumber: 5
-    }, undefined);
-};
-_c = Header;
-const StyledHeaderWrapper = (0, _styledComponentsDefault.default).div`
-  position: relative;
-`;
-_c1 = StyledHeaderWrapper;
-const StyledHeaderText = (0, _styledComponentsDefault.default)((0, _global.StyledText))`
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  text-transform: uppercase;
-
-  @media ${(0, _constants.devices).mobileL} {
-    font-size: 22px;
-  }
-`;
-_c2 = StyledHeaderText;
-const StyledSubHeaderText = (0, _styledComponentsDefault.default)((0, _global.StyledText))`
-  position: absolute;
-  top: 60px;
-  left: 10px;
-  width: 25%;
-  word-wrap: normal;
-  text-transform: uppercase;
-
-  @media ${(0, _constants.devices).mobileL} {
-    top: 40px;
-    width: 100%;
-    font-size: 12px;
-  }
-`;
-_c3 = StyledSubHeaderText;
-exports.default = Header;
-var _c, _c1, _c2, _c3;
-$RefreshReg$(_c, "Header");
-$RefreshReg$(_c1, "StyledHeaderWrapper");
-$RefreshReg$(_c2, "StyledHeaderText");
-$RefreshReg$(_c3, "StyledSubHeaderText");
-
-  $parcel$ReactRefreshHelpers$d5a6.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","styled-components":"1U3k6","../styles/global":"jHMjs","./Blob":"5vqDi","./Waves":"iu8jy","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../constants":"45DZp"}],"5vqDi":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$6469 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$6469.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-const Blob = (props)=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
-        version: "1.1",
-        xmlns: "http://www.w3.org/2000/svg",
-        viewBox: "0 0 500 500",
-        width: props?.width || "100%",
-        id: "blobSvg",
-        filter: "blur(0px)",
-        style: {
-            opacity: 1
-        },
-        transform: "rotate(0)",
-        children: [
-            " ",
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("defs", {
-                children: [
-                    " ",
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("linearGradient", {
-                        id: "gradient",
-                        x1: "0%",
-                        y1: "0%",
-                        x2: "0%",
-                        y2: "100%",
-                        children: [
-                            " ",
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("stop", {
-                                offset: "0%",
-                                style: {
-                                    stopColor: "rgb(84, 11, 14)"
-                                }
-                            }, void 0, false, {
-                                fileName: "src/components/Blob.tsx",
-                                lineNumber: 20,
-                                columnNumber: 11
-                            }, undefined),
-                            " ",
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("stop", {
-                                offset: "100%",
-                                style: {
-                                    stopColor: "rgb(224, 159, 62)"
-                                }
-                            }, void 0, false, {
-                                fileName: "src/components/Blob.tsx",
-                                lineNumber: 21,
-                                columnNumber: 11
-                            }, undefined),
-                            " "
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/components/Blob.tsx",
-                        lineNumber: 18,
-                        columnNumber: 9
-                    }, undefined),
-                    " "
-                ]
-            }, void 0, true, {
-                fileName: "src/components/Blob.tsx",
-                lineNumber: 16,
-                columnNumber: 7
-            }, undefined),
-            " ",
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
-                id: "blob",
-                fill: "url(#gradient)",
-                style: {
-                    opacity: 1
-                },
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("animate", {
-                    attributeName: "d",
-                    dur: "10s",
-                    repeatCount: "indefinite",
-                    values: "M400,314Q352,378,277,420Q202,462,143,396Q84,330,66.5,241.5Q49,153,125.5,97.5Q202,42,298.5,55Q395,68,421.5,159Q448,250,400,314Z;M392.2525,331.53996Q379.05994,413.07992,285.7525,456.15485Q192.44505,499.22978,100.80019,432.44731Q9.15533,365.66484,30.81018,260.57493Q52.46503,155.48501,121.45005,74.10764Q190.43506,-7.26974,268.13261,60.97003Q345.83016,129.2098,375.63761,189.6049Q405.44505,250,392.2525,331.53996Z;M388.67097,319.27849Q360.55699,388.55699,291.23441,379.72688Q221.91183,370.89678,145.00645,354.28387Q68.10108,337.67097,71.32903,251.33548Q74.55699,165,142.39247,119.95591Q210.22796,74.91183,286.12043,91.61398Q362.0129,108.31613,389.39892,179.15806Q416.78495,250,388.67097,319.27849Z;M429.79847,339.54154Q392.67727,429.08308,294.97368,455.00137Q197.27008,480.91966,143.94598,403.56786Q90.62188,326.21607,83.52769,246.22992Q76.43351,166.24376,136.8518,92.77008Q197.27008,19.29641,287.1482,55Q377.02632,90.70359,421.97299,170.3518Q466.91966,250,429.79847,339.54154Z;M390.7302,319.10952Q360.37524,388.21905,284.62068,409.39959Q208.86612,430.58014,161.11156,373.20082Q113.35701,315.8215,88.46857,238.04463Q63.58014,160.26776,136.76776,117.04463Q209.95537,73.8215,303.79007,69.52027Q397.62476,65.21905,409.35497,157.60952Q421.08517,250,390.7302,319.10952Z;M400,314Q352,378,277,420Q202,462,143,396Q84,330,66.5,241.5Q49,153,125.5,97.5Q202,42,298.5,55Q395,68,421.5,159Q448,250,400,314Z"
-                }, void 0, false, {
-                    fileName: "src/components/Blob.tsx",
-                    lineNumber: 25,
-                    columnNumber: 9
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/components/Blob.tsx",
-                lineNumber: 24,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/components/Blob.tsx",
-        lineNumber: 5,
-        columnNumber: 5
-    }, undefined);
-};
-_c = Blob;
-exports.default = Blob;
-var _c;
-$RefreshReg$(_c, "Blob");
-
-  $parcel$ReactRefreshHelpers$6469.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iu8jy":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$e565 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$e565.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-const Waves = (props)=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
-        xmlns: "http://www.w3.org/2000/svg",
-        viewBox: "0 0 1440 320",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
-            fill: props?.color || "#0099ff",
-            fillOpacity: "1",
-            d: "M0,256L34.3,245.3C68.6,235,137,213,206,186.7C274.3,160,343,128,411,106.7C480,85,549,75,617,85.3C685.7,96,754,128,823,138.7C891.4,149,960,139,1029,149.3C1097.1,160,1166,192,1234,186.7C1302.9,181,1371,139,1406,117.3L1440,96L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z"
-        }, void 0, false, {
-            fileName: "src/components/Waves.tsx",
-            lineNumber: 6,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/components/Waves.tsx",
-        lineNumber: 5,
-        columnNumber: 5
-    }, undefined);
-};
-_c = Waves;
-exports.default = Waves;
-var _c;
-$RefreshReg$(_c, "Waves");
-
-  $parcel$ReactRefreshHelpers$e565.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lOjBx":[function(require,module,exports) {
+},{}],"lOjBx":[function(require,module,exports) {
 "use strict";
 var m = require("react-dom");
 var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
@@ -29612,6 +27072,4174 @@ module.exports = require("./cjs/scheduler.development.js");
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
 })();
 
-},{}]},["1xC6H","6FqiZ","4aBH6"], "4aBH6", "parcelRequire1a27")
+},{}],"7F5Te":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$0342 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$0342.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "App", ()=>App);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _global = require("./styles/global");
+var _globalDefault = parcelHelpers.interopDefault(_global);
+var _contrastChecker = require("./components/ContrastChecker");
+var _contrastCheckerDefault = parcelHelpers.interopDefault(_contrastChecker);
+var _layout = require("./components/Layout");
+var _layoutDefault = parcelHelpers.interopDefault(_layout);
+var _header = require("./components/Header");
+var _headerDefault = parcelHelpers.interopDefault(_header);
+var _footnote = require("./components/Footnote");
+var _footnoteDefault = parcelHelpers.interopDefault(_footnote);
+var _footer = require("./components/Footer");
+var _footerDefault = parcelHelpers.interopDefault(_footer);
+function App() {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _globalDefault.default), {}, void 0, false, {
+                fileName: "src/App.tsx",
+                lineNumber: 13,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {
+                type: "wave"
+            }, void 0, false, {
+                fileName: "src/App.tsx",
+                lineNumber: 14,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _layoutDefault.default), {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contrastCheckerDefault.default), {}, void 0, false, {
+                        fileName: "src/App.tsx",
+                        lineNumber: 16,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footnoteDefault.default), {}, void 0, false, {
+                        fileName: "src/App.tsx",
+                        lineNumber: 17,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerDefault.default), {}, void 0, false, {
+                        fileName: "src/App.tsx",
+                        lineNumber: 18,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "src/App.tsx",
+                lineNumber: 15,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true);
+}
+_c = App;
+var _c;
+$RefreshReg$(_c, "App");
+
+  $parcel$ReactRefreshHelpers$0342.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./styles/global":"jHMjs","./components/ContrastChecker":"c52lp","./components/Layout":"95pB0","./components/Header":"35enc","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/Footnote":"kgI26","./components/Footer":"eHp76"}],"jHMjs":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "StyledRowSection", ()=>StyledRowSection);
+parcelHelpers.export(exports, "StyledColSection", ()=>StyledColSection);
+parcelHelpers.export(exports, "StyledText", ()=>StyledText);
+var _styledComponents = require("styled-components");
+var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
+var _constants = require("../constants");
+const StyledRowSection = (0, _styledComponentsDefault.default).section`
+  display: flex;
+  flex-direction: row;
+  align-items: ${(props)=>props?.vAlign ? props?.vAlign == "start" ? "flex-start" : props?.vAlign == "end" ? "flex-end" : "center" : "center"};
+  justify-content: ${(props)=>props?.align ? props?.align == "start" ? "flex-start" : props?.align == "end" ? "flex-end" : "center" : "center"};
+  grid-gap: 30px;
+  gap: 30px;
+
+  @media ${(0, _constants.devices).mobileL} {
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+const StyledColSection = (0, _styledComponentsDefault.default).section`
+  display: flex;
+  flex-direction: column;
+  justify-content: ${(props)=>props?.vAlign ? props?.vAlign == "start" ? "flex-start" : props?.vAlign == "end" ? "flex-end" : "center" : "center"};
+  align-items: ${(props)=>props?.align ? props?.align == "start" ? "flex-start" : props?.align == "end" ? "flex-end" : "center" : "center"};
+  grid-gap: 10px;
+  gap: 10px;
+
+  @media ${(0, _constants.devices).mobileL} {
+    align-items: center;
+  }
+`;
+const StyledText = (0, _styledComponentsDefault.default).p`
+  font-size: ${(props)=>props.type === "small" ? "16px" : props.type === "medium" ? "24px" : "36px"};
+  color: ${(props)=>props.color};
+  ${(props)=>props?.bold && `font-weight: 700`}
+`;
+const GlobalStyle = (0, _styledComponents.createGlobalStyle)`
+   *{
+      margin: 0;
+      padding: 0;
+      outline:0;
+      box-sizing:border-box;
+      font-family: 'Inter Tight', sans-serif;
+      overscroll-behavior: none;
+   }
+   html, body{     
+    background-color: rgb(249, 250, 251);
+   }
+   #root{
+      margin: 0 auto 50px auto;
+   }
+`;
+exports.default = GlobalStyle;
+
+},{"styled-components":"1U3k6","../constants":"45DZp","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1U3k6":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ServerStyleSheet", ()=>Je);
+parcelHelpers.export(exports, "StyleSheetConsumer", ()=>le);
+parcelHelpers.export(exports, "StyleSheetContext", ()=>ue);
+parcelHelpers.export(exports, "StyleSheetManager", ()=>ye);
+parcelHelpers.export(exports, "ThemeConsumer", ()=>Le);
+parcelHelpers.export(exports, "ThemeContext", ()=>Ge);
+parcelHelpers.export(exports, "ThemeProvider", ()=>Fe);
+parcelHelpers.export(exports, "__PRIVATE__", ()=>Ke);
+parcelHelpers.export(exports, "createGlobalStyle", ()=>We);
+parcelHelpers.export(exports, "css", ()=>Ce);
+parcelHelpers.export(exports, "isStyledComponent", ()=>N);
+parcelHelpers.export(exports, "keyframes", ()=>Ue);
+parcelHelpers.export(exports, "useTheme", ()=>Ze);
+parcelHelpers.export(exports, "version", ()=>C);
+parcelHelpers.export(exports, "withTheme", ()=>Xe);
+var _reactIs = require("react-is");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _shallowequal = require("shallowequal");
+var _shallowequalDefault = parcelHelpers.interopDefault(_shallowequal);
+var _stylis = require("@emotion/stylis");
+var _stylisDefault = parcelHelpers.interopDefault(_stylis);
+var _unitless = require("@emotion/unitless");
+var _unitlessDefault = parcelHelpers.interopDefault(_unitless);
+var _isPropValid = require("@emotion/is-prop-valid");
+var _isPropValidDefault = parcelHelpers.interopDefault(_isPropValid);
+var _hoistNonReactStatics = require("hoist-non-react-statics");
+var _hoistNonReactStaticsDefault = parcelHelpers.interopDefault(_hoistNonReactStatics);
+var process = require("process");
+function v() {
+    return (v = Object.assign || function(e) {
+        for(var t = 1; t < arguments.length; t++){
+            var n = arguments[t];
+            for(var r in n)Object.prototype.hasOwnProperty.call(n, r) && (e[r] = n[r]);
+        }
+        return e;
+    }).apply(this, arguments);
+}
+var g = function(e, t) {
+    for(var n = [
+        e[0]
+    ], r = 0, o = t.length; r < o; r += 1)n.push(t[r], e[r + 1]);
+    return n;
+}, S = function(t) {
+    return null !== t && "object" == typeof t && "[object Object]" === (t.toString ? t.toString() : Object.prototype.toString.call(t)) && !(0, _reactIs.typeOf)(t);
+}, w = Object.freeze([]), E = Object.freeze({});
+function b(e) {
+    return "function" == typeof e;
+}
+function _(e) {
+    return "string" == typeof e && e || e.displayName || e.name || "Component";
+}
+function N(e) {
+    return e && "string" == typeof e.styledComponentId;
+}
+var A = ("undefined" != typeof process && undefined, "data-styled"), C = "5.3.6", I = "undefined" != typeof window && "HTMLElement" in window, P = Boolean("boolean" == typeof SC_DISABLE_SPEEDY ? SC_DISABLE_SPEEDY : (typeof process, typeof process, true)), O = {}, R = {
+    1: "Cannot create styled-component for component: %s.\n\n",
+    2: "Can't collect styles once you've consumed a `ServerStyleSheet`'s styles! `ServerStyleSheet` is a one off instance for each server-side render cycle.\n\n- Are you trying to reuse it across renders?\n- Are you accidentally calling collectStyles twice?\n\n",
+    3: "Streaming SSR is only supported in a Node.js environment; Please do not try to call this method in the browser.\n\n",
+    4: "The `StyleSheetManager` expects a valid target or sheet prop!\n\n- Does this error occur on the client and is your target falsy?\n- Does this error occur on the server and is the sheet falsy?\n\n",
+    5: "The clone method cannot be used on the client!\n\n- Are you running in a client-like environment on the server?\n- Are you trying to run SSR on the client?\n\n",
+    6: "Trying to insert a new style tag, but the given Node is unmounted!\n\n- Are you using a custom target that isn't mounted?\n- Does your document not have a valid head element?\n- Have you accidentally removed a style tag manually?\n\n",
+    7: 'ThemeProvider: Please return an object from your "theme" prop function, e.g.\n\n```js\ntheme={() => ({})}\n```\n\n',
+    8: 'ThemeProvider: Please make your "theme" prop an object.\n\n',
+    9: "Missing document `<head>`\n\n",
+    10: "Cannot find a StyleSheet instance. Usually this happens if there are multiple copies of styled-components loaded at once. Check out this issue for how to troubleshoot and fix the common cases where this situation can happen: https://github.com/styled-components/styled-components/issues/1941#issuecomment-417862021\n\n",
+    11: "_This error was replaced with a dev-time warning, it will be deleted for v4 final._ [createGlobalStyle] received children which will not be rendered. Please use the component without passing children elements.\n\n",
+    12: "It seems you are interpolating a keyframe declaration (%s) into an untagged string. This was supported in styled-components v3, but is not longer supported in v4 as keyframes are now injected on-demand. Please wrap your string in the css\\`\\` helper which ensures the styles are injected correctly. See https://www.styled-components.com/docs/api#css\n\n",
+    13: "%s is not a styled component and cannot be referred to via component selector. See https://www.styled-components.com/docs/advanced#referring-to-other-components for more details.\n\n",
+    14: 'ThemeProvider: "theme" prop is required.\n\n',
+    15: "A stylis plugin has been supplied that is not named. We need a name for each plugin to be able to prevent styling collisions between different stylis configurations within the same app. Before you pass your plugin to `<StyleSheetManager stylisPlugins={[]}>`, please make sure each plugin is uniquely-named, e.g.\n\n```js\nObject.defineProperty(importedPlugin, 'name', { value: 'some-unique-name' });\n```\n\n",
+    16: "Reached the limit of how many styled components may be created at group %s.\nYou may only create up to 1,073,741,824 components. If you're creating components dynamically,\nas for instance in your render method then you may be running into this limitation.\n\n",
+    17: "CSSStyleSheet could not be found on HTMLStyleElement.\nHas styled-components' style tag been unmounted or altered by another script?\n"
+};
+function D() {
+    for(var e = arguments.length <= 0 ? void 0 : arguments[0], t = [], n = 1, r = arguments.length; n < r; n += 1)t.push(n < 0 || arguments.length <= n ? void 0 : arguments[n]);
+    return t.forEach(function(t) {
+        e = e.replace(/%[a-z]/, t);
+    }), e;
+}
+function j(e) {
+    for(var t = arguments.length, n = new Array(t > 1 ? t - 1 : 0), r = 1; r < t; r++)n[r - 1] = arguments[r];
+    throw new Error(D.apply(void 0, [
+        R[e]
+    ].concat(n)).trim());
+}
+var T = function() {
+    function e(e) {
+        this.groupSizes = new Uint32Array(512), this.length = 512, this.tag = e;
+    }
+    var t = e.prototype;
+    return t.indexOfGroup = function(e) {
+        for(var t = 0, n = 0; n < e; n++)t += this.groupSizes[n];
+        return t;
+    }, t.insertRules = function(e, t) {
+        if (e >= this.groupSizes.length) {
+            for(var n = this.groupSizes, r = n.length, o = r; e >= o;)(o <<= 1) < 0 && j(16, "" + e);
+            this.groupSizes = new Uint32Array(o), this.groupSizes.set(n), this.length = o;
+            for(var s = r; s < o; s++)this.groupSizes[s] = 0;
+        }
+        for(var i = this.indexOfGroup(e + 1), a = 0, c = t.length; a < c; a++)this.tag.insertRule(i, t[a]) && (this.groupSizes[e]++, i++);
+    }, t.clearGroup = function(e) {
+        if (e < this.length) {
+            var t = this.groupSizes[e], n = this.indexOfGroup(e), r = n + t;
+            this.groupSizes[e] = 0;
+            for(var o = n; o < r; o++)this.tag.deleteRule(n);
+        }
+    }, t.getGroup = function(e) {
+        var t = "";
+        if (e >= this.length || 0 === this.groupSizes[e]) return t;
+        for(var n = this.groupSizes[e], r = this.indexOfGroup(e), o = r + n, s = r; s < o; s++)t += this.tag.getRule(s) + "/*!sc*/\n";
+        return t;
+    }, e;
+}(), x = new Map, k = new Map, V = 1, B = function(e) {
+    if (x.has(e)) return x.get(e);
+    for(; k.has(V);)V++;
+    var t = V++;
+    return ((0 | t) < 0 || t > 1073741824) && j(16, "" + t), x.set(e, t), k.set(t, e), t;
+}, z = function(e) {
+    return k.get(e);
+}, M = function(e, t) {
+    t >= V && (V = t + 1), x.set(e, t), k.set(t, e);
+}, G = "style[" + A + '][data-styled-version="5.3.6"]', L = new RegExp("^" + A + '\\.g(\\d+)\\[id="([\\w\\d-]+)"\\].*?"([^"]*)'), F = function(e, t, n) {
+    for(var r, o = n.split(","), s = 0, i = o.length; s < i; s++)(r = o[s]) && e.registerName(t, r);
+}, Y = function(e, t) {
+    for(var n = (t.textContent || "").split("/*!sc*/\n"), r = [], o = 0, s = n.length; o < s; o++){
+        var i = n[o].trim();
+        if (i) {
+            var a = i.match(L);
+            if (a) {
+                var c = 0 | parseInt(a[1], 10), u = a[2];
+                0 !== c && (M(u, c), F(e, u, a[3]), e.getTag().insertRules(c, r)), r.length = 0;
+            } else r.push(i);
+        }
+    }
+}, q = function() {
+    return "undefined" != typeof __webpack_nonce__ ? __webpack_nonce__ : null;
+}, H = function(e) {
+    var t = document.head, n = e || t, r = document.createElement("style"), o = function(e) {
+        for(var t = e.childNodes, n = t.length; n >= 0; n--){
+            var r = t[n];
+            if (r && 1 === r.nodeType && r.hasAttribute(A)) return r;
+        }
+    }(n), s = void 0 !== o ? o.nextSibling : null;
+    r.setAttribute(A, "active"), r.setAttribute("data-styled-version", "5.3.6");
+    var i = q();
+    return i && r.setAttribute("nonce", i), n.insertBefore(r, s), r;
+}, $ = function() {
+    function e(e) {
+        var t = this.element = H(e);
+        t.appendChild(document.createTextNode("")), this.sheet = function(e) {
+            if (e.sheet) return e.sheet;
+            for(var t = document.styleSheets, n = 0, r = t.length; n < r; n++){
+                var o = t[n];
+                if (o.ownerNode === e) return o;
+            }
+            j(17);
+        }(t), this.length = 0;
+    }
+    var t = e.prototype;
+    return t.insertRule = function(e, t) {
+        try {
+            return this.sheet.insertRule(t, e), this.length++, !0;
+        } catch (e1) {
+            return !1;
+        }
+    }, t.deleteRule = function(e) {
+        this.sheet.deleteRule(e), this.length--;
+    }, t.getRule = function(e) {
+        var t = this.sheet.cssRules[e];
+        return void 0 !== t && "string" == typeof t.cssText ? t.cssText : "";
+    }, e;
+}(), W = function() {
+    function e(e) {
+        var t = this.element = H(e);
+        this.nodes = t.childNodes, this.length = 0;
+    }
+    var t = e.prototype;
+    return t.insertRule = function(e, t) {
+        if (e <= this.length && e >= 0) {
+            var n = document.createTextNode(t), r = this.nodes[e];
+            return this.element.insertBefore(n, r || null), this.length++, !0;
+        }
+        return !1;
+    }, t.deleteRule = function(e) {
+        this.element.removeChild(this.nodes[e]), this.length--;
+    }, t.getRule = function(e) {
+        return e < this.length ? this.nodes[e].textContent : "";
+    }, e;
+}(), U = function() {
+    function e(e) {
+        this.rules = [], this.length = 0;
+    }
+    var t = e.prototype;
+    return t.insertRule = function(e, t) {
+        return e <= this.length && (this.rules.splice(e, 0, t), this.length++, !0);
+    }, t.deleteRule = function(e) {
+        this.rules.splice(e, 1), this.length--;
+    }, t.getRule = function(e) {
+        return e < this.length ? this.rules[e] : "";
+    }, e;
+}(), J = I, X = {
+    isServer: !I,
+    useCSSOMInjection: !P
+}, Z = function() {
+    function e(e, t, n) {
+        void 0 === e && (e = E), void 0 === t && (t = {}), this.options = v({}, X, {}, e), this.gs = t, this.names = new Map(n), this.server = !!e.isServer, !this.server && I && J && (J = !1, function(e) {
+            for(var t = document.querySelectorAll(G), n = 0, r = t.length; n < r; n++){
+                var o = t[n];
+                o && "active" !== o.getAttribute(A) && (Y(e, o), o.parentNode && o.parentNode.removeChild(o));
+            }
+        }(this));
+    }
+    e.registerId = function(e) {
+        return B(e);
+    };
+    var t = e.prototype;
+    return t.reconstructWithOptions = function(t, n) {
+        return void 0 === n && (n = !0), new e(v({}, this.options, {}, t), this.gs, n && this.names || void 0);
+    }, t.allocateGSInstance = function(e) {
+        return this.gs[e] = (this.gs[e] || 0) + 1;
+    }, t.getTag = function() {
+        var e, t, n, r, o;
+        return this.tag || (this.tag = (n = (t = this.options).isServer, r = t.useCSSOMInjection, o = t.target, e = n ? new U(o) : r ? new $(o) : new W(o), new T(e)));
+    }, t.hasNameForId = function(e, t) {
+        return this.names.has(e) && this.names.get(e).has(t);
+    }, t.registerName = function(e, t) {
+        if (B(e), this.names.has(e)) this.names.get(e).add(t);
+        else {
+            var n = new Set;
+            n.add(t), this.names.set(e, n);
+        }
+    }, t.insertRules = function(e, t, n) {
+        this.registerName(e, t), this.getTag().insertRules(B(e), n);
+    }, t.clearNames = function(e) {
+        this.names.has(e) && this.names.get(e).clear();
+    }, t.clearRules = function(e) {
+        this.getTag().clearGroup(B(e)), this.clearNames(e);
+    }, t.clearTag = function() {
+        this.tag = void 0;
+    }, t.toString = function() {
+        return function(e) {
+            for(var t = e.getTag(), n = t.length, r = "", o = 0; o < n; o++){
+                var s = z(o);
+                if (void 0 !== s) {
+                    var i = e.names.get(s), a = t.getGroup(o);
+                    if (i && a && i.size) {
+                        var c = A + ".g" + o + '[id="' + s + '"]', u = "";
+                        void 0 !== i && i.forEach(function(e) {
+                            e.length > 0 && (u += e + ",");
+                        }), r += "" + a + c + '{content:"' + u + '"}/*!sc*/\n';
+                    }
+                }
+            }
+            return r;
+        }(this);
+    }, e;
+}(), K = /(a)(d)/gi, Q = function(e) {
+    return String.fromCharCode(e + (e > 25 ? 39 : 97));
+};
+function ee(e) {
+    var t, n = "";
+    for(t = Math.abs(e); t > 52; t = t / 52 | 0)n = Q(t % 52) + n;
+    return (Q(t % 52) + n).replace(K, "$1-$2");
+}
+var te = function(e, t) {
+    for(var n = t.length; n;)e = 33 * e ^ t.charCodeAt(--n);
+    return e;
+}, ne = function(e) {
+    return te(5381, e);
+};
+function re(e) {
+    for(var t = 0; t < e.length; t += 1){
+        var n = e[t];
+        if (b(n) && !N(n)) return !1;
+    }
+    return !0;
+}
+var oe = ne("5.3.6"), se = function() {
+    function e(e, t, n) {
+        this.rules = e, this.staticRulesId = "", this.isStatic = false, this.componentId = t, this.baseHash = te(oe, t), this.baseStyle = n, Z.registerId(t);
+    }
+    return e.prototype.generateAndInjectStyles = function(e, t, n) {
+        var r = this.componentId, o = [];
+        if (this.baseStyle && o.push(this.baseStyle.generateAndInjectStyles(e, t, n)), this.isStatic && !n.hash) {
+            if (this.staticRulesId && t.hasNameForId(r, this.staticRulesId)) o.push(this.staticRulesId);
+            else {
+                var s = Ne(this.rules, e, t, n).join(""), i = ee(te(this.baseHash, s) >>> 0);
+                if (!t.hasNameForId(r, i)) {
+                    var a = n(s, "." + i, void 0, r);
+                    t.insertRules(r, i, a);
+                }
+                o.push(i), this.staticRulesId = i;
+            }
+        } else {
+            for(var c = this.rules.length, u = te(this.baseHash, n.hash), l = "", d = 0; d < c; d++){
+                var h = this.rules[d];
+                if ("string" == typeof h) l += h, u = te(u, h + d);
+                else if (h) {
+                    var p = Ne(h, e, t, n), f = Array.isArray(p) ? p.join("") : p;
+                    u = te(u, f + d), l += f;
+                }
+            }
+            if (l) {
+                var m = ee(u >>> 0);
+                if (!t.hasNameForId(r, m)) {
+                    var y = n(l, "." + m, void 0, r);
+                    t.insertRules(r, m, y);
+                }
+                o.push(m);
+            }
+        }
+        return o.join(" ");
+    }, e;
+}(), ie = /^\s*\/\/.*$/gm, ae = [
+    ":",
+    "[",
+    ".",
+    "#"
+];
+function ce(e) {
+    var t, n, r, o, s = void 0 === e ? E : e, i = s.options, a = void 0 === i ? E : i, c = s.plugins, u = void 0 === c ? w : c, l = new (0, _stylisDefault.default)(a), d = [], h = function(e) {
+        function t(t) {
+            if (t) try {
+                e(t + "}");
+            } catch (e1) {}
+        }
+        return function(n, r, o, s, i, a, c, u, l, d) {
+            switch(n){
+                case 1:
+                    if (0 === l && 64 === r.charCodeAt(0)) return e(r + ";"), "";
+                    break;
+                case 2:
+                    if (0 === u) return r + "/*|*/";
+                    break;
+                case 3:
+                    switch(u){
+                        case 102:
+                        case 112:
+                            return e(o[0] + r), "";
+                        default:
+                            return r + (0 === d ? "/*|*/" : "");
+                    }
+                case -2:
+                    r.split("/*|*/}").forEach(t);
+            }
+        };
+    }(function(e) {
+        d.push(e);
+    }), f = function(e, r, s) {
+        return 0 === r && -1 !== ae.indexOf(s[n.length]) || s.match(o) ? e : "." + t;
+    };
+    function m(e, s, i, a) {
+        void 0 === a && (a = "&");
+        var c = e.replace(ie, ""), u = s && i ? i + " " + s + " { " + c + " }" : c;
+        return t = a, n = s, r = new RegExp("\\" + n + "\\b", "g"), o = new RegExp("(\\" + n + "\\b){2,}"), l(i || !s ? "" : s, u);
+    }
+    return l.use([].concat(u, [
+        function(e, t, o) {
+            2 === e && o.length && o[0].lastIndexOf(n) > 0 && (o[0] = o[0].replace(r, f));
+        },
+        h,
+        function(e) {
+            if (-2 === e) {
+                var t = d;
+                return d = [], t;
+            }
+        }
+    ])), m.hash = u.length ? u.reduce(function(e, t) {
+        return t.name || j(15), te(e, t.name);
+    }, 5381).toString() : "", m;
+}
+var ue = (0, _reactDefault.default).createContext(), le = ue.Consumer, de = (0, _reactDefault.default).createContext(), he = (de.Consumer, new Z), pe = ce();
+function fe() {
+    return (0, _react.useContext)(ue) || he;
+}
+function me() {
+    return (0, _react.useContext)(de) || pe;
+}
+function ye(e) {
+    var t = (0, _react.useState)(e.stylisPlugins), n = t[0], s = t[1], c = fe(), u = (0, _react.useMemo)(function() {
+        var t = c;
+        return e.sheet ? t = e.sheet : e.target && (t = t.reconstructWithOptions({
+            target: e.target
+        }, !1)), e.disableCSSOMInjection && (t = t.reconstructWithOptions({
+            useCSSOMInjection: !1
+        })), t;
+    }, [
+        e.disableCSSOMInjection,
+        e.sheet,
+        e.target
+    ]), l = (0, _react.useMemo)(function() {
+        return ce({
+            options: {
+                prefix: !e.disableVendorPrefixes
+            },
+            plugins: n
+        });
+    }, [
+        e.disableVendorPrefixes,
+        n
+    ]);
+    return (0, _react.useEffect)(function() {
+        (0, _shallowequalDefault.default)(n, e.stylisPlugins) || s(e.stylisPlugins);
+    }, [
+        e.stylisPlugins
+    ]), (0, _reactDefault.default).createElement(ue.Provider, {
+        value: u
+    }, (0, _reactDefault.default).createElement(de.Provider, {
+        value: l
+    }, (0, _reactDefault.default).Children.only(e.children)));
+}
+var ve = function() {
+    function e(e, t) {
+        var n = this;
+        this.inject = function(e, t) {
+            void 0 === t && (t = pe);
+            var r = n.name + t.hash;
+            e.hasNameForId(n.id, r) || e.insertRules(n.id, r, t(n.rules, r, "@keyframes"));
+        }, this.toString = function() {
+            return j(12, String(n.name));
+        }, this.name = e, this.id = "sc-keyframes-" + e, this.rules = t;
+    }
+    return e.prototype.getName = function(e) {
+        return void 0 === e && (e = pe), this.name + e.hash;
+    }, e;
+}(), ge = /([A-Z])/, Se = /([A-Z])/g, we = /^ms-/, Ee = function(e) {
+    return "-" + e.toLowerCase();
+};
+function be(e) {
+    return ge.test(e) ? e.replace(Se, Ee).replace(we, "-ms-") : e;
+}
+var _e = function(e) {
+    return null == e || !1 === e || "" === e;
+};
+function Ne(e, n, r, o) {
+    if (Array.isArray(e)) {
+        for(var s, i = [], a = 0, c = e.length; a < c; a += 1)"" !== (s = Ne(e[a], n, r, o)) && (Array.isArray(s) ? i.push.apply(i, s) : i.push(s));
+        return i;
+    }
+    if (_e(e)) return "";
+    if (N(e)) return "." + e.styledComponentId;
+    if (b(e)) {
+        if ("function" != typeof (l = e) || l.prototype && l.prototype.isReactComponent || !n) return e;
+        var u = e(n);
+        return (0, _reactIs.isElement)(u) && console.warn(_(e) + " is not a styled component and cannot be referred to via component selector. See https://www.styled-components.com/docs/advanced#referring-to-other-components for more details."), Ne(u, n, r, o);
+    }
+    var l;
+    return e instanceof ve ? r ? (e.inject(r, o), e.getName(o)) : e : S(e) ? function e(t, n) {
+        var r, o, s = [];
+        for(var i in t)t.hasOwnProperty(i) && !_e(t[i]) && (Array.isArray(t[i]) && t[i].isCss || b(t[i]) ? s.push(be(i) + ":", t[i], ";") : S(t[i]) ? s.push.apply(s, e(t[i], i)) : s.push(be(i) + ": " + (r = i, null == (o = t[i]) || "boolean" == typeof o || "" === o ? "" : "number" != typeof o || 0 === o || r in (0, _unitlessDefault.default) ? String(o).trim() : o + "px") + ";"));
+        return n ? [
+            n + " {"
+        ].concat(s, [
+            "}"
+        ]) : s;
+    }(e) : e.toString();
+}
+var Ae = function(e) {
+    return Array.isArray(e) && (e.isCss = !0), e;
+};
+function Ce(e) {
+    for(var t = arguments.length, n = new Array(t > 1 ? t - 1 : 0), r = 1; r < t; r++)n[r - 1] = arguments[r];
+    return b(e) || S(e) ? Ae(Ne(g(w, [
+        e
+    ].concat(n)))) : 0 === n.length && 1 === e.length && "string" == typeof e[0] ? e : Ae(Ne(g(e, n)));
+}
+var Ie = /invalid hook call/i, Pe = new Set, Oe = function(e, t) {
+    var n = "The component " + e + (t ? ' with the id of "' + t + '"' : "") + " has been created dynamically.\nYou may see this warning because you've called styled inside another component.\nTo resolve this only create new StyledComponents outside of any render method and function component.", r = console.error;
+    try {
+        var o = !0;
+        console.error = function(e) {
+            if (Ie.test(e)) o = !1, Pe.delete(n);
+            else {
+                for(var t = arguments.length, s = new Array(t > 1 ? t - 1 : 0), i = 1; i < t; i++)s[i - 1] = arguments[i];
+                r.apply(void 0, [
+                    e
+                ].concat(s));
+            }
+        }, (0, _react.useRef)(), o && !Pe.has(n) && (console.warn(n), Pe.add(n));
+    } catch (e1) {
+        Ie.test(e1.message) && Pe.delete(n);
+    } finally{
+        console.error = r;
+    }
+}, Re = function(e, t, n) {
+    return void 0 === n && (n = E), e.theme !== n.theme && e.theme || t || n.theme;
+}, De = /[!"#$%&'()*+,./:;<=>?@[\\\]^`{|}~-]+/g, je = /(^-|-$)/g;
+function Te(e) {
+    return e.replace(De, "-").replace(je, "");
+}
+var xe = function(e) {
+    return ee(ne(e) >>> 0);
+};
+function ke(e) {
+    return "string" == typeof e && e.charAt(0) === e.charAt(0).toLowerCase();
+}
+var Ve = function(e) {
+    return "function" == typeof e || "object" == typeof e && null !== e && !Array.isArray(e);
+}, Be = function(e) {
+    return "__proto__" !== e && "constructor" !== e && "prototype" !== e;
+};
+function ze(e, t, n) {
+    var r = e[n];
+    Ve(t) && Ve(r) ? Me(r, t) : e[n] = t;
+}
+function Me(e) {
+    for(var t = arguments.length, n = new Array(t > 1 ? t - 1 : 0), r = 1; r < t; r++)n[r - 1] = arguments[r];
+    for(var o = 0, s = n; o < s.length; o++){
+        var i = s[o];
+        if (Ve(i)) for(var a in i)Be(a) && ze(e, i[a], a);
+    }
+    return e;
+}
+var Ge = (0, _reactDefault.default).createContext(), Le = Ge.Consumer;
+function Fe(e) {
+    var t = (0, _react.useContext)(Ge), n = (0, _react.useMemo)(function() {
+        return function(e, t) {
+            if (!e) return j(14);
+            if (b(e)) {
+                var n = e(t);
+                return null !== n && !Array.isArray(n) && "object" == typeof n ? n : j(7);
+            }
+            return Array.isArray(e) || "object" != typeof e ? j(8) : t ? v({}, t, {}, e) : e;
+        }(e.theme, t);
+    }, [
+        e.theme,
+        t
+    ]);
+    return e.children ? (0, _reactDefault.default).createElement(Ge.Provider, {
+        value: n
+    }, e.children) : null;
+}
+var Ye = {};
+function qe(e, t, n) {
+    var o = N(e), i = !ke(e), a = t.attrs, c = void 0 === a ? w : a, d = t.componentId, h = void 0 === d ? function(e, t) {
+        var n = "string" != typeof e ? "sc" : Te(e);
+        Ye[n] = (Ye[n] || 0) + 1;
+        var r = n + "-" + xe("5.3.6" + n + Ye[n]);
+        return t ? t + "-" + r : r;
+    }(t.displayName, t.parentComponentId) : d, p = t.displayName, f = void 0 === p ? function(e) {
+        return ke(e) ? "styled." + e : "Styled(" + _(e) + ")";
+    }(e) : p, g = t.displayName && t.componentId ? Te(t.displayName) + "-" + t.componentId : t.componentId || h, S = o && e.attrs ? Array.prototype.concat(e.attrs, c).filter(Boolean) : c, A = t.shouldForwardProp;
+    o && e.shouldForwardProp && (A = t.shouldForwardProp ? function(n, r, o) {
+        return e.shouldForwardProp(n, r, o) && t.shouldForwardProp(n, r, o);
+    } : e.shouldForwardProp);
+    var C, I = new se(n, g, o ? e.componentStyle : void 0), P = I.isStatic && 0 === c.length, O = function(e, t) {
+        return function(e, t, n, r) {
+            var o = e.attrs, i = e.componentStyle, a = e.defaultProps, c = e.foldedComponentIds, d = e.shouldForwardProp, h = e.styledComponentId, p = e.target;
+            (0, _react.useDebugValue)(h);
+            var f = function(e, t, n) {
+                void 0 === e && (e = E);
+                var r = v({}, t, {
+                    theme: e
+                }), o = {};
+                return n.forEach(function(e) {
+                    var t, n, s, i = e;
+                    for(t in b(i) && (i = i(r)), i)r[t] = o[t] = "className" === t ? (n = o[t], s = i[t], n && s ? n + " " + s : n || s) : i[t];
+                }), [
+                    r,
+                    o
+                ];
+            }(Re(t, (0, _react.useContext)(Ge), a) || E, t, o), y = f[0], g = f[1], S = function(e, t, n, r) {
+                var o = fe(), s = me(), i = t ? e.generateAndInjectStyles(E, o, s) : e.generateAndInjectStyles(n, o, s);
+                return (0, _react.useDebugValue)(i), !t && r && r(i), i;
+            }(i, r, y, e.warnTooManyClasses), w = n, _ = g.$as || t.$as || g.as || t.as || p, N = ke(_), A = g !== t ? v({}, t, {}, g) : t, C = {};
+            for(var I in A)"$" !== I[0] && "as" !== I && ("forwardedAs" === I ? C.as = A[I] : (d ? d(I, (0, _isPropValidDefault.default), _) : !N || (0, _isPropValidDefault.default)(I)) && (C[I] = A[I]));
+            return t.style && g.style !== t.style && (C.style = v({}, t.style, {}, g.style)), C.className = Array.prototype.concat(c, h, S !== h ? S : null, t.className, g.className).filter(Boolean).join(" "), C.ref = w, (0, _react.createElement)(_, C);
+        }(C, e, t, P);
+    };
+    return O.displayName = f, (C = (0, _reactDefault.default).forwardRef(O)).attrs = S, C.componentStyle = I, C.displayName = f, C.shouldForwardProp = A, C.foldedComponentIds = o ? Array.prototype.concat(e.foldedComponentIds, e.styledComponentId) : w, C.styledComponentId = g, C.target = o ? e.target : e, C.withComponent = function(e) {
+        var r = t.componentId, o = function(e, t) {
+            if (null == e) return {};
+            var n, r, o = {}, s = Object.keys(e);
+            for(r = 0; r < s.length; r++)n = s[r], t.indexOf(n) >= 0 || (o[n] = e[n]);
+            return o;
+        }(t, [
+            "componentId"
+        ]), s = r && r + "-" + (ke(e) ? e : Te(_(e)));
+        return qe(e, v({}, o, {
+            attrs: S,
+            componentId: s
+        }), n);
+    }, Object.defineProperty(C, "defaultProps", {
+        get: function() {
+            return this._foldedDefaultProps;
+        },
+        set: function(t) {
+            this._foldedDefaultProps = o ? Me({}, e.defaultProps, t) : t;
+        }
+    }), Oe(f, g), C.warnTooManyClasses = function(e, t) {
+        var n = {}, r = !1;
+        return function(o) {
+            if (!r && (n[o] = !0, Object.keys(n).length >= 200)) {
+                var s = t ? ' with the id of "' + t + '"' : "";
+                console.warn("Over 200 classes were generated for component " + e + s + ".\nConsider using the attrs method, together with a style object for frequently changed styles.\nExample:\n  const Component = styled.div.attrs(props => ({\n    style: {\n      background: props.background,\n    },\n  }))`width: 100%;`\n\n  <Component />"), r = !0, n = {};
+            }
+        };
+    }(f, g), C.toString = function() {
+        return "." + C.styledComponentId;
+    }, i && (0, _hoistNonReactStaticsDefault.default)(C, e, {
+        attrs: !0,
+        componentStyle: !0,
+        displayName: !0,
+        foldedComponentIds: !0,
+        shouldForwardProp: !0,
+        styledComponentId: !0,
+        target: !0,
+        withComponent: !0
+    }), C;
+}
+var He = function(e) {
+    return function e(t, r, o) {
+        if (void 0 === o && (o = E), !(0, _reactIs.isValidElementType)(r)) return j(1, String(r));
+        var s = function() {
+            return t(r, o, Ce.apply(void 0, arguments));
+        };
+        return s.withConfig = function(n) {
+            return e(t, r, v({}, o, {}, n));
+        }, s.attrs = function(n) {
+            return e(t, r, v({}, o, {
+                attrs: Array.prototype.concat(o.attrs, n).filter(Boolean)
+            }));
+        }, s;
+    }(qe, e);
+};
+[
+    "a",
+    "abbr",
+    "address",
+    "area",
+    "article",
+    "aside",
+    "audio",
+    "b",
+    "base",
+    "bdi",
+    "bdo",
+    "big",
+    "blockquote",
+    "body",
+    "br",
+    "button",
+    "canvas",
+    "caption",
+    "cite",
+    "code",
+    "col",
+    "colgroup",
+    "data",
+    "datalist",
+    "dd",
+    "del",
+    "details",
+    "dfn",
+    "dialog",
+    "div",
+    "dl",
+    "dt",
+    "em",
+    "embed",
+    "fieldset",
+    "figcaption",
+    "figure",
+    "footer",
+    "form",
+    "h1",
+    "h2",
+    "h3",
+    "h4",
+    "h5",
+    "h6",
+    "head",
+    "header",
+    "hgroup",
+    "hr",
+    "html",
+    "i",
+    "iframe",
+    "img",
+    "input",
+    "ins",
+    "kbd",
+    "keygen",
+    "label",
+    "legend",
+    "li",
+    "link",
+    "main",
+    "map",
+    "mark",
+    "marquee",
+    "menu",
+    "menuitem",
+    "meta",
+    "meter",
+    "nav",
+    "noscript",
+    "object",
+    "ol",
+    "optgroup",
+    "option",
+    "output",
+    "p",
+    "param",
+    "picture",
+    "pre",
+    "progress",
+    "q",
+    "rp",
+    "rt",
+    "ruby",
+    "s",
+    "samp",
+    "script",
+    "section",
+    "select",
+    "small",
+    "source",
+    "span",
+    "strong",
+    "style",
+    "sub",
+    "summary",
+    "sup",
+    "table",
+    "tbody",
+    "td",
+    "textarea",
+    "tfoot",
+    "th",
+    "thead",
+    "time",
+    "title",
+    "tr",
+    "track",
+    "u",
+    "ul",
+    "var",
+    "video",
+    "wbr",
+    "circle",
+    "clipPath",
+    "defs",
+    "ellipse",
+    "foreignObject",
+    "g",
+    "image",
+    "line",
+    "linearGradient",
+    "marker",
+    "mask",
+    "path",
+    "pattern",
+    "polygon",
+    "polyline",
+    "radialGradient",
+    "rect",
+    "stop",
+    "svg",
+    "text",
+    "textPath",
+    "tspan"
+].forEach(function(e) {
+    He[e] = He(e);
+});
+var $e = function() {
+    function e(e, t) {
+        this.rules = e, this.componentId = t, this.isStatic = re(e), Z.registerId(this.componentId + 1);
+    }
+    var t = e.prototype;
+    return t.createStyles = function(e, t, n, r) {
+        var o = r(Ne(this.rules, t, n, r).join(""), ""), s = this.componentId + e;
+        n.insertRules(s, s, o);
+    }, t.removeStyles = function(e, t) {
+        t.clearRules(this.componentId + e);
+    }, t.renderStyles = function(e, t, n, r) {
+        e > 2 && Z.registerId(this.componentId + e), this.removeStyles(e, n), this.createStyles(e, t, n, r);
+    }, e;
+}();
+function We(e) {
+    for(var t = arguments.length, n = new Array(t > 1 ? t - 1 : 0), o = 1; o < t; o++)n[o - 1] = arguments[o];
+    var i = Ce.apply(void 0, [
+        e
+    ].concat(n)), a = "sc-global-" + xe(JSON.stringify(i)), u = new $e(i, a);
+    function l(e) {
+        var t = fe(), n = me(), o = (0, _react.useContext)(Ge), l = (0, _react.useRef)(t.allocateGSInstance(a)).current;
+        return (0, _reactDefault.default).Children.count(e.children) && console.warn("The global style component " + a + " was given child JSX. createGlobalStyle does not render children."), i.some(function(e) {
+            return "string" == typeof e && -1 !== e.indexOf("@import");
+        }) && console.warn("Please do not use @import CSS syntax in createGlobalStyle at this time, as the CSSOM APIs we use in production do not handle it well. Instead, we recommend using a library such as react-helmet to inject a typical <link> meta tag to the stylesheet, or simply embedding it manually in your index.html <head> section for a simpler app."), t.server && h(l, e, t, o, n), (0, _react.useLayoutEffect)(function() {
+            if (!t.server) return h(l, e, t, o, n), function() {
+                return u.removeStyles(l, t);
+            };
+        }, [
+            l,
+            e,
+            t,
+            o,
+            n
+        ]), null;
+    }
+    function h(e, t, n, r, o) {
+        if (u.isStatic) u.renderStyles(e, O, n, o);
+        else {
+            var s = v({}, t, {
+                theme: Re(t, r, l.defaultProps)
+            });
+            u.renderStyles(e, s, n, o);
+        }
+    }
+    return Oe(a), (0, _reactDefault.default).memo(l);
+}
+function Ue(e) {
+    "undefined" != typeof navigator && "ReactNative" === navigator.product && console.warn("`keyframes` cannot be used on ReactNative, only on the web. To do animation in ReactNative please use Animated.");
+    for(var t = arguments.length, n = new Array(t > 1 ? t - 1 : 0), r = 1; r < t; r++)n[r - 1] = arguments[r];
+    var o = Ce.apply(void 0, [
+        e
+    ].concat(n)).join(""), s = xe(o);
+    return new ve(s, o);
+}
+var Je = function() {
+    function e() {
+        var e = this;
+        this._emitSheetCSS = function() {
+            var t = e.instance.toString();
+            if (!t) return "";
+            var n = q();
+            return "<style " + [
+                n && 'nonce="' + n + '"',
+                A + '="true"',
+                'data-styled-version="5.3.6"'
+            ].filter(Boolean).join(" ") + ">" + t + "</style>";
+        }, this.getStyleTags = function() {
+            return e.sealed ? j(2) : e._emitSheetCSS();
+        }, this.getStyleElement = function() {
+            var t;
+            if (e.sealed) return j(2);
+            var n = ((t = {})[A] = "", t["data-styled-version"] = "5.3.6", t.dangerouslySetInnerHTML = {
+                __html: e.instance.toString()
+            }, t), o = q();
+            return o && (n.nonce = o), [
+                (0, _reactDefault.default).createElement("style", v({}, n, {
+                    key: "sc-0-0"
+                }))
+            ];
+        }, this.seal = function() {
+            e.sealed = !0;
+        }, this.instance = new Z({
+            isServer: !0
+        }), this.sealed = !1;
+    }
+    var t = e.prototype;
+    return t.collectStyles = function(e) {
+        return this.sealed ? j(2) : (0, _reactDefault.default).createElement(ye, {
+            sheet: this.instance
+        }, e);
+    }, t.interleaveWithNodeStream = function(e) {
+        return j(3);
+    }, e;
+}(), Xe = function(e) {
+    var t = (0, _reactDefault.default).forwardRef(function(t, n) {
+        var o = (0, _react.useContext)(Ge), i = e.defaultProps, a = Re(t, o, i);
+        return void 0 === a && console.warn('[withTheme] You are not using a ThemeProvider nor passing a theme prop or a theme in defaultProps in component class "' + _(e) + '"'), (0, _reactDefault.default).createElement(e, v({}, t, {
+            theme: a,
+            ref: n
+        }));
+    });
+    return (0, _hoistNonReactStaticsDefault.default)(t, e), t.displayName = "WithTheme(" + _(e) + ")", t;
+}, Ze = function() {
+    return (0, _react.useContext)(Ge);
+}, Ke = {
+    StyleSheet: Z,
+    masterSheet: he
+};
+"undefined" != typeof navigator && "ReactNative" === navigator.product && console.warn("It looks like you've imported 'styled-components' on React Native.\nPerhaps you're looking to import 'styled-components/native'?\nRead more about this at https://www.styled-components.com/docs/basics#react-native"), "undefined" != typeof window && (window["__styled-components-init__"] = window["__styled-components-init__"] || 0, 1 === window["__styled-components-init__"] && console.warn("It looks like there are several instances of 'styled-components' initialized in this application. This may cause dynamic styles to not render properly, errors during the rehydration process, a missing theme prop, and makes your application bigger without good reason.\n\nSee https://s-c.sh/2BAXzed for more info."), window["__styled-components-init__"] += 1);
+exports.default = He;
+
+},{"react-is":"7EuwB","react":"21dqq","shallowequal":"fjwkp","@emotion/stylis":"fGS9o","@emotion/unitless":"pVndT","@emotion/is-prop-valid":"9JzNk","hoist-non-react-statics":"1GfsB","process":"d5jf4","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7EuwB":[function(require,module,exports) {
+"use strict";
+module.exports = require("./cjs/react-is.development.js");
+
+},{"./cjs/react-is.development.js":"5DsXl"}],"5DsXl":[function(require,module,exports) {
+/** @license React v16.13.1
+ * react-is.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+(function() {
+    "use strict";
+    // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+    // nor polyfill, then a plain number is used for performance.
+    var hasSymbol = typeof Symbol === "function" && Symbol.for;
+    var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for("react.element") : 0xeac7;
+    var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for("react.portal") : 0xeaca;
+    var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for("react.fragment") : 0xeacb;
+    var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for("react.strict_mode") : 0xeacc;
+    var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for("react.profiler") : 0xead2;
+    var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for("react.provider") : 0xeacd;
+    var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for("react.context") : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
+    // (unstable) APIs that have been removed. Can we remove the symbols?
+    var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for("react.async_mode") : 0xeacf;
+    var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for("react.concurrent_mode") : 0xeacf;
+    var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for("react.forward_ref") : 0xead0;
+    var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for("react.suspense") : 0xead1;
+    var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for("react.suspense_list") : 0xead8;
+    var REACT_MEMO_TYPE = hasSymbol ? Symbol.for("react.memo") : 0xead3;
+    var REACT_LAZY_TYPE = hasSymbol ? Symbol.for("react.lazy") : 0xead4;
+    var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for("react.block") : 0xead9;
+    var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for("react.fundamental") : 0xead5;
+    var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for("react.responder") : 0xead6;
+    var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for("react.scope") : 0xead7;
+    function isValidElementType(type) {
+        return typeof type === "string" || typeof type === "function" || type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === "object" && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
+    }
+    function typeOf(object) {
+        if (typeof object === "object" && object !== null) {
+            var $$typeof = object.$$typeof;
+            switch($$typeof){
+                case REACT_ELEMENT_TYPE:
+                    var type = object.type;
+                    switch(type){
+                        case REACT_ASYNC_MODE_TYPE:
+                        case REACT_CONCURRENT_MODE_TYPE:
+                        case REACT_FRAGMENT_TYPE:
+                        case REACT_PROFILER_TYPE:
+                        case REACT_STRICT_MODE_TYPE:
+                        case REACT_SUSPENSE_TYPE:
+                            return type;
+                        default:
+                            var $$typeofType = type && type.$$typeof;
+                            switch($$typeofType){
+                                case REACT_CONTEXT_TYPE:
+                                case REACT_FORWARD_REF_TYPE:
+                                case REACT_LAZY_TYPE:
+                                case REACT_MEMO_TYPE:
+                                case REACT_PROVIDER_TYPE:
+                                    return $$typeofType;
+                                default:
+                                    return $$typeof;
+                            }
+                    }
+                case REACT_PORTAL_TYPE:
+                    return $$typeof;
+            }
+        }
+        return undefined;
+    } // AsyncMode is deprecated along with isAsyncMode
+    var AsyncMode = REACT_ASYNC_MODE_TYPE;
+    var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
+    var ContextConsumer = REACT_CONTEXT_TYPE;
+    var ContextProvider = REACT_PROVIDER_TYPE;
+    var Element = REACT_ELEMENT_TYPE;
+    var ForwardRef = REACT_FORWARD_REF_TYPE;
+    var Fragment = REACT_FRAGMENT_TYPE;
+    var Lazy = REACT_LAZY_TYPE;
+    var Memo = REACT_MEMO_TYPE;
+    var Portal = REACT_PORTAL_TYPE;
+    var Profiler = REACT_PROFILER_TYPE;
+    var StrictMode = REACT_STRICT_MODE_TYPE;
+    var Suspense = REACT_SUSPENSE_TYPE;
+    var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
+    function isAsyncMode(object) {
+        if (!hasWarnedAboutDeprecatedIsAsyncMode) {
+            hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
+            console["warn"]("The ReactIs.isAsyncMode() alias has been deprecated, and will be removed in React 17+. Update your code to use ReactIs.isConcurrentMode() instead. It has the exact same API.");
+        }
+        return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
+    }
+    function isConcurrentMode(object) {
+        return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
+    }
+    function isContextConsumer(object) {
+        return typeOf(object) === REACT_CONTEXT_TYPE;
+    }
+    function isContextProvider(object) {
+        return typeOf(object) === REACT_PROVIDER_TYPE;
+    }
+    function isElement(object) {
+        return typeof object === "object" && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+    }
+    function isForwardRef(object) {
+        return typeOf(object) === REACT_FORWARD_REF_TYPE;
+    }
+    function isFragment(object) {
+        return typeOf(object) === REACT_FRAGMENT_TYPE;
+    }
+    function isLazy(object) {
+        return typeOf(object) === REACT_LAZY_TYPE;
+    }
+    function isMemo(object) {
+        return typeOf(object) === REACT_MEMO_TYPE;
+    }
+    function isPortal(object) {
+        return typeOf(object) === REACT_PORTAL_TYPE;
+    }
+    function isProfiler(object) {
+        return typeOf(object) === REACT_PROFILER_TYPE;
+    }
+    function isStrictMode(object) {
+        return typeOf(object) === REACT_STRICT_MODE_TYPE;
+    }
+    function isSuspense(object) {
+        return typeOf(object) === REACT_SUSPENSE_TYPE;
+    }
+    exports.AsyncMode = AsyncMode;
+    exports.ConcurrentMode = ConcurrentMode;
+    exports.ContextConsumer = ContextConsumer;
+    exports.ContextProvider = ContextProvider;
+    exports.Element = Element;
+    exports.ForwardRef = ForwardRef;
+    exports.Fragment = Fragment;
+    exports.Lazy = Lazy;
+    exports.Memo = Memo;
+    exports.Portal = Portal;
+    exports.Profiler = Profiler;
+    exports.StrictMode = StrictMode;
+    exports.Suspense = Suspense;
+    exports.isAsyncMode = isAsyncMode;
+    exports.isConcurrentMode = isConcurrentMode;
+    exports.isContextConsumer = isContextConsumer;
+    exports.isContextProvider = isContextProvider;
+    exports.isElement = isElement;
+    exports.isForwardRef = isForwardRef;
+    exports.isFragment = isFragment;
+    exports.isLazy = isLazy;
+    exports.isMemo = isMemo;
+    exports.isPortal = isPortal;
+    exports.isProfiler = isProfiler;
+    exports.isStrictMode = isStrictMode;
+    exports.isSuspense = isSuspense;
+    exports.isValidElementType = isValidElementType;
+    exports.typeOf = typeOf;
+})();
+
+},{}],"fjwkp":[function(require,module,exports) {
+//
+module.exports = function shallowEqual(objA, objB, compare, compareContext) {
+    var ret = compare ? compare.call(compareContext, objA, objB) : void 0;
+    if (ret !== void 0) return !!ret;
+    if (objA === objB) return true;
+    if (typeof objA !== "object" || !objA || typeof objB !== "object" || !objB) return false;
+    var keysA = Object.keys(objA);
+    var keysB = Object.keys(objB);
+    if (keysA.length !== keysB.length) return false;
+    var bHasOwnProperty = Object.prototype.hasOwnProperty.bind(objB);
+    // Test for A's keys different from B.
+    for(var idx = 0; idx < keysA.length; idx++){
+        var key = keysA[idx];
+        if (!bHasOwnProperty(key)) return false;
+        var valueA = objA[key];
+        var valueB = objB[key];
+        ret = compare ? compare.call(compareContext, valueA, valueB, key) : void 0;
+        if (ret === false || ret === void 0 && valueA !== valueB) return false;
+    }
+    return true;
+};
+
+},{}],"fGS9o":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function stylis_min(W) {
+    function M(d, c, e, h, a) {
+        for(var m = 0, b = 0, v = 0, n = 0, q, g, x = 0, K = 0, k, u = k = q = 0, l = 0, r = 0, I = 0, t = 0, B = e.length, J = B - 1, y, f = "", p = "", F = "", G = "", C; l < B;){
+            g = e.charCodeAt(l);
+            l === J && 0 !== b + n + v + m && (0 !== b && (g = 47 === b ? 10 : 47), n = v = m = 0, B++, J++);
+            if (0 === b + n + v + m) {
+                if (l === J && (0 < r && (f = f.replace(N, "")), 0 < f.trim().length)) {
+                    switch(g){
+                        case 32:
+                        case 9:
+                        case 59:
+                        case 13:
+                        case 10:
+                            break;
+                        default:
+                            f += e.charAt(l);
+                    }
+                    g = 59;
+                }
+                switch(g){
+                    case 123:
+                        f = f.trim();
+                        q = f.charCodeAt(0);
+                        k = 1;
+                        for(t = ++l; l < B;){
+                            switch(g = e.charCodeAt(l)){
+                                case 123:
+                                    k++;
+                                    break;
+                                case 125:
+                                    k--;
+                                    break;
+                                case 47:
+                                    switch(g = e.charCodeAt(l + 1)){
+                                        case 42:
+                                        case 47:
+                                            a: {
+                                                for(u = l + 1; u < J; ++u)switch(e.charCodeAt(u)){
+                                                    case 47:
+                                                        if (42 === g && 42 === e.charCodeAt(u - 1) && l + 2 !== u) {
+                                                            l = u + 1;
+                                                            break a;
+                                                        }
+                                                        break;
+                                                    case 10:
+                                                        if (47 === g) {
+                                                            l = u + 1;
+                                                            break a;
+                                                        }
+                                                }
+                                                l = u;
+                                            }
+                                    }
+                                    break;
+                                case 91:
+                                    g++;
+                                case 40:
+                                    g++;
+                                case 34:
+                                case 39:
+                                    for(; (l++) < J && e.charCodeAt(l) !== g;);
+                            }
+                            if (0 === k) break;
+                            l++;
+                        }
+                        k = e.substring(t, l);
+                        0 === q && (q = (f = f.replace(ca, "").trim()).charCodeAt(0));
+                        switch(q){
+                            case 64:
+                                0 < r && (f = f.replace(N, ""));
+                                g = f.charCodeAt(1);
+                                switch(g){
+                                    case 100:
+                                    case 109:
+                                    case 115:
+                                    case 45:
+                                        r = c;
+                                        break;
+                                    default:
+                                        r = O;
+                                }
+                                k = M(c, r, k, g, a + 1);
+                                t = k.length;
+                                0 < A && (r = X(O, f, I), C = H(3, k, r, c, D, z, t, g, a, h), f = r.join(""), void 0 !== C && 0 === (t = (k = C.trim()).length) && (g = 0, k = ""));
+                                if (0 < t) switch(g){
+                                    case 115:
+                                        f = f.replace(da, ea);
+                                    case 100:
+                                    case 109:
+                                    case 45:
+                                        k = f + "{" + k + "}";
+                                        break;
+                                    case 107:
+                                        f = f.replace(fa, "$1 $2");
+                                        k = f + "{" + k + "}";
+                                        k = 1 === w || 2 === w && L("@" + k, 3) ? "@-webkit-" + k + "@" + k : "@" + k;
+                                        break;
+                                    default:
+                                        k = f + k, 112 === h && (k = (p += k, ""));
+                                }
+                                else k = "";
+                                break;
+                            default:
+                                k = M(c, X(c, f, I), k, h, a + 1);
+                        }
+                        F += k;
+                        k = I = r = u = q = 0;
+                        f = "";
+                        g = e.charCodeAt(++l);
+                        break;
+                    case 125:
+                    case 59:
+                        f = (0 < r ? f.replace(N, "") : f).trim();
+                        if (1 < (t = f.length)) switch(0 === u && (q = f.charCodeAt(0), 45 === q || 96 < q && 123 > q) && (t = (f = f.replace(" ", ":")).length), 0 < A && void 0 !== (C = H(1, f, c, d, D, z, p.length, h, a, h)) && 0 === (t = (f = C.trim()).length) && (f = "\0\0"), q = f.charCodeAt(0), g = f.charCodeAt(1), q){
+                            case 0:
+                                break;
+                            case 64:
+                                if (105 === g || 99 === g) {
+                                    G += f + e.charAt(l);
+                                    break;
+                                }
+                            default:
+                                58 !== f.charCodeAt(t - 1) && (p += P(f, q, g, f.charCodeAt(2)));
+                        }
+                        I = r = u = q = 0;
+                        f = "";
+                        g = e.charCodeAt(++l);
+                }
+            }
+            switch(g){
+                case 13:
+                case 10:
+                    47 === b ? b = 0 : 0 === 1 + q && 107 !== h && 0 < f.length && (r = 1, f += "\0");
+                    0 < A * Y && H(0, f, c, d, D, z, p.length, h, a, h);
+                    z = 1;
+                    D++;
+                    break;
+                case 59:
+                case 125:
+                    if (0 === b + n + v + m) {
+                        z++;
+                        break;
+                    }
+                default:
+                    z++;
+                    y = e.charAt(l);
+                    switch(g){
+                        case 9:
+                        case 32:
+                            if (0 === n + m + b) switch(x){
+                                case 44:
+                                case 58:
+                                case 9:
+                                case 32:
+                                    y = "";
+                                    break;
+                                default:
+                                    32 !== g && (y = " ");
+                            }
+                            break;
+                        case 0:
+                            y = "\\0";
+                            break;
+                        case 12:
+                            y = "\\f";
+                            break;
+                        case 11:
+                            y = "\\v";
+                            break;
+                        case 38:
+                            0 === n + b + m && (r = I = 1, y = "\f" + y);
+                            break;
+                        case 108:
+                            if (0 === n + b + m + E && 0 < u) switch(l - u){
+                                case 2:
+                                    112 === x && 58 === e.charCodeAt(l - 3) && (E = x);
+                                case 8:
+                                    111 === K && (E = K);
+                            }
+                            break;
+                        case 58:
+                            0 === n + b + m && (u = l);
+                            break;
+                        case 44:
+                            0 === b + v + n + m && (r = 1, y += "\r");
+                            break;
+                        case 34:
+                        case 39:
+                            0 === b && (n = n === g ? 0 : 0 === n ? g : n);
+                            break;
+                        case 91:
+                            0 === n + b + v && m++;
+                            break;
+                        case 93:
+                            0 === n + b + v && m--;
+                            break;
+                        case 41:
+                            0 === n + b + m && v--;
+                            break;
+                        case 40:
+                            if (0 === n + b + m) {
+                                if (0 === q) switch(2 * x + 3 * K){
+                                    case 533:
+                                        break;
+                                    default:
+                                        q = 1;
+                                }
+                                v++;
+                            }
+                            break;
+                        case 64:
+                            0 === b + v + n + m + u + k && (k = 1);
+                            break;
+                        case 42:
+                        case 47:
+                            if (!(0 < n + m + v)) switch(b){
+                                case 0:
+                                    switch(2 * g + 3 * e.charCodeAt(l + 1)){
+                                        case 235:
+                                            b = 47;
+                                            break;
+                                        case 220:
+                                            t = l, b = 42;
+                                    }
+                                    break;
+                                case 42:
+                                    47 === g && 42 === x && t + 2 !== l && (33 === e.charCodeAt(t + 2) && (p += e.substring(t, l + 1)), y = "", b = 0);
+                            }
+                    }
+                    0 === b && (f += y);
+            }
+            K = x;
+            x = g;
+            l++;
+        }
+        t = p.length;
+        if (0 < t) {
+            r = c;
+            if (0 < A && (C = H(2, p, r, d, D, z, t, h, a, h), void 0 !== C && 0 === (p = C).length)) return G + p + F;
+            p = r.join(",") + "{" + p + "}";
+            if (0 !== w * E) {
+                2 !== w || L(p, 2) || (E = 0);
+                switch(E){
+                    case 111:
+                        p = p.replace(ha, ":-moz-$1") + p;
+                        break;
+                    case 112:
+                        p = p.replace(Q, "::-webkit-input-$1") + p.replace(Q, "::-moz-$1") + p.replace(Q, ":-ms-input-$1") + p;
+                }
+                E = 0;
+            }
+        }
+        return G + p + F;
+    }
+    function X(d, c, e) {
+        var h = c.trim().split(ia);
+        c = h;
+        var a = h.length, m = d.length;
+        switch(m){
+            case 0:
+            case 1:
+                var b = 0;
+                for(d = 0 === m ? "" : d[0] + " "; b < a; ++b)c[b] = Z(d, c[b], e).trim();
+                break;
+            default:
+                var v = b = 0;
+                for(c = []; b < a; ++b)for(var n = 0; n < m; ++n)c[v++] = Z(d[n] + " ", h[b], e).trim();
+        }
+        return c;
+    }
+    function Z(d, c, e) {
+        var h = c.charCodeAt(0);
+        33 > h && (h = (c = c.trim()).charCodeAt(0));
+        switch(h){
+            case 38:
+                return c.replace(F, "$1" + d.trim());
+            case 58:
+                return d.trim() + c.replace(F, "$1" + d.trim());
+            default:
+                if (0 < 1 * e && 0 < c.indexOf("\f")) return c.replace(F, (58 === d.charCodeAt(0) ? "" : "$1") + d.trim());
+        }
+        return d + c;
+    }
+    function P(d, c, e, h) {
+        var a = d + ";", m = 2 * c + 3 * e + 4 * h;
+        if (944 === m) {
+            d = a.indexOf(":", 9) + 1;
+            var b = a.substring(d, a.length - 1).trim();
+            b = a.substring(0, d).trim() + b + ";";
+            return 1 === w || 2 === w && L(b, 1) ? "-webkit-" + b + b : b;
+        }
+        if (0 === w || 2 === w && !L(a, 1)) return a;
+        switch(m){
+            case 1015:
+                return 97 === a.charCodeAt(10) ? "-webkit-" + a + a : a;
+            case 951:
+                return 116 === a.charCodeAt(3) ? "-webkit-" + a + a : a;
+            case 963:
+                return 110 === a.charCodeAt(5) ? "-webkit-" + a + a : a;
+            case 1009:
+                if (100 !== a.charCodeAt(4)) break;
+            case 969:
+            case 942:
+                return "-webkit-" + a + a;
+            case 978:
+                return "-webkit-" + a + "-moz-" + a + a;
+            case 1019:
+            case 983:
+                return "-webkit-" + a + "-moz-" + a + "-ms-" + a + a;
+            case 883:
+                if (45 === a.charCodeAt(8)) return "-webkit-" + a + a;
+                if (0 < a.indexOf("image-set(", 11)) return a.replace(ja, "$1-webkit-$2") + a;
+                break;
+            case 932:
+                if (45 === a.charCodeAt(4)) switch(a.charCodeAt(5)){
+                    case 103:
+                        return "-webkit-box-" + a.replace("-grow", "") + "-webkit-" + a + "-ms-" + a.replace("grow", "positive") + a;
+                    case 115:
+                        return "-webkit-" + a + "-ms-" + a.replace("shrink", "negative") + a;
+                    case 98:
+                        return "-webkit-" + a + "-ms-" + a.replace("basis", "preferred-size") + a;
+                }
+                return "-webkit-" + a + "-ms-" + a + a;
+            case 964:
+                return "-webkit-" + a + "-ms-flex-" + a + a;
+            case 1023:
+                if (99 !== a.charCodeAt(8)) break;
+                b = a.substring(a.indexOf(":", 15)).replace("flex-", "").replace("space-between", "justify");
+                return "-webkit-box-pack" + b + "-webkit-" + a + "-ms-flex-pack" + b + a;
+            case 1005:
+                return ka.test(a) ? a.replace(aa, ":-webkit-") + a.replace(aa, ":-moz-") + a : a;
+            case 1e3:
+                b = a.substring(13).trim();
+                c = b.indexOf("-") + 1;
+                switch(b.charCodeAt(0) + b.charCodeAt(c)){
+                    case 226:
+                        b = a.replace(G, "tb");
+                        break;
+                    case 232:
+                        b = a.replace(G, "tb-rl");
+                        break;
+                    case 220:
+                        b = a.replace(G, "lr");
+                        break;
+                    default:
+                        return a;
+                }
+                return "-webkit-" + a + "-ms-" + b + a;
+            case 1017:
+                if (-1 === a.indexOf("sticky", 9)) break;
+            case 975:
+                c = (a = d).length - 10;
+                b = (33 === a.charCodeAt(c) ? a.substring(0, c) : a).substring(d.indexOf(":", 7) + 1).trim();
+                switch(m = b.charCodeAt(0) + (b.charCodeAt(7) | 0)){
+                    case 203:
+                        if (111 > b.charCodeAt(8)) break;
+                    case 115:
+                        a = a.replace(b, "-webkit-" + b) + ";" + a;
+                        break;
+                    case 207:
+                    case 102:
+                        a = a.replace(b, "-webkit-" + (102 < m ? "inline-" : "") + "box") + ";" + a.replace(b, "-webkit-" + b) + ";" + a.replace(b, "-ms-" + b + "box") + ";" + a;
+                }
+                return a + ";";
+            case 938:
+                if (45 === a.charCodeAt(5)) switch(a.charCodeAt(6)){
+                    case 105:
+                        return b = a.replace("-items", ""), "-webkit-" + a + "-webkit-box-" + b + "-ms-flex-" + b + a;
+                    case 115:
+                        return "-webkit-" + a + "-ms-flex-item-" + a.replace(ba, "") + a;
+                    default:
+                        return "-webkit-" + a + "-ms-flex-line-pack" + a.replace("align-content", "").replace(ba, "") + a;
+                }
+                break;
+            case 973:
+            case 989:
+                if (45 !== a.charCodeAt(3) || 122 === a.charCodeAt(4)) break;
+            case 931:
+            case 953:
+                if (!0 === la.test(d)) return 115 === (b = d.substring(d.indexOf(":") + 1)).charCodeAt(0) ? P(d.replace("stretch", "fill-available"), c, e, h).replace(":fill-available", ":stretch") : a.replace(b, "-webkit-" + b) + a.replace(b, "-moz-" + b.replace("fill-", "")) + a;
+                break;
+            case 962:
+                if (a = "-webkit-" + a + (102 === a.charCodeAt(5) ? "-ms-" + a : "") + a, 211 === e + h && 105 === a.charCodeAt(13) && 0 < a.indexOf("transform", 10)) return a.substring(0, a.indexOf(";", 27) + 1).replace(ma, "$1-webkit-$2") + a;
+        }
+        return a;
+    }
+    function L(d, c) {
+        var e = d.indexOf(1 === c ? ":" : "{"), h = d.substring(0, 3 !== c ? e : 10);
+        e = d.substring(e + 1, d.length - 1);
+        return R(2 !== c ? h : h.replace(na, "$1"), e, c);
+    }
+    function ea(d, c) {
+        var e = P(c, c.charCodeAt(0), c.charCodeAt(1), c.charCodeAt(2));
+        return e !== c + ";" ? e.replace(oa, " or ($1)").substring(4) : "(" + c + ")";
+    }
+    function H(d, c, e, h, a, m, b, v, n, q) {
+        for(var g = 0, x = c, w; g < A; ++g)switch(w = S[g].call(B, d, x, e, h, a, m, b, v, n, q)){
+            case void 0:
+            case !1:
+            case !0:
+            case null:
+                break;
+            default:
+                x = w;
+        }
+        if (x !== c) return x;
+    }
+    function T(d) {
+        switch(d){
+            case void 0:
+            case null:
+                A = S.length = 0;
+                break;
+            default:
+                if ("function" === typeof d) S[A++] = d;
+                else if ("object" === typeof d) for(var c = 0, e = d.length; c < e; ++c)T(d[c]);
+                else Y = !!d | 0;
+        }
+        return T;
+    }
+    function U(d) {
+        d = d.prefix;
+        void 0 !== d && (R = null, d ? "function" !== typeof d ? w = 1 : (w = 2, R = d) : w = 0);
+        return U;
+    }
+    function B(d, c) {
+        var e = d;
+        33 > e.charCodeAt(0) && (e = e.trim());
+        V = e;
+        e = [
+            V
+        ];
+        if (0 < A) {
+            var h = H(-1, c, e, e, D, z, 0, 0, 0, 0);
+            void 0 !== h && "string" === typeof h && (c = h);
+        }
+        var a = M(O, e, c, 0, 0);
+        0 < A && (h = H(-2, a, e, e, D, z, a.length, 0, 0, 0), void 0 !== h && (a = h));
+        V = "";
+        E = 0;
+        z = D = 1;
+        return a;
+    }
+    var ca = /^\0+/g, N = /[\0\r\f]/g, aa = /: */g, ka = /zoo|gra/, ma = /([,: ])(transform)/g, ia = /,\r+?/g, F = /([\t\r\n ])*\f?&/g, fa = /@(k\w+)\s*(\S*)\s*/, Q = /::(place)/g, ha = /:(read-only)/g, G = /[svh]\w+-[tblr]{2}/, da = /\(\s*(.*)\s*\)/g, oa = /([\s\S]*?);/g, ba = /-self|flex-/g, na = /[^]*?(:[rp][el]a[\w-]+)[^]*/, la = /stretch|:\s*\w+\-(?:conte|avail)/, ja = /([^-])(image-set\()/, z = 1, D = 1, E = 0, w = 1, O = [], S = [], A = 0, R = null, Y = 0, V = "";
+    B.use = T;
+    B.set = U;
+    void 0 !== W && U(W);
+    return B;
+}
+exports.default = stylis_min;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"pVndT":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var unitlessKeys = {
+    animationIterationCount: 1,
+    borderImageOutset: 1,
+    borderImageSlice: 1,
+    borderImageWidth: 1,
+    boxFlex: 1,
+    boxFlexGroup: 1,
+    boxOrdinalGroup: 1,
+    columnCount: 1,
+    columns: 1,
+    flex: 1,
+    flexGrow: 1,
+    flexPositive: 1,
+    flexShrink: 1,
+    flexNegative: 1,
+    flexOrder: 1,
+    gridRow: 1,
+    gridRowEnd: 1,
+    gridRowSpan: 1,
+    gridRowStart: 1,
+    gridColumn: 1,
+    gridColumnEnd: 1,
+    gridColumnSpan: 1,
+    gridColumnStart: 1,
+    msGridRow: 1,
+    msGridRowSpan: 1,
+    msGridColumn: 1,
+    msGridColumnSpan: 1,
+    fontWeight: 1,
+    lineHeight: 1,
+    opacity: 1,
+    order: 1,
+    orphans: 1,
+    tabSize: 1,
+    widows: 1,
+    zIndex: 1,
+    zoom: 1,
+    WebkitLineClamp: 1,
+    // SVG-related properties
+    fillOpacity: 1,
+    floodOpacity: 1,
+    stopOpacity: 1,
+    strokeDasharray: 1,
+    strokeDashoffset: 1,
+    strokeMiterlimit: 1,
+    strokeOpacity: 1,
+    strokeWidth: 1
+};
+exports.default = unitlessKeys;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9JzNk":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _memoize = require("@emotion/memoize");
+var _memoizeDefault = parcelHelpers.interopDefault(_memoize);
+var reactPropsRegex = /^((children|dangerouslySetInnerHTML|key|ref|autoFocus|defaultValue|defaultChecked|innerHTML|suppressContentEditableWarning|suppressHydrationWarning|valueLink|abbr|accept|acceptCharset|accessKey|action|allow|allowUserMedia|allowPaymentRequest|allowFullScreen|allowTransparency|alt|async|autoComplete|autoPlay|capture|cellPadding|cellSpacing|challenge|charSet|checked|cite|classID|className|cols|colSpan|content|contentEditable|contextMenu|controls|controlsList|coords|crossOrigin|data|dateTime|decoding|default|defer|dir|disabled|disablePictureInPicture|download|draggable|encType|enterKeyHint|form|formAction|formEncType|formMethod|formNoValidate|formTarget|frameBorder|headers|height|hidden|high|href|hrefLang|htmlFor|httpEquiv|id|inputMode|integrity|is|keyParams|keyType|kind|label|lang|list|loading|loop|low|marginHeight|marginWidth|max|maxLength|media|mediaGroup|method|min|minLength|multiple|muted|name|nonce|noValidate|open|optimum|pattern|placeholder|playsInline|poster|preload|profile|radioGroup|readOnly|referrerPolicy|rel|required|reversed|role|rows|rowSpan|sandbox|scope|scoped|scrolling|seamless|selected|shape|size|sizes|slot|span|spellCheck|src|srcDoc|srcLang|srcSet|start|step|style|summary|tabIndex|target|title|translate|type|useMap|value|width|wmode|wrap|about|datatype|inlist|prefix|property|resource|typeof|vocab|autoCapitalize|autoCorrect|autoSave|color|incremental|fallback|inert|itemProp|itemScope|itemType|itemID|itemRef|on|option|results|security|unselectable|accentHeight|accumulate|additive|alignmentBaseline|allowReorder|alphabetic|amplitude|arabicForm|ascent|attributeName|attributeType|autoReverse|azimuth|baseFrequency|baselineShift|baseProfile|bbox|begin|bias|by|calcMode|capHeight|clip|clipPathUnits|clipPath|clipRule|colorInterpolation|colorInterpolationFilters|colorProfile|colorRendering|contentScriptType|contentStyleType|cursor|cx|cy|d|decelerate|descent|diffuseConstant|direction|display|divisor|dominantBaseline|dur|dx|dy|edgeMode|elevation|enableBackground|end|exponent|externalResourcesRequired|fill|fillOpacity|fillRule|filter|filterRes|filterUnits|floodColor|floodOpacity|focusable|fontFamily|fontSize|fontSizeAdjust|fontStretch|fontStyle|fontVariant|fontWeight|format|from|fr|fx|fy|g1|g2|glyphName|glyphOrientationHorizontal|glyphOrientationVertical|glyphRef|gradientTransform|gradientUnits|hanging|horizAdvX|horizOriginX|ideographic|imageRendering|in|in2|intercept|k|k1|k2|k3|k4|kernelMatrix|kernelUnitLength|kerning|keyPoints|keySplines|keyTimes|lengthAdjust|letterSpacing|lightingColor|limitingConeAngle|local|markerEnd|markerMid|markerStart|markerHeight|markerUnits|markerWidth|mask|maskContentUnits|maskUnits|mathematical|mode|numOctaves|offset|opacity|operator|order|orient|orientation|origin|overflow|overlinePosition|overlineThickness|panose1|paintOrder|pathLength|patternContentUnits|patternTransform|patternUnits|pointerEvents|points|pointsAtX|pointsAtY|pointsAtZ|preserveAlpha|preserveAspectRatio|primitiveUnits|r|radius|refX|refY|renderingIntent|repeatCount|repeatDur|requiredExtensions|requiredFeatures|restart|result|rotate|rx|ry|scale|seed|shapeRendering|slope|spacing|specularConstant|specularExponent|speed|spreadMethod|startOffset|stdDeviation|stemh|stemv|stitchTiles|stopColor|stopOpacity|strikethroughPosition|strikethroughThickness|string|stroke|strokeDasharray|strokeDashoffset|strokeLinecap|strokeLinejoin|strokeMiterlimit|strokeOpacity|strokeWidth|surfaceScale|systemLanguage|tableValues|targetX|targetY|textAnchor|textDecoration|textRendering|textLength|to|transform|u1|u2|underlinePosition|underlineThickness|unicode|unicodeBidi|unicodeRange|unitsPerEm|vAlphabetic|vHanging|vIdeographic|vMathematical|values|vectorEffect|version|vertAdvY|vertOriginX|vertOriginY|viewBox|viewTarget|visibility|widths|wordSpacing|writingMode|x|xHeight|x1|x2|xChannelSelector|xlinkActuate|xlinkArcrole|xlinkHref|xlinkRole|xlinkShow|xlinkTitle|xlinkType|xmlBase|xmlns|xmlnsXlink|xmlLang|xmlSpace|y|y1|y2|yChannelSelector|z|zoomAndPan|for|class|autofocus)|(([Dd][Aa][Tt][Aa]|[Aa][Rr][Ii][Aa]|x)-.*))$/; // https://esbench.com/bench/5bfee68a4cd7e6009ef61d23
+var isPropValid = /* #__PURE__ */ (0, _memoizeDefault.default)(function(prop) {
+    return reactPropsRegex.test(prop) || prop.charCodeAt(0) === 111 && prop.charCodeAt(1) === 110 && prop.charCodeAt(2) < 91;
+});
+exports.default = isPropValid;
+
+},{"@emotion/memoize":"2vzJd","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2vzJd":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function memoize(fn) {
+    var cache = Object.create(null);
+    return function(arg) {
+        if (cache[arg] === undefined) cache[arg] = fn(arg);
+        return cache[arg];
+    };
+}
+exports.default = memoize;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1GfsB":[function(require,module,exports) {
+"use strict";
+var reactIs = require("react-is");
+/**
+ * Copyright 2015, Yahoo! Inc.
+ * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
+ */ var REACT_STATICS = {
+    childContextTypes: true,
+    contextType: true,
+    contextTypes: true,
+    defaultProps: true,
+    displayName: true,
+    getDefaultProps: true,
+    getDerivedStateFromError: true,
+    getDerivedStateFromProps: true,
+    mixins: true,
+    propTypes: true,
+    type: true
+};
+var KNOWN_STATICS = {
+    name: true,
+    length: true,
+    prototype: true,
+    caller: true,
+    callee: true,
+    arguments: true,
+    arity: true
+};
+var FORWARD_REF_STATICS = {
+    "$$typeof": true,
+    render: true,
+    defaultProps: true,
+    displayName: true,
+    propTypes: true
+};
+var MEMO_STATICS = {
+    "$$typeof": true,
+    compare: true,
+    defaultProps: true,
+    displayName: true,
+    propTypes: true,
+    type: true
+};
+var TYPE_STATICS = {};
+TYPE_STATICS[reactIs.ForwardRef] = FORWARD_REF_STATICS;
+TYPE_STATICS[reactIs.Memo] = MEMO_STATICS;
+function getStatics(component) {
+    // React v16.11 and below
+    if (reactIs.isMemo(component)) return MEMO_STATICS;
+     // React v16.12 and above
+    return TYPE_STATICS[component["$$typeof"]] || REACT_STATICS;
+}
+var defineProperty = Object.defineProperty;
+var getOwnPropertyNames = Object.getOwnPropertyNames;
+var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+var getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
+var getPrototypeOf = Object.getPrototypeOf;
+var objectPrototype = Object.prototype;
+function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
+    if (typeof sourceComponent !== "string") {
+        // don't hoist over string (html) components
+        if (objectPrototype) {
+            var inheritedComponent = getPrototypeOf(sourceComponent);
+            if (inheritedComponent && inheritedComponent !== objectPrototype) hoistNonReactStatics(targetComponent, inheritedComponent, blacklist);
+        }
+        var keys = getOwnPropertyNames(sourceComponent);
+        if (getOwnPropertySymbols) keys = keys.concat(getOwnPropertySymbols(sourceComponent));
+        var targetStatics = getStatics(targetComponent);
+        var sourceStatics = getStatics(sourceComponent);
+        for(var i = 0; i < keys.length; ++i){
+            var key = keys[i];
+            if (!KNOWN_STATICS[key] && !(blacklist && blacklist[key]) && !(sourceStatics && sourceStatics[key]) && !(targetStatics && targetStatics[key])) {
+                var descriptor = getOwnPropertyDescriptor(sourceComponent, key);
+                try {
+                    // Avoid failures from read-only properties
+                    defineProperty(targetComponent, key, descriptor);
+                } catch (e) {}
+            }
+        }
+    }
+    return targetComponent;
+}
+module.exports = hoistNonReactStatics;
+
+},{"react-is":"7EuwB"}],"45DZp":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "BRAND_COLOR", ()=>BRAND_COLOR);
+parcelHelpers.export(exports, "BRAND_TEXT_COLORS", ()=>BRAND_TEXT_COLORS);
+parcelHelpers.export(exports, "devices", ()=>devices);
+const BRAND_COLOR = "#cbf3f0";
+let BRAND_TEXT_COLORS;
+(function(BRAND_TEXT_COLORS) {
+    BRAND_TEXT_COLORS["BODY"] = "#335c67";
+    BRAND_TEXT_COLORS["LARGE"] = "#e09f3e";
+    BRAND_TEXT_COLORS["SMALL_BODY"] = "#540b0e";
+})(BRAND_TEXT_COLORS || (BRAND_TEXT_COLORS = {}));
+const sizes = {
+    mobileS: "320px",
+    mobileM: "375px",
+    mobileL: "425px",
+    tablet: "768px",
+    laptop: "1024px",
+    laptopL: "1440px",
+    desktop: "2560px"
+};
+const devices = {
+    mobileS: `(max-width: ${sizes.mobileS})`,
+    mobileM: `(max-width: ${sizes.mobileM})`,
+    mobileL: `(max-width: ${sizes.mobileL})`,
+    tablet: `(max-width: ${sizes.tablet})`,
+    laptop: `(max-width: ${sizes.laptop})`,
+    laptopL: `(max-width: ${sizes.laptopL})`,
+    desktop: `(max-width: ${sizes.desktop})`
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"c52lp":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$7c7e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$7c7e.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _styledComponents = require("styled-components");
+var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
+var _global = require("../styles/global");
+var _blob = require("./Blob");
+var _blobDefault = parcelHelpers.interopDefault(_blob);
+var _contrastDisplay = require("./ContrastDisplay");
+var _contrastDisplayDefault = parcelHelpers.interopDefault(_contrastDisplay);
+var _swapSvg = require("url:../assets/swap.svg");
+var _swapSvgDefault = parcelHelpers.interopDefault(_swapSvg);
+var _constants = require("../constants");
+var _utils = require("../utils");
+var _s = $RefreshSig$();
+const ContrastChecker = ()=>{
+    _s();
+    const [textColor, setTextColor] = (0, _react.useState)("#FEF3C7");
+    const [bgColor, setBgColor] = (0, _react.useState)("#059669");
+    const [contrastRatio, setContrastRatio] = (0, _react.useState)(null);
+    const [wcag2Ratio, setWcag2Ratio] = (0, _react.useState)(null);
+    (0, _react.useEffect)(()=>{
+        updateRatio(textColor, bgColor);
+    }, [
+        textColor,
+        bgColor
+    ]);
+    const updateRatio = (textColor, bgColor)=>{
+        const { contrastLC , wcag2Ratio  } = (0, _utils.getContrast)(textColor, bgColor);
+        setContrastRatio(contrastLC);
+        setWcag2Ratio(wcag2Ratio);
+        console.log({
+            contrastLC,
+            wcag2Ratio
+        });
+    };
+    const handleTextColorChange = (event)=>{
+        const color = event.target.value.toUpperCase();
+        setTextColor(color);
+        (0, _utils.parseColor)(color)[4];
+    };
+    const handleBgColorChange = (event)=>{
+        const color = event.target.value.toUpperCase();
+        setBgColor(color);
+        (0, _utils.parseColor)(color)[4];
+    };
+    const swapColors = (event)=>{
+        event.preventDefault();
+        const tempColor = textColor;
+        setTextColor(bgColor);
+        setBgColor(tempColor);
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Wrapper, {
+        align: "center",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledForm, {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledColSection), {
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledText), {
+                                type: "small",
+                                color: (0, _constants.BRAND_TEXT_COLORS).BODY,
+                                children: "Text Color"
+                            }, void 0, false, {
+                                fileName: "src/components/ContrastChecker.tsx",
+                                lineNumber: 57,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _blobDefault.default), {
+                                fill: textColor,
+                                width: 48,
+                                height: 48
+                            }, void 0, false, {
+                                fileName: "src/components/ContrastChecker.tsx",
+                                lineNumber: 61,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledInputs, {
+                                type: "text",
+                                name: "textColor",
+                                value: textColor,
+                                onChange: handleTextColorChange,
+                                placeholder: "Enter text color"
+                            }, void 0, false, {
+                                fileName: "src/components/ContrastChecker.tsx",
+                                lineNumber: 62,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/ContrastChecker.tsx",
+                        lineNumber: 56,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(SwapButton, {
+                        onClick: swapColors,
+                        type: "button",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            src: (0, _swapSvgDefault.default),
+                            alt: "Swap icon",
+                            width: 24,
+                            height: 24
+                        }, void 0, false, {
+                            fileName: "src/components/ContrastChecker.tsx",
+                            lineNumber: 72,
+                            columnNumber: 11
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/components/ContrastChecker.tsx",
+                        lineNumber: 71,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledColSection), {
+                        align: "end",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledText), {
+                                type: "small",
+                                color: (0, _constants.BRAND_TEXT_COLORS).BODY,
+                                children: "Background Color"
+                            }, void 0, false, {
+                                fileName: "src/components/ContrastChecker.tsx",
+                                lineNumber: 76,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _blobDefault.default), {
+                                fill: bgColor,
+                                width: 48,
+                                height: 48
+                            }, void 0, false, {
+                                fileName: "src/components/ContrastChecker.tsx",
+                                lineNumber: 80,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledInputs, {
+                                type: "text",
+                                name: "bgColor",
+                                value: bgColor,
+                                onChange: handleBgColorChange,
+                                placeholder: "Enter background color"
+                            }, void 0, false, {
+                                fileName: "src/components/ContrastChecker.tsx",
+                                lineNumber: 81,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/ContrastChecker.tsx",
+                        lineNumber: 75,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/ContrastChecker.tsx",
+                lineNumber: 55,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contrastDisplayDefault.default), {
+                contrastLC: contrastRatio,
+                wcag2Ratio: wcag2Ratio
+            }, void 0, false, {
+                fileName: "src/components/ContrastChecker.tsx",
+                lineNumber: 91,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledTextDisplay, {
+                textColor: textColor,
+                bgColor: bgColor,
+                children: "The quick brown fox jumped over the lazy dog"
+            }, void 0, false, {
+                fileName: "src/components/ContrastChecker.tsx",
+                lineNumber: 93,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/ContrastChecker.tsx",
+        lineNumber: 54,
+        columnNumber: 5
+    }, undefined);
+};
+_s(ContrastChecker, "r9VwQucZtzi0qBU7QalCWAjvwpI=");
+_c = ContrastChecker;
+const Wrapper = (0, _styledComponentsDefault.default)((0, _global.StyledColSection))`
+  z-index: 1;
+  margin-top: -10%;
+
+  @media ${(0, _constants.devices).mobileL} {
+    margin-top: 10%;
+  }
+`;
+_c1 = Wrapper;
+const StyledForm = (0, _styledComponentsDefault.default).form`
+  display: flex;
+  justify-content: center;
+  grid-gap: 20px;
+  gap: 20px;
+
+  @media ${(0, _constants.devices).mobileL} {
+    flex-direction: column;
+    align-items: center;
+    grid-gap: 10px;
+    gap: 10px;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+`;
+_c2 = StyledForm;
+const StyledInputs = (0, _styledComponentsDefault.default).input`
+  padding: 5px;
+  border: 3px solid #cbf3f0;
+  border-radius: 5px;
+
+  @media ${(0, _constants.devices).mobileL} {
+    width: 100%;
+  }
+`;
+_c3 = StyledInputs;
+// const StyledColorPickerIcon = styled.div<{ color: string }>`
+//   width: 24px;
+//   height: 24px;
+//   border-radius: 12px;
+//   background-color: ${props => props.color};
+// `;
+const StyledTextDisplay = (0, _styledComponentsDefault.default).div`
+  background-color: ${(props)=>props.bgColor};
+  color: ${(props)=>props.textColor};
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 24px;
+  margin-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  @media ${(0, _constants.devices).mobileL} {
+    width: 90%;
+    height: 200px;
+  }
+`;
+_c4 = StyledTextDisplay;
+const SwapButton = (0, _styledComponentsDefault.default).button`
+  background: transparent;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  cursor: pointer;
+
+  @media ${(0, _constants.devices).mobileL} {
+    transform: rotateZ(90deg);
+  }
+`;
+_c5 = SwapButton;
+exports.default = ContrastChecker;
+var _c, _c1, _c2, _c3, _c4, _c5;
+$RefreshReg$(_c, "ContrastChecker");
+$RefreshReg$(_c1, "Wrapper");
+$RefreshReg$(_c2, "StyledForm");
+$RefreshReg$(_c3, "StyledInputs");
+$RefreshReg$(_c4, "StyledTextDisplay");
+$RefreshReg$(_c5, "SwapButton");
+
+  $parcel$ReactRefreshHelpers$7c7e.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","styled-components":"1U3k6","../styles/global":"jHMjs","url:../assets/swap.svg":"g4rXk","../constants":"45DZp","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../utils":"dsXzW","./Blob":"5vqDi","./ContrastDisplay":"afdqE"}],"g4rXk":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("6EXJA") + "swap.9c464f13.svg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"lgJ39":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return "/";
+}
+function getBaseURL(url) {
+    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error("Origin not found");
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"km3Ru":[function(require,module,exports) {
+"use strict";
+var Refresh = require("react-refresh/runtime");
+function debounce(func, delay) {
+    var args;
+    var timeout = undefined;
+    return function(args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(function() {
+            timeout = undefined;
+            func.call(null, args);
+        }, delay);
+    };
+}
+var enqueueUpdate = debounce(function() {
+    Refresh.performReactRefresh();
+}, 30); // Everthing below is either adapted or copied from
+// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
+// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
+module.exports.prelude = function(module1) {
+    window.$RefreshReg$ = function(type, id) {
+        Refresh.register(type, module1.id + " " + id);
+    };
+    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
+};
+module.exports.postlude = function(module1) {
+    if (isReactRefreshBoundary(module1.exports)) {
+        registerExportsForReactRefresh(module1);
+        if (module1.hot) {
+            module1.hot.dispose(function(data) {
+                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
+                data.prevExports = module1.exports;
+            });
+            module1.hot.accept(function(getParents) {
+                var prevExports = module1.hot.data.prevExports;
+                var nextExports = module1.exports; // Since we just executed the code for it, it's possible
+                // that the new exports make it ineligible for being a boundary.
+                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports); // It can also become ineligible if its exports are incompatible
+                // with the previous exports.
+                // For example, if you add/remove/change exports, we'll want
+                // to re-execute the importing modules, and force those components
+                // to re-render. Similarly, if you convert a class component
+                // to a function, we want to invalidate the boundary.
+                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
+                if (isNoLongerABoundary || didInvalidate) {
+                    // We'll be conservative. The only case in which we won't do a full
+                    // reload is if all parent modules are also refresh boundaries.
+                    // In that case we'll add them to the current queue.
+                    var parents = getParents();
+                    if (parents.length === 0) {
+                        // Looks like we bubbled to the root. Can't recover from that.
+                        window.location.reload();
+                        return;
+                    }
+                    return parents;
+                }
+                enqueueUpdate();
+            });
+        }
+    }
+};
+function isReactRefreshBoundary(exports) {
+    if (Refresh.isLikelyComponentType(exports)) return true;
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    return false;
+    var hasExports = false;
+    var areAllExportsComponents = true;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        hasExports = true;
+        if (key === "__esModule") continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
+        return false;
+        var exportValue = exports[key];
+        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
+    }
+    return hasExports && areAllExportsComponents;
+}
+function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
+    var prevSignature = getRefreshBoundarySignature(prevExports);
+    var nextSignature = getRefreshBoundarySignature(nextExports);
+    if (prevSignature.length !== nextSignature.length) return true;
+    for(var i = 0; i < nextSignature.length; i++){
+        if (prevSignature[i] !== nextSignature[i]) return true;
+    }
+    return false;
+} // When this signature changes, it's unsafe to stop at this refresh boundary.
+function getRefreshBoundarySignature(exports) {
+    var signature = [];
+    signature.push(Refresh.getFamilyByType(exports));
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return signature;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        if (key === "__esModule") continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        signature.push(key);
+        signature.push(Refresh.getFamilyByType(exportValue));
+    }
+    return signature;
+}
+function registerExportsForReactRefresh(module1) {
+    var exports = module1.exports, id = module1.id;
+    Refresh.register(exports, id + " %exports%");
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        Refresh.register(exportValue, id + " %exports% " + key);
+    }
+}
+
+},{"react-refresh/runtime":"786KC"}],"dsXzW":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "parseColor", ()=>parseColor);
+parcelHelpers.export(exports, "getContrast", ()=>getContrast);
+parcelHelpers.export(exports, "getAALevel", ()=>getAALevel);
+var _bridgePca = require("bridge-pca");
+var _colorparsley = require("colorparsley");
+const parseColor = (color)=>{
+    return (0, _colorparsley.colorParsley)(color);
+};
+const getContrast = (textColor, bgColor)=>{
+    const TextColor = (0, _colorparsley.colorParsley)(textColor);
+    const BGColor = (0, _colorparsley.colorParsley)(bgColor);
+    const contrastLC = (0, _bridgePca.BPCAcontrast)((0, _bridgePca.sRGBtoY)(TextColor), (0, _bridgePca.sRGBtoY)(BGColor));
+    const wcag2Ratio = (0, _bridgePca.bridgeRatio)(contrastLC, (0, _bridgePca.sRGBtoY)(TextColor), (0, _bridgePca.sRGBtoY)(BGColor)).split("to").join(":");
+    console.log({
+        TextColor,
+        BGColor,
+        contrastLC,
+        wcag2Ratio
+    });
+    return {
+        contrastLC,
+        wcag2Ratio
+    };
+};
+const getAALevel = (ratio)=>{
+    const absoluteRatio = Math.abs(ratio);
+    let quality = "";
+    if (absoluteRatio != undefined) {
+        if (absoluteRatio < 15) quality = "INVISIBLE! \uD83D\uDE22";
+        else if (absoluteRatio >= 15 && absoluteRatio < 30) quality = "NOTICEABLE \uD83D\uDE0C";
+        else if (absoluteRatio >= 30 && absoluteRatio < 45) quality = "GETTING BETTER \uD83D\uDE42";
+        else if (absoluteRatio >= 45 && absoluteRatio < 60) quality = "NICE JOB \uD83D\uDE00";
+        else if (absoluteRatio >= 60 && absoluteRatio < 75) quality = "GREAT! \uD83D\uDE04";
+        else if (absoluteRatio >= 75 && absoluteRatio < 90) quality = "BEST \uD83D\uDE0A";
+        else if (absoluteRatio >= 90) quality = "ACCESSIBILITY MASTER!!! \uD83E\uDD29";
+    } else quality = "?";
+    return quality;
+};
+
+},{"bridge-pca":"lVMFY","colorparsley":"gNgS2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lVMFY":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+//////////  ƒ  BPCAcontrast()  /////////////////////////////////////////////
+parcelHelpers.export(exports, "BPCAcontrast", ()=>BPCAcontrast) // End BPCAcontrast()
+;
+//////////  ƒ  bridgeRatio()  ////////////////////////////////////////////
+parcelHelpers.export(exports, "bridgeRatio", ()=>bridgeRatio);
+//////////  ƒ  sRGBtoY()  //////////////////////////////////////////////////
+parcelHelpers.export(exports, "sRGBtoY", ()=>sRGBtoY) // End sRGBtoY()
+;
+//////////  ƒ  displayP3toY()  /////////////////////////////////////////////
+parcelHelpers.export(exports, "displayP3toY", ()=>displayP3toY) // End displayP3toY()
+;
+//////////  ƒ  adobeRGBtoY()  /////////////////////////////////////////////
+parcelHelpers.export(exports, "adobeRGBtoY", ()=>adobeRGBtoY) // End displayP3toY()
+;
+//////////  ƒ  alphaBlend()  /////////////////////////////////////////////
+// send rgba array for top, rgb for bottom.
+// Only foreground has alpha of 0.0 to 1.0 
+// This blends using gamma encoded space (standard)
+// rounded 0-255 or set isInt false for float 0.0-1.0
+parcelHelpers.export(exports, "alphaBlend", ()=>alphaBlend) // End alphaBlend()
+;
+//////////  ƒ  calcBPCA()  /////////////////////////////////////////////
+parcelHelpers.export(exports, "calcBPCA", ()=>calcBPCA) // End calcBPCA()
+ /*/ ///// PARSESTRING MID TOGGLE /////
+
+module.exports = {
+   BPCAcontrast,
+   bridgeRatio,
+   sRGBtoY,
+   displayP3toY,
+   adobeRGBtoY,
+   alphaBlend,
+   calcBPCA
+};
+
+// import { colorParsley } from './colorparsley';
+
+// */  ///// END PARSESTRING COMMENT SWITCH /////
+ ////\                              /////////////////////////////////////////////
+ /////\  END BPCA  0.1.6 4g BLOCK  /////////////////////////////////////////////
+ //////////////////////////////////////////////////////////////////////////////
+;
+///////////////////////////////////////////////////////////////////////////////
+/** @preserve
+/////    SAPC APCA - Advanced Perceptual Contrast Algorithm
+/////           bridge-pca  0.1.6  • BRIDGE contrast function only
+/////           DIST: W3 • Revision date: May 17, 2022
+/////    Function to parse color values and determine Lc contrast
+/////    Copyright © 2019-2021 by Andrew Somers. All Rights Reserved.
+/////    LICENSE: W3 LICENSE
+/////    CONTACT: Please use the ISSUES or DISCUSSIONS tab at:
+/////    https://github.com/Myndex/SAPC-APCA/
+/////
+///////////////////////////////////////////////////////////////////////////////
+/////
+/////    IMPORT:
+/////    import {
+/////            BPCAcontrast, bridgeRatio, sRGBtoY, displayP3toY, colorParsley
+/////            } from 'bridge-pca';
+/////    
+/////    FORWARD CONTRAST USAGE:
+/////    
+/////    txtY = sRGBtoY( TEXTcolor );
+/////    bgY = sRGBtoY( BACKGNDcolor );
+/////    contrastLc = BPCAcontrast( txtY, bgY );
+/////    wcag2ratio = bridgeRatio( contrastLc, txtY, bgY );
+/////    
+/////     Where the colors are sent as an rgba array [0,0,0]
+/////
+/////     Live Demonstrator at https://www.myndex.com/BPCA/
+// */ ///////////////////////////////////////////////////////////////////////////////
+// ==ClosureCompiler==
+// @compilation_level SIMPLE_OPTIMIZATIONS
+// @output_file_name bridge-pca.min.js
+// @code_url https://raw.githubusercontent.com/Myndex/bridge-pca/master/src/bridge-pca.js
+// ==/ClosureCompiler==
+// 
+////////////////////////////////////////////////////////////////////////////////
+/////
+/////                      SAPC Method and APCA Algorithm
+/////   WCAG_2 Bridge Version: https://github.com/Myndex/bridge-pca
+/////   MAIN GITHUB: https://github.com/Myndex/SAPC-APCA
+/////   DEVELOPER SITE: https://www.myndex.com/WEB/Perception
+/////
+/////   Acknowledgments and Thanks To:
+/////   • This project references the research and work of Dr.Lovie-Kitchin, 
+/////     Dr.Legge, Dr.Arditi, M.Fairchild, R.Hunt, M.Stone, Dr.Poynton, 
+/////     L.Arend, M.Luo, E.Burns, R.Blackwell, P.Barton, M.Brettel, and many 
+/////     others — see refs at https://www.myndex.com/WEB/WCAG_CE17polarity
+/////   • Bruce Bailey of USAccessBoard for his encouragement, ideas, & feedback
+/////   • Chris Loiselle of Oracle for getting us back on track in a pandemic
+/////   • The many volunteer test subjects for participating in the studies.
+/////   • Principal research conducted at Myndex by A.Somers.
+/////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+/////
+/////   *****  SAPC BLOCK  *****
+/////
+/////   For Evaluations, refer to this as: SAPC-8, v0.1.6 G-series constant 4g
+/////            SAPC • S-LUV Advanced Predictive Color
+/////
+/////   SIMPLE VERSION — Only the basic APCA contrast predictor.
+/////
+/////   Included Extensions & Model Features in this file:
+/////       • SAPC-8 Core Contrast (Base APCA, non-clinical use only) 
+/////       • G series constants, group "G-4g" using a 2.4 monitor exponent
+/////       • sRGB to Y, parses numeric sRGB color to luminance
+/////       • SoftToe black level soft clamp and flare compensation.
+/////
+/////
+////////////////////////////////////////////////////////////////////////////////
+/////
+/////               DISCLAIMER AND LIMITATIONS OF USE
+/////     Bridge-PCA is an embodiment of certain suprathreshold contrast
+/////     prediction technologies and it is licensed to the W3 on a
+/////     limited basis for use in certain specific accessibility
+/////     guidelines for web content only. Bridge-PCA may be used for 
+/////     predicting colors for web content use without royalty.
+/////
+/////     However, Any such license excludes other use cases
+/////     not related to web content. Prohibited uses include
+/////     medical, clinical evaluation, human safety related,
+/////     aerospace, transportation, military applications, 
+/////     and uses which are not specific to web based content
+/////     presented on self-illuminated displays or devices.
+/////
+////////////////////////////////////////////////////////////////////////////////
+//////////   BRIDGE PCA 0.1.6 4g USAGE  ////////////////////////////////////////
+///
+///  The API for "bridge-pca" is trivially simple.
+///  Send text and background sRGB numeric values to the sRGBtoY() function,
+///  and send the resulting text-Y and background-Y to the BPCAcontrast function,
+///  it returns a signed float with the numeric Lc contrast result.
+///  
+///  The two inputs are TEXT color and BACKGROUND color in that order.
+///  Each must be a numeric NOT a string, as this simple version has
+///  no string parsing utilities. EXAMPLE:
+///  ________________________________________________________________________
+///
+///     txtColor = [0,0,0]; // color of the text, as will be rendered
+///     bgColor  = [232,230,221]; // color for the background
+///
+///     contrastLc = BPCAcontrast( sRGBtoY(txtColor) , sRGBtoY(bgColor) );
+///  ________________________________________________________________________
+///
+///                  **********   QUICK START   **********
+///
+///  Each color must be a 24bit color (8 bit per channel) as a single integer
+///  (or 0x) sRGB encoded color, i.e. White is either the integer 16777216 or
+///  the hex 0xffffff. A float is returned with a positive or negative value.
+///  Negative values mean light text and a dark background, positive values
+///  mean dark text and a light background. 60.0, or -60.0 is a contrast
+///  "sort of like" the old WCAG 2's 4.5:1. NOTE: the total range is now less
+///  than ± 110, so output can be rounded to a signed INT but DO NOT output
+///  an absolute value - light text on dark BG should return a negative number.
+///
+///     *****  IMPORTANT: Do Not Mix Up Text and Background inputs.  *****
+///     ****************   BPCA is polarity dependent!   *****************
+///  
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+/////  BEGIN BPCA  0.1.6 4g BLOCK       \//////////////////////////////////////
+////                                     \////////////////////////////////////
+var _colorparsley = require("colorparsley");
+function BPCAcontrast(txtY, bgY, places = -1) {
+    // send linear Y (luminance) for text and background.
+    // txtY and bgY must be between 0.0-1.0
+    // IMPORTANT: Do not swap, polarity is important.
+    const icp = [
+        0.0,
+        1.1
+    ]; // input range clamp / input error check
+    if (isNaN(txtY) || isNaN(bgY) || Math.min(txtY, bgY) < icp[0] || Math.max(txtY, bgY) > icp[1]) return 0; // return zero on error
+    //////////   BPCA 0.1.6 G - 4g Constants   ///////////////////////
+    const normBG = 0.56, normTXT = 0.57, revTXT = 0.62, revBG = 0.65; // G-4g constants for use with 2.4 exponent
+    const blkThrs = 0.022, blkClmp = 1.414, scaleBoW = 1.14, scaleWoB = 1.14, loBoWoffset = 0.027, loWoBoffset = 0.027, bridgeWoBfact = 0.1414, bridgeWoBpivot = 0.84, loClip = 0.1, deltaYmin = 0.0005;
+    //////////   SAPC LOCAL VARS   /////////////////////////////////////////
+    let SAPC = 0.0; // For raw SAPC values
+    let outputContrast = 0.0; // For weighted final values
+    let polCat = "BoW"; // Polarity Indicator. N normal R reverse
+    // TUTORIAL
+    // Use Y for text and BG, and soft clamp black,
+    // return 0 for very close luminances, determine
+    // polarity, and calculate SAPC raw contrast
+    // Then scale for easy to remember levels.
+    // Note that reverse contrast (white text on black)
+    // intentionally returns a negative number
+    // Proper polarity is important!
+    //////////   BLACK SOFT CLAMP   ////////////////////////////////////////
+    // Soft clamps Y for either color if it is near black.
+    txtY = txtY > blkThrs ? txtY : txtY + Math.pow(blkThrs - txtY, blkClmp);
+    bgY = bgY > blkThrs ? bgY : bgY + Math.pow(blkThrs - bgY, blkClmp);
+    ///// Return 0 Early for extremely low ∆Y
+    if (Math.abs(bgY - txtY) < deltaYmin) return 0.0;
+    //////////   Bridge-PCA/SAPC CONTRAST - LOW CLIP (W3 LICENSE)  ///////////////
+    if (bgY > txtY) {
+        // Calculate the SAPC contrast value and scale
+        SAPC = (Math.pow(bgY, normBG) - Math.pow(txtY, normTXT)) * scaleBoW;
+        // Low Clip to prevent polarity reversal
+        outputContrast = SAPC < loClip ? 0.0 : SAPC - loBoWoffset;
+    } else {
+        // WoB should always return either negative value.
+        // OR the output will have R appended as string '23R'
+        // OR WoB '23 BoW' toolmaker choice so long as explained
+        polCat = "WoB";
+        SAPC = (Math.pow(bgY, revBG) - Math.pow(txtY, revTXT)) * scaleWoB;
+        // this is a special offset to align with incorrect WCAG_2 math.
+        let bridge = Math.max(0, txtY / bridgeWoBpivot - 1.0) * bridgeWoBfact;
+        // console.log(bridge + ' txtY ' + txtY + ' SAPC ' + SAPC);
+        outputContrast = SAPC > -loClip ? 0.0 : SAPC + loWoBoffset + bridge;
+    }
+    // return Lc (lightness contrast) as a signed numeric value 
+    // Round to the nearest whole number is optional.
+    // Rounded can be a signed INT as output will be within ± 127 
+    // places = -1 returns signed float, 0 returns rounded as string
+    if (places < 0) return outputContrast * 100.0;
+    else if (places == 0) return Math.round(Math.abs(outputContrast) * 100.0) + "<sub>" + polCat + "</sub>";
+    else if (Number.isInteger(places)) return (outputContrast * 100.0).toFixed(places);
+    else throw "Err-3";
+}
+function bridgeRatio(contrastLc = 0, txtY, bgY, ratioStr = " to 1", places = 1) {
+    // Takes the output of APCA (either a string or number)
+    // and makes it a WCAG2 ratio, returning a string '4.5 to 1'
+    // Jan 16 2022 constants   
+    let maxY = Math.max(txtY, bgY);
+    const offsetA = 0.2693;
+    const preScale = -0.0561;
+    const powerShift = 4.537;
+    const mainFactor = 1.113946;
+    const loThresh = 0.3;
+    const loExp = 0.48;
+    const preEmph = 0.42;
+    const postDe = 0.6594;
+    const hiTrim = 0.0785;
+    const loTrim = 0.0815;
+    const trimThresh = 0.506; // #c0c0c0
+    let addTrim = loTrim + hiTrim;
+    if (maxY > trimThresh) {
+        let adjFact = (1.0 - maxY) / (1.0 - trimThresh);
+        addTrim = loTrim * adjFact + hiTrim;
+    }
+    contrastLc = Math.max(0, Math.abs(parseFloat(contrastLc) * 0.01));
+    // convert Lc into a WCAG ratio
+    let wcagContrast = (Math.pow(contrastLc + preScale, powerShift) + offsetA) * mainFactor * contrastLc + addTrim;
+    // adjust WCAG ratios that are under  3 : 1, clean up near 0.
+    wcagContrast = wcagContrast > loThresh ? 10.0 * wcagContrast : contrastLc < 0.06 ? 0 : 10.0 * wcagContrast - (Math.pow(loThresh - wcagContrast + preEmph, loExp) - postDe);
+    return wcagContrast.toFixed(places) + ratioStr; // + '<br>trim:' + addTrim;
+}
+function sRGBtoY(rgba = [
+    0,
+    0,
+    0
+]) {
+    /////   Bridge-PCA 0.1.6 G - 4g - W3 Constants   ////////////////////////
+    const mainTRC = 2.4; // 2.4 exponent emulates actual monitor perception
+    const sRco = 0.2126478133913640, sGco = 0.7151791475336150, sBco = 0.0721730390750208; // sRGB coefficients
+    // Derived from:
+    // xW	yW	K	xR	yR	xG	yG	xB	yB
+    // 0.312720	0.329030	6504	0.640	0.330	0.300	0.600	0.150	0.060
+    // linearize r, g, or b then apply coefficients
+    // and sum then return the resulting luminance
+    function simpleExp(chan) {
+        return Math.pow(chan / 255.0, mainTRC);
+    }
+    return sRco * simpleExp(rgba[0]) + sGco * simpleExp(rgba[1]) + sBco * simpleExp(rgba[2]);
+}
+function displayP3toY(rgba = [
+    0,
+    0,
+    0
+]) {
+    /////   Bridge-PCA 0.1.6 G - 4g - W3 Constants   ////////////////////////
+    const mainTRC = 2.4; // 2.4 exponent emulates actual monitor perception
+    // Pending evaluation, because, Apple...
+    const sRco = 0.2289829594805780, sGco = 0.6917492625852380, sBco = 0.0792677779341829; // displayP3 coefficients
+    // Derived from:
+    // xW	yW	K	xR	yR	xG	yG	xB	yB
+    // 0.312720	0.329030	6504	0.680	0.320	0.265	0.690	0.150	0.060
+    // linearize r, g, or b then apply coefficients
+    // and sum then return the resulting luminance
+    function simpleExp(chan) {
+        return Math.pow(chan / 255.0, mainTRC);
+    }
+    return sRco * simpleExp(rgba[0]) + sGco * simpleExp(rgba[1]) + sBco * simpleExp(rgba[2]);
+}
+function adobeRGBtoY(rgb = [
+    0,
+    0,
+    0
+]) {
+    // NOTE: Currently expects 0-255
+    /////   Bridge-PCA 0.1.6   G - 4g - W3 Constants   ////////////////////////
+    const mainTRC = 2.35; // 2.35 exponent emulates actual monitor perception
+    // Pending evaluation...
+    const sRco = 0.2973550227113810, sGco = 0.6273727497145280, sBco = 0.0752722275740913; // adobeRGB coefficients
+    // Derived from:
+    // xW	yW	K	xR	yR	xG	yG	xB	yB
+    // 0.312720	0.329030	6504	0.640	0.330	0.210	0.710	0.150	0.060
+    // linearize r, g, or b then apply coefficients
+    // and sum then return the resulting luminance
+    function simpleExp(chan) {
+        return Math.pow(chan / 255.0, mainTRC);
+    }
+    return sRco * simpleExp(rgb[0]) + sGco * simpleExp(rgb[1]) + sBco * simpleExp(rgb[2]);
+}
+function alphaBlend(rgbaFG = [
+    0,
+    0,
+    0,
+    1.0
+], rgbBG = [
+    0,
+    0,
+    0
+], isInt = true) {
+    if (rgbaFG[3]) {
+        rgbaFG[3] = Math.max(Math.min(rgbaFG[3], 1.0), 0.0); // clamp alpha
+        let compBlend = 1.0 - rgbaFG[3];
+        let rgbOut = [
+            0,
+            0,
+            0
+        ]; // or just use rgbBG to retain other elements?
+        for(let i = 0; i < 3; i++){
+            rgbOut[i] = rgbBG[i] * compBlend + rgbaFG[i] * rgbaFG[3];
+            if (isInt) rgbOut[i] = Math.min(Math.round(rgbOut[i]), 255);
+        }
+        return rgbOut;
+    } else return rgbaFG;
+}
+function calcBPCA(textColor, bgColor, places = -1, isInt = true) {
+    // Note that this function required colorParsley !!
+    let bgClr = (0, _colorparsley.colorParsley)(bgColor);
+    let txClr = (0, _colorparsley.colorParsley)(textColor);
+    let hasAlpha = txClr[3] != "" && txClr[3] < 1 ? true : false;
+    if (hasAlpha) txClr = alphaBlend(txClr, bgClr, isInt);
+    return BPCAcontrast(sRGBtoY(txClr), sRGBtoY(bgClr), places);
+}
+
+},{"colorparsley":"gNgS2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gNgS2":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+///////////////////////////////////////////////////////////////////////////////
+/** @preserve
+/////    CoLoR PaRsLeY  a simple set of color parsing thingies!
+/////           Beta 0.1.8   Revision date: June 04, 2022
+/////
+/////    Functions to parse color values and return array
+/////    Copyright (c) 2019-2022 by Andrew Somers. All Rights Reserved.
+/////    LICENSE: AGPL 3
+/////    CONTACT: Please use the ISSUES or DISCUSSIONS tab at:
+/////    https://github.com/Myndex/colorparsley/
+/////
+///////////////////////////////////////////////////////////////////////////////
+/////
+/////    IMPORT:
+/////    import { colorParsley } from 'colorparsley';
+/////
+/////    let rgbaArray = colorParsley('#abcdef');
+/////
+/////    Output as array:  [r,g,b,a,isValid,colorspace]
+/////    Example: [123,123,123,1.0,true,'sRGB']
+// */ ///////////////////////////////////////////////////////////////////////////////
+// ==ClosureCompiler==
+// @compilation_level SIMPLE_OPTIMIZATIONS
+// @output_file_name colorparsley.min.js
+// @code_url https://raw.githubusercontent.com/Myndex/colorparsley/master/src/colorparsley.js
+// ==/ClosureCompiler==
+// 
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+/////  BEGIN COLOR PARSLEY 0.1.8  BLOCK  \/////////////////////////////////////
+////                                      \///////////////////////////////////
+///                                        \/////////////////////////////////
+/////  ƒ  colorParsley()  ///////////////////////////////////////////////////
+parcelHelpers.export(exports, "colorParsley", ()=>colorParsley);
+////////////////////////////////////////////////////////////////////////////////
+/////  BONUS STRING FORMATTING UTILITIES  \////////////////////////////////////
+/////  ƒ  colorToHex()  ///////////////////////////////////////////////////
+// returns hex string, 3,4,6, or 8 chars if that was entered, no #
+// If alpha is 1 or empty, no alpha is returned i.e. abcf returns abc
+parcelHelpers.export(exports, "colorToHex", ()=>colorToHex);
+/////  ƒ  colorToRGB()  ///////////////////////////////////////////////////
+// RGBAstr — returns rgb() or rgba() INT value string (0-255) no spaces
+// If alpha is 1 or empty, no alpha is returned 
+parcelHelpers.export(exports, "colorToRGB", ()=>colorToRGB) /////\  END UTILITIES  ///////////////////////////////////////////////////////
+ /////////////////////////////////////////////////////////////////////////////
+ ///\                                      //////////////////////////////////////
+ ////\                                    //////////////////////////////////////
+ /////\  END COLOR PARSLEY 0.1.8  BLOCK  //////////////////////////////////////
+ /////////////////////////////////////////////////////////////////////////////
+;
+function colorParsley(colorIn) {
+    if (typeof colorIn === "string") return parseString(colorIn);
+    else if (typeof colorIn === "number") return [
+        (colorIn & 0xFF0000) >> 16,
+        (colorIn & 0x00FF00) >> 8,
+        colorIn & 0x0000FF,
+        1,
+        true,
+        "unknown"
+    ];
+    else if (typeof colorIn === "object") {
+        if (Array.isArray(colorIn)) return colorIn;
+        else if (!isNaN(colorIn.r) || !isNaN(colorIn.red)) {
+            // validate object & return array
+            let objArray = [
+                0,
+                0,
+                0,
+                0,
+                false,
+                "unknown"
+            ];
+            // takes object with r g b or red green blue etc...
+            objArray[0] = colorIn.r ? colorIn.r : colorIn.red ? colorIn.red : false;
+            objArray[1] = colorIn.g ? colorIn.g : colorIn.green ? colorIn.green : false;
+            objArray[2] = colorIn.b ? colorIn.b : colorIn.blue ? colorIn.blue : false;
+            objArray[3] = colorIn.a ? colorIn.a : colorIn.alpha ? colorIn.alpha : 1;
+            objArray[4] = objArray[0] && objArray[1] && objArray[2] ? true : false;
+            objArray[5] = colorIn.space ? colorIn.space : colorIn.colorSpace ? colorIn.colorSpace : colorIn.colorspace ? colorIn.colorspace : "unknown";
+            return objArray;
+        }
+    }
+    console.log("colorParsley error: invalid input");
+    return [
+        0,
+        0,
+        0,
+        0,
+        false,
+        "inputError"
+    ] // throw 'InvalidInput' // return error 
+    ;
+}
+/////  ƒ  parseString()  ///////////////////////////////////////////////////
+// private
+function parseString(colorString = "#abcdef") {
+    // strip junk and make a clean string (replace unmatched)
+    // This retains all alphanumeric and , . # % ( ) /
+    colorString = colorString.replace(/[^\w,.#%()\/ -]/g, "");
+    colorString = colorString.toLowerCase(); // set lowercase
+    let isValid = false; // validation flag, in array element [4]
+    let type = "sRGB"; // Default colorspace flag in element [5]
+    let retArray = [
+        0,
+        0,
+        0,
+        0,
+        isValid,
+        type
+    ]; // init the return array
+    // test for named color before iterating array
+    if (colorString.match(/^(?:(?!rgb|l.h|hs|col|\d|#).{0,4})(?=[g-z])/)) {
+        ///// CSS4 NAMED COLORS plus a bonus set of GREYS and GRAYS //////////
+        // If name is matched, parse and return the color values
+        let namedColors = {
+            gray0: "000000",
+            gray1: "111111",
+            gray2: "222222",
+            gray3: "333333",
+            gray4: "444444",
+            gray5: "555555",
+            gray6: "666666",
+            gray7: "777777",
+            gray8: "888888",
+            gray9: "999999",
+            graya: "aaaaaa",
+            grayb: "bbbbbb",
+            grayc: "cccccc",
+            grayd: "dddddd",
+            graye: "eeeeee",
+            grayf: "ffffff",
+            midgray: "a0a0a0",
+            grey0: "000000",
+            grey1: "111111",
+            grey2: "222222",
+            grey3: "333333",
+            grey4: "444444",
+            grey5: "555555",
+            grey6: "666666",
+            grey7: "777777",
+            grey8: "888888",
+            grey9: "999999",
+            greya: "aaaaaa",
+            greyb: "bbbbbb",
+            greyc: "cccccc",
+            greyd: "dddddd",
+            greye: "eeeeee",
+            greyf: "ffffff",
+            midgrey: "a0a0a0",
+            aliceblue: "f0f8ff",
+            antiquewhite: "faebd7",
+            aqua: "00ffff",
+            aquamarine: "7fffd4",
+            azure: "f0ffff",
+            beige: "f5f5dc",
+            bisque: "ffe4c4",
+            black: "000000",
+            blanchedalmond: "ffebcd",
+            blue: "0000ff",
+            blueviolet: "8a2be2",
+            brown: "a52a2a",
+            burlywood: "deb887",
+            cadetblue: "5f9ea0",
+            chartreuse: "7fff00",
+            chocolate: "d2691e",
+            coral: "ff7f50",
+            cornflowerblue: "6495ed",
+            cornsilk: "fff8dc",
+            crimson: "dc143c",
+            cyan: "00ffff",
+            darkblue: "00008b",
+            darkcyan: "008b8b",
+            darkgoldenrod: "b8860b",
+            darkgray: "a9a9a9",
+            darkgreen: "006400",
+            darkgrey: "a9a9a9",
+            darkkhaki: "bdb76b",
+            darkmagenta: "8b008b",
+            darkolivegreen: "556b2f",
+            darkorange: "ff8c00",
+            darkorchid: "9932cc",
+            darkred: "8b0000",
+            darksalmon: "e9967a",
+            darkseagreen: "8fbc8f",
+            darkslateblue: "483d8b",
+            darkslategray: "2f4f4f",
+            darkslategrey: "2f4f4f",
+            darkturquoise: "00ced1",
+            darkviolet: "9400d3",
+            deeppink: "ff1493",
+            deepskyblue: "00bfff",
+            dimgray: "696969",
+            dimgrey: "696969",
+            dodgerblue: "1e90ff",
+            firebrick: "b22222",
+            floralwhite: "fffaf0",
+            forestgreen: "228b22",
+            fuchsia: "ff00ff",
+            gainsboro: "dcdcdc",
+            ghostwhite: "f8f8ff",
+            gold: "ffd700",
+            goldenrod: "daa520",
+            gray: "808080",
+            green: "008000",
+            greenyellow: "adff2f",
+            grey: "808080",
+            honeydew: "f0fff0",
+            hotpink: "ff69b4",
+            indianred: "cd5c5c",
+            indigo: "4b0082",
+            ivory: "fffff0",
+            khaki: "f0e68c",
+            lavender: "e6e6fa",
+            lavenderblush: "fff0f5",
+            lawngreen: "7cfc00",
+            lemonchiffon: "fffacd",
+            lightblue: "add8e6",
+            lightcoral: "f08080",
+            lightcyan: "e0ffff",
+            lightgoldenrodyellow: "fafad2",
+            lightgray: "d3d3d3",
+            lightgreen: "90ee90",
+            lightgrey: "d3d3d3",
+            lightpink: "ffb6c1",
+            lightsalmon: "ffa07a",
+            lightseagreen: "20b2aa",
+            lightskyblue: "87cefa",
+            lightslategray: "778899",
+            lightslategrey: "778899",
+            lightsteelblue: "b0c4de",
+            lightyellow: "ffffe0",
+            lime: "00ff00",
+            limegreen: "32cd32",
+            linen: "faf0e6",
+            magenta: "ff00ff",
+            maroon: "800000",
+            mediumaquamarine: "66cdaa",
+            mediumblue: "0000cd",
+            mediumorchid: "ba55d3",
+            mediumpurple: "9370db",
+            mediumseagreen: "3cb371",
+            mediumslateblue: "7b68ee",
+            mediumspringgreen: "00fa9a",
+            mediumturquoise: "48d1cc",
+            mediumvioletred: "c71585",
+            midnightblue: "191970",
+            mintcream: "f5fffa",
+            mistyrose: "ffe4e1",
+            moccasin: "ffe4b5",
+            navajowhite: "ffdead",
+            navy: "000080",
+            oldlace: "fdf5e6",
+            olive: "808000",
+            olivedrab: "6b8e23",
+            orange: "ffa500",
+            orangered: "ff4500",
+            orchid: "da70d6",
+            palegoldenrod: "eee8aa",
+            palegreen: "98fb98",
+            paleturquoise: "afeeee",
+            palevioletred: "db7093",
+            papayawhip: "ffefd5",
+            peachpuff: "ffdab9",
+            peru: "cd853f",
+            pink: "ffc0cb",
+            plum: "dda0dd",
+            powderblue: "b0e0e6",
+            purple: "800080",
+            rebeccapurple: "663399",
+            red: "ff0000",
+            rosybrown: "bc8f8f",
+            royalblue: "4169e1",
+            saddlebrown: "8b4513",
+            salmon: "fa8072",
+            sandybrown: "f4a460",
+            seagreen: "2e8b57",
+            seashell: "fff5ee",
+            sienna: "a0522d",
+            silver: "c0c0c0",
+            skyblue: "87ceeb",
+            slateblue: "6a5acd",
+            slategray: "708090",
+            slategrey: "708090",
+            snow: "fffafa",
+            springgreen: "00ff7f",
+            steelblue: "4682b4",
+            tan: "d2b48c",
+            teal: "008080",
+            thistle: "d8bfd8",
+            tomato: "ff6347",
+            turquoise: "40e0d0",
+            violet: "ee82ee",
+            wheat: "f5deb3",
+            white: "ffffff",
+            whitesmoke: "f5f5f5",
+            yellow: "ffff00",
+            yellowgreen: "9acd32"
+        };
+        for(let key in namedColors)if (colorString == key) {
+            let hexRex = {
+                rex: /^([\da-f]{2})([\da-f]{2})([\da-f]{2})$/,
+                sprig: function(slices) {
+                    for(let i = 0; i < 3; i++)retArray[i] = parseInt(slices[i + 1], 16);
+                    retArray[3] = 1;
+                    return true;
+                }
+            };
+            let hexProc = hexRex.rex.exec(namedColors[key]);
+            retArray[4] = isValid = hexRex.sprig(hexProc);
+            return retArray;
+        }
+    }
+    // NEW regex  0.1.6 - still current for use with with 0.1.8+
+    // See docs for breakdown of regex pattern
+    let colorRex = {
+        rex: /(?:^(?:#|0x|)(?:(?:([\da-f])([\da-f])([\da-f])([\da-f])?)(?!\S)|(?:([\da-f]{2})(?:([\da-f]{2})([\da-f]{2})([\da-f]{2})?)?))|(?:(?:^(?:rgba?|)\(? ?(?:(?:(?:(255|(?:25[0-4]|2[0-4]\d|1?\d{1,2})(?:\.\d{1,24})?)))(?:,[^\S]*$|(?:(?:, ?| )(255|(?:25[0-4]|2[0-4]\d|1?\d{1,2})(?:\.\d{1,24})?)(?:, ?| )(255|(?:25[0-4]|2[0-4]\d|1?\d{1,2})(?:\.\d{1,24})?)))|(100%|\d{1,2}(?:\.\d{1,24})?%)(?:,?[^\S]*$|(?:(?:, ?| )(?:(100%|\d{1,2}(?:\.\d{1,24})?%)(?:, ?| )(100%|\d{1,2}(?:\.\d{1,24})?%)))))|^(?:color\((srgb|srgb-linear|display-p3|a98-rgb|prophoto-rgb|rec2020|xyz|xyz-d50|xyz-d65) (?:(100%|\d{1,2}(?:\.\d{1,24})?%|[0 ]\.\d{1,24}|[01])) (?:(100%|\d{1,2}(?:\.\d{1,24})?%|[0 ]\.\d{1,24}|[01])) (?:(100%|\d{1,2}(?:\.\d{1,24})?%|[0 ]\.\d{1,24}|[01])))|^(?:((?:r(?!gb)|c(?!olor)|[abd-qs-z])[a-z]{2,5})\( ?((?:\d{0,3}\.|)\d{1,24}%?)(?:, ?| )((?:\d{0,3}\.|)\d{1,24}%?)(?:, ?| )((?:\d{0,3}\.|)\d{1,24}%?))))(?:(?:,| \/| ) ?(?:(100%|\d{1,2}(?:\.\d{1,24})?%|[0 ]\.\d{1,24}|[01])))?(?:\)| |))[^\S]*$/,
+        parsley: function(slices) {
+            let slicePos = 0;
+            let sliceLast = 0;
+            let base = 10;
+            let divisor = 100.0;
+            let convertPct = 2.55;
+            let alpha = "1";
+            if (slices[23]) {
+                alpha = slices[23];
+                delete slices[23];
+            }
+            // Set alpha before anything else
+            retArray[3] = alpha.match(/%/g) ? parseFloat(alpha) / divisor : parseFloat(alpha);
+            //  determine first and last element
+            for(let k = 1; k < slices.length; k++)if (slices[k]) {
+                slicePos = slicePos ? slicePos : k;
+                sliceLast = k;
+            }
+            switch(sliceLast){
+                case 4:
+                    base = 16;
+                    divisor = 15.0;
+                    retArray[3] = parseInt(slices[sliceLast], base) / divisor;
+                case 3:
+                    base = 16;
+                    for(let i = 0; i < 3; i++)retArray[i] = parseInt(slices[slicePos + i] + slices[slicePos + i], base);
+                    break;
+                case 5:
+                    base = 16;
+                case 9:
+                    retArray[0] = retArray[1] = retArray[2] = base == 10 ? parseFloat(slices[sliceLast]) : parseInt(slices[sliceLast], base);
+                    break;
+                case 12:
+                    retArray[0] = retArray[1] = retArray[2] = parseFloat(slices[sliceLast]) * convertPct;
+                    break;
+                case 8:
+                    base = 16;
+                    divisor = 255.0;
+                    retArray[3] = parseInt(slices[8], base) / divisor;
+                case 7:
+                    base = 16;
+                case 11:
+                    for(let i1 = 0; i1 < 3; i1++)retArray[i1] = base == 10 ? parseFloat(slices[slicePos + i1]) : parseInt(slices[slicePos + i1], base);
+                    break;
+                case 14:
+                    for(let i2 = 0; i2 < 3; i2++)retArray[i2] = parseFloat(slices[slicePos + i2]) * convertPct;
+                    break;
+                case 18:
+                    retArray[5] = slices[15];
+                    for(let i3 = 0; i3 < 3; i3++){
+                        slicePos++;
+                        retArray[i3] = slices[slicePos].match(/%/g) ? parseFloat(slices[slicePos]) * 2.55 : parseFloat(slices[slicePos]) * 255;
+                    }
+                    break;
+                case 22:
+                    retArray[5] = slices[slicePos];
+                    for(let i4 = 0; i4 < 3; i4++){
+                        slicePos++;
+                        retArray[i4] = slices[slicePos] ? slices[slicePos].match(/%/g) ? parseFloat(slices[slicePos]) / divisor : parseFloat(slices[slicePos]) : 0.0;
+                    }
+                    // Process for HSL and HWB
+                    if (retArray[5].match(/^(?:hsla?|hwba?)/i)) {
+                        let sat, light, white, black, hwbFact;
+                        let hue = retArray[0] % 360.0;
+                        if (hue < 0) hue += 360.0;
+                        if (retArray[5].match(/^hsla?/i)) {
+                            sat = retArray[1];
+                            light = retArray[2];
+                            white = 0;
+                            hwbFact = 1;
+                        } else if (retArray[5].match(/^hwba?/i)) {
+                            white = retArray[1];
+                            black = retArray[2];
+                            if (white + black >= 1) {
+                                retArray[0] = retArray[1] = retArray[2] = white / (white + black);
+                                retArray[5] = "sRGB";
+                                break;
+                            }
+                            sat = 1.0;
+                            light = 0.5;
+                            hwbFact = 1.0 - white - black;
+                        }
+                        function f(n) {
+                            let k = (n + hue / 30) % 12;
+                            let a = sat * Math.min(light, 1 - light);
+                            return light - a * Math.max(-1, Math.min(k - 3, 9 - k, 1));
+                        }
+                        retArray[0] = Math.round(255 * (f(0) * hwbFact + white));
+                        retArray[1] = Math.round(255 * (f(8) * hwbFact + white));
+                        retArray[2] = Math.round(255 * (f(4) * hwbFact + white));
+                        retArray[5] = "sRGB";
+                    }
+                    break;
+            }
+            return true;
+        } // close parsley sub-function
+    }; // close colorRex obj
+    //  The main call
+    let slicesProc = colorRex.rex.exec(colorString);
+    if (slicesProc) {
+        retArray[4] = isValid = colorRex.parsley(slicesProc); // set the isValid flag
+        return retArray;
+    } else {
+        isValid = false;
+        console.log("colorParsley error: unable to parse string");
+        return [
+            0,
+            0,
+            0,
+            0,
+            isValid,
+            "parsleyError"
+        ] // throw 'InvalidString'
+        ;
+    }
+}
+function colorToHex(rgba = [
+    0,
+    0,
+    0,
+    ""
+], allow3 = true) {
+    let R = Math.round(rgba[0]).toString(16).padStart(2, "0");
+    let G = Math.round(rgba[1]).toString(16).padStart(2, "0");
+    let B = Math.round(rgba[2]).toString(16).padStart(2, "0");
+    let A = rgba[3] == "" || rgba[3] == 1 ? "" : Math.round(rgba[3] * 255).toString(16).padStart(2, "0");
+    // this if returns a 3 character hex if possible - aabbcc becomes abc
+    if (allow3 && parseInt(A, 16) % 17 == 0 && parseInt(A, 16) % 17 == 0 && parseInt(A, 16) % 17 == 0 && (parseInt(A, 16) % 17 == 0 || A == "")) return R.charAt(0) + G.charAt(0) + B.charAt(0) + A.charAt(0);
+    else return R + G + B + A;
+}
+function colorToRGB(rgba = [
+    0,
+    0,
+    0,
+    ""
+], round = true) {
+    if (round) {
+        for(let i = 0; i < 3; i++)rgba[i] = Math.round(rgba[i]);
+        // while RGB tuples round to int, A needs additional precision
+        rgba[3] = rgba[3] == "" || rgba[3] == 1 ? 1 : Math.trunc(rgba[3] * 1000) * 0.001;
+    }
+    return rgba[3] == "" || rgba[3] == 1 ? "rgb(" + rgba[0] + "," + rgba[1] + "," + rgba[2] + ")" : "rgba(" + rgba[0] + "," + rgba[1] + "," + rgba[2] + "," + rgba[3] + ")";
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5vqDi":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$6469 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$6469.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const AnimatedBlob = (props)=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
+        viewBox: "0 0 200 200",
+        xmlns: "http://www.w3.org/2000/svg",
+        width: props.width,
+        height: props.height,
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+            fill: props.fill,
+            stroke: "#000",
+            strokeWidth: 5,
+            d: "M49.4,-18.8C56,4.3,47.8,29.3,30.3,42.1C12.8,54.9,-13.9,55.4,-35.9,41.3C-57.9,27.2,-75.3,-1.4,-68.5,-24.7C-61.7,-48,-30.9,-65.9,-4.7,-64.4C21.4,-62.8,42.8,-41.8,49.4,-18.8Z",
+            transform: "translate(100 100)"
+        }, void 0, false, {
+            fileName: "src/components/Blob.tsx",
+            lineNumber: 6,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/components/Blob.tsx",
+        lineNumber: 5,
+        columnNumber: 5
+    }, undefined);
+};
+_c = AnimatedBlob;
+exports.default = AnimatedBlob;
+var _c;
+$RefreshReg$(_c, "AnimatedBlob");
+
+  $parcel$ReactRefreshHelpers$6469.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"afdqE":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$4d18 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$4d18.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _styledComponents = require("styled-components");
+var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
+var _constants = require("../constants");
+var _global = require("../styles/global");
+var _utils = require("../utils");
+const ContrastDisplay = ({ contrastLC , wcag2Ratio  })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledDisplay, {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledInfoText, {
+                type: "medium",
+                color: (0, _constants.BRAND_TEXT_COLORS).BODY,
+                children: (0, _utils.getAALevel)(contrastLC ?? 0)
+            }, void 0, false, {
+                fileName: "src/components/ContrastDisplay.tsx",
+                lineNumber: 11,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledColumnWrapper, {
+                align: "center",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledText), {
+                        type: "medium",
+                        color: (0, _constants.BRAND_TEXT_COLORS).BODY,
+                        children: [
+                            "APCA Contrast L",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("sup", {
+                                    children: "c"
+                                }, void 0, false, {
+                                    fileName: "src/components/ContrastDisplay.tsx",
+                                    lineNumber: 18,
+                                    columnNumber: 13
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/components/ContrastDisplay.tsx",
+                                lineNumber: 17,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/ContrastDisplay.tsx",
+                        lineNumber: 15,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledText), {
+                        type: "medium",
+                        color: (0, _constants.BRAND_TEXT_COLORS).BODY,
+                        bold: true,
+                        children: contrastLC?.toFixed(2) ?? "?"
+                    }, void 0, false, {
+                        fileName: "src/components/ContrastDisplay.tsx",
+                        lineNumber: 21,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/ContrastDisplay.tsx",
+                lineNumber: 14,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledColumnWrapper, {
+                align: "center",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledText), {
+                        type: "medium",
+                        color: (0, _constants.BRAND_TEXT_COLORS).BODY,
+                        children: "Compatibility with WCAG 2"
+                    }, void 0, false, {
+                        fileName: "src/components/ContrastDisplay.tsx",
+                        lineNumber: 26,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledText), {
+                        type: "medium",
+                        color: (0, _constants.BRAND_TEXT_COLORS).BODY,
+                        bold: true,
+                        children: wcag2Ratio ?? "?"
+                    }, void 0, false, {
+                        fileName: "src/components/ContrastDisplay.tsx",
+                        lineNumber: 29,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/ContrastDisplay.tsx",
+                lineNumber: 25,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/ContrastDisplay.tsx",
+        lineNumber: 10,
+        columnNumber: 5
+    }, undefined);
+};
+_c = ContrastDisplay;
+const StyledInfoText = (0, _styledComponentsDefault.default)((0, _global.StyledText))`
+  @media ${(0, _constants.devices).mobileL} {
+    font-size: 20px;
+  }
+`;
+_c1 = StyledInfoText;
+const StyledColumnWrapper = (0, _styledComponentsDefault.default)((0, _global.StyledColSection))`
+  background-color: ${(0, _constants.BRAND_COLOR)};
+  border-radius: 5px;
+  width: 100%;
+  padding: 10px;
+`;
+_c2 = StyledColumnWrapper;
+const StyledDisplay = (0, _styledComponentsDefault.default)((0, _global.StyledColSection))`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+`;
+_c3 = StyledDisplay;
+exports.default = ContrastDisplay;
+var _c, _c1, _c2, _c3;
+$RefreshReg$(_c, "ContrastDisplay");
+$RefreshReg$(_c1, "StyledInfoText");
+$RefreshReg$(_c2, "StyledColumnWrapper");
+$RefreshReg$(_c3, "StyledDisplay");
+
+  $parcel$ReactRefreshHelpers$4d18.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","styled-components":"1U3k6","../constants":"45DZp","../styles/global":"jHMjs","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../utils":"dsXzW"}],"95pB0":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$d617 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$d617.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _styledComponents = require("styled-components");
+var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
+const Layout = ({ children  })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledLayout, {
+        children: children
+    }, void 0, false, {
+        fileName: "src/components/Layout.tsx",
+        lineNumber: 5,
+        columnNumber: 10
+    }, undefined);
+};
+_c = Layout;
+const StyledLayout = (0, _styledComponentsDefault.default).section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  align-self: center;
+  margin-top: 20px;
+`;
+_c1 = StyledLayout;
+exports.default = Layout;
+var _c, _c1;
+$RefreshReg$(_c, "Layout");
+$RefreshReg$(_c1, "StyledLayout");
+
+  $parcel$ReactRefreshHelpers$d617.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","styled-components":"1U3k6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"35enc":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$d5a6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$d5a6.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _styledComponents = require("styled-components");
+var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
+var _constants = require("../constants");
+var _global = require("../styles/global");
+var _animatedBlob = require("./AnimatedBlob");
+var _animatedBlobDefault = parcelHelpers.interopDefault(_animatedBlob);
+var _waves = require("./Waves");
+var _wavesDefault = parcelHelpers.interopDefault(_waves);
+const Header = ({ type  })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledHeaderWrapper, {
+        children: [
+            type === "animatedBlob" ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _animatedBlobDefault.default), {
+                width: "350px"
+            }, void 0, false, {
+                fileName: "src/components/Header.tsx",
+                lineNumber: 13,
+                columnNumber: 34
+            }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _wavesDefault.default), {
+                color: (0, _constants.BRAND_COLOR)
+            }, void 0, false, {
+                fileName: "src/components/Header.tsx",
+                lineNumber: 13,
+                columnNumber: 69
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledHeaderText, {
+                type: "large",
+                color: (0, _constants.BRAND_TEXT_COLORS).BODY,
+                children: "Color Contrast Tool"
+            }, void 0, false, {
+                fileName: "src/components/Header.tsx",
+                lineNumber: 14,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledSubHeaderText, {
+                type: "small",
+                color: (0, _constants.BRAND_TEXT_COLORS).BODY,
+                children: "Calculated using the new WCAG 3 - APCA algorithm currently being developed."
+            }, void 0, false, {
+                fileName: "src/components/Header.tsx",
+                lineNumber: 17,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/Header.tsx",
+        lineNumber: 12,
+        columnNumber: 5
+    }, undefined);
+};
+_c = Header;
+const StyledHeaderWrapper = (0, _styledComponentsDefault.default).div`
+  position: relative;
+`;
+_c1 = StyledHeaderWrapper;
+const StyledHeaderText = (0, _styledComponentsDefault.default)((0, _global.StyledText))`
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  text-transform: uppercase;
+
+  @media ${(0, _constants.devices).mobileL} {
+    font-size: 22px;
+  }
+`;
+_c2 = StyledHeaderText;
+const StyledSubHeaderText = (0, _styledComponentsDefault.default)((0, _global.StyledText))`
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  width: 25%;
+  word-wrap: normal;
+  text-transform: uppercase;
+
+  @media ${(0, _constants.devices).mobileL} {
+    top: 40px;
+    width: 100%;
+    font-size: 12px;
+  }
+`;
+_c3 = StyledSubHeaderText;
+exports.default = Header;
+var _c, _c1, _c2, _c3;
+$RefreshReg$(_c, "Header");
+$RefreshReg$(_c1, "StyledHeaderWrapper");
+$RefreshReg$(_c2, "StyledHeaderText");
+$RefreshReg$(_c3, "StyledSubHeaderText");
+
+  $parcel$ReactRefreshHelpers$d5a6.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","styled-components":"1U3k6","../constants":"45DZp","../styles/global":"jHMjs","./Waves":"iu8jy","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./AnimatedBlob":"5Am8O"}],"iu8jy":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$e565 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$e565.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const Waves = (props)=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
+        xmlns: "http://www.w3.org/2000/svg",
+        viewBox: "0 0 1440 320",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+            fill: props?.color || "#0099ff",
+            fillOpacity: "1",
+            d: "M0,256L34.3,245.3C68.6,235,137,213,206,186.7C274.3,160,343,128,411,106.7C480,85,549,75,617,85.3C685.7,96,754,128,823,138.7C891.4,149,960,139,1029,149.3C1097.1,160,1166,192,1234,186.7C1302.9,181,1371,139,1406,117.3L1440,96L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z"
+        }, void 0, false, {
+            fileName: "src/components/Waves.tsx",
+            lineNumber: 6,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/components/Waves.tsx",
+        lineNumber: 5,
+        columnNumber: 5
+    }, undefined);
+};
+_c = Waves;
+exports.default = Waves;
+var _c;
+$RefreshReg$(_c, "Waves");
+
+  $parcel$ReactRefreshHelpers$e565.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"5Am8O":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$9e80 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$9e80.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const AnimatedBlob = (props)=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
+        version: "1.1",
+        xmlns: "http://www.w3.org/2000/svg",
+        viewBox: "0 0 500 500",
+        width: props?.width || "100%",
+        id: "blobSvg",
+        filter: "blur(0px)",
+        style: {
+            opacity: 1
+        },
+        transform: "rotate(0)",
+        children: [
+            " ",
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("defs", {
+                children: [
+                    " ",
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("linearGradient", {
+                        id: "gradient",
+                        x1: "0%",
+                        y1: "0%",
+                        x2: "0%",
+                        y2: "100%",
+                        children: [
+                            " ",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("stop", {
+                                offset: "0%",
+                                style: {
+                                    stopColor: "rgb(84, 11, 14)"
+                                }
+                            }, void 0, false, {
+                                fileName: "src/components/AnimatedBlob.tsx",
+                                lineNumber: 20,
+                                columnNumber: 11
+                            }, undefined),
+                            " ",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("stop", {
+                                offset: "100%",
+                                style: {
+                                    stopColor: "rgb(224, 159, 62)"
+                                }
+                            }, void 0, false, {
+                                fileName: "src/components/AnimatedBlob.tsx",
+                                lineNumber: 21,
+                                columnNumber: 11
+                            }, undefined),
+                            " "
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/AnimatedBlob.tsx",
+                        lineNumber: 18,
+                        columnNumber: 9
+                    }, undefined),
+                    " "
+                ]
+            }, void 0, true, {
+                fileName: "src/components/AnimatedBlob.tsx",
+                lineNumber: 16,
+                columnNumber: 7
+            }, undefined),
+            " ",
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+                id: "blob",
+                fill: "url(#gradient)",
+                style: {
+                    opacity: 1
+                },
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("animate", {
+                    attributeName: "d",
+                    dur: "10s",
+                    repeatCount: "indefinite",
+                    values: "M400,314Q352,378,277,420Q202,462,143,396Q84,330,66.5,241.5Q49,153,125.5,97.5Q202,42,298.5,55Q395,68,421.5,159Q448,250,400,314Z;M392.2525,331.53996Q379.05994,413.07992,285.7525,456.15485Q192.44505,499.22978,100.80019,432.44731Q9.15533,365.66484,30.81018,260.57493Q52.46503,155.48501,121.45005,74.10764Q190.43506,-7.26974,268.13261,60.97003Q345.83016,129.2098,375.63761,189.6049Q405.44505,250,392.2525,331.53996Z;M388.67097,319.27849Q360.55699,388.55699,291.23441,379.72688Q221.91183,370.89678,145.00645,354.28387Q68.10108,337.67097,71.32903,251.33548Q74.55699,165,142.39247,119.95591Q210.22796,74.91183,286.12043,91.61398Q362.0129,108.31613,389.39892,179.15806Q416.78495,250,388.67097,319.27849Z;M429.79847,339.54154Q392.67727,429.08308,294.97368,455.00137Q197.27008,480.91966,143.94598,403.56786Q90.62188,326.21607,83.52769,246.22992Q76.43351,166.24376,136.8518,92.77008Q197.27008,19.29641,287.1482,55Q377.02632,90.70359,421.97299,170.3518Q466.91966,250,429.79847,339.54154Z;M390.7302,319.10952Q360.37524,388.21905,284.62068,409.39959Q208.86612,430.58014,161.11156,373.20082Q113.35701,315.8215,88.46857,238.04463Q63.58014,160.26776,136.76776,117.04463Q209.95537,73.8215,303.79007,69.52027Q397.62476,65.21905,409.35497,157.60952Q421.08517,250,390.7302,319.10952Z;M400,314Q352,378,277,420Q202,462,143,396Q84,330,66.5,241.5Q49,153,125.5,97.5Q202,42,298.5,55Q395,68,421.5,159Q448,250,400,314Z"
+                }, void 0, false, {
+                    fileName: "src/components/AnimatedBlob.tsx",
+                    lineNumber: 25,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/components/AnimatedBlob.tsx",
+                lineNumber: 24,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/AnimatedBlob.tsx",
+        lineNumber: 5,
+        columnNumber: 5
+    }, undefined);
+};
+_c = AnimatedBlob;
+exports.default = AnimatedBlob;
+var _c;
+$RefreshReg$(_c, "AnimatedBlob");
+
+  $parcel$ReactRefreshHelpers$9e80.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kgI26":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$0ad5 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$0ad5.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _styledComponents = require("styled-components");
+var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
+var _constants = require("../constants");
+var _global = require("../styles/global");
+const Footnote = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledFootnote, {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledColSection), {
+                align: "start",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledText), {
+                    type: "small",
+                    color: (0, _constants.BRAND_TEXT_COLORS).SMALL_BODY,
+                    children: [
+                        "INSPIRED FROM:",
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                        href: "http://www.myndex.com/BPCA/",
+                                        children: "Myndex BPCA Bridge"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Footnote.tsx",
+                                        lineNumber: 14,
+                                        columnNumber: 15
+                                    }, undefined)
+                                }, void 0, false, {
+                                    fileName: "src/components/Footnote.tsx",
+                                    lineNumber: 13,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                        href: "https://cliambrown.com/contrast/",
+                                        children: "C Liam Brown's Contrast Calculator"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Footnote.tsx",
+                                        lineNumber: 17,
+                                        columnNumber: 15
+                                    }, undefined)
+                                }, void 0, false, {
+                                    fileName: "src/components/Footnote.tsx",
+                                    lineNumber: 16,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/components/Footnote.tsx",
+                            lineNumber: 12,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/components/Footnote.tsx",
+                    lineNumber: 10,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/components/Footnote.tsx",
+                lineNumber: 9,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledColSection), {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledRowSection), {
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledText), {
+                            type: "medium",
+                            color: (0, _constants.BRAND_TEXT_COLORS).BODY,
+                            children: "WCAG 2 Standards reference"
+                        }, void 0, false, {
+                            fileName: "src/components/Footnote.tsx",
+                            lineNumber: 25,
+                            columnNumber: 11
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/components/Footnote.tsx",
+                        lineNumber: 24,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledRowSection), {
+                        vAlign: "start",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledColSection), {
+                                align: "start",
+                                vAlign: "start",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledText), {
+                                        type: "medium",
+                                        color: (0, _constants.BRAND_TEXT_COLORS).BODY,
+                                        children: "AA, Enhanced"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Footnote.tsx",
+                                        lineNumber: 32,
+                                        columnNumber: 13
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledText), {
+                                        type: "small",
+                                        color: (0, _constants.BRAND_TEXT_COLORS).SMALL_BODY,
+                                        bold: true,
+                                        children: "SHOULD"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Footnote.tsx",
+                                        lineNumber: 35,
+                                        columnNumber: 13
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledText), {
+                                        type: "small",
+                                        color: (0, _constants.BRAND_TEXT_COLORS).SMALL_BODY,
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                    children: [
+                                                        "L",
+                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("sup", {
+                                                            children: "c"
+                                                        }, void 0, false, {
+                                                            fileName: "src/components/Footnote.tsx",
+                                                            lineNumber: 41,
+                                                            columnNumber: 20
+                                                        }, undefined),
+                                                        " 15 (W 1.3:1) Minimum for disabled elements (not hidden)."
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "src/components/Footnote.tsx",
+                                                    lineNumber: 40,
+                                                    columnNumber: 17
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                    children: [
+                                                        "L",
+                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("sup", {
+                                                            children: "c"
+                                                        }, void 0, false, {
+                                                            fileName: "src/components/Footnote.tsx",
+                                                            lineNumber: 44,
+                                                            columnNumber: 20
+                                                        }, undefined),
+                                                        " 30 (W 1.8:1) Minimum for incidental text such as placeholders."
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "src/components/Footnote.tsx",
+                                                    lineNumber: 43,
+                                                    columnNumber: 17
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                    children: [
+                                                        "L",
+                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("sup", {
+                                                            children: "c"
+                                                        }, void 0, false, {
+                                                            fileName: "src/components/Footnote.tsx",
+                                                            lineNumber: 47,
+                                                            columnNumber: 20
+                                                        }, undefined),
+                                                        " 45 (W 2:1) Minimum for logotypes."
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "src/components/Footnote.tsx",
+                                                    lineNumber: 46,
+                                                    columnNumber: 17
+                                                }, undefined)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "src/components/Footnote.tsx",
+                                            lineNumber: 39,
+                                            columnNumber: 15
+                                        }, undefined)
+                                    }, void 0, false, {
+                                        fileName: "src/components/Footnote.tsx",
+                                        lineNumber: 38,
+                                        columnNumber: 13
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledText), {
+                                        type: "small",
+                                        color: (0, _constants.BRAND_TEXT_COLORS).SMALL_BODY,
+                                        bold: true,
+                                        children: "SHALL"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Footnote.tsx",
+                                        lineNumber: 52,
+                                        columnNumber: 13
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledText), {
+                                        type: "small",
+                                        color: (0, _constants.BRAND_TEXT_COLORS).SMALL_BODY,
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                    children: [
+                                                        "L",
+                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("sup", {
+                                                            children: "c"
+                                                        }, void 0, false, {
+                                                            fileName: "src/components/Footnote.tsx",
+                                                            lineNumber: 59,
+                                                            columnNumber: 20
+                                                        }, undefined),
+                                                        " 60 (W 3:1) Large font only, no body text. Non-text okay."
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "src/components/Footnote.tsx",
+                                                    lineNumber: 58,
+                                                    columnNumber: 17
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                    children: [
+                                                        "L",
+                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("sup", {
+                                                            children: "c"
+                                                        }, void 0, false, {
+                                                            fileName: "src/components/Footnote.tsx",
+                                                            lineNumber: 62,
+                                                            columnNumber: 20
+                                                        }, undefined),
+                                                        " 75 (W 4.5:1) 16px minimum for body text, 12px minimum otherwise"
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "src/components/Footnote.tsx",
+                                                    lineNumber: 61,
+                                                    columnNumber: 17
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                    children: [
+                                                        "L",
+                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("sup", {
+                                                            children: "c"
+                                                        }, void 0, false, {
+                                                            fileName: "src/components/Footnote.tsx",
+                                                            lineNumber: 65,
+                                                            columnNumber: 20
+                                                        }, undefined),
+                                                        " 90 (W 7:1) 14px minimum body text, 10px minimum otherwise"
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "src/components/Footnote.tsx",
+                                                    lineNumber: 64,
+                                                    columnNumber: 17
+                                                }, undefined)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "src/components/Footnote.tsx",
+                                            lineNumber: 57,
+                                            columnNumber: 15
+                                        }, undefined)
+                                    }, void 0, false, {
+                                        fileName: "src/components/Footnote.tsx",
+                                        lineNumber: 56,
+                                        columnNumber: 13
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/Footnote.tsx",
+                                lineNumber: 31,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledColSection), {
+                                align: "start",
+                                vAlign: "start",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledText), {
+                                        type: "medium",
+                                        color: (0, _constants.BRAND_TEXT_COLORS).BODY,
+                                        children: "AAA, Enhanced"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Footnote.tsx",
+                                        lineNumber: 72,
+                                        columnNumber: 13
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledText), {
+                                        type: "small",
+                                        color: (0, _constants.BRAND_TEXT_COLORS).SMALL_BODY,
+                                        bold: true,
+                                        children: "SHOULD"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Footnote.tsx",
+                                        lineNumber: 75,
+                                        columnNumber: 13
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledText), {
+                                        type: "small",
+                                        color: (0, _constants.BRAND_TEXT_COLORS).SMALL_BODY,
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                    children: [
+                                                        "L",
+                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("sup", {
+                                                            children: "c"
+                                                        }, void 0, false, {
+                                                            fileName: "src/components/Footnote.tsx",
+                                                            lineNumber: 81,
+                                                            columnNumber: 20
+                                                        }, undefined),
+                                                        " 15 (W 1.3:1) Minimum for disabled elements (not hidden)."
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "src/components/Footnote.tsx",
+                                                    lineNumber: 80,
+                                                    columnNumber: 17
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                    children: [
+                                                        "L",
+                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("sup", {
+                                                            children: "c"
+                                                        }, void 0, false, {
+                                                            fileName: "src/components/Footnote.tsx",
+                                                            lineNumber: 84,
+                                                            columnNumber: 20
+                                                        }, undefined),
+                                                        " 30 (W 1.8:1) Minimum for incidental text such as placeholders."
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "src/components/Footnote.tsx",
+                                                    lineNumber: 83,
+                                                    columnNumber: 17
+                                                }, undefined)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "src/components/Footnote.tsx",
+                                            lineNumber: 79,
+                                            columnNumber: 15
+                                        }, undefined)
+                                    }, void 0, false, {
+                                        fileName: "src/components/Footnote.tsx",
+                                        lineNumber: 78,
+                                        columnNumber: 13
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledText), {
+                                        type: "small",
+                                        color: (0, _constants.BRAND_TEXT_COLORS).SMALL_BODY,
+                                        bold: true,
+                                        children: "SHALL"
+                                    }, void 0, false, {
+                                        fileName: "src/components/Footnote.tsx",
+                                        lineNumber: 89,
+                                        columnNumber: 13
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledText), {
+                                        type: "small",
+                                        color: (0, _constants.BRAND_TEXT_COLORS).SMALL_BODY,
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                    children: [
+                                                        "L",
+                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("sup", {
+                                                            children: "c"
+                                                        }, void 0, false, {
+                                                            fileName: "src/components/Footnote.tsx",
+                                                            lineNumber: 96,
+                                                            columnNumber: 20
+                                                        }, undefined),
+                                                        " 60 (W 3:1) Minimum for logotypes and essential non-text."
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "src/components/Footnote.tsx",
+                                                    lineNumber: 95,
+                                                    columnNumber: 17
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                    children: [
+                                                        "L",
+                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("sup", {
+                                                            children: "c"
+                                                        }, void 0, false, {
+                                                            fileName: "src/components/Footnote.tsx",
+                                                            lineNumber: 99,
+                                                            columnNumber: 20
+                                                        }, undefined),
+                                                        " 75 (W 4.5:1) Large font only, no body text."
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "src/components/Footnote.tsx",
+                                                    lineNumber: 98,
+                                                    columnNumber: 17
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                    children: [
+                                                        "L",
+                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("sup", {
+                                                            children: "c"
+                                                        }, void 0, false, {
+                                                            fileName: "src/components/Footnote.tsx",
+                                                            lineNumber: 102,
+                                                            columnNumber: 20
+                                                        }, undefined),
+                                                        " 90 (W 7:1) 16px minimum for body text, 12px minimum otherwise"
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "src/components/Footnote.tsx",
+                                                    lineNumber: 101,
+                                                    columnNumber: 17
+                                                }, undefined)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "src/components/Footnote.tsx",
+                                            lineNumber: 94,
+                                            columnNumber: 15
+                                        }, undefined)
+                                    }, void 0, false, {
+                                        fileName: "src/components/Footnote.tsx",
+                                        lineNumber: 93,
+                                        columnNumber: 13
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/components/Footnote.tsx",
+                                lineNumber: 71,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/components/Footnote.tsx",
+                        lineNumber: 30,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/components/Footnote.tsx",
+                lineNumber: 23,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/Footnote.tsx",
+        lineNumber: 8,
+        columnNumber: 5
+    }, undefined);
+};
+_c = Footnote;
+const StyledFootnote = (0, _styledComponentsDefault.default).div`
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+  margin-top: 20px;
+  grid-gap: 50px;
+  gap: 50px;
+
+  @media ${(0, _constants.devices).mobileL} {
+    flex-direction: column;
+    align-items: center;
+    grid-gap: 20px;
+    gap: 20px;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+`;
+_c1 = StyledFootnote;
+exports.default = Footnote;
+var _c, _c1;
+$RefreshReg$(_c, "Footnote");
+$RefreshReg$(_c1, "StyledFootnote");
+
+  $parcel$ReactRefreshHelpers$0ad5.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","styled-components":"1U3k6","../constants":"45DZp","../styles/global":"jHMjs","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"eHp76":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$b676 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$b676.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _constants = require("../constants");
+var _global = require("../styles/global");
+const Footer = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledRowSection), {
+        style: {
+            marginTop: 50
+        },
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledText), {
+            type: "medium",
+            color: (0, _constants.BRAND_TEXT_COLORS).LARGE,
+            children: [
+                "Made with ☕ by ",
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                    href: "https://github.com/ShimantaBhuyan",
+                    children: "Shimanta"
+                }, void 0, false, {
+                    fileName: "src/components/Footer.tsx",
+                    lineNumber: 10,
+                    columnNumber: 30
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/Footer.tsx",
+            lineNumber: 9,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/components/Footer.tsx",
+        lineNumber: 8,
+        columnNumber: 5
+    }, undefined);
+};
+_c = Footer;
+exports.default = Footer;
+var _c;
+$RefreshReg$(_c, "Footer");
+
+  $parcel$ReactRefreshHelpers$b676.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../constants":"45DZp","../styles/global":"jHMjs","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["1xC6H","6FqiZ","4aBH6"], "4aBH6", "parcelRequire1a27")
 
 //# sourceMappingURL=index.2d3ace14.js.map

@@ -1,3 +1,5 @@
+export const BRAND_COLOR = "#cbf3f0";
+
 export enum BRAND_TEXT_COLORS {
   BODY = "#335c67",
   LARGE = "#e09f3e",

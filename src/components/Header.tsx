@@ -1,16 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 
-import { BRAND_TEXT_COLORS, devices } from "../constants";
+import { BRAND_COLOR, BRAND_TEXT_COLORS, devices } from "../constants";
 import { StyledText } from "../styles/global";
 
-import Blob from "./Blob";
+import AnimatedBlob from "./AnimatedBlob";
 import Waves from "./Waves";
 
-const Header = ({ type }: { type: "wave" | "blob" }) => {
+const Header = ({ type }: { type: "wave" | "animatedBlob" }) => {
   return (
     <StyledHeaderWrapper>
-      {type === "blob" ? <Blob width={"350px"} /> : <Waves color={"#cbf3f0"} />}
+      {type === "animatedBlob" ? <AnimatedBlob width={"350px"} /> : <Waves color={BRAND_COLOR} />}
       <StyledHeaderText type="large" color={BRAND_TEXT_COLORS.BODY}>
         Color Contrast Tool
       </StyledHeaderText>
