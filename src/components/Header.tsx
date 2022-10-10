@@ -16,7 +16,11 @@ const Header = ({ type }: { type: "wave" | "animatedBlob" }) => {
         Color Contrast Tool
       </StyledHeaderText>
       <StyledSubHeaderText type="small" color={BRAND_TEXT_COLORS.BODY}>
-        Calculated using the new WCAG 3 - APCA algorithm currently being developed.
+        <a href="https://github.com/Myndex/SAPC-APCA/" target="_blank">
+          APCA™
+        </a>
+        &nbsp;is the candidate contrast method for WCAG 3, and is currently in public beta. WCAG 3 is still in
+        development and subject to changes prior to adoption.
       </StyledSubHeaderText>
       <RepoSectionWrapper href="https://github.com/ShimantaBhuyan/color-contrast" about="Repo Link" target={"_blank"}>
         {/* <a target="_blank" href="https://icons8.com/icon/106567/github">GitHub</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> */}

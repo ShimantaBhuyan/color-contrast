@@ -30657,8 +30657,19 @@ const Header = ({ type  })=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledSubHeaderText, {
                 type: "small",
                 color: (0, _constants.BRAND_TEXT_COLORS).BODY,
-                children: "Calculated using the new WCAG 3 - APCA algorithm currently being developed."
-            }, void 0, false, {
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "https://github.com/Myndex/SAPC-APCA/",
+                        target: "_blank",
+                        children: "APCA™"
+                    }, void 0, false, {
+                        fileName: "src/components/Header.tsx",
+                        lineNumber: 19,
+                        columnNumber: 9
+                    }, undefined),
+                    "\xa0is the candidate contrast method for WCAG 3, and is currently in public beta. WCAG 3 is still in development and subject to changes prior to adoption."
+                ]
+            }, void 0, true, {
                 fileName: "src/components/Header.tsx",
                 lineNumber: 18,
                 columnNumber: 7
@@ -30674,12 +30685,12 @@ const Header = ({ type  })=>{
                     height: 48
                 }, void 0, false, {
                     fileName: "src/components/Header.tsx",
-                    lineNumber: 23,
+                    lineNumber: 27,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/Header.tsx",
-                lineNumber: 21,
+                lineNumber: 25,
                 columnNumber: 7
             }, undefined)
         ]

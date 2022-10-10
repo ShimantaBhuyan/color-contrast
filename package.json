@@ -6,6 +6,7 @@
   "scripts": {
     "start": "parcel",
     "build": "parcel build",
+    "prepare": "patch-package",
     "lint": "eslint . --ext .ts | .tsx",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -29,6 +30,8 @@
     "@typescript-eslint/parser": "^5.39.0",
     "eslint": "^8.24.0",
     "parcel": "^2.7.0",
+    "patch-package": "^6.4.7",
+    "postinstall-prepare": "^2.0.0",
     "process": "^0.11.10",
     "typescript": "^4.8.4"
   }
