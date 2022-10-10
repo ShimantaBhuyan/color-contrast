@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { StyledColSection, StyledText } from "../styles/global";
 
+import { StyledColSection, StyledText } from "../styles/global";
 import Blob from "./Blob";
 import ContrastDisplay from "./ContrastDisplay";
 import SwapIcon from "url:../assets/swap.svg";
@@ -24,7 +24,6 @@ const ContrastChecker = () => {
     const { contrastLC, wcag2Ratio } = getContrast(textColor, bgColor);
     setContrastRatio(contrastLC);
     setWcag2Ratio(wcag2Ratio);
-    console.log({ contrastLC, wcag2Ratio });
   };
 
   const handleTextColorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -56,6 +55,17 @@ const ContrastChecker = () => {
     setBgColor(tempColor);
   };
 
+  const handleColorPickerChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const color = event.target.value.toUpperCase();
+    if (color) {
+      if (event.target.id === "TextColorPicker") {
+        setTextColor(color);
+      } else if (event.target.id === "BGColorPicker") {
+        setBgColor(color);
+      }
+    }
+  };
+
   return (
     <Wrapper align="center">
       <StyledForm>
@@ -63,9 +73,13 @@ const ContrastChecker = () => {
           <StyledText type="small" color={BRAND_TEXT_COLORS.BODY}>
             Text Color
           </StyledText>
-          {/* <StyledColorPickerIcon color={textColor} /> */}
           {!tColorError ? (
-            <Blob fill={textColor} width={48} height={48} />
+            <>
+              <Blob fill={textColor} width={48} height={48} style={{ cursor: "pointer" }} />
+              <StyledColorPickerIcon color={textColor}>
+                <input type="color" id="TextColorPicker" onInput={handleColorPickerChange} value={textColor} />
+              </StyledColorPickerIcon>
+            </>
           ) : (
             <InvalidColorText>Invalid Color!</InvalidColorText>
           )}
@@ -79,18 +93,22 @@ const ContrastChecker = () => {
         </StyledColSection>
 
         <SwapButton onClick={swapColors} type="button">
-          <img src={SwapIcon} alt="Swap icon" width={24} height={24} />
+          <img src={SwapIcon} alt="Swap icon" width={24} height={24} style={{ cursor: "pointer" }} />
         </SwapButton>
 
         <StyledColSection align="end">
           <StyledText type="small" color={BRAND_TEXT_COLORS.BODY}>
             Background Color
           </StyledText>
-          {/* <StyledColorPickerIcon color={bgColor} /> */}
           {!bgColorError ? (
-            <Blob fill={bgColor} width={48} height={48} />
+            <>
+              <Blob fill={bgColor} width={48} height={48} style={{ cursor: "pointer" }} />
+              <StyledColorPickerIcon color={bgColor}>
+                <input type="color" id="BGColorPicker" onInput={handleColorPickerChange} value={bgColor} />
+              </StyledColorPickerIcon>
+            </>
           ) : (
-            <InvalidColorText>Invalid Background Color!</InvalidColorText>
+            <InvalidColorText>Invalid Color!</InvalidColorText>
           )}
           <StyledInputs
             type="text"
@@ -142,17 +160,27 @@ const StyledInputs = styled.input`
   border: 3px solid #cbf3f0;
   border-radius: 5px;
 
+  &:focus {
+    outline: none;
+    border: 3px solid green;
+  }
+
   @media ${devices.mobileL} {
     width: 100%;
   }
 `;
 
-// const StyledColorPickerIcon = styled.div<{ color: string }>`
-//   width: 24px;
-//   height: 24px;
-//   border-radius: 12px;
-//   background-color: ${props => props.color};
-// `;
+const StyledColorPickerIcon = styled.div<{ color: string }>`
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  opacity: 0.01;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  appearance: none;
+  margin-top: -10px;
+`;
 
 const StyledTextDisplay = styled.div<{ textColor: string; bgColor: string }>`
   background-color: ${props => props.bgColor};

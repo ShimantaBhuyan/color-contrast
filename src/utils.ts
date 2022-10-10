@@ -10,7 +10,6 @@ export const getContrast = (textColor: string, bgColor: string) => {
   const BGColor = colorParsley(bgColor);
   const contrastLC = BPCAcontrast(sRGBtoY(TextColor), sRGBtoY(BGColor));
   const wcag2Ratio = bridgeRatio(contrastLC, sRGBtoY(TextColor), sRGBtoY(BGColor)).split("to").join(":");
-  console.log({ TextColor, BGColor, contrastLC, wcag2Ratio });
   return { contrastLC, wcag2Ratio };
 };
 

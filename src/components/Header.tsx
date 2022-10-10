@@ -6,6 +6,7 @@ import { StyledText } from "../styles/global";
 
 import AnimatedBlob from "./AnimatedBlob";
 import Waves from "./Waves";
+import GithubLogo from "url:../assets/github-logo.png";
 
 const Header = ({ type }: { type: "wave" | "animatedBlob" }) => {
   return (
@@ -17,6 +18,10 @@ const Header = ({ type }: { type: "wave" | "animatedBlob" }) => {
       <StyledSubHeaderText type="small" color={BRAND_TEXT_COLORS.BODY}>
         Calculated using the new WCAG 3 - APCA algorithm currently being developed.
       </StyledSubHeaderText>
+      <RepoSectionWrapper href="https://github.com/ShimantaBhuyan/color-contrast" about="Repo Link" target={"_blank"}>
+        {/* <a target="_blank" href="https://icons8.com/icon/106567/github">GitHub</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> */}
+        <GithubLogoWrapper src={GithubLogo} alt="Repo Link" width={48} height={48} />
+      </RepoSectionWrapper>
     </StyledHeaderWrapper>
   );
 };
@@ -48,6 +53,23 @@ const StyledSubHeaderText = styled(StyledText)`
     top: 40px;
     width: 100%;
     font-size: 12px;
+  }
+`;
+
+const RepoSectionWrapper = styled.a`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  text-decoration: none;
+`;
+
+const GithubLogoWrapper = styled.img`
+  width: 48px;
+  height: 48px;
+
+  @media ${devices.mobileL} {
+    width: 24px;
+    height: 24px;
   }
 `;
 

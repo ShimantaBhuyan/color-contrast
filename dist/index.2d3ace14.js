@@ -28985,10 +28985,6 @@ const ContrastChecker = ()=>{
         const { contrastLC , wcag2Ratio  } = (0, _utils.getContrast)(textColor, bgColor);
         setContrastRatio(contrastLC);
         setWcag2Ratio(wcag2Ratio);
-        console.log({
-            contrastLC,
-            wcag2Ratio
-        });
     };
     const handleTextColorChange = (event)=>{
         const color = event.target.value.toUpperCase();
@@ -29008,6 +29004,13 @@ const ContrastChecker = ()=>{
         setTextColor(bgColor);
         setBgColor(tempColor);
     };
+    const handleColorPickerChange = (event)=>{
+        const color = event.target.value.toUpperCase();
+        if (color) {
+            if (event.target.id === "TextColorPicker") setTextColor(color);
+            else if (event.target.id === "BGColorPicker") setBgColor(color);
+        }
+    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Wrapper, {
         align: "center",
         children: [
@@ -29022,22 +29025,46 @@ const ContrastChecker = ()=>{
                                 children: "Text Color"
                             }, void 0, false, {
                                 fileName: "src/components/ContrastChecker.tsx",
-                                lineNumber: 63,
+                                lineNumber: 73,
                                 columnNumber: 11
                             }, undefined),
-                            !tColorError ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _blobDefault.default), {
-                                fill: textColor,
-                                width: 48,
-                                height: 48
-                            }, void 0, false, {
-                                fileName: "src/components/ContrastChecker.tsx",
-                                lineNumber: 68,
-                                columnNumber: 13
-                            }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(InvalidColorText, {
+                            !tColorError ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _blobDefault.default), {
+                                        fill: textColor,
+                                        width: 48,
+                                        height: 48,
+                                        style: {
+                                            cursor: "pointer"
+                                        }
+                                    }, void 0, false, {
+                                        fileName: "src/components/ContrastChecker.tsx",
+                                        lineNumber: 78,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledColorPickerIcon, {
+                                        color: textColor,
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                            type: "color",
+                                            id: "TextColorPicker",
+                                            onInput: handleColorPickerChange,
+                                            value: textColor
+                                        }, void 0, false, {
+                                            fileName: "src/components/ContrastChecker.tsx",
+                                            lineNumber: 80,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    }, void 0, false, {
+                                        fileName: "src/components/ContrastChecker.tsx",
+                                        lineNumber: 79,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(InvalidColorText, {
                                 children: "Invalid Color!"
                             }, void 0, false, {
                                 fileName: "src/components/ContrastChecker.tsx",
-                                lineNumber: 70,
+                                lineNumber: 84,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledInputs, {
@@ -29048,13 +29075,13 @@ const ContrastChecker = ()=>{
                                 placeholder: "Enter text color"
                             }, void 0, false, {
                                 fileName: "src/components/ContrastChecker.tsx",
-                                lineNumber: 72,
+                                lineNumber: 86,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/ContrastChecker.tsx",
-                        lineNumber: 62,
+                        lineNumber: 72,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(SwapButton, {
@@ -29064,15 +29091,18 @@ const ContrastChecker = ()=>{
                             src: (0, _swapSvgDefault.default),
                             alt: "Swap icon",
                             width: 24,
-                            height: 24
+                            height: 24,
+                            style: {
+                                cursor: "pointer"
+                            }
                         }, void 0, false, {
                             fileName: "src/components/ContrastChecker.tsx",
-                            lineNumber: 82,
+                            lineNumber: 96,
                             columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/ContrastChecker.tsx",
-                        lineNumber: 81,
+                        lineNumber: 95,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _global.StyledColSection), {
@@ -29084,22 +29114,46 @@ const ContrastChecker = ()=>{
                                 children: "Background Color"
                             }, void 0, false, {
                                 fileName: "src/components/ContrastChecker.tsx",
-                                lineNumber: 86,
+                                lineNumber: 100,
                                 columnNumber: 11
                             }, undefined),
-                            !bgColorError ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _blobDefault.default), {
-                                fill: bgColor,
-                                width: 48,
-                                height: 48
+                            !bgColorError ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _blobDefault.default), {
+                                        fill: bgColor,
+                                        width: 48,
+                                        height: 48,
+                                        style: {
+                                            cursor: "pointer"
+                                        }
+                                    }, void 0, false, {
+                                        fileName: "src/components/ContrastChecker.tsx",
+                                        lineNumber: 105,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledColorPickerIcon, {
+                                        color: bgColor,
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                            type: "color",
+                                            id: "BGColorPicker",
+                                            onInput: handleColorPickerChange,
+                                            value: bgColor
+                                        }, void 0, false, {
+                                            fileName: "src/components/ContrastChecker.tsx",
+                                            lineNumber: 107,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    }, void 0, false, {
+                                        fileName: "src/components/ContrastChecker.tsx",
+                                        lineNumber: 106,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(InvalidColorText, {
+                                children: "Invalid Color!"
                             }, void 0, false, {
                                 fileName: "src/components/ContrastChecker.tsx",
-                                lineNumber: 91,
-                                columnNumber: 13
-                            }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(InvalidColorText, {
-                                children: "Invalid Background Color!"
-                            }, void 0, false, {
-                                fileName: "src/components/ContrastChecker.tsx",
-                                lineNumber: 93,
+                                lineNumber: 111,
                                 columnNumber: 13
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledInputs, {
@@ -29110,19 +29164,19 @@ const ContrastChecker = ()=>{
                                 placeholder: "Enter background color"
                             }, void 0, false, {
                                 fileName: "src/components/ContrastChecker.tsx",
-                                lineNumber: 95,
+                                lineNumber: 113,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/ContrastChecker.tsx",
-                        lineNumber: 85,
+                        lineNumber: 99,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/ContrastChecker.tsx",
-                lineNumber: 61,
+                lineNumber: 71,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contrastDisplayDefault.default), {
@@ -29131,7 +29185,7 @@ const ContrastChecker = ()=>{
                 error: tColorError || bgColorError
             }, void 0, false, {
                 fileName: "src/components/ContrastChecker.tsx",
-                lineNumber: 105,
+                lineNumber: 123,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledTextDisplay, {
@@ -29140,13 +29194,13 @@ const ContrastChecker = ()=>{
                 children: "The quick brown fox jumped over the lazy dog"
             }, void 0, false, {
                 fileName: "src/components/ContrastChecker.tsx",
-                lineNumber: 107,
+                lineNumber: 125,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/ContrastChecker.tsx",
-        lineNumber: 60,
+        lineNumber: 70,
         columnNumber: 5
     }, undefined);
 };
@@ -29183,17 +29237,29 @@ const StyledInputs = (0, _styledComponentsDefault.default).input`
   border: 3px solid #cbf3f0;
   border-radius: 5px;
 
+  &:focus {
+    outline: none;
+    border: 3px solid green;
+  }
+
   @media ${(0, _constants.devices).mobileL} {
     width: 100%;
   }
 `;
 _c3 = StyledInputs;
-// const StyledColorPickerIcon = styled.div<{ color: string }>`
-//   width: 24px;
-//   height: 24px;
-//   border-radius: 12px;
-//   background-color: ${props => props.color};
-// `;
+const StyledColorPickerIcon = (0, _styledComponentsDefault.default).div`
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  opacity: 0.01;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  appearance: none;
+  /* z-index: -1; */
+  margin-top: -10px;
+`;
+_c4 = StyledColorPickerIcon;
 const StyledTextDisplay = (0, _styledComponentsDefault.default).div`
   background-color: ${(props)=>props.bgColor};
   color: ${(props)=>props.textColor};
@@ -29215,7 +29281,7 @@ const StyledTextDisplay = (0, _styledComponentsDefault.default).div`
     height: 200px;
   }
 `;
-_c4 = StyledTextDisplay;
+_c5 = StyledTextDisplay;
 const SwapButton = (0, _styledComponentsDefault.default).button`
   background: transparent;
   width: 30px;
@@ -29227,23 +29293,24 @@ const SwapButton = (0, _styledComponentsDefault.default).button`
     transform: rotateZ(90deg);
   }
 `;
-_c5 = SwapButton;
+_c6 = SwapButton;
 const InvalidColorText = (0, _styledComponentsDefault.default).p`
   color: red;
   height: 48px;
   display: flex;
   align-items: center;
 `;
-_c6 = InvalidColorText;
+_c7 = InvalidColorText;
 exports.default = ContrastChecker;
-var _c, _c1, _c2, _c3, _c4, _c5, _c6;
+var _c, _c1, _c2, _c3, _c4, _c5, _c6, _c7;
 $RefreshReg$(_c, "ContrastChecker");
 $RefreshReg$(_c1, "Wrapper");
 $RefreshReg$(_c2, "StyledForm");
 $RefreshReg$(_c3, "StyledInputs");
-$RefreshReg$(_c4, "StyledTextDisplay");
-$RefreshReg$(_c5, "SwapButton");
-$RefreshReg$(_c6, "InvalidColorText");
+$RefreshReg$(_c4, "StyledColorPickerIcon");
+$RefreshReg$(_c5, "StyledTextDisplay");
+$RefreshReg$(_c6, "SwapButton");
+$RefreshReg$(_c7, "InvalidColorText");
 
   $parcel$ReactRefreshHelpers$7c7e.postlude(module);
 } finally {
@@ -29573,12 +29640,6 @@ const getContrast = (textColor, bgColor)=>{
     const BGColor = (0, _colorparsley.colorParsley)(bgColor);
     const contrastLC = (0, _bridgePca.BPCAcontrast)((0, _bridgePca.sRGBtoY)(TextColor), (0, _bridgePca.sRGBtoY)(BGColor));
     const wcag2Ratio = (0, _bridgePca.bridgeRatio)(contrastLC, (0, _bridgePca.sRGBtoY)(TextColor), (0, _bridgePca.sRGBtoY)(BGColor)).split("to").join(":");
-    console.log({
-        TextColor,
-        BGColor,
-        contrastLC,
-        wcag2Ratio
-    });
     return {
         contrastLC,
         wcag2Ratio
@@ -30505,6 +30566,8 @@ var _animatedBlob = require("./AnimatedBlob");
 var _animatedBlobDefault = parcelHelpers.interopDefault(_animatedBlob);
 var _waves = require("./Waves");
 var _wavesDefault = parcelHelpers.interopDefault(_waves);
+var _githubLogoPng = require("url:../assets/github-logo.png");
+var _githubLogoPngDefault = parcelHelpers.interopDefault(_githubLogoPng);
 const Header = ({ type  })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledHeaderWrapper, {
         children: [
@@ -30512,13 +30575,13 @@ const Header = ({ type  })=>{
                 width: "350px"
             }, void 0, false, {
                 fileName: "src/components/Header.tsx",
-                lineNumber: 13,
+                lineNumber: 14,
                 columnNumber: 34
             }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _wavesDefault.default), {
                 color: (0, _constants.BRAND_COLOR)
             }, void 0, false, {
                 fileName: "src/components/Header.tsx",
-                lineNumber: 13,
+                lineNumber: 14,
                 columnNumber: 69
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledHeaderText, {
@@ -30527,7 +30590,7 @@ const Header = ({ type  })=>{
                 children: "Color Contrast Tool"
             }, void 0, false, {
                 fileName: "src/components/Header.tsx",
-                lineNumber: 14,
+                lineNumber: 15,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(StyledSubHeaderText, {
@@ -30536,13 +30599,32 @@ const Header = ({ type  })=>{
                 children: "Calculated using the new WCAG 3 - APCA algorithm currently being developed."
             }, void 0, false, {
                 fileName: "src/components/Header.tsx",
-                lineNumber: 17,
+                lineNumber: 18,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(RepoSectionWrapper, {
+                href: "https://github.com/ShimantaBhuyan/color-contrast",
+                about: "Repo Link",
+                target: "_blank",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(GithubLogoWrapper, {
+                    src: (0, _githubLogoPngDefault.default),
+                    alt: "Repo Link",
+                    width: 48,
+                    height: 48
+                }, void 0, false, {
+                    fileName: "src/components/Header.tsx",
+                    lineNumber: 23,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/components/Header.tsx",
+                lineNumber: 21,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/Header.tsx",
-        lineNumber: 12,
+        lineNumber: 13,
         columnNumber: 5
     }, undefined);
 };
@@ -30577,19 +30659,38 @@ const StyledSubHeaderText = (0, _styledComponentsDefault.default)((0, _global.St
   }
 `;
 _c3 = StyledSubHeaderText;
+const RepoSectionWrapper = (0, _styledComponentsDefault.default).a`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  text-decoration: none;
+`;
+_c4 = RepoSectionWrapper;
+const GithubLogoWrapper = (0, _styledComponentsDefault.default).img`
+  width: 48px;
+  height: 48px;
+
+  @media ${(0, _constants.devices).mobileL} {
+    width: 24px;
+    height: 24px;
+  }
+`;
+_c5 = GithubLogoWrapper;
 exports.default = Header;
-var _c, _c1, _c2, _c3;
+var _c, _c1, _c2, _c3, _c4, _c5;
 $RefreshReg$(_c, "Header");
 $RefreshReg$(_c1, "StyledHeaderWrapper");
 $RefreshReg$(_c2, "StyledHeaderText");
 $RefreshReg$(_c3, "StyledSubHeaderText");
+$RefreshReg$(_c4, "RepoSectionWrapper");
+$RefreshReg$(_c5, "GithubLogoWrapper");
 
   $parcel$ReactRefreshHelpers$d5a6.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","styled-components":"1U3k6","../constants":"45DZp","../styles/global":"jHMjs","./Waves":"iu8jy","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./AnimatedBlob":"5Am8O"}],"iu8jy":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","styled-components":"1U3k6","../constants":"45DZp","../styles/global":"jHMjs","./Waves":"iu8jy","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./AnimatedBlob":"5Am8O","url:../assets/github-logo.png":"bY51f"}],"iu8jy":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$e565 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -30741,7 +30842,10 @@ $RefreshReg$(_c, "AnimatedBlob");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kgI26":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bY51f":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("6EXJA") + "github-logo.41d7bf07.png" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"kgI26":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$0ad5 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
