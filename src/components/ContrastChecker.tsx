@@ -10,7 +10,9 @@ import { getContrast, parseColor } from "../utils";
 
 const ContrastChecker = () => {
   const [textColor, setTextColor] = useState("#FEF3C7");
+  const [tColorError, setTColorError] = useState(false);
   const [bgColor, setBgColor] = useState("#059669");
+  const [bgColorError, setBgColorError] = useState(false);
   const [contrastRatio, setContrastRatio] = useState<number | null>(null);
   const [wcag2Ratio, setWcag2Ratio] = useState<string | null>(null);
 
@@ -30,7 +32,9 @@ const ContrastChecker = () => {
     setTextColor(color);
 
     if (parseColor(color)[4] === false) {
-      // TODO: show error
+      setTColorError(true);
+    } else {
+      setTColorError(false);
     }
   };
 
@@ -39,7 +43,9 @@ const ContrastChecker = () => {
     setBgColor(color);
 
     if (parseColor(color)[4] === false) {
-      // TODO: show error
+      setBgColorError(true);
+    } else {
+      setBgColorError(false);
     }
   };
 
@@ -53,12 +59,16 @@ const ContrastChecker = () => {
   return (
     <Wrapper align="center">
       <StyledForm>
-        <StyledColSection>
+        <StyledColSection align="start">
           <StyledText type="small" color={BRAND_TEXT_COLORS.BODY}>
             Text Color
           </StyledText>
           {/* <StyledColorPickerIcon color={textColor} /> */}
-          <Blob fill={textColor} width={48} height={48} />
+          {!tColorError ? (
+            <Blob fill={textColor} width={48} height={48} />
+          ) : (
+            <InvalidColorText>Invalid Color!</InvalidColorText>
+          )}
           <StyledInputs
             type="text"
             name="textColor"
@@ -77,7 +87,11 @@ const ContrastChecker = () => {
             Background Color
           </StyledText>
           {/* <StyledColorPickerIcon color={bgColor} /> */}
-          <Blob fill={bgColor} width={48} height={48} />
+          {!bgColorError ? (
+            <Blob fill={bgColor} width={48} height={48} />
+          ) : (
+            <InvalidColorText>Invalid Background Color!</InvalidColorText>
+          )}
           <StyledInputs
             type="text"
             name="bgColor"
@@ -88,7 +102,7 @@ const ContrastChecker = () => {
         </StyledColSection>
       </StyledForm>
 
-      <ContrastDisplay contrastLC={contrastRatio} wcag2Ratio={wcag2Ratio} />
+      <ContrastDisplay contrastLC={contrastRatio} wcag2Ratio={wcag2Ratio} error={tColorError || bgColorError} />
 
       <StyledTextDisplay textColor={textColor} bgColor={bgColor}>
         The quick brown fox jumped over the lazy dog
@@ -145,6 +159,7 @@ const StyledTextDisplay = styled.div<{ textColor: string; bgColor: string }>`
   color: ${props => props.textColor};
   width: 300px;
   height: 200px;
+  border: 2px solid #000;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -171,6 +186,13 @@ const SwapButton = styled.button`
   @media ${devices.mobileL} {
     transform: rotateZ(90deg);
   }
+`;
+
+const InvalidColorText = styled.p`
+  color: red;
+  height: 48px;
+  display: flex;
+  align-items: center;
 `;
 
 export default ContrastChecker;
