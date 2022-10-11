@@ -52,7 +52,6 @@ export const getFromQueryParams = () => {
     const parsedTxtString = parseColor(txtStringFromUrl ?? "");
     const bgStringFromUrl = queryParams.get("bgColor");
     const parsedBgString = parseColor(bgStringFromUrl ?? "");
-    console.log({ parsedTxtString, parsedBgString });
     if (parsedTxtString[4] === false) {
       result.txtColorFromUrl = -1;
     } else {
@@ -63,7 +62,6 @@ export const getFromQueryParams = () => {
     } else {
       result.bgColorFromUrl = colorToHex(parsedBgString, false);
     }
-    console.log({ currentLocation, queryParams, result });
     return result;
   } else {
     return { txtColorFromUrl: -1, bgColorFromUrl: -1 };

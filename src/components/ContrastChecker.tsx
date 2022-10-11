@@ -93,6 +93,7 @@ const ContrastChecker = () => {
                 onInput={handleColorPickerChange}
                 value={getHexColor(textColor)}
               />
+              <label htmlFor="TextColorPicker">Click</label>
             </>
           ) : (
             <InvalidColorText>Invalid Color!</InvalidColorText>
@@ -105,6 +106,7 @@ const ContrastChecker = () => {
             onChange={handleColorChange}
             placeholder="Enter text color"
           />
+          <label htmlFor="textColorInput">Click</label>
         </StyledColSection>
 
         <SwapButton onClick={swapColors} type="button" data-tooltip={"Click to swap text and background color"}>
@@ -124,6 +126,7 @@ const ContrastChecker = () => {
                 onInput={handleColorPickerChange}
                 value={getHexColor(bgColor)}
               />
+              <label htmlFor="TextColorPicker">Click</label>
             </>
           ) : (
             <InvalidColorText>Invalid Color!</InvalidColorText>
@@ -136,6 +139,7 @@ const ContrastChecker = () => {
             onChange={handleColorChange}
             placeholder="Enter background color"
           />
+          <label htmlFor="bgColorInput">Click</label>
         </StyledColSection>
       </StyledForm>
 

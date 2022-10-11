@@ -105,6 +105,9 @@ const GlobalStyle = createGlobalStyle`
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     font-size: 12px;
   }
+  label{
+    display: none;
+  }
 `;
 
 export default GlobalStyle;
