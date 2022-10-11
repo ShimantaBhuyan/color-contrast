@@ -126,7 +126,7 @@ const ContrastChecker = () => {
                 onInput={handleColorPickerChange}
                 value={getHexColor(bgColor)}
               />
-              <label htmlFor="TextColorPicker">Click</label>
+              <label htmlFor="BGColorPicker">Click</label>
             </>
           ) : (
             <InvalidColorText>Invalid Color!</InvalidColorText>
