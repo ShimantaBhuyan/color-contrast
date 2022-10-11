@@ -31,7 +31,19 @@ const ContrastDisplay = ({
             <sup>c</sup>
           </strong>
         </StyledText>
-        <StyledText type="medium" color={BRAND_TEXT_COLORS.BODY} bold data-tooltip={contrastLCTooltip}>
+        <StyledText
+          type="medium"
+          color={BRAND_TEXT_COLORS.BODY}
+          bold
+          data-tooltip={contrastLCTooltip}
+          onMouseEnter={() => {
+            if (mixpanel) {
+              mixpanel?.track("Viewed", {
+                source: "APCA Contrast Lc",
+              });
+            }
+          }}
+        >
           {!error ? contrastLC?.toFixed(2) ?? "?" : "?"}
         </StyledText>
       </StyledColumnWrapper>
@@ -39,7 +51,19 @@ const ContrastDisplay = ({
         <StyledText type="medium" color={BRAND_TEXT_COLORS.BODY}>
           Compatibility with WCAG 2
         </StyledText>
-        <StyledText type="medium" color={BRAND_TEXT_COLORS.BODY} bold data-tooltip={wcagTooltip}>
+        <StyledText
+          type="medium"
+          color={BRAND_TEXT_COLORS.BODY}
+          bold
+          data-tooltip={wcagTooltip}
+          onMouseEnter={() => {
+            if (mixpanel) {
+              mixpanel?.track("Viewed", {
+                source: "WCAG2Ratio",
+              });
+            }
+          }}
+        >
           {!error ? wcag2Ratio ?? "?" : "?"}
         </StyledText>
       </StyledColumnWrapper>

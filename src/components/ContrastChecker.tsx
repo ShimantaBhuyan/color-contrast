@@ -20,12 +20,38 @@ const ContrastChecker = () => {
     const colorsFromUrl = getFromQueryParams();
     if (
       colorsFromUrl.txtColorFromUrl != undefined &&
-      colorsFromUrl.txtColorFromUrl != -1 &&
+      colorsFromUrl.txtColorFromUrl !== -1 &&
       colorsFromUrl.bgColorFromUrl != undefined &&
-      colorsFromUrl.bgColorFromUrl != -1
+      colorsFromUrl.bgColorFromUrl !== -1
     ) {
       setTextColor(colorsFromUrl.txtColorFromUrl.toString().toUpperCase());
       setBgColor(colorsFromUrl.bgColorFromUrl.toString().toUpperCase());
+      console.log("APP VIEWED FROM URL: CORRECT COLORS");
+      if (mixpanel) {
+        mixpanel?.track("Viewed", {
+          source: "urlWithCorrectColors",
+          txtColor: colorsFromUrl.txtColorFromUrl,
+          bgColor: colorsFromUrl.bgColorFromUrl,
+        });
+      }
+      return;
+    } else if (
+      (colorsFromUrl.txtColorFromUrl != undefined && colorsFromUrl.txtColorFromUrl == -1) ||
+      (colorsFromUrl.bgColorFromUrl != undefined && colorsFromUrl.bgColorFromUrl == -1)
+    ) {
+      console.log("APP VIEWED FROM URL: INCORRECT COLORS");
+      if (mixpanel) {
+        mixpanel?.track("Viewed", {
+          source: "urlWithIncorrectColors",
+          txtColor: colorsFromUrl.txtColorFromUrl,
+          bgColor: colorsFromUrl.bgColorFromUrl,
+        });
+      }
+      return;
+    }
+
+    if (mixpanel) {
+      mixpanel?.track("Viewed", { source: "direct" });
     }
   }, []);
 
@@ -64,6 +90,12 @@ const ContrastChecker = () => {
     const tempColor = textColor;
     setTextColor(bgColor);
     setBgColor(tempColor);
+
+    if (mixpanel) {
+      mixpanel?.track("Click", {
+        source: "swap",
+      });
+    }
   };
 
   const handleColorPickerChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -92,6 +124,13 @@ const ContrastChecker = () => {
                 id="TextColorPicker"
                 onInput={handleColorPickerChange}
                 value={getHexColor(textColor)}
+                onClick={() => {
+                  if (mixpanel) {
+                    mixpanel?.track("Click", {
+                      source: "textColorPicker",
+                    });
+                  }
+                }}
               />
               <label htmlFor="TextColorPicker">Click</label>
             </>
@@ -125,6 +164,13 @@ const ContrastChecker = () => {
                 id="BGColorPicker"
                 onInput={handleColorPickerChange}
                 value={getHexColor(bgColor)}
+                onClick={() => {
+                  if (mixpanel) {
+                    mixpanel?.track("Click", {
+                      source: "bgColorPicker",
+                    });
+                  }
+                }}
               />
               <label htmlFor="BGColorPicker">Click</label>
             </>

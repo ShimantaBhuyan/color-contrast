@@ -64,6 +64,6 @@ export const getFromQueryParams = () => {
     }
     return result;
   } else {
-    return { txtColorFromUrl: -1, bgColorFromUrl: -1 };
+    return { txtColorFromUrl: -2, bgColorFromUrl: -2 };
   }
 };
