@@ -227,14 +227,23 @@ const StyledTextDisplay = styled.div<{ textColor: string; bgColor: string }>`
 `;
 
 const SwapButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: transparent;
   width: 30px;
   height: 30px;
+  border: 1px solid #000;
   border-radius: 15px;
   cursor: pointer;
 
   @media ${devices.mobileL} {
-    transform: rotateZ(90deg);
+    & > img {
+      transform: rotateZ(90deg);
+    }
+    &[data-tooltip]:hover::before {
+      display: none;
+    }
   }
 `;
 
