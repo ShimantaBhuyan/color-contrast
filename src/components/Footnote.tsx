@@ -6,11 +6,8 @@ import { StyledColSection, StyledRowSection, StyledText } from "../styles/global
 const Footnote = () => {
   return (
     <StyledFootnoteWrapper>
-      <StyledText type="large" color={BRAND_TEXT_COLORS.LARGE}>
-        Notes
-      </StyledText>
       <StyledFootnote>
-        <StyledColSection align="start">
+        <InspireSection align="start" vAlign="start">
           <StyledText type="small" color={BRAND_TEXT_COLORS.SMALL_BODY}>
             INSPIRED FROM:
             <ul>
@@ -25,12 +22,12 @@ const Footnote = () => {
               </li>
             </ul>
           </StyledText>
-        </StyledColSection>
+        </InspireSection>
 
-        <StyledColSection>
+        <NotesSection align="start">
           <StyledRowSection style={{ marginBottom: "20px", textAlign: "center" }}>
             <StyledText type="medium" color={BRAND_TEXT_COLORS.BODY}>
-              WCAG 2 Standards reference
+              <u>WCAG 2 Standards reference</u>
             </StyledText>
           </StyledRowSection>
 
@@ -42,7 +39,7 @@ const Footnote = () => {
               <StyledText type="small" color={BRAND_TEXT_COLORS.SMALL_BODY} bold>
                 SHOULD
               </StyledText>
-              <StyledText type="small" color={BRAND_TEXT_COLORS.SMALL_BODY}>
+              <StyledText type="small" color={BRAND_TEXT_COLORS.SMALL_BODY} style={{ padding: "10px 20px" }}>
                 <ul>
                   <li>
                     L<sup>c</sup> 15 (W 1.3:1) Minimum for disabled elements (not hidden).
@@ -60,7 +57,7 @@ const Footnote = () => {
                 SHALL
               </StyledText>
 
-              <StyledText type="small" color={BRAND_TEXT_COLORS.SMALL_BODY}>
+              <StyledText type="small" color={BRAND_TEXT_COLORS.SMALL_BODY} style={{ padding: "10px 20px" }}>
                 <ul>
                   <li>
                     L<sup>c</sup> 60 (W 3:1) Large font only, no body text. Non-text okay.
@@ -82,7 +79,7 @@ const Footnote = () => {
               <StyledText type="small" color={BRAND_TEXT_COLORS.SMALL_BODY} bold>
                 SHOULD
               </StyledText>
-              <StyledText type="small" color={BRAND_TEXT_COLORS.SMALL_BODY}>
+              <StyledText type="small" color={BRAND_TEXT_COLORS.SMALL_BODY} style={{ padding: "10px 20px" }}>
                 <ul>
                   <li>
                     L<sup>c</sup> 15 (W 1.3:1) Minimum for disabled elements (not hidden).
@@ -97,7 +94,7 @@ const Footnote = () => {
                 SHALL
               </StyledText>
 
-              <StyledText type="small" color={BRAND_TEXT_COLORS.SMALL_BODY}>
+              <StyledText type="small" color={BRAND_TEXT_COLORS.SMALL_BODY} style={{ padding: "10px 20px" }}>
                 <ul>
                   <li>
                     L<sup>c</sup> 60 (W 3:1) Minimum for logotypes and essential non-text.
@@ -112,29 +109,63 @@ const Footnote = () => {
               </StyledText>
             </StyledColSection>
           </StyledRowSection>
-        </StyledColSection>
+        </NotesSection>
+
+        <APCANotesSection>
+          <StyledRowSection style={{ marginBottom: "20px" }}>
+            <StyledText type="medium" color={BRAND_TEXT_COLORS.LARGE}>
+              The new, under-development WCAG 3 method using APCA sees great improvements over the current contrast
+              system. Some of the important changes are listed below:
+            </StyledText>
+          </StyledRowSection>
+          <StyledRowSection vAlign="start">
+            <StyledText type="small" color={BRAND_TEXT_COLORS.SMALL_BODY}>
+              <ul>
+                <li>
+                  The new APCA scoring system, scores accessibility in levels out of 106 &amp; -108 instead of ratios.
+                  The higher the number, the higher the contrast. 15 is the minimum for non-text elements, while 75 is
+                  the preferred level for body text.
+                </li>
+                <li>
+                  The size and weight of text are considered to measure accessibility. Thinner the text, lower the
+                  score.
+                </li>
+                <li>
+                  If you swap text and background colours, the accessibility result differs; unlike WCAG 2, which yields
+                  the same results.
+                </li>
+                <li>
+                  Contrast is modelled perceptually, not mathematically. Unlike WCAG 2, the new APCA considers that
+                  humans have different perception of contrast and do not perceive it linearly across hue and lightness.
+                </li>
+              </ul>
+            </StyledText>
+          </StyledRowSection>
+        </APCANotesSection>
       </StyledFootnote>
     </StyledFootnoteWrapper>
   );
 };
 
 const StyledFootnoteWrapper = styled(StyledColSection)`
+  padding: 5px 25px;
   margin-top: 80px;
   @media ${devices.mobileL} {
-    margin-top: 20px;
+    margin-top: 50px;
   }
 `;
 
 const StyledFootnote = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: start;
-  width: 100%;
-  margin-top: 20px;
-  grid-gap: 50px;
-  gap: 50px;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-auto-rows: auto;
+  gap: 50px 50px;
+  grid-template-areas:
+    "Inspire Notes"
+    ". APCANotes";
 
   @media ${devices.mobileL} {
+    display: flex;
     flex-direction: column;
     align-items: center;
     grid-gap: 20px;
@@ -143,6 +174,18 @@ const StyledFootnote = styled.div`
     padding-left: 10px;
     padding-right: 10px;
   }
+`;
+
+const InspireSection = styled(StyledColSection)`
+  grid-area: Inspire;
+`;
+
+const NotesSection = styled(StyledColSection)`
+  grid-area: Notes;
+`;
+
+const APCANotesSection = styled(StyledColSection)`
+  grid-area: APCANotes;
 `;
 
 export default Footnote;

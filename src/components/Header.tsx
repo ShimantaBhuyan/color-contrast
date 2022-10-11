@@ -52,9 +52,11 @@ const StyledSubHeaderText = styled(StyledText)`
   width: 25%;
   word-wrap: normal;
   text-transform: uppercase;
+  padding: 5px;
 
   @media ${devices.mobileL} {
     top: 40px;
+    padding: 5px 10px;
     width: 100%;
     font-size: 12px;
   }
