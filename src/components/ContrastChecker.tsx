@@ -21,12 +21,13 @@ const ContrastChecker = () => {
     if (
       colorsFromUrl.txtColorFromUrl != undefined &&
       colorsFromUrl.txtColorFromUrl !== -1 &&
+      colorsFromUrl.txtColorFromUrl !== -2 &&
       colorsFromUrl.bgColorFromUrl != undefined &&
-      colorsFromUrl.bgColorFromUrl !== -1
+      colorsFromUrl.bgColorFromUrl !== -1 &&
+      colorsFromUrl.bgColorFromUrl !== -2
     ) {
       setTextColor(colorsFromUrl.txtColorFromUrl.toString().toUpperCase());
       setBgColor(colorsFromUrl.bgColorFromUrl.toString().toUpperCase());
-      console.log("APP VIEWED FROM URL: CORRECT COLORS");
       if (mixpanel) {
         mixpanel?.track("Viewed", {
           source: "urlWithCorrectColors",
@@ -35,11 +36,12 @@ const ContrastChecker = () => {
         });
       }
       return;
-    } else if (
+    }
+
+    if (
       (colorsFromUrl.txtColorFromUrl != undefined && colorsFromUrl.txtColorFromUrl == -1) ||
       (colorsFromUrl.bgColorFromUrl != undefined && colorsFromUrl.bgColorFromUrl == -1)
     ) {
-      console.log("APP VIEWED FROM URL: INCORRECT COLORS");
       if (mixpanel) {
         mixpanel?.track("Viewed", {
           source: "urlWithIncorrectColors",
@@ -50,8 +52,14 @@ const ContrastChecker = () => {
       return;
     }
 
-    if (mixpanel) {
-      mixpanel?.track("Viewed", { source: "direct" });
+    if (
+      (colorsFromUrl.txtColorFromUrl != undefined && colorsFromUrl.txtColorFromUrl == -2) ||
+      (colorsFromUrl.bgColorFromUrl != undefined && colorsFromUrl.bgColorFromUrl == -2)
+    ) {
+      if (mixpanel) {
+        mixpanel?.track("Viewed", { source: "direct" });
+      }
+      return;
     }
   }, []);
 
