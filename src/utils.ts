@@ -45,22 +45,26 @@ export const getAALevel = (ratio: number) => {
 
 export const getFromQueryParams = () => {
   if (window && window.location && URLSearchParams) {
-    const result = { txtColorFromUrl: {}, bgColorFromUrl: {} };
+    let result = { txtColorFromUrl: {}, bgColorFromUrl: {} };
     const currentLocation = window.location;
     const queryParams = new URLSearchParams(currentLocation.search);
     const txtStringFromUrl = queryParams.get("txtColor");
-    const parsedTxtString = parseColor(txtStringFromUrl ?? "");
     const bgStringFromUrl = queryParams.get("bgColor");
-    const parsedBgString = parseColor(bgStringFromUrl ?? "");
-    if (parsedTxtString[4] === false) {
-      result.txtColorFromUrl = -1;
+    if ((txtStringFromUrl && txtStringFromUrl.length > 0) || (bgStringFromUrl && bgStringFromUrl.length > 0)) {
+      const parsedTxtString = parseColor(txtStringFromUrl ?? "");
+      const parsedBgString = parseColor(bgStringFromUrl ?? "");
+      if (parsedTxtString[4] === false) {
+        result.txtColorFromUrl = -1;
+      } else {
+        result.txtColorFromUrl = colorToHex(parsedTxtString, false);
+      }
+      if (parsedBgString[4] === false) {
+        result.bgColorFromUrl = -1;
+      } else {
+        result.bgColorFromUrl = colorToHex(parsedBgString, false);
+      }
     } else {
-      result.txtColorFromUrl = colorToHex(parsedTxtString, false);
-    }
-    if (parsedBgString[4] === false) {
-      result.bgColorFromUrl = -1;
-    } else {
-      result.bgColorFromUrl = colorToHex(parsedBgString, false);
+      result = { txtColorFromUrl: -2, bgColorFromUrl: -2 };
     }
     return result;
   } else {
