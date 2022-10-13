@@ -30,12 +30,12 @@ const Footnote = () => {
               Use directly from URL
             </StyledText>
             <StyledText type="small" color={BRAND_TEXT_COLORS.SMALL_BODY}>
-              All color formats mentioned above (removing the # and except the one's with % characters) are supported to
-              directly land on this page via url. Try these samples:
+              All color formats mentioned above (after removing the # character) are supported to directly land on this
+              page via url. Try these samples:
               <ul>
                 <li>
                   <a href="https://color-contrast.dev?txtColor=abcdef&bgColor=rgb(123, 45, 67)" target="_blank">
-                    https://color-contrast.dev?txtColor=abcdef&bgColor=rgb(123, 45, 67)
+                    https://color-contrast.dev?txtColor=abcdef&bgColor=rgb(123,45,67)
                   </a>
                 </li>
                 <li>
