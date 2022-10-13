@@ -5,7 +5,8 @@ import { StyledColSection, StyledText } from "../styles/global";
 import Blob from "./Blob";
 import ContrastDisplay from "./ContrastDisplay";
 import SwapIcon from "url:../assets/swap.svg";
-import { BRAND_TEXT_COLORS, devices } from "../constants";
+import QuestionIcon from "url:../assets/question-mark.svg";
+import { BRAND_COLOR, BRAND_TEXT_COLORS, devices } from "../constants";
 import { getContrast, getFromQueryParams, getHexColor, parseColor, mixpanelTrack } from "../utils";
 
 const ContrastChecker = () => {
@@ -15,6 +16,7 @@ const ContrastChecker = () => {
   const [bgColorError, setBgColorError] = useState(false);
   const [contrastRatio, setContrastRatio] = useState<number | null>(null);
   const [wcag2Ratio, setWcag2Ratio] = useState<string | null>(null);
+  const [showColorFormats, setShowColorFormats] = useState(false);
 
   useEffect(() => {
     const colorsFromUrl = getFromQueryParams();
@@ -147,9 +149,14 @@ const ContrastChecker = () => {
           <label htmlFor="textColorInput">Click</label>
         </StyledColSection>
 
-        <SwapButton onClick={swapColors} type="button" data-tooltip={"Click to swap text and background color"}>
+        <IconButton
+          onClick={swapColors}
+          type="button"
+          data-tooltip={"Click to swap text and background color"}
+          rotateOnMobile
+        >
           <img src={SwapIcon} alt="Swap icon" width={24} height={24} />
-        </SwapButton>
+        </IconButton>
 
         <StyledColSection align="end">
           <StyledText type="small" color={BRAND_TEXT_COLORS.BODY}>
@@ -185,6 +192,48 @@ const ContrastChecker = () => {
           <label htmlFor="bgColorInput">Click</label>
         </StyledColSection>
       </StyledForm>
+
+      <StyledColSection>
+        <IconButton
+          onClick={() => {
+            setShowColorFormats(!showColorFormats);
+            mixpanelTrack("Click", {
+              source: "show-formats",
+            });
+          }}
+          type="button"
+          data-tooltip={"Click to show compatible color formats"}
+          border={false}
+        >
+          <img src={QuestionIcon} alt="Info icon" width={30} height={30} />
+        </IconButton>
+
+        {showColorFormats && (
+          <ColorFormatInfo vAlign="between">
+            <StyledText type="medium" color={BRAND_TEXT_COLORS.BODY} style={{ textAlign: "center" }}>
+              You can input colors in these formats:
+            </StyledText>
+            <StyledText type="small" color={BRAND_TEXT_COLORS.SMALL_BODY}>
+              <ul>
+                <li>#abc or abc (interpreted as aabbcc)</li>
+                <li>#abcdef or abcdef</li>
+                <li>rgb(123, 45, 67) or 123,45,67 or [123,45,67]</li>
+                <li>aquamarine or magenta (full CSS4 named colors list)</li>
+                <li>color(srgb 0.765 0.89 0.556)</li>
+                <li>#abcf or abcf (interpreted as aabbccff)</li>
+                <li>#123456ff or 123456ff</li>
+                <li>rgba(123, 45, 67, 1.0)</li>
+              </ul>
+              Greyscale shorthand
+              <ul>
+                <li>#ab or ab (interpreted as 'ababab')</li>
+                <li>123 (interpreted as ifrgb(123, 123, 123))</li>
+                <li>87% (interpreted as if rgb(87%, 87%, 87%) = [221.85,221.85,221.85])</li>
+              </ul>
+            </StyledText>
+          </ColorFormatInfo>
+        )}
+      </StyledColSection>
 
       <ContrastDisplay contrastLC={contrastRatio} wcag2Ratio={wcag2Ratio} error={tColorError || bgColorError} />
 
@@ -251,6 +300,16 @@ const StyledColorPicker = styled.input`
   z-index: 1;
 `;
 
+const ColorFormatInfo = styled(StyledColSection)`
+  padding: 20px 30px;
+  border: 3px solid ${BRAND_COLOR};
+  border-radius: 8px;
+
+  @media ${devices.mobileL} {
+    width: 90%;
+  }
+`;
+
 const StyledTextDisplay = styled.div<{ textColor: string; bgColor: string }>`
   background-color: ${props => props.bgColor};
   color: ${props => props.textColor};
@@ -273,21 +332,23 @@ const StyledTextDisplay = styled.div<{ textColor: string; bgColor: string }>`
   }
 `;
 
-const SwapButton = styled.button`
+const IconButton = styled.button<{ border?: boolean; rotateOnMobile?: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
   background: transparent;
   width: 30px;
   height: 30px;
-  border: 1px solid #000;
   border-radius: 15px;
+  border: ${props => (props.border == undefined || props.border ? "1px solid #000" : "none")};
   cursor: pointer;
 
   @media ${devices.mobileL} {
-    & > img {
+    ${props =>
+      props?.rotateOnMobile &&
+      `& > img {
       transform: rotateZ(90deg);
-    }
+    }`}
     &[data-tooltip]:hover::before {
       display: none;
     }
