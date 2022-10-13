@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import { BRAND_COLOR, BRAND_TEXT_COLORS, devices } from "../constants";
 import { StyledColSection, StyledText } from "../styles/global";
-import { getAALevel } from "../utils";
+import { getAALevel, mixpanelTrack } from "../utils";
 
 const ContrastDisplay = ({
   contrastLC,
@@ -37,11 +37,9 @@ const ContrastDisplay = ({
           bold
           data-tooltip={contrastLCTooltip}
           onMouseEnter={() => {
-            if (mixpanel) {
-              mixpanel?.track("Viewed", {
-                source: "APCA Contrast Lc",
-              });
-            }
+            mixpanelTrack("Viewed", {
+              source: "APCA Contrast Lc",
+            });
           }}
         >
           {!error ? contrastLC?.toFixed(2) ?? "?" : "?"}
@@ -57,11 +55,9 @@ const ContrastDisplay = ({
           bold
           data-tooltip={wcagTooltip}
           onMouseEnter={() => {
-            if (mixpanel) {
-              mixpanel?.track("Viewed", {
-                source: "WCAG2Ratio",
-              });
-            }
+            mixpanelTrack("Viewed", {
+              source: "WCAG2Ratio",
+            });
           }}
         >
           {!error ? wcag2Ratio ?? "?" : "?"}
