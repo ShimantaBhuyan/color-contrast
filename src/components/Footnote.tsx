@@ -6,6 +6,27 @@ import { StyledColSection, StyledRowSection, StyledText } from "../styles/global
 const Footnote = () => {
   return (
     <StyledFootnoteWrapper>
+      {/* <InfoWrapper>
+        <StyledText type="medium" color={BRAND_TEXT_COLORS.BODY}>
+          Use directly from URL
+        </StyledText>
+        <StyledText type="small" color={BRAND_TEXT_COLORS.SMALL_BODY}>
+          All color formats mentioned above (removing the # and except the one's with % characters) are supported to
+          directly land on this page via url. Try these samples:
+          <ul>
+            <li>
+              <a href="http://localhost:1234?txtColor=abcdef&bgColor=rgb(123, 45, 67)" target="_blank">
+                http://localhost:1234?txtColor=abcdef&bgColor=rgb(123, 45, 67)
+              </a>
+            </li>
+            <li>
+              <a href="http://localhost:1234?txtColor=magenta&bgColor=color(srgb 0.765 0.89 0.556)" target="_blank">
+                http://localhost:1234?txtColor=magenta&bgColor=color(srgb 0.765 0.89 0.556)
+              </a>
+            </li>
+          </ul>
+        </StyledText>
+      </InfoWrapper> */}
       <StyledFootnote>
         <InspireSection align="start" vAlign="start">
           <StyledText type="small" color={BRAND_TEXT_COLORS.SMALL_BODY}>
@@ -25,7 +46,29 @@ const Footnote = () => {
         </InspireSection>
 
         <NotesSection align="start">
-          <StyledRowSection style={{ marginBottom: "20px", textAlign: "center" }}>
+          <StyledRowSection vAlign="start">
+            <StyledText type="medium" color={BRAND_TEXT_COLORS.BODY}>
+              Use directly from URL
+            </StyledText>
+            <StyledText type="small" color={BRAND_TEXT_COLORS.SMALL_BODY}>
+              All color formats mentioned above (removing the # and except the one's with % characters) are supported to
+              directly land on this page via url. Try these samples:
+              <ul>
+                <li>
+                  <a href="http://localhost:1234?txtColor=abcdef&bgColor=rgb(123, 45, 67)" target="_blank">
+                    https://color-contrast.dev?txtColor=abcdef&bgColor=rgb(123, 45, 67)
+                  </a>
+                </li>
+                <li>
+                  <a href="http://localhost:1234?txtColor=magenta&bgColor=color(srgb 0.765 0.89 0.556)" target="_blank">
+                    https://color-contrast.dev?txtColor=magenta&bgColor=color(srgb 0.765 0.89 0.556)
+                  </a>
+                </li>
+              </ul>
+            </StyledText>
+          </StyledRowSection>
+
+          <StyledRowSection style={{ marginBottom: "20px" }}>
             <StyledText type="medium" color={BRAND_TEXT_COLORS.BODY}>
               <u>WCAG 2 Standards reference</u>
             </StyledText>
@@ -182,6 +225,7 @@ const InspireSection = styled(StyledColSection)`
 
 const NotesSection = styled(StyledColSection)`
   grid-area: Notes;
+  grid-gap: 30px;
 `;
 
 const APCANotesSection = styled(StyledColSection)`

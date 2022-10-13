@@ -1,5 +1,6 @@
 import styled, { createGlobalStyle } from "styled-components";
-import { devices } from "../constants";
+import { BRAND_COLOR, BRAND_TEXT_COLORS, devices } from "../constants";
+import { getFlexAlign } from "../utils";
 
 type StyledTextProps = {
   type: "small" | "medium" | "large";
@@ -8,21 +9,13 @@ type StyledTextProps = {
 };
 
 export const StyledRowSection = styled.section<{
-  align?: "start" | "center" | "end";
-  vAlign?: "start" | "center" | "end";
+  vAlign?: "start" | "center" | "end" | "stretch";
+  align?: "start" | "center" | "end" | "between" | "around" | "evenly";
 }>`
   display: flex;
   flex-direction: row;
-  align-items: ${props =>
-    props?.vAlign
-      ? props?.vAlign == "start"
-        ? "flex-start"
-        : props?.vAlign == "end"
-        ? "flex-end"
-        : "center"
-      : "center"};
-  justify-content: ${props =>
-    props?.align ? (props?.align == "start" ? "flex-start" : props?.align == "end" ? "flex-end" : "center") : "center"};
+  align-items: ${props => (props?.vAlign ? getFlexAlign(props?.vAlign) : "center")};
+  justify-content: ${props => (props?.align ? getFlexAlign(props?.align) : "center")};
   grid-gap: 30px;
   gap: 30px;
 
@@ -33,21 +26,13 @@ export const StyledRowSection = styled.section<{
 `;
 
 export const StyledColSection = styled.section<{
-  align?: "start" | "center" | "end";
-  vAlign?: "start" | "center" | "end";
+  vAlign?: "start" | "center" | "end" | "between" | "around" | "evenly";
+  align?: "start" | "center" | "end" | "stretch";
 }>`
   display: flex;
   flex-direction: column;
-  justify-content: ${props =>
-    props?.vAlign
-      ? props?.vAlign == "start"
-        ? "flex-start"
-        : props?.vAlign == "end"
-        ? "flex-end"
-        : "center"
-      : "center"};
-  align-items: ${props =>
-    props?.align ? (props?.align == "start" ? "flex-start" : props?.align == "end" ? "flex-end" : "center") : "center"};
+  justify-content: ${props => (props?.vAlign ? getFlexAlign(props?.vAlign) : "center")};
+  align-items: ${props => (props?.align ? getFlexAlign(props?.align) : "center")};
   grid-gap: 10px;
   gap: 10px;
 
@@ -73,6 +58,19 @@ const GlobalStyle = createGlobalStyle`
    }
    html, body{     
     background-color: rgb(249, 250, 251);
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+    &::-webkit-scrollbar-track {
+      /* box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
+      box-shadow: linear-gradient(90deg,#434343,#434343 1px,#111 0,#111)
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background-color: ${BRAND_TEXT_COLORS.BODY};
+      border-radius: 8px;
+      box-shadow: inset 2px 2px 2px hsl(0deg 0% 100% / 25%), inset -2px -2px 2px rgb(0 0 0 / 25%);
+    }
    }
    #root{
       margin: 0 auto 50px auto;

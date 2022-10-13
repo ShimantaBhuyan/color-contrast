@@ -89,3 +89,22 @@ export const mixpanelTrack = (type: "Viewed" | "Click", props: MixpanelProps) =>
     }
   }
 };
+
+export const getFlexAlign = (alignment: "start" | "center" | "end" | "between" | "around" | "evenly" | "stretch") => {
+  switch (alignment) {
+    case "start":
+      return "flex-start";
+    case "center":
+      return "center";
+    case "end":
+      return "flex-end";
+    case "between":
+      return "space-between";
+    case "around":
+      return "space-around";
+    case "evenly":
+      return "space-evenly";
+    case "stretch":
+      return "stretch";
+  }
+};
