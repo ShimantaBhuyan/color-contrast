@@ -71,3 +71,21 @@ export const getFromQueryParams = () => {
     return { txtColorFromUrl: -2, bgColorFromUrl: -2 };
   }
 };
+
+type MixpanelProps = {
+  source: string;
+  txtColor?: string;
+  bgColor?: string;
+};
+
+export const mixpanelTrack = (type: "Viewed" | "Click", props: MixpanelProps) => {
+  if (process.env.NODE_ENV === "development") {
+    console.log("TRACK CALL: ", { type, ...props });
+  } else {
+    if (mixpanel) {
+      mixpanel?.track(type, {
+        ...props,
+      });
+    }
+  }
+};

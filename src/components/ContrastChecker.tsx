@@ -6,7 +6,7 @@ import Blob from "./Blob";
 import ContrastDisplay from "./ContrastDisplay";
 import SwapIcon from "url:../assets/swap.svg";
 import { BRAND_TEXT_COLORS, devices } from "../constants";
-import { getContrast, getFromQueryParams, getHexColor, parseColor } from "../utils";
+import { getContrast, getFromQueryParams, getHexColor, parseColor, mixpanelTrack } from "../utils";
 
 const ContrastChecker = () => {
   const [textColor, setTextColor] = useState("#FEF3C7");
@@ -28,13 +28,11 @@ const ContrastChecker = () => {
     ) {
       setTextColor(colorsFromUrl.txtColorFromUrl.toString().toUpperCase());
       setBgColor(colorsFromUrl.bgColorFromUrl.toString().toUpperCase());
-      if (mixpanel) {
-        mixpanel?.track("Viewed", {
-          source: "urlWithCorrectColors",
-          txtColor: colorsFromUrl.txtColorFromUrl,
-          bgColor: colorsFromUrl.bgColorFromUrl,
-        });
-      }
+      mixpanelTrack("Viewed", {
+        source: "urlWithCorrectColors",
+        txtColor: colorsFromUrl.txtColorFromUrl.toString(),
+        bgColor: colorsFromUrl.bgColorFromUrl.toString(),
+      });
       return;
     }
 
@@ -42,13 +40,11 @@ const ContrastChecker = () => {
       (colorsFromUrl.txtColorFromUrl != undefined && colorsFromUrl.txtColorFromUrl == -1) ||
       (colorsFromUrl.bgColorFromUrl != undefined && colorsFromUrl.bgColorFromUrl == -1)
     ) {
-      if (mixpanel) {
-        mixpanel?.track("Viewed", {
-          source: "urlWithIncorrectColors",
-          txtColor: colorsFromUrl.txtColorFromUrl,
-          bgColor: colorsFromUrl.bgColorFromUrl,
-        });
-      }
+      mixpanelTrack("Viewed", {
+        source: "urlWithIncorrectColors",
+        txtColor: colorsFromUrl.txtColorFromUrl.toString(),
+        bgColor: colorsFromUrl.bgColorFromUrl.toString(),
+      });
       return;
     }
 
@@ -56,9 +52,9 @@ const ContrastChecker = () => {
       (colorsFromUrl.txtColorFromUrl != undefined && colorsFromUrl.txtColorFromUrl == -2) ||
       (colorsFromUrl.bgColorFromUrl != undefined && colorsFromUrl.bgColorFromUrl == -2)
     ) {
-      if (mixpanel) {
-        mixpanel?.track("Viewed", { source: "direct" });
-      }
+      mixpanelTrack("Viewed", {
+        source: "direct",
+      });
       return;
     }
   }, []);
@@ -98,12 +94,9 @@ const ContrastChecker = () => {
     const tempColor = textColor;
     setTextColor(bgColor);
     setBgColor(tempColor);
-
-    if (mixpanel) {
-      mixpanel?.track("Click", {
-        source: "swap",
-      });
-    }
+    mixpanelTrack("Click", {
+      source: "swap",
+    });
   };
 
   const handleColorPickerChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -133,11 +126,9 @@ const ContrastChecker = () => {
                 onInput={handleColorPickerChange}
                 value={getHexColor(textColor)}
                 onClick={() => {
-                  if (mixpanel) {
-                    mixpanel?.track("Click", {
-                      source: "textColorPicker",
-                    });
-                  }
+                  mixpanelTrack("Click", {
+                    source: "textColorPicker",
+                  });
                 }}
               />
               <label htmlFor="TextColorPicker">Click</label>
@@ -173,11 +164,9 @@ const ContrastChecker = () => {
                 onInput={handleColorPickerChange}
                 value={getHexColor(bgColor)}
                 onClick={() => {
-                  if (mixpanel) {
-                    mixpanel?.track("Click", {
-                      source: "bgColorPicker",
-                    });
-                  }
+                  mixpanelTrack("Click", {
+                    source: "bgColorPicker",
+                  });
                 }}
               />
               <label htmlFor="BGColorPicker">Click</label>
