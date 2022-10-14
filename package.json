@@ -5,7 +5,7 @@
   "source": "src/public/index.html",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build -d build && cp /robots.txt dist/robots.txt && cp /sitemap.xml dist/sitemap.xml",
+    "build": "parcel build && cp /robots.txt dist/robots.txt && cp /sitemap.xml dist/sitemap.xml",
     "prepare": "patch-package",
     "lint": "eslint . --ext .ts | .tsx",
     "test": "echo \"Error: no test specified\" && exit 1"
