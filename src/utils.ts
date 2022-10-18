@@ -1,5 +1,6 @@
 import { BPCAcontrast, sRGBtoY, bridgeRatio } from "bridge-pca";
 import { colorParsley, colorToHex } from "colorparsley";
+import { Hsluv } from "hsluv/dist/esm/hsluv.js";
 
 export const parseColor = (color: string) => {
   return colorParsley(color);
@@ -88,6 +89,56 @@ export const mixpanelTrack = (type: "Viewed" | "Click", props: MixpanelProps) =>
       });
     }
   }
+};
+
+/**
+ * calculate value minus target. if delta is negative, cast to +Infinity
+ */
+const getContrastDelta = (target: number, value: number): number => {
+  const diff = value - target;
+  // Ensure contrast is >= target by giving
+  // negative delta a high positive value (Infinity)
+  return diff < 0 ? Infinity : diff;
+};
+
+type SUGGESTED_COLOR_TYPE = {
+  lightness: number;
+  color: string;
+  contrast: number;
+  contrastAbs: number;
+  diff: number;
+};
+
+export const suggestContrastColor = (
+  hexColor: string,
+  isTextColor: boolean,
+  targetContrast: number,
+): SUGGESTED_COLOR_TYPE => {
+  const hsluvColor = new Hsluv();
+  hsluvColor.hex = hexColor;
+  hsluvColor.hexToHsluv();
+  const colors = [];
+  for (let i = 0; i <= 100; i += 1) {
+    hsluvColor.hsluv_l = i;
+    hsluvColor.hsluvToHex();
+    const color = hsluvColor.hex;
+    const contrast = isTextColor ? getContrast(hexColor, color).contrastLC : getContrast(color, hexColor).contrastLC;
+    const contrastAbs = Math.abs(contrast);
+    colors.push({
+      lightness: i,
+      color: color,
+      contrast,
+      contrastAbs,
+      diff: getContrastDelta(targetContrast, contrastAbs),
+    });
+  }
+  console.log("IS TEXT COLOR: ", isTextColor, " | SUGGESTED CONTRAST COLORS : ", colors);
+
+  let contrastColor = colors.sort((a, b) => a.diff - b.diff)[0];
+  if (contrastColor.diff === Infinity) {
+    contrastColor = colors.sort((a, b) => b.contrastAbs - a.contrastAbs)[0];
+  }
+  return contrastColor;
 };
 
 export const getFlexAlign = (alignment: "start" | "center" | "end" | "between" | "around" | "evenly" | "stretch") => {
