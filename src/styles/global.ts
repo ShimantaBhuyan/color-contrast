@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
-import { BRAND_COLOR, BRAND_TEXT_COLORS, devices } from "../constants";
+import { BRAND_TEXT_COLORS, devices } from "../constants";
 import { getFlexAlign } from "../utils";
 
 type StyledTextProps = {
@@ -11,6 +11,7 @@ type StyledTextProps = {
 export const StyledRowSection = styled.section<{
   vAlign?: "start" | "center" | "end" | "stretch";
   align?: "start" | "center" | "end" | "between" | "around" | "evenly";
+  noCol?: boolean;
 }>`
   display: flex;
   flex-direction: row;
@@ -19,10 +20,12 @@ export const StyledRowSection = styled.section<{
   grid-gap: 30px;
   gap: 30px;
 
-  @media ${devices.mobileL} {
+  ${props =>
+    !props?.noCol &&
+    `@media ${devices.mobileL} {
     flex-direction: column;
     align-items: center;
-  }
+  }`}
 `;
 
 export const StyledColSection = styled.section<{
@@ -45,6 +48,34 @@ export const StyledText = styled.p<StyledTextProps>`
   font-size: ${props => (props.type === "small" ? "16px" : props.type === "medium" ? "24px" : "36px")};
   color: ${props => props.color};
   ${props => props?.bold && `font-weight: 700`}
+`;
+
+export const StyledButton = styled.button<{ buttonType: "normal" | "rounded"; bold?: boolean }>`
+  padding: 8px;
+  border: 2px solid ${BRAND_TEXT_COLORS.LARGE};
+  border-radius: ${props => (props.buttonType === "rounded" ? "50%" : "4px")};
+  font-size: 12px;
+  font-weight: ${props => (props?.bold ? "bold" : "regular")};
+  text-align: center;
+  cursor: pointer;
+`;
+
+export const PillButton = styled.a<{ fillColor?: string; color?: string }>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  padding: 8px;
+  font-size: 12px;
+  text-align: center;
+  text-decoration: none;
+  width: 100px;
+  height: 35px;
+  color: ${props => props?.color};
+  background-color: ${props => props?.fillColor};
+  border-radius: 35px;
+  border: 2px solid ${BRAND_TEXT_COLORS.LARGE};
+  cursor: pointer;
 `;
 
 const GlobalStyle = createGlobalStyle`
