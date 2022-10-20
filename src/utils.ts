@@ -101,19 +101,7 @@ const getContrastDelta = (target: number, value: number): number => {
   return diff < 0 ? Infinity : diff;
 };
 
-type SUGGESTED_COLOR_TYPE = {
-  lightness: number;
-  color: string;
-  contrast: number;
-  contrastAbs: number;
-  diff: number;
-};
-
-export const suggestContrastColor = (
-  hexColor: string,
-  isTextColor: boolean,
-  targetContrast: number,
-): SUGGESTED_COLOR_TYPE => {
+export const suggestContrastColor = (hexColor: string, isTextColor: boolean, targetContrast: number): string => {
   const hsluvColor = new Hsluv();
   hsluvColor.hex = hexColor;
   hsluvColor.hexToHsluv();
@@ -126,19 +114,23 @@ export const suggestContrastColor = (
     const contrastAbs = Math.abs(contrast);
     colors.push({
       lightness: i,
+      isTextColor,
       color: color,
       contrast,
       contrastAbs,
       diff: getContrastDelta(targetContrast, contrastAbs),
     });
   }
-  console.log("IS TEXT COLOR: ", isTextColor, " | SUGGESTED CONTRAST COLORS : ", colors);
 
-  let contrastColor = colors.sort((a, b) => a.diff - b.diff)[0];
-  if (contrastColor.diff === Infinity) {
-    contrastColor = colors.sort((a, b) => b.contrastAbs - a.contrastAbs)[0];
+  let contrastColors = colors.sort((a, b) => a.diff - b.diff);
+
+  if (contrastColors[0].diff === Infinity) {
+    contrastColors = colors.sort((a, b) => b.contrastAbs - a.contrastAbs);
   }
-  return contrastColor;
+
+  console.log("SUGGESTING: ", [contrastColors[0].color, contrastColors[1].color, contrastColors[2].color]);
+
+  return contrastColors[0].color;
 };
 
 export const getFlexAlign = (alignment: "start" | "center" | "end" | "between" | "around" | "evenly" | "stretch") => {

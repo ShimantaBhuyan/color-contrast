@@ -1,15 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
-import { StyledColSection, StyledText } from "../styles/global";
+import { StyledColSection, StyledRowSection, StyledText } from "../styles/global";
 import Blob from "./Blob";
 import ContrastDisplay from "./ContrastDisplay";
 import SwapIcon from "url:../assets/swap.svg";
 import QuestionIcon from "url:../assets/question-mark.svg";
+import SuggestionIcon from "url:../assets/suggestion.svg";
 import { BRAND_COLOR, BRAND_TEXT_COLORS, devices } from "../constants";
 import { getContrast, getFromQueryParams, getHexColor, parseColor, mixpanelTrack } from "../utils";
+import { useOnClickOutside } from "../hooks/useOnClickOutside";
+import ContrastSuggester from "./ContrastSuggester";
 
 const ContrastChecker = () => {
+  const suggesterRef = useRef(null);
+  const colorFormatContainerRef = useRef(null);
   const [textColor, setTextColor] = useState("#FEF3C7");
   const [tColorError, setTColorError] = useState(false);
   const [bgColor, setBgColor] = useState("#059669");
@@ -17,6 +22,17 @@ const ContrastChecker = () => {
   const [contrastRatio, setContrastRatio] = useState<number | null>(null);
   const [wcag2Ratio, setWcag2Ratio] = useState<string | null>(null);
   const [showColorFormats, setShowColorFormats] = useState(false);
+  const [showSuggestion, setShowSuggestion] = useState(false);
+
+  const handleClickOutsideSuggester = () => {
+    setShowSuggestion(false);
+  };
+  useOnClickOutside(suggesterRef, handleClickOutsideSuggester);
+
+  const handleClickOutsideColorFormatContainer = () => {
+    setShowColorFormats(false);
+  };
+  useOnClickOutside(colorFormatContainerRef, handleClickOutsideColorFormatContainer);
 
   useEffect(() => {
     const colorsFromUrl = getFromQueryParams();
@@ -76,14 +92,14 @@ const ContrastChecker = () => {
 
     if (event.target.id === "textColorInput") {
       setTextColor(color);
-      if (parseColor(color)[4] === false) {
+      if (color.length > 0 && parseColor(color)[4] === false) {
         setTColorError(true);
       } else {
         setTColorError(false);
       }
     } else if (event.target.id === "bgColorInput") {
       setBgColor(color);
-      if (parseColor(color)[4] === false) {
+      if (color.length > 0 && parseColor(color)[4] === false) {
         setBgColorError(true);
       } else {
         setBgColorError(false);
@@ -114,6 +130,9 @@ const ContrastChecker = () => {
 
   return (
     <Wrapper align="center">
+      <StyledTextDisplay textColor={getHexColor(textColor)} bgColor={getHexColor(bgColor)}>
+        The quick brown fox jumped over the lazy dog
+      </StyledTextDisplay>
       <StyledForm>
         <StyledColSection align="start">
           <StyledText type="small" color={BRAND_TEXT_COLORS.BODY}>
@@ -149,12 +168,7 @@ const ContrastChecker = () => {
           <label htmlFor="textColorInput">Click</label>
         </StyledColSection>
 
-        <IconButton
-          onClick={swapColors}
-          type="button"
-          data-tooltip={"Click to swap text and background color"}
-          rotateOnMobile
-        >
+        <IconButton onClick={swapColors} type="button" data-tooltip={"Click to swap text and background color"}>
           <img src={SwapIcon} alt="Swap icon" width={24} height={24} />
         </IconButton>
 
@@ -193,23 +207,41 @@ const ContrastChecker = () => {
         </StyledColSection>
       </StyledForm>
 
-      <StyledColSection>
-        <IconButton
-          onClick={() => {
-            setShowColorFormats(!showColorFormats);
-            mixpanelTrack("Click", {
-              source: "show-formats",
-            });
-          }}
-          type="button"
-          data-tooltip={"Click to show compatible color formats"}
-          border={false}
-        >
-          <img src={QuestionIcon} alt="Info icon" width={30} height={30} />
-        </IconButton>
+      <StyledColSection style={{ width: "100%" }}>
+        <StyledRowSection noCol>
+          <IconButton
+            onClick={() => {
+              setShowColorFormats(!showColorFormats);
+              setShowSuggestion(false);
+              mixpanelTrack("Click", {
+                source: "show-formats",
+              });
+            }}
+            type="button"
+            data-tooltip={"Click to show compatible color formats"}
+            border={false}
+          >
+            <img src={QuestionIcon} alt="Info icon" width={30} height={30} />
+          </IconButton>
+
+          <IconButton
+            onClick={() => {
+              setShowSuggestion(!showSuggestion);
+              setShowColorFormats(false);
+              mixpanelTrack("Click", {
+                source: "show-suggestions",
+              });
+            }}
+            type="button"
+            data-tooltip={"Click to show color suggestions with different contrast"}
+            border={false}
+          >
+            <img src={SuggestionIcon} alt="Suggestion icon" width={24} height={24} />
+          </IconButton>
+        </StyledRowSection>
 
         {showColorFormats && (
-          <ColorFormatInfo vAlign="between">
+          <ColorFormatInfo vAlign="between" ref={colorFormatContainerRef}>
             <StyledText type="medium" color={BRAND_TEXT_COLORS.BODY} style={{ textAlign: "center" }}>
               You can input colors in these formats:
             </StyledText>
@@ -233,13 +265,19 @@ const ContrastChecker = () => {
             </StyledText>
           </ColorFormatInfo>
         )}
+
+        {showSuggestion && (
+          <ContrastSuggester
+            innerRef={suggesterRef}
+            textColor={textColor}
+            bgColor={bgColor}
+            setTxtColor={setTextColor}
+            setBackColor={setBgColor}
+          />
+        )}
       </StyledColSection>
 
       <ContrastDisplay contrastLC={contrastRatio} wcag2Ratio={wcag2Ratio} error={tColorError || bgColorError} />
-
-      <StyledTextDisplay textColor={getHexColor(textColor)} bgColor={getHexColor(bgColor)}>
-        The quick brown fox jumped over the lazy dog
-      </StyledTextDisplay>
     </Wrapper>
   );
 };
@@ -260,13 +298,8 @@ const StyledForm = styled.form`
   gap: 20px;
 
   @media ${devices.mobileL} {
-    flex-direction: column;
+    width: 90%;
     align-items: center;
-    grid-gap: 10px;
-    gap: 10px;
-    width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
   }
 `;
 
@@ -325,6 +358,7 @@ const StyledTextDisplay = styled.div<{ textColor: string; bgColor: string }>`
   margin-top: 20px;
   padding-left: 10px;
   padding-right: 10px;
+  margin-bottom: 25px;
 
   @media ${devices.mobileL} {
     width: 90%;
