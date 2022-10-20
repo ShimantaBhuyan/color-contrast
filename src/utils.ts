@@ -128,8 +128,6 @@ export const suggestContrastColor = (hexColor: string, isTextColor: boolean, tar
     contrastColors = colors.sort((a, b) => b.contrastAbs - a.contrastAbs);
   }
 
-  console.log("SUGGESTING: ", [contrastColors[0].color, contrastColors[1].color, contrastColors[2].color]);
-
   return contrastColors[0].color;
 };
 

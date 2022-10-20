@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import { PillButton, StyledColSection, StyledRowSection, StyledText } from "../styles/global";
 import { BRAND_COLOR, BRAND_TEXT_COLORS, devices } from "../constants";
-import { suggestContrastColor } from "../utils";
+import { mixpanelTrack, suggestContrastColor } from "../utils";
 
 type PROPS = {
   innerRef: RefObject<HTMLDivElement>;
@@ -19,7 +19,7 @@ const ContrastSuggester = ({ innerRef, textColor, bgColor, setTxtColor, setBackC
 
   const suggestColor = (color: string, isTextColor: boolean, targetContrast: number) => {
     if (isTextColor != null) {
-      setSuggestedColor(suggestContrastColor(color, isTextColor, targetContrast));
+      setSuggestedColor(suggestContrastColor(color, isTextColor, targetContrast).toUpperCase());
     }
   };
 
@@ -31,6 +31,9 @@ const ContrastSuggester = ({ innerRef, textColor, bgColor, setTxtColor, setBackC
       <StyledRowSection noCol>
         <PillButton
           onClick={() => {
+            mixpanelTrack("Click", {
+              source: "getTextColorSuggestion",
+            });
             setIsTextColor(true);
             suggestColor(bgColor, false, 90);
           }}
@@ -39,6 +42,9 @@ const ContrastSuggester = ({ innerRef, textColor, bgColor, setTxtColor, setBackC
         </PillButton>
         <PillButton
           onClick={() => {
+            mixpanelTrack("Click", {
+              source: "getBGColorSuggestion",
+            });
             setIsTextColor(false);
             suggestColor(textColor, true, 90);
           }}
@@ -50,7 +56,9 @@ const ContrastSuggester = ({ innerRef, textColor, bgColor, setTxtColor, setBackC
         <StyledRowSection>
           <PillButton
             onClick={() => {
-              console.log(isTextColor, suggestedColor);
+              mixpanelTrack("Click", {
+                source: "applySuggestedColor",
+              });
               isTextColor ? setTxtColor(suggestedColor) : setBackColor(suggestedColor);
             }}
             color={isTextColor ? suggestedColor : textColor}
