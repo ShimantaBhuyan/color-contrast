@@ -1,4 +1,4 @@
-# Color Contrast Tool (using [APCA](http://apcaw3.myndex.com/)) - Inspired from work by [Myndex](https://github.com/Myndex)
+# Color Contrast Tool (using [APCA](http://apcaw3.myndex.com/))
 
 This is a tool to check for color contrast using APCA(the candidate method for WCAG 3) and which is backwards compatible
 with WCAG 2.1, but is actually based on human perception.
