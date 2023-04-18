@@ -26,17 +26,17 @@ export const getAALevel = (ratio: number) => {
     if (absoluteRatio < 15) {
       quality = "INVISIBLE! 😢";
     } else if (absoluteRatio >= 15 && absoluteRatio < 30) {
-      quality = "NOTICEABLE 😌";
+      quality = "JUST NOTICEABLE 😳";
     } else if (absoluteRatio >= 30 && absoluteRatio < 45) {
-      quality = "GETTING BETTER 🙂";
+      quality = "GETTING BETTER 🤓";
     } else if (absoluteRatio >= 45 && absoluteRatio < 60) {
-      quality = "NICE JOB 😀";
+      quality = "OK FOR BIG TEXT 🙂";
     } else if (absoluteRatio >= 60 && absoluteRatio < 75) {
-      quality = "GREAT! 😄";
+      quality = "NICE JOB! 😄";
     } else if (absoluteRatio >= 75 && absoluteRatio < 90) {
-      quality = "BEST 😊";
+      quality = "GREAT!! 😊";
     } else if (absoluteRatio >= 90) {
-      quality = "ACCESSIBILITY MASTER!!! 🤩";
+      quality = "BEST!!! 🤩";
     }
   } else {
     quality = "?";

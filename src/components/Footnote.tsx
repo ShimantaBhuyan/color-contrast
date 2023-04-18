@@ -24,6 +24,13 @@ const Footnote = () => {
           </StyledText>
         </InspireSection>
 
+        <StyledExtraNote>
+          Check out{" "}
+          <a href="https://readtech.org/ARC/tests/visual-readability-contrast/?tn=criterion">Readibility Criterion</a>{" "}
+          for latest updates on criteria's pertaining to font size, colors and more on how to ensure best readability
+          for digital mediums like websites.
+        </StyledExtraNote>
+
         <NotesSection align="start">
           <StyledRowSection vAlign="start">
             <StyledText type="medium" color={BRAND_TEXT_COLORS.BODY}>
@@ -187,6 +194,7 @@ const StyledFootnote = styled.div`
   gap: 50px 50px;
   grid-template-areas:
     "Inspire Notes"
+    ". ExtraNote"
     ". APCANotes";
 
   @media ${devices.mobileL} {
@@ -212,6 +220,11 @@ const NotesSection = styled(StyledColSection)`
 
 const APCANotesSection = styled(StyledColSection)`
   grid-area: APCANotes;
+`;
+
+const StyledExtraNote = styled.h1`
+  grid-area: ExtraNote;
+  font-size: 20px;
 `;
 
 export default Footnote;
