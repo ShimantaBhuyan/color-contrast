@@ -101,7 +101,6 @@ const ContrastChecker = () => {
     urlParams.set("txtColor", textColor.startsWith("#") ? textColor.substring(1) : textColor);
     urlParams.set("bgColor", bgColor.startsWith("#") ? bgColor.substring(1) : bgColor);
     window.history.replaceState(null, "", "?" + urlParams.toString());
-    // window.location.search = urlParams.toString();
   };
 
   const handleColorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
