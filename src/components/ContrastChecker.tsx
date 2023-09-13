@@ -13,11 +13,19 @@ import { useOnClickOutside } from "../hooks/useOnClickOutside";
 import ContrastSuggester from "./ContrastSuggester";
 
 const ContrastChecker = () => {
+  const firstUrlParams = new URLSearchParams(window.location.search);
   const suggesterRef = useRef(null);
   const colorFormatContainerRef = useRef(null);
-  const [textColor, setTextColor] = useState("#FEF3C7");
+
+  const getFirstUrlParamsColor = (key: string) => {
+    let param = firstUrlParams.get(key);
+    if (!param) return null;
+    return "#" + param;
+  };
+
+  const [textColor, setTextColor] = useState(() => getFirstUrlParamsColor("txtColor") || "#FEF3C7");
   const [tColorError, setTColorError] = useState(false);
-  const [bgColor, setBgColor] = useState("#059669");
+  const [bgColor, setBgColor] = useState(() => getFirstUrlParamsColor("bgColor") || "#059669");
   const [bgColorError, setBgColorError] = useState(false);
   const [contrastRatio, setContrastRatio] = useState<number | null>(null);
   const [wcag2Ratio, setWcag2Ratio] = useState<string | null>(null);
@@ -79,12 +87,20 @@ const ContrastChecker = () => {
 
   useEffect(() => {
     updateRatio(textColor, bgColor);
+    updateUrl(textColor, bgColor);
   }, [textColor, bgColor]);
 
   const updateRatio = (textColor: string, bgColor: string) => {
     const { contrastLC, wcag2Ratio } = getContrast(textColor, bgColor);
     setContrastRatio(contrastLC);
     setWcag2Ratio(wcag2Ratio);
+  };
+
+  const updateUrl = (textColor: string, bgColor: string) => {
+    const urlParams = new URLSearchParams(window.location.search);
+    urlParams.set("txtColor", textColor.startsWith("#") ? textColor.substring(1) : textColor);
+    urlParams.set("bgColor", bgColor.startsWith("#") ? bgColor.substring(1) : bgColor);
+    window.history.replaceState(null, "", "?" + urlParams.toString());
   };
 
   const handleColorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
